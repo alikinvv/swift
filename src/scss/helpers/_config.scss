@@ -1,0 +1,80 @@
+// Options
+$enable-grid-classes: true !default;
+
+// colors
+
+$white: #fff !default;
+$black: #000 !default;
+$red: #ff502f !default;
+
+$primary: #151d33 !default;
+$secondary: #818285 !default;
+$gray: #cccccc !default;
+$gray-light: #f5f5f5 !default;
+$accent: #ff502f !default;
+
+$theme-colors: (
+    'primary': #000,
+    'secondary': #000,
+    'white': #fff,
+    'black': #000,
+);
+
+$html-font-size: 16px;
+$font-size-base: 1rem !default;
+$line-height-base: 1.5 !default;
+
+$font-family-primary: 'Montserrat', sans-serif;
+$font-family-secondary: 'Montserrat', sans-serif;
+
+$border-radius: 8px;
+$transition-time: 0.2s;
+$shadow-100: 2px 2px 40px rgba(0, 0, 0, 0.08);
+
+$paragraph-margin-bottom: 1.25rem !default;
+
+// Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+// You can add more entries to the $spacers map, should you need more variation.
+
+$spacer: 1rem !default;
+
+$spacers: (
+    0: 0,
+    1: $spacer / 4,
+    2: $spacer / 2,
+    3: $spacer,
+    4: $spacer * 1.5,
+    5: $spacer * 3,
+) !default;
+
+// Grid
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 768px,
+    md: 1024px,
+    lg: 1200px,
+    xl: 1420px,
+    xxl: 1760px,
+) !default;
+
+$container-max-widths: (
+    sm: inherit,
+    md: 990px,
+    lg: 1170px,
+    xl: 1334px,
+    xxl: 1680px,
+) !default;
+
+$screen-xs: 576px !default;
+
+$grid-columns: 12 !default;
+$grid-gutter-width: 2rem !default;
+$grid-row-columns: 6 !default;
+
+$gutters: $spacers !default;
+
+$container-padding-x: $grid-gutter-width !default;

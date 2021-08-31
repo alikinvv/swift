@@ -1,0 +1,1996 @@
+{% extends "src/template/layout/_template.njk" %}
+
+{%- set page_hide_breadcrumb = false -%}
+{% set title = "4-комнатная 444,44 м², 17 этаж" %}
+{% set is_filter = true %}
+
+
+{% block content %}
+
+    <div class="top-bar">
+        <div class="root__wrap">
+            <div class="top-bar__wrap">
+                <div class="container-fluid">
+                    <div class="top-bar__main">
+                        <div class="top-bar__content">
+                            <div class="top-bar__flat">
+                                <div class="top-bar__flat--image">
+                                    <img src="img/content/topbar__flat.jpg" class="ico-svg" alt="">
+                                </div>
+                                <div class="top-bar__flat--name">4-комнатная 444,44 м², 17 этаж</div>
+                                <div class="top-bar__flat--price">25 124 657 ₽</div>
+                            </div>
+                        </div>
+                        <div class="top-bar__buttons">
+                            <a href="#" class="btn">Выбрать квартиру</a>
+                            <a href="#" class="btn btn-border">Задать вопрос</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!--/.top-bar -->
+
+    <div class="flat">
+        <div class="flat__article">артикул: жщ-123аол</div><!-- .flat__article -->
+        <div class="flat__header flat-header">
+            <div class="flat-header__content">
+                <div class="flat-header__title">{{ title }}</div>
+                <ul class="flat-header__tags">
+                   <li>
+                       <div class="post-tag">Евро</div>
+                   </li>
+                    <li>
+                        <div class="post-tag">Переуступка</div>
+                    </li>
+                </ul>
+            </div><!-- .flat-header__content -->
+            <div class="flat-header__buttons">
+                <div class="flat-header__buttons--wrap">
+                    <button type="button" class="iconic-button ml-1">
+                        <i>
+                            <svg class="ico-svg" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+                                <use xlink:href="img/sprites/sprite-color.svg#print" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                            </svg>
+                        </i>
+                    </button>
+                    <button type="button" class="iconic-button ml-1">
+                        <i>
+                            <svg class="ico-svg" viewBox="0 0 12 14" xmlns="http://www.w3.org/2000/svg">
+                                <use xlink:href="img/sprites/sprite-color.svg#share" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                            </svg>
+                        </i>
+                    </button>
+                </div><!-- .flat-header__buttons -->
+            </div>
+        </div><!-- .flat__header -->
+        <div class="flat__place flat__place--md">
+            <div class="flat__place--address">
+                <div class="flat__place--name">Солнечный луч</div>
+                <div class="flat__place--street">Краснознаменная партизанская никитинская ул., 88, корпус 1-6, Москва</div>
+            </div>
+            <div class="flat__place--location">
+                <ul class="obj-location">
+                    <li class="obj-location__item">
+                        <div class="obj-location__station">
+                            <div class="obj-location__station--icon" style="background-color: #FFD702;"></div>
+                            <div class="obj-location__station--name">Рассказовка</div>
+                        </div>
+                        <div class="obj-location__distance">
+                            <div class="obj-location__distance--icon">
+                                <svg class="ico-svg" viewBox="0 0 10 15" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="img/sprites/sprite-mono.svg#distanceicon" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </div>
+                            <div class="obj-location__distance--text">5 минут</div>
+                        </div>
+                    </li>
+                    <li class="obj-location__item">
+                        <div class="obj-location__station">
+                            <div class="obj-location__station--icon" style="background-color: #83BD02;"></div>
+                            <div class="obj-location__station--name">ул академика Янгеля</div>
+                        </div>
+                        <div class="obj-location__distance">
+                            <div class="obj-location__distance--icon">
+                                <svg class="ico-svg" viewBox="0 0 10 15" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="img/sprites/sprite-mono.svg#distanceicon" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </div>
+                            <div class="obj-location__distance--text">5 минут</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div><!-- .flat__place -->
+        <div class="flat__main">
+            <div class="flat__media flat-media">
+                <div class="flat-media__gallery">
+                    <div class="swiper-container flat-media-gallery">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a href="img/content/flats/flat__image_01.jpg" class="flat-media__item flat-media__item--border" data-fancybox="flat-gallery">
+                                    <div class="flat-media__item--image">
+                                        <img src="img/content/flats/flat__image_01.jpg" class="img-fluid" alt="">
+                                    </div><!-- .flat__item -->
+                                </a><!-- .flat__item -->
+                            </div><!-- .swiper-slide -->
+                            <div class="swiper-slide">
+                                <a href="img/content/flats/flat__image_02.jpg" class="flat-media__item flat-media__item--border" data-fancybox="flat-gallery">
+                                    <div class="flat-media__item--image">
+                                        <img src="img/content/flats/flat__image_02.jpg" class="img-fluid" alt="">
+                                    </div><!-- .flat__item -->
+                                </a><!-- .flat__item -->
+                            </div><!-- .swiper-slide -->
+                            <div class="swiper-slide">
+                                <a href="img/content/flats/flat__image_03.jpg" class="flat-media__item" style="background-image: url('img/content/flats/flat__image_03.jpg')" data-fancybox="flat-gallery"></a><!-- .flat__item -->
+                            </div><!-- .swiper-slide -->
+                            <div class="swiper-slide">
+                                <a href="img/content/flats/flat__image_04.jpg" class="flat-media__item" style="background-image: url('img/content/flats/flat__image_04.jpg')" data-fancybox="flat-gallery"></a><!-- .flat__item -->
+                            </div><!-- .swiper-slide -->
+                            <div class="swiper-slide">
+                                <a href="img/content/flats/flat__image_05.jpg" class="flat-media__item" style="background-image: url('img/content/flats/flat__image_05.jpg')" data-fancybox="flat-gallery"></a><!-- .flat__item -->
+                            </div><!-- .swiper-slide -->
+                        </div>
+                    </div>
+                    <button type="button" class="slider-button slider-button--prev flat-media__nav flat-media__nav--prev gallery-prev">
+                        <i>
+                            <svg class="ico-svg" viewBox="0 0 192 512" xmlns="http://www.w3.org/2000/svg">
+                                <use xlink:href="img/sprites/sprite-mono.svg#angle-left" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                            </svg>
+                        </i>
+                    </button>
+                    <button type="button" class="slider-button slider-button--next flat-media__nav flat-media__nav--next gallery-next">
+                        <i>
+                            <svg class="ico-svg" viewBox="0 0 192 512" xmlns="http://www.w3.org/2000/svg">
+                                <use xlink:href="img/sprites/sprite-mono.svg#angle-right" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                            </svg>
+                        </i>
+                    </button>
+                </div><!-- .flat-media__gallery -->
+                <div class="flat-media__thumbs">
+                    <div class="swiper-container flat-media-thumbs">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            <div class="swiper-slide">
+                                <div class="flat-media__thumb flat-media__thumb--border">
+                                    <div class="flat-media__thumb--image">
+                                        <img src="img/content/flats/flat__image_01.jpg" class="img-fluid" alt="">
+                                    </div>
+                                </div><!-- .flat-media__thumb -->
+                            </div><!-- .swiper-slide -->
+                            <div class="swiper-slide">
+                                <div class="flat-media__thumb flat-media__thumb--border">
+                                    <div class="flat-media__thumb--image">
+                                        <img src="img/content/flats/flat__image_02.jpg" class="img-fluid" alt="">
+                                    </div>
+                                </div><!-- .flat-media__thumb -->
+                            </div><!-- .swiper-slide -->
+                            <div class="swiper-slide">
+                                <div class="flat-media__thumb" style="background-image: url('img/content/flats/flat__image_03.jpg')"></div><!-- .flat-media__thumb -->
+                            </div><!-- .swiper-slide -->
+                            <div class="swiper-slide">
+                                <div class="flat-media__thumb" style="background-image: url('img/content/flats/flat__image_04.jpg')"></div><!-- .flat-media__thumb -->
+                            </div><!-- .swiper-slide -->
+                            <div class="swiper-slide">
+                                <div class="flat-media__thumb" style="background-image: url('img/content/flats/flat__image_05.jpg')"></div><!-- .flat-media__thumb -->
+                            </div><!-- .swiper-slide -->
+                        </div>
+                    </div>
+                </div><!-- .flat-media__thumbs -->
+            </div><!-- .flat__media -->
+            <div class="flat__content">
+                <div class="flat__content--info flat__info">
+                    <div class="flat__info--base">
+                        <ul class="flat__specifications">
+                            <li>
+                                <div class="flat__specifications--label">Площадь</div>
+                                <div class="flat__specifications--value">444 м²</div>
+                            </li>
+                            <li>
+                                <div class="flat__specifications--label">Этаж</div>
+                                <div class="flat__specifications--value">24 из 35</div>
+                            </li>
+                            <li>
+                                <div class="flat__specifications--label">Корпус</div>
+                                <div class="flat__specifications--value">24</div>
+                            </li>
+                            <li>
+                                <div class="flat__specifications--label">Срок сдачи</div>
+                                <div class="flat__specifications--value">IV кв 2024</div>
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="btn-view flat-info-view">
+                        <span class="btn-view__text">Дополнительные характеристики</span>
+                        <i class="btn-view__icon">
+                            <svg class="ico-svg" viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+                                <use xlink:href="img/sprites/sprite-mono.svg#angle-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                            </svg>
+                        </i>
+                    </button>
+                    <div class="flat__info--advance">
+                        <ul class="flat__specifications">
+                            <li>
+                                <div class="flat__specifications--label">Площадь</div>
+                                <div class="flat__specifications--value">444 м²</div>
+                            </li>
+                            <li>
+                                <div class="flat__specifications--label">Этаж</div>
+                                <div class="flat__specifications--value">24 из 35</div>
+                            </li>
+                            <li>
+                                <div class="flat__specifications--label">Корпус</div>
+                                <div class="flat__specifications--value">24</div>
+                            </li>
+                            <li>
+                                <div class="flat__specifications--label">Срок сдачи</div>
+                                <div class="flat__specifications--value">IV кв 2024</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div><!-- .flat__info -->
+
+                <div class="flat__content--place flat__place flat__place--xs">
+                    <div class="flat__place--address">
+                        <div class="flat__place--name">Солнечный луч</div>
+                        <div class="flat__place--street">Краснознаменная партизанская никитинская ул., 88, корпус 1-6, Москва</div>
+                    </div>
+                    <div class="flat__place--location">
+                        <ul class="obj-location">
+                            <li class="obj-location__item">
+                                <div class="obj-location__station">
+                                    <div class="obj-location__station--icon" style="background-color: #FFD702;"></div>
+                                    <div class="obj-location__station--name">Рассказовка</div>
+                                </div>
+                                <div class="obj-location__distance">
+                                    <div class="obj-location__distance--icon">
+                                        <svg class="ico-svg" viewBox="0 0 10 15" xmlns="http://www.w3.org/2000/svg">
+                                            <use xlink:href="img/sprites/sprite-mono.svg#distanceicon" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="obj-location__distance--text">5 минут</div>
+                                </div>
+                            </li>
+                            <li class="obj-location__item">
+                                <div class="obj-location__station">
+                                    <div class="obj-location__station--icon" style="background-color: #83BD02;"></div>
+                                    <div class="obj-location__station--name">ул академика Янгеля</div>
+                                </div>
+                                <div class="obj-location__distance">
+                                    <div class="obj-location__distance--icon">
+                                        <svg class="ico-svg" viewBox="0 0 10 15" xmlns="http://www.w3.org/2000/svg">
+                                            <use xlink:href="img/sprites/sprite-mono.svg#distanceicon" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="obj-location__distance--text">5 минут</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div><!-- .flat__place -->
+                <div class="flat__content--price flat-price">
+                    <div class="flat-price__finishing">
+                        <div class="flat-price__finishing--icon">
+                            <svg class="ico-svg" viewBox="0 0 13 16" xmlns="http://www.w3.org/2000/svg">
+                                <use xlink:href="img/sprites/sprite-color.svg#finishing" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                            </svg>
+                        </div>
+                        <div class="flat-price__finishing--text">Отделка включена в стоимость</div>
+                    </div>
+                    <div class="flat-price__value">25 124 657 ₽</div>
+                    <div class="flat-price__meter flat-price__meter">250 400 ₽ за м²</div>
+                    <div class="flat-price__credit flat-price__credit--xs">В ипотеку от  14 000 ₽/мес</div>
+                    <div class="flat-price__checkout">
+                        <div class="flat-price__checkout--item">
+                            <a href="#" class="btn btn-sm">Купить квартиру</a>
+                        </div>
+                        <div class="flat-price__checkout--item">
+                            <a href="#" class="btn btn-border btn-sm">Задать вопрос</a>
+                        </div>
+                    </div>
+                    <div class="flat-price__credit flat-price__credit--md">В ипотеку от  14 000 ₽/мес</div>
+                </div>
+
+            </div><!-- .flat__content -->
+        </div><!-- .flat__main -->
+    </div><!--/.flat -->
+
+    <div class="section">
+        <div class="section__header">
+            <div class="section__header--title">Условия приобритения</div><!--/.section__header--title -->
+            <div class="section__header--nav">
+                <div class="section__header--buttons">
+                    <div class="section-nav">
+                        <button type="button" class="slider-button slider-button--prev conditions-prev">
+                            <i>
+                                <svg class="ico-svg" viewBox="0 0 192 512" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="img/sprites/sprite-mono.svg#angle-left" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </i>
+                        </button>
+                        <button type="button" class="slider-button slider-button--next conditions-next">
+                            <i>
+                                <svg class="ico-svg" viewBox="0 0 192 512" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="img/sprites/sprite-mono.svg#angle-right" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </i>
+                        </button>
+                    </div>
+                </div>
+            </div><!--/.section__header--nav -->
+        </div><!--/.section__header -->
+        <div class="section__content">
+            <div class="conditions">
+                <div class="swiper-container conditions__slider">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="#" class="conditions__item">
+                                <div class="conditions__wrap">
+                                    <div class="conditions__num">01</div>
+                                    <div class="conditions__title">Онлайн-бронирование</div>
+                                    <div class="conditions__text">от 4,44% до 30 лет</div>
+                                    <div class="conditions__footer">
+                                        <div class="conditions__footer--text">Перейти</div>
+                                        <div class="conditions__footer--arrow">
+                                            <svg class="ico-svg" viewBox="0 0 25 12" xmlns="http://www.w3.org/2000/svg">
+                                                <use xlink:href="img/sprites/sprite-mono.svg#arrow-right" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a><!--/.conditions__item -->
+                        </div><!--/.swiper-slide -->
+                        <div class="swiper-slide">
+                            <a href="#" class="conditions__item">
+                                <div class="conditions__wrap">
+                                    <div class="conditions__num">02</div>
+                                    <div class="conditions__title">Рассрочка</div>
+                                    <div class="conditions__text">Текст в две строки если нужно что нибудь подписать</div>
+                                    <div class="conditions__footer">
+                                        <div class="conditions__footer--text">Перейти</div>
+                                        <div class="conditions__footer--arrow">
+                                            <svg class="ico-svg" viewBox="0 0 25 12" xmlns="http://www.w3.org/2000/svg">
+                                                <use xlink:href="img/sprites/sprite-mono.svg#arrow-right" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a><!--/.conditions__item -->
+                        </div><!--/.swiper-slide -->
+                        <div class="swiper-slide">
+                            <a href="#" class="conditions__item">
+                                <div class="conditions__wrap">
+                                    <div class="conditions__num">03</div>
+                                    <div class="conditions__title">Трейд ин</div>
+                                    <div class="conditions__text">Текст в две строки если нужно что нибудь подписать</div>
+                                    <div class="conditions__footer">
+                                        <div class="conditions__footer--text">Перейти</div>
+                                        <div class="conditions__footer--arrow">
+                                            <svg class="ico-svg" viewBox="0 0 25 12" xmlns="http://www.w3.org/2000/svg">
+                                                <use xlink:href="img/sprites/sprite-mono.svg#arrow-right" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a><!--/.conditions__item -->
+                        </div><!--/.swiper-slide -->
+                        <div class="swiper-slide">
+                            <a href="#" class="conditions__item">
+                                <div class="conditions__wrap">
+                                    <div class="conditions__num">04</div>
+                                    <div class="conditions__title">Рефинансирование</div>
+                                    <div class="conditions__text">Текст в две строки если нужно что нибудь подписать</div>
+                                    <div class="conditions__footer">
+                                        <div class="conditions__footer--text">Перейти</div>
+                                        <div class="conditions__footer--arrow">
+                                            <svg class="ico-svg" viewBox="0 0 25 12" xmlns="http://www.w3.org/2000/svg">
+                                                <use xlink:href="img/sprites/sprite-mono.svg#arrow-right" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a><!--/.conditions__item -->
+                        </div><!--/.swiper-slide -->
+                        <div class="swiper-slide">
+                            <a href="#" class="conditions__item">
+                                <div class="conditions__wrap">
+                                    <div class="conditions__num">05</div>
+                                    <div class="conditions__title">Рассрочка</div>
+                                    <div class="conditions__text">Текст в две строки если нужно что нибудь подписать</div>
+                                    <div class="conditions__footer">
+                                        <div class="conditions__footer--text">Перейти</div>
+                                        <div class="conditions__footer--arrow">
+                                            <svg class="ico-svg" viewBox="0 0 25 12" xmlns="http://www.w3.org/2000/svg">
+                                                <use xlink:href="img/sprites/sprite-mono.svg#arrow-right" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a><!--/.conditions__item -->
+                        </div><!--/.swiper-slide -->
+                        <div class="swiper-slide">
+                            <a href="#" class="conditions__item">
+                                <div class="conditions__wrap">
+                                    <div class="conditions__num">06</div>
+                                    <div class="conditions__title">Трейд ин</div>
+                                    <div class="conditions__text">Текст в две строки если нужно что нибудь подписать</div>
+                                    <div class="conditions__footer">
+                                        <div class="conditions__footer--text">Перейти</div>
+                                        <div class="conditions__footer--arrow">
+                                            <svg class="ico-svg" viewBox="0 0 25 12" xmlns="http://www.w3.org/2000/svg">
+                                                <use xlink:href="img/sprites/sprite-mono.svg#arrow-right" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a><!--/.conditions__item -->
+                        </div><!--/.swiper-slide -->
+                        <div class="swiper-slide">
+                            <a href="#" class="conditions__item">
+                                <div class="conditions__wrap">
+                                    <div class="conditions__num">07</div>
+                                    <div class="conditions__title">Рефинансирование</div>
+                                    <div class="conditions__text">Текст в две строки если нужно что нибудь подписать</div>
+                                    <div class="conditions__footer">
+                                        <div class="conditions__footer--text">Перейти</div>
+                                        <div class="conditions__footer--arrow">
+                                            <svg class="ico-svg" viewBox="0 0 25 12" xmlns="http://www.w3.org/2000/svg">
+                                                <use xlink:href="img/sprites/sprite-mono.svg#arrow-right" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a><!--/.conditions__item -->
+                        </div><!--/.swiper-slide -->
+                    </div>
+                </div><!--/.conditions__slider -->
+            </div><!--/.conditions -->
+        </div><!--/.section__content -->
+    </div><!--/.section -->
+
+    <div class="section">
+        <div class="section__header">
+            <div class="section__header--title">Рассчитайте ипотеку</div>
+        </div><!-- .section__header -->
+        <div class="section__content">
+            <div class="credit-block">
+                <div class="credit-block__filter">
+                    <div class="credit-filter">
+                        <div class="credit-filter__main">
+                            <div class="credit-filter__item">
+                                <div class="range">
+                                    <div class="range__title">Стоимость квартиры, ₽</div>
+                                    <div class="range__main">
+                                        <div class="range__item range__item--single">
+                                            <div class="range__value range__value--from">3000000</div>
+                                        </div>
+                                    </div>
+                                    <div class="range__slider">
+                                        <input type="text" class="range-field-slider"
+                                               data-type="single"
+                                               data-min="500000"
+                                               data-max="50000000"
+                                               data-from="3000000"
+                                               data-postfix=""
+                                        >
+                                    </div>
+                                </div>
+                            </div><!-- .credit-filter__item -->
+                            <div class="credit-filter__item">
+                                <div class="range">
+                                    <div class="range__title">Первый взнос, ₽</div>
+                                    <div class="range__main">
+                                        <div class="range__item range__item--single">
+                                            <div class="range__value range__value--from">3000000</div>
+                                        </div>
+                                        <div class="range__item  range__item--percent">
+                                            <div class="range__value range__value--percent">20%</div>
+                                        </div>
+                                    </div>
+                                    <div class="range__slider">
+                                        <input type="text" class="range-field-slider"
+                                               data-type="single"
+                                               data-min="500000"
+                                               data-max="15000000"
+                                               data-from="3000000"
+                                               data-postfix=""
+                                        >
+                                    </div>
+                                </div>
+                            </div><!-- .credit-filter__item -->
+                            <div class="credit-filter__item">
+                                <div class="range">
+                                    <div class="range__title">Срок кредита, лет</div>
+                                    <div class="range__main">
+                                        <div class="range__item range__item--single">
+                                            <div class="range__value range__value--from">10</div>
+                                        </div>
+                                    </div>
+                                    <div class="range__slider">
+                                        <input type="text" class="range-field-slider"
+                                               data-type="single"
+                                               data-min="1"
+                                               data-max="30"
+                                               data-from="10"
+                                               data-postfix=""
+                                        >
+                                    </div>
+                                </div>
+                            </div><!-- .credit-filter__item -->
+                        </div>
+                        <button class="credit-filter__toggle">
+                            <span class="credit-filter__toggle--text">Дополнительные фильтры</span>
+                            <i class="credit-filter__toggle--icon">
+                                <svg class="ico-svg" viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="img/sprites/sprite-mono.svg#angle-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </i>
+                        </button>
+                        <div class="credit-filter__additional">
+                            <div class="credit-filter__item mb-0">
+                                <select name="banks" class="pretty-select">
+                                    <option value="" disabled selected>Банк</option>
+                                    <option value="Все банки">Все банки</option>
+                                    <option value="Сбер">Сбер</option>
+                                    <option value="ВТБ">ВТБ</option>
+                                    <option value="Открытие">Открытие</option>
+                                    <option value="Альфа банк">Альфа банк</option>
+                                    <option value="ЕБРР">ЕБРР</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="credit-filter__button">
+                            <button class="btn" type="button">Оставить заявку</button>
+                        </div>
+                    </div><!-- .credit-filter -->
+                </div><!-- .credit__filter -->
+                <div class="credit-block__main">
+                    <div class="simple-bar">
+                        <div class="simple-bar__item">
+                            <div class="sorter">
+                                <div class="sorter__header">Сортировать по</div>
+                                <ul class="sorter__content">
+                                    <li>
+                                        <button class="sorter__item active">
+                                            <span class="sorter__item--text">Цене</span>
+                                            <span class="sorter__item--icon">
+                                <span></span>
+                            </span>
+                                        </button><!--/.sorter__item -->
+                                    </li>
+                                    <li>
+                                        <button class="sorter__item">
+                                            <span class="sorter__item--text">Площади</span>
+                                            <span class="sorter__item--icon">
+                                <span></span>
+                            </span>
+                                        </button><!--/.sorter__item -->
+                                    </li>
+                                    <li>
+                                        <button class="sorter__item">
+                                            <span class="sorter__item--text">Сроку сдачи</span>
+                                            <span class="sorter__item--icon">
+                                <span></span>
+                            </span>
+                                        </button><!--/.sorter__item -->
+                                    </li>
+                                    <li>
+                                        <button class="sorter__item">
+                                            <span class="sorter__item--text">Расстоянию до метро</span>
+                                            <span class="sorter__item--icon">
+                                <span></span>
+                            </span>
+                                        </button><!--/.sorter__item -->
+                                    </li>
+                                </ul>
+                            </div>
+                        </div><!--/.simple-bar__item -->
+                    </div><!--/.simple-bar -->
+                    <div class="credit-block__list">
+
+                        <div class="credit">
+                            <div class="credit__main credit__main--primary">
+                                <div class="credit__header">
+                                    <div class="credit__header--icon">
+                                        <img src="img/content/sber_logo.svg" class="ico-svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="credit__price">от <strong>444 444 ₽</strong>/мес</div>
+                                <ul class="credit__info">
+                                    <li>
+                                        <div class="credit__info--label">Срок</div>
+                                        <div class="credit__info--value">до 44 лет</div>
+                                    </li>
+                                    <li>
+                                        <div class="credit__info--label">Ставка</div>
+                                        <div class="credit__info--value">от 4,44%</div>
+                                    </li>
+                                    <li>
+                                        <div class="credit__info--label">Первый взнос</div>
+                                        <div class="credit__info--value">от 15%</div>
+                                    </li>
+                                </ul>
+                                <div class="credit__empty"></div>
+                                <button type="button" class="credit__toggle">
+                                    <i>
+                                        <svg class="ico-svg" viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+                                            <use xlink:href="img/sprites/sprite-mono.svg#angle-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                        </svg>
+                                    </i>
+                                </button>
+                            </div><!-- .credit__main -->
+                            <div class="credit__options">
+                                <div class="credit__main credit__main--secondary">
+                                    <div class="credit__header">
+                                        <div class="credit__header--title">Ипотека для молодых семей на Дальнем Востоке</div>
+                                    </div>
+                                    <div class="credit__price">от <strong>444 444 ₽</strong>/мес</div>
+                                    <ul class="credit__info">
+                                        <li>
+                                            <div class="credit__info--value">до 44 лет</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 4,44%</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 15%</div>
+                                        </li>
+                                    </ul>
+                                    <div class="credit__button">
+                                        <a href="#" class="btn btn-border">Оставить заявку</a>
+                                    </div>
+                                </div><!-- .credit__main -->
+                                <div class="credit__main credit__main--secondary">
+                                    <div class="credit__header">
+                                        <div class="credit__header--title">Для работников ОАО «РЖД»</div>
+                                    </div>
+                                    <div class="credit__price">от <strong>444 444 ₽</strong>/мес</div>
+                                    <ul class="credit__info">
+                                        <li>
+                                            <div class="credit__info--value">до 44 лет</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 4,44%</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 15%</div>
+                                        </li>
+                                    </ul>
+                                    <div class="credit__button">
+                                        <a href="#" class="btn btn-border">Оставить заявку</a>
+                                    </div>
+                                </div><!-- .credit__main -->
+                            </div><!-- .credit__options -->
+                        </div><!-- .credit -->
+                        <div class="credit">
+                            <div class="credit__main credit__main--primary">
+                                <div class="credit__header">
+                                    <div class="credit__header--icon">
+                                        <img src="img/content/sber_logo.svg" class="ico-svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="credit__price">от <strong>444 444 ₽</strong>/мес</div>
+                                <ul class="credit__info">
+                                    <li>
+                                        <div class="credit__info--label">Срок</div>
+                                        <div class="credit__info--value">до 44 лет</div>
+                                    </li>
+                                    <li>
+                                        <div class="credit__info--label">Ставка</div>
+                                        <div class="credit__info--value">от 4,44%</div>
+                                    </li>
+                                    <li>
+                                        <div class="credit__info--label">Первый взнос</div>
+                                        <div class="credit__info--value">от 15%</div>
+                                    </li>
+                                </ul>
+                                <div class="credit__empty"></div>
+                                <button type="button" class="credit__toggle">
+                                    <i>
+                                        <svg class="ico-svg" viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+                                            <use xlink:href="img/sprites/sprite-mono.svg#angle-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                        </svg>
+                                    </i>
+                                </button>
+                            </div><!-- .credit__main -->
+                            <div class="credit__options">
+                                <div class="credit__main credit__main--secondary">
+                                    <div class="credit__header">
+                                        <div class="credit__header--title">Ипотека для молодых семей на Дальнем Востоке</div>
+                                    </div>
+                                    <div class="credit__price">от <strong>444 444 ₽</strong>/мес</div>
+                                    <ul class="credit__info">
+                                        <li>
+                                            <div class="credit__info--value">до 44 лет</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 4,44%</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 15%</div>
+                                        </li>
+                                    </ul>
+                                    <div class="credit__button">
+                                        <a href="#" class="btn btn-border">Оставить заявку</a>
+                                    </div>
+                                </div><!-- .credit__main -->
+                                <div class="credit__main credit__main--secondary">
+                                    <div class="credit__header">
+                                        <div class="credit__header--title">Для работников ОАО «РЖД»</div>
+                                    </div>
+                                    <div class="credit__price">от <strong>444 444 ₽</strong>/мес</div>
+                                    <ul class="credit__info">
+                                        <li>
+                                            <div class="credit__info--value">до 44 лет</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 4,44%</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 15%</div>
+                                        </li>
+                                    </ul>
+                                    <div class="credit__button">
+                                        <a href="#" class="btn btn-border">Оставить заявку</a>
+                                    </div>
+                                </div><!-- .credit__main -->
+                            </div><!-- .credit__options -->
+                        </div><!-- .credit -->
+                        <div class="credit">
+                            <div class="credit__main credit__main--primary">
+                                <div class="credit__header">
+                                    <div class="credit__header--icon">
+                                        <img src="img/content/sber_logo.svg" class="ico-svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="credit__price">от <strong>444 444 ₽</strong>/мес</div>
+                                <ul class="credit__info">
+                                    <li>
+                                        <div class="credit__info--label">Срок</div>
+                                        <div class="credit__info--value">до 44 лет</div>
+                                    </li>
+                                    <li>
+                                        <div class="credit__info--label">Ставка</div>
+                                        <div class="credit__info--value">от 4,44%</div>
+                                    </li>
+                                    <li>
+                                        <div class="credit__info--label">Первый взнос</div>
+                                        <div class="credit__info--value">от 15%</div>
+                                    </li>
+                                </ul>
+                                <div class="credit__empty"></div>
+                                <button type="button" class="credit__toggle">
+                                    <i>
+                                        <svg class="ico-svg" viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+                                            <use xlink:href="img/sprites/sprite-mono.svg#angle-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                        </svg>
+                                    </i>
+                                </button>
+                            </div><!-- .credit__main -->
+                            <div class="credit__options">
+                                <div class="credit__main credit__main--secondary">
+                                    <div class="credit__header">
+                                        <div class="credit__header--title">Ипотека для молодых семей на Дальнем Востоке</div>
+                                    </div>
+                                    <div class="credit__price">от <strong>444 444 ₽</strong>/мес</div>
+                                    <ul class="credit__info">
+                                        <li>
+                                            <div class="credit__info--value">до 44 лет</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 4,44%</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 15%</div>
+                                        </li>
+                                    </ul>
+                                    <div class="credit__button">
+                                        <a href="#" class="btn btn-border">Оставить заявку</a>
+                                    </div>
+                                </div><!-- .credit__main -->
+                                <div class="credit__main credit__main--secondary">
+                                    <div class="credit__header">
+                                        <div class="credit__header--title">Для работников ОАО «РЖД»</div>
+                                    </div>
+                                    <div class="credit__price">от <strong>444 444 ₽</strong>/мес</div>
+                                    <ul class="credit__info">
+                                        <li>
+                                            <div class="credit__info--value">до 44 лет</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 4,44%</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 15%</div>
+                                        </li>
+                                    </ul>
+                                    <div class="credit__button">
+                                        <a href="#" class="btn btn-border">Оставить заявку</a>
+                                    </div>
+                                </div><!-- .credit__main -->
+                            </div><!-- .credit__options -->
+                        </div><!-- .credit -->
+                        <div class="credit">
+                            <div class="credit__main credit__main--primary">
+                                <div class="credit__header">
+                                    <div class="credit__header--icon">
+                                        <img src="img/content/sber_logo.svg" class="ico-svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="credit__price">от <strong>444 444 ₽</strong>/мес</div>
+                                <ul class="credit__info">
+                                    <li>
+                                        <div class="credit__info--label">Срок</div>
+                                        <div class="credit__info--value">до 44 лет</div>
+                                    </li>
+                                    <li>
+                                        <div class="credit__info--label">Ставка</div>
+                                        <div class="credit__info--value">от 4,44%</div>
+                                    </li>
+                                    <li>
+                                        <div class="credit__info--label">Первый взнос</div>
+                                        <div class="credit__info--value">от 15%</div>
+                                    </li>
+                                </ul>
+                                <div class="credit__empty"></div>
+                                <button type="button" class="credit__toggle">
+                                    <i>
+                                        <svg class="ico-svg" viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+                                            <use xlink:href="img/sprites/sprite-mono.svg#angle-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                        </svg>
+                                    </i>
+                                </button>
+                            </div><!-- .credit__main -->
+                            <div class="credit__options">
+                                <div class="credit__main credit__main--secondary">
+                                    <div class="credit__header">
+                                        <div class="credit__header--title">Ипотека для молодых семей на Дальнем Востоке</div>
+                                    </div>
+                                    <div class="credit__price">от <strong>444 444 ₽</strong>/мес</div>
+                                    <ul class="credit__info">
+                                        <li>
+                                            <div class="credit__info--value">до 44 лет</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 4,44%</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 15%</div>
+                                        </li>
+                                    </ul>
+                                    <div class="credit__button">
+                                        <a href="#" class="btn btn-border">Оставить заявку</a>
+                                    </div>
+                                </div><!-- .credit__main -->
+                                <div class="credit__main credit__main--secondary">
+                                    <div class="credit__header">
+                                        <div class="credit__header--title">Для работников ОАО «РЖД»</div>
+                                    </div>
+                                    <div class="credit__price">от <strong>444 444 ₽</strong>/мес</div>
+                                    <ul class="credit__info">
+                                        <li>
+                                            <div class="credit__info--value">до 44 лет</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 4,44%</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 15%</div>
+                                        </li>
+                                    </ul>
+                                    <div class="credit__button">
+                                        <a href="#" class="btn btn-border">Оставить заявку</a>
+                                    </div>
+                                </div><!-- .credit__main -->
+                            </div><!-- .credit__options -->
+                        </div><!-- .credit -->
+                        <div class="credit">
+                            <div class="credit__main credit__main--primary">
+                                <div class="credit__header">
+                                    <div class="credit__header--icon">
+                                        <img src="img/content/sber_logo.svg" class="ico-svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="credit__price">от <strong>444 444 ₽</strong>/мес</div>
+                                <ul class="credit__info">
+                                    <li>
+                                        <div class="credit__info--label">Срок</div>
+                                        <div class="credit__info--value">до 44 лет</div>
+                                    </li>
+                                    <li>
+                                        <div class="credit__info--label">Ставка</div>
+                                        <div class="credit__info--value">от 4,44%</div>
+                                    </li>
+                                    <li>
+                                        <div class="credit__info--label">Первый взнос</div>
+                                        <div class="credit__info--value">от 15%</div>
+                                    </li>
+                                </ul>
+                                <div class="credit__empty"></div>
+                                <button type="button" class="credit__toggle">
+                                    <i>
+                                        <svg class="ico-svg" viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+                                            <use xlink:href="img/sprites/sprite-mono.svg#angle-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                        </svg>
+                                    </i>
+                                </button>
+                            </div><!-- .credit__main -->
+                            <div class="credit__options">
+                                <div class="credit__main credit__main--secondary">
+                                    <div class="credit__header">
+                                        <div class="credit__header--title">Ипотека для молодых семей на Дальнем Востоке</div>
+                                    </div>
+                                    <div class="credit__price">от <strong>444 444 ₽</strong>/мес</div>
+                                    <ul class="credit__info">
+                                        <li>
+                                            <div class="credit__info--value">до 44 лет</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 4,44%</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 15%</div>
+                                        </li>
+                                    </ul>
+                                    <div class="credit__button">
+                                        <a href="#" class="btn btn-border">Оставить заявку</a>
+                                    </div>
+                                </div><!-- .credit__main -->
+                                <div class="credit__main credit__main--secondary">
+                                    <div class="credit__header">
+                                        <div class="credit__header--title">Для работников ОАО «РЖД»</div>
+                                    </div>
+                                    <div class="credit__price">от <strong>444 444 ₽</strong>/мес</div>
+                                    <ul class="credit__info">
+                                        <li>
+                                            <div class="credit__info--value">до 44 лет</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 4,44%</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 15%</div>
+                                        </li>
+                                    </ul>
+                                    <div class="credit__button">
+                                        <a href="#" class="btn btn-border">Оставить заявку</a>
+                                    </div>
+                                </div><!-- .credit__main -->
+                            </div><!-- .credit__options -->
+                        </div><!-- .credit -->
+                        <div class="credit">
+                            <div class="credit__main credit__main--primary">
+                                <div class="credit__header">
+                                    <div class="credit__header--icon">
+                                        <img src="img/content/sber_logo.svg" class="ico-svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="credit__price">от <strong>444 444 ₽</strong>/мес</div>
+                                <ul class="credit__info">
+                                    <li>
+                                        <div class="credit__info--label">Срок</div>
+                                        <div class="credit__info--value">до 44 лет</div>
+                                    </li>
+                                    <li>
+                                        <div class="credit__info--label">Ставка</div>
+                                        <div class="credit__info--value">от 4,44%</div>
+                                    </li>
+                                    <li>
+                                        <div class="credit__info--label">Первый взнос</div>
+                                        <div class="credit__info--value">от 15%</div>
+                                    </li>
+                                </ul>
+                                <div class="credit__empty"></div>
+                                <button type="button" class="credit__toggle">
+                                    <i>
+                                        <svg class="ico-svg" viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+                                            <use xlink:href="img/sprites/sprite-mono.svg#angle-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                        </svg>
+                                    </i>
+                                </button>
+                            </div><!-- .credit__main -->
+                            <div class="credit__options">
+                                <div class="credit__main credit__main--secondary">
+                                    <div class="credit__header">
+                                        <div class="credit__header--title">Ипотека для молодых семей на Дальнем Востоке</div>
+                                    </div>
+                                    <div class="credit__price">от <strong>444 444 ₽</strong>/мес</div>
+                                    <ul class="credit__info">
+                                        <li>
+                                            <div class="credit__info--value">до 44 лет</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 4,44%</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 15%</div>
+                                        </li>
+                                    </ul>
+                                    <div class="credit__button">
+                                        <a href="#" class="btn btn-border">Оставить заявку</a>
+                                    </div>
+                                </div><!-- .credit__main -->
+                                <div class="credit__main credit__main--secondary">
+                                    <div class="credit__header">
+                                        <div class="credit__header--title">Для работников ОАО «РЖД»</div>
+                                    </div>
+                                    <div class="credit__price">от <strong>444 444 ₽</strong>/мес</div>
+                                    <ul class="credit__info">
+                                        <li>
+                                            <div class="credit__info--value">до 44 лет</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 4,44%</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 15%</div>
+                                        </li>
+                                    </ul>
+                                    <div class="credit__button">
+                                        <a href="#" class="btn btn-border">Оставить заявку</a>
+                                    </div>
+                                </div><!-- .credit__main -->
+                            </div><!-- .credit__options -->
+                        </div><!-- .credit -->
+                        <div class="credit">
+                            <div class="credit__main credit__main--primary">
+                                <div class="credit__header">
+                                    <div class="credit__header--icon">
+                                        <img src="img/content/sber_logo.svg" class="ico-svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="credit__price">от <strong>444 444 ₽</strong>/мес</div>
+                                <ul class="credit__info">
+                                    <li>
+                                        <div class="credit__info--label">Срок</div>
+                                        <div class="credit__info--value">до 44 лет</div>
+                                    </li>
+                                    <li>
+                                        <div class="credit__info--label">Ставка</div>
+                                        <div class="credit__info--value">от 4,44%</div>
+                                    </li>
+                                    <li>
+                                        <div class="credit__info--label">Первый взнос</div>
+                                        <div class="credit__info--value">от 15%</div>
+                                    </li>
+                                </ul>
+                                <div class="credit__empty"></div>
+                                <button type="button" class="credit__toggle">
+                                    <i>
+                                        <svg class="ico-svg" viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+                                            <use xlink:href="img/sprites/sprite-mono.svg#angle-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                        </svg>
+                                    </i>
+                                </button>
+                            </div><!-- .credit__main -->
+                            <div class="credit__options">
+                                <div class="credit__main credit__main--secondary">
+                                    <div class="credit__header">
+                                        <div class="credit__header--title">Ипотека для молодых семей на Дальнем Востоке</div>
+                                    </div>
+                                    <div class="credit__price">от <strong>444 444 ₽</strong>/мес</div>
+                                    <ul class="credit__info">
+                                        <li>
+                                            <div class="credit__info--value">до 44 лет</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 4,44%</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 15%</div>
+                                        </li>
+                                    </ul>
+                                    <div class="credit__button">
+                                        <a href="#" class="btn btn-border">Оставить заявку</a>
+                                    </div>
+                                </div><!-- .credit__main -->
+                                <div class="credit__main credit__main--secondary">
+                                    <div class="credit__header">
+                                        <div class="credit__header--title">Для работников ОАО «РЖД»</div>
+                                    </div>
+                                    <div class="credit__price">от <strong>444 444 ₽</strong>/мес</div>
+                                    <ul class="credit__info">
+                                        <li>
+                                            <div class="credit__info--value">до 44 лет</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 4,44%</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 15%</div>
+                                        </li>
+                                    </ul>
+                                    <div class="credit__button">
+                                        <a href="#" class="btn btn-border">Оставить заявку</a>
+                                    </div>
+                                </div><!-- .credit__main -->
+                            </div><!-- .credit__options -->
+                        </div><!-- .credit -->
+                        <div class="credit">
+                            <div class="credit__main credit__main--primary">
+                                <div class="credit__header">
+                                    <div class="credit__header--icon">
+                                        <img src="img/content/sber_logo.svg" class="ico-svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="credit__price">от <strong>444 444 ₽</strong>/мес</div>
+                                <ul class="credit__info">
+                                    <li>
+                                        <div class="credit__info--label">Срок</div>
+                                        <div class="credit__info--value">до 44 лет</div>
+                                    </li>
+                                    <li>
+                                        <div class="credit__info--label">Ставка</div>
+                                        <div class="credit__info--value">от 4,44%</div>
+                                    </li>
+                                    <li>
+                                        <div class="credit__info--label">Первый взнос</div>
+                                        <div class="credit__info--value">от 15%</div>
+                                    </li>
+                                </ul>
+                                <div class="credit__empty"></div>
+                                <button type="button" class="credit__toggle">
+                                    <i>
+                                        <svg class="ico-svg" viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+                                            <use xlink:href="img/sprites/sprite-mono.svg#angle-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                        </svg>
+                                    </i>
+                                </button>
+                            </div><!-- .credit__main -->
+                            <div class="credit__options">
+                                <div class="credit__main credit__main--secondary">
+                                    <div class="credit__header">
+                                        <div class="credit__header--title">Ипотека для молодых семей на Дальнем Востоке</div>
+                                    </div>
+                                    <div class="credit__price">от <strong>444 444 ₽</strong>/мес</div>
+                                    <ul class="credit__info">
+                                        <li>
+                                            <div class="credit__info--value">до 44 лет</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 4,44%</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 15%</div>
+                                        </li>
+                                    </ul>
+                                    <div class="credit__button">
+                                        <a href="#" class="btn btn-border">Оставить заявку</a>
+                                    </div>
+                                </div><!-- .credit__main -->
+                                <div class="credit__main credit__main--secondary">
+                                    <div class="credit__header">
+                                        <div class="credit__header--title">Для работников ОАО «РЖД»</div>
+                                    </div>
+                                    <div class="credit__price">от <strong>444 444 ₽</strong>/мес</div>
+                                    <ul class="credit__info">
+                                        <li>
+                                            <div class="credit__info--value">до 44 лет</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 4,44%</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 15%</div>
+                                        </li>
+                                    </ul>
+                                    <div class="credit__button">
+                                        <a href="#" class="btn btn-border">Оставить заявку</a>
+                                    </div>
+                                </div><!-- .credit__main -->
+                            </div><!-- .credit__options -->
+                        </div><!-- .credit -->
+
+                        <div class="credit">
+                            <div class="credit__main credit__main--primary">
+                                <div class="credit__header">
+                                    <div class="credit__header--icon">
+                                        <img src="img/content/sber_logo.svg" class="ico-svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="credit__price">от <strong>444 444 ₽</strong>/мес</div>
+                                <ul class="credit__info">
+                                    <li>
+                                        <div class="credit__info--label">Срок</div>
+                                        <div class="credit__info--value">до 44 лет</div>
+                                    </li>
+                                    <li>
+                                        <div class="credit__info--label">Ставка</div>
+                                        <div class="credit__info--value">от 4,44%</div>
+                                    </li>
+                                    <li>
+                                        <div class="credit__info--label">Первый взнос</div>
+                                        <div class="credit__info--value">от 15%</div>
+                                    </li>
+                                </ul>
+                                <div class="credit__empty"></div>
+                                <button type="button" class="credit__toggle">
+                                    <i>
+                                        <svg class="ico-svg" viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+                                            <use xlink:href="img/sprites/sprite-mono.svg#angle-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                        </svg>
+                                    </i>
+                                </button>
+                            </div><!-- .credit__main -->
+                            <div class="credit__options">
+                                <div class="credit__main credit__main--secondary">
+                                    <div class="credit__header">
+                                        <div class="credit__header--title">Ипотека для молодых семей на Дальнем Востоке</div>
+                                    </div>
+                                    <div class="credit__price">от <strong>444 444 ₽</strong>/мес</div>
+                                    <ul class="credit__info">
+                                        <li>
+                                            <div class="credit__info--value">до 44 лет</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 4,44%</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 15%</div>
+                                        </li>
+                                    </ul>
+                                    <div class="credit__button">
+                                        <a href="#" class="btn btn-border">Оставить заявку</a>
+                                    </div>
+                                </div><!-- .credit__main -->
+                                <div class="credit__main credit__main--secondary">
+                                    <div class="credit__header">
+                                        <div class="credit__header--title">Для работников ОАО «РЖД»</div>
+                                    </div>
+                                    <div class="credit__price">от <strong>444 444 ₽</strong>/мес</div>
+                                    <ul class="credit__info">
+                                        <li>
+                                            <div class="credit__info--value">до 44 лет</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 4,44%</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 15%</div>
+                                        </li>
+                                    </ul>
+                                    <div class="credit__button">
+                                        <a href="#" class="btn btn-border">Оставить заявку</a>
+                                    </div>
+                                </div><!-- .credit__main -->
+                            </div><!-- .credit__options -->
+                        </div><!-- .credit -->
+                        <div class="credit">
+                            <div class="credit__main credit__main--primary">
+                                <div class="credit__header">
+                                    <div class="credit__header--icon">
+                                        <img src="img/content/sber_logo.svg" class="ico-svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="credit__price">от <strong>444 444 ₽</strong>/мес</div>
+                                <ul class="credit__info">
+                                    <li>
+                                        <div class="credit__info--label">Срок</div>
+                                        <div class="credit__info--value">до 44 лет</div>
+                                    </li>
+                                    <li>
+                                        <div class="credit__info--label">Ставка</div>
+                                        <div class="credit__info--value">от 4,44%</div>
+                                    </li>
+                                    <li>
+                                        <div class="credit__info--label">Первый взнос</div>
+                                        <div class="credit__info--value">от 15%</div>
+                                    </li>
+                                </ul>
+                                <div class="credit__empty"></div>
+                                <button type="button" class="credit__toggle">
+                                    <i>
+                                        <svg class="ico-svg" viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+                                            <use xlink:href="img/sprites/sprite-mono.svg#angle-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                        </svg>
+                                    </i>
+                                </button>
+                            </div><!-- .credit__main -->
+                            <div class="credit__options">
+                                <div class="credit__main credit__main--secondary">
+                                    <div class="credit__header">
+                                        <div class="credit__header--title">Ипотека для молодых семей на Дальнем Востоке</div>
+                                    </div>
+                                    <div class="credit__price">от <strong>444 444 ₽</strong>/мес</div>
+                                    <ul class="credit__info">
+                                        <li>
+                                            <div class="credit__info--value">до 44 лет</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 4,44%</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 15%</div>
+                                        </li>
+                                    </ul>
+                                    <div class="credit__button">
+                                        <a href="#" class="btn btn-border">Оставить заявку</a>
+                                    </div>
+                                </div><!-- .credit__main -->
+                                <div class="credit__main credit__main--secondary">
+                                    <div class="credit__header">
+                                        <div class="credit__header--title">Для работников ОАО «РЖД»</div>
+                                    </div>
+                                    <div class="credit__price">от <strong>444 444 ₽</strong>/мес</div>
+                                    <ul class="credit__info">
+                                        <li>
+                                            <div class="credit__info--value">до 44 лет</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 4,44%</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 15%</div>
+                                        </li>
+                                    </ul>
+                                    <div class="credit__button">
+                                        <a href="#" class="btn btn-border">Оставить заявку</a>
+                                    </div>
+                                </div><!-- .credit__main -->
+                            </div><!-- .credit__options -->
+                        </div><!-- .credit -->
+                        <div class="credit">
+                            <div class="credit__main credit__main--primary">
+                                <div class="credit__header">
+                                    <div class="credit__header--icon">
+                                        <img src="img/content/sber_logo.svg" class="ico-svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="credit__price">от <strong>444 444 ₽</strong>/мес</div>
+                                <ul class="credit__info">
+                                    <li>
+                                        <div class="credit__info--label">Срок</div>
+                                        <div class="credit__info--value">до 44 лет</div>
+                                    </li>
+                                    <li>
+                                        <div class="credit__info--label">Ставка</div>
+                                        <div class="credit__info--value">от 4,44%</div>
+                                    </li>
+                                    <li>
+                                        <div class="credit__info--label">Первый взнос</div>
+                                        <div class="credit__info--value">от 15%</div>
+                                    </li>
+                                </ul>
+                                <div class="credit__empty"></div>
+                                <button type="button" class="credit__toggle">
+                                    <i>
+                                        <svg class="ico-svg" viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+                                            <use xlink:href="img/sprites/sprite-mono.svg#angle-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                        </svg>
+                                    </i>
+                                </button>
+                            </div><!-- .credit__main -->
+                            <div class="credit__options">
+                                <div class="credit__main credit__main--secondary">
+                                    <div class="credit__header">
+                                        <div class="credit__header--title">Ипотека для молодых семей на Дальнем Востоке</div>
+                                    </div>
+                                    <div class="credit__price">от <strong>444 444 ₽</strong>/мес</div>
+                                    <ul class="credit__info">
+                                        <li>
+                                            <div class="credit__info--value">до 44 лет</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 4,44%</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 15%</div>
+                                        </li>
+                                    </ul>
+                                    <div class="credit__button">
+                                        <a href="#" class="btn btn-border">Оставить заявку</a>
+                                    </div>
+                                </div><!-- .credit__main -->
+                                <div class="credit__main credit__main--secondary">
+                                    <div class="credit__header">
+                                        <div class="credit__header--title">Для работников ОАО «РЖД»</div>
+                                    </div>
+                                    <div class="credit__price">от <strong>444 444 ₽</strong>/мес</div>
+                                    <ul class="credit__info">
+                                        <li>
+                                            <div class="credit__info--value">до 44 лет</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 4,44%</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 15%</div>
+                                        </li>
+                                    </ul>
+                                    <div class="credit__button">
+                                        <a href="#" class="btn btn-border">Оставить заявку</a>
+                                    </div>
+                                </div><!-- .credit__main -->
+                            </div><!-- .credit__options -->
+                        </div><!-- .credit -->
+                        <div class="credit">
+                            <div class="credit__main credit__main--primary">
+                                <div class="credit__header">
+                                    <div class="credit__header--icon">
+                                        <img src="img/content/sber_logo.svg" class="ico-svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="credit__price">от <strong>444 444 ₽</strong>/мес</div>
+                                <ul class="credit__info">
+                                    <li>
+                                        <div class="credit__info--label">Срок</div>
+                                        <div class="credit__info--value">до 44 лет</div>
+                                    </li>
+                                    <li>
+                                        <div class="credit__info--label">Ставка</div>
+                                        <div class="credit__info--value">от 4,44%</div>
+                                    </li>
+                                    <li>
+                                        <div class="credit__info--label">Первый взнос</div>
+                                        <div class="credit__info--value">от 15%</div>
+                                    </li>
+                                </ul>
+                                <div class="credit__empty"></div>
+                                <button type="button" class="credit__toggle">
+                                    <i>
+                                        <svg class="ico-svg" viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+                                            <use xlink:href="img/sprites/sprite-mono.svg#angle-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                        </svg>
+                                    </i>
+                                </button>
+                            </div><!-- .credit__main -->
+                            <div class="credit__options">
+                                <div class="credit__main credit__main--secondary">
+                                    <div class="credit__header">
+                                        <div class="credit__header--title">Ипотека для молодых семей на Дальнем Востоке</div>
+                                    </div>
+                                    <div class="credit__price">от <strong>444 444 ₽</strong>/мес</div>
+                                    <ul class="credit__info">
+                                        <li>
+                                            <div class="credit__info--value">до 44 лет</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 4,44%</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 15%</div>
+                                        </li>
+                                    </ul>
+                                    <div class="credit__button">
+                                        <a href="#" class="btn btn-border">Оставить заявку</a>
+                                    </div>
+                                </div><!-- .credit__main -->
+                                <div class="credit__main credit__main--secondary">
+                                    <div class="credit__header">
+                                        <div class="credit__header--title">Для работников ОАО «РЖД»</div>
+                                    </div>
+                                    <div class="credit__price">от <strong>444 444 ₽</strong>/мес</div>
+                                    <ul class="credit__info">
+                                        <li>
+                                            <div class="credit__info--value">до 44 лет</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 4,44%</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 15%</div>
+                                        </li>
+                                    </ul>
+                                    <div class="credit__button">
+                                        <a href="#" class="btn btn-border">Оставить заявку</a>
+                                    </div>
+                                </div><!-- .credit__main -->
+                            </div><!-- .credit__options -->
+                        </div><!-- .credit -->
+                        <div class="credit">
+                            <div class="credit__main credit__main--primary">
+                                <div class="credit__header">
+                                    <div class="credit__header--icon">
+                                        <img src="img/content/sber_logo.svg" class="ico-svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="credit__price">от <strong>444 444 ₽</strong>/мес</div>
+                                <ul class="credit__info">
+                                    <li>
+                                        <div class="credit__info--label">Срок</div>
+                                        <div class="credit__info--value">до 44 лет</div>
+                                    </li>
+                                    <li>
+                                        <div class="credit__info--label">Ставка</div>
+                                        <div class="credit__info--value">от 4,44%</div>
+                                    </li>
+                                    <li>
+                                        <div class="credit__info--label">Первый взнос</div>
+                                        <div class="credit__info--value">от 15%</div>
+                                    </li>
+                                </ul>
+                                <div class="credit__empty"></div>
+                                <button type="button" class="credit__toggle">
+                                    <i>
+                                        <svg class="ico-svg" viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+                                            <use xlink:href="img/sprites/sprite-mono.svg#angle-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                        </svg>
+                                    </i>
+                                </button>
+                            </div><!-- .credit__main -->
+                            <div class="credit__options">
+                                <div class="credit__main credit__main--secondary">
+                                    <div class="credit__header">
+                                        <div class="credit__header--title">Ипотека для молодых семей на Дальнем Востоке</div>
+                                    </div>
+                                    <div class="credit__price">от <strong>444 444 ₽</strong>/мес</div>
+                                    <ul class="credit__info">
+                                        <li>
+                                            <div class="credit__info--value">до 44 лет</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 4,44%</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 15%</div>
+                                        </li>
+                                    </ul>
+                                    <div class="credit__button">
+                                        <a href="#" class="btn btn-border">Оставить заявку</a>
+                                    </div>
+                                </div><!-- .credit__main -->
+                                <div class="credit__main credit__main--secondary">
+                                    <div class="credit__header">
+                                        <div class="credit__header--title">Для работников ОАО «РЖД»</div>
+                                    </div>
+                                    <div class="credit__price">от <strong>444 444 ₽</strong>/мес</div>
+                                    <ul class="credit__info">
+                                        <li>
+                                            <div class="credit__info--value">до 44 лет</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 4,44%</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 15%</div>
+                                        </li>
+                                    </ul>
+                                    <div class="credit__button">
+                                        <a href="#" class="btn btn-border">Оставить заявку</a>
+                                    </div>
+                                </div><!-- .credit__main -->
+                            </div><!-- .credit__options -->
+                        </div><!-- .credit -->
+                        <div class="credit">
+                            <div class="credit__main credit__main--primary">
+                                <div class="credit__header">
+                                    <div class="credit__header--icon">
+                                        <img src="img/content/sber_logo.svg" class="ico-svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="credit__price">от <strong>444 444 ₽</strong>/мес</div>
+                                <ul class="credit__info">
+                                    <li>
+                                        <div class="credit__info--label">Срок</div>
+                                        <div class="credit__info--value">до 44 лет</div>
+                                    </li>
+                                    <li>
+                                        <div class="credit__info--label">Ставка</div>
+                                        <div class="credit__info--value">от 4,44%</div>
+                                    </li>
+                                    <li>
+                                        <div class="credit__info--label">Первый взнос</div>
+                                        <div class="credit__info--value">от 15%</div>
+                                    </li>
+                                </ul>
+                                <div class="credit__empty"></div>
+                                <button type="button" class="credit__toggle">
+                                    <i>
+                                        <svg class="ico-svg" viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+                                            <use xlink:href="img/sprites/sprite-mono.svg#angle-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                        </svg>
+                                    </i>
+                                </button>
+                            </div><!-- .credit__main -->
+                            <div class="credit__options">
+                                <div class="credit__main credit__main--secondary">
+                                    <div class="credit__header">
+                                        <div class="credit__header--title">Ипотека для молодых семей на Дальнем Востоке</div>
+                                    </div>
+                                    <div class="credit__price">от <strong>444 444 ₽</strong>/мес</div>
+                                    <ul class="credit__info">
+                                        <li>
+                                            <div class="credit__info--value">до 44 лет</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 4,44%</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 15%</div>
+                                        </li>
+                                    </ul>
+                                    <div class="credit__button">
+                                        <a href="#" class="btn btn-border">Оставить заявку</a>
+                                    </div>
+                                </div><!-- .credit__main -->
+                                <div class="credit__main credit__main--secondary">
+                                    <div class="credit__header">
+                                        <div class="credit__header--title">Для работников ОАО «РЖД»</div>
+                                    </div>
+                                    <div class="credit__price">от <strong>444 444 ₽</strong>/мес</div>
+                                    <ul class="credit__info">
+                                        <li>
+                                            <div class="credit__info--value">до 44 лет</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 4,44%</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 15%</div>
+                                        </li>
+                                    </ul>
+                                    <div class="credit__button">
+                                        <a href="#" class="btn btn-border">Оставить заявку</a>
+                                    </div>
+                                </div><!-- .credit__main -->
+                            </div><!-- .credit__options -->
+                        </div><!-- .credit -->
+                        <div class="credit">
+                            <div class="credit__main credit__main--primary">
+                                <div class="credit__header">
+                                    <div class="credit__header--icon">
+                                        <img src="img/content/sber_logo.svg" class="ico-svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="credit__price">от <strong>444 444 ₽</strong>/мес</div>
+                                <ul class="credit__info">
+                                    <li>
+                                        <div class="credit__info--label">Срок</div>
+                                        <div class="credit__info--value">до 44 лет</div>
+                                    </li>
+                                    <li>
+                                        <div class="credit__info--label">Ставка</div>
+                                        <div class="credit__info--value">от 4,44%</div>
+                                    </li>
+                                    <li>
+                                        <div class="credit__info--label">Первый взнос</div>
+                                        <div class="credit__info--value">от 15%</div>
+                                    </li>
+                                </ul>
+                                <div class="credit__empty"></div>
+                                <button type="button" class="credit__toggle">
+                                    <i>
+                                        <svg class="ico-svg" viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+                                            <use xlink:href="img/sprites/sprite-mono.svg#angle-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                        </svg>
+                                    </i>
+                                </button>
+                            </div><!-- .credit__main -->
+                            <div class="credit__options">
+                                <div class="credit__main credit__main--secondary">
+                                    <div class="credit__header">
+                                        <div class="credit__header--title">Ипотека для молодых семей на Дальнем Востоке</div>
+                                    </div>
+                                    <div class="credit__price">от <strong>444 444 ₽</strong>/мес</div>
+                                    <ul class="credit__info">
+                                        <li>
+                                            <div class="credit__info--value">до 44 лет</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 4,44%</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 15%</div>
+                                        </li>
+                                    </ul>
+                                    <div class="credit__button">
+                                        <a href="#" class="btn btn-border">Оставить заявку</a>
+                                    </div>
+                                </div><!-- .credit__main -->
+                                <div class="credit__main credit__main--secondary">
+                                    <div class="credit__header">
+                                        <div class="credit__header--title">Для работников ОАО «РЖД»</div>
+                                    </div>
+                                    <div class="credit__price">от <strong>444 444 ₽</strong>/мес</div>
+                                    <ul class="credit__info">
+                                        <li>
+                                            <div class="credit__info--value">до 44 лет</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 4,44%</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 15%</div>
+                                        </li>
+                                    </ul>
+                                    <div class="credit__button">
+                                        <a href="#" class="btn btn-border">Оставить заявку</a>
+                                    </div>
+                                </div><!-- .credit__main -->
+                            </div><!-- .credit__options -->
+                        </div><!-- .credit -->
+                        <div class="credit">
+                            <div class="credit__main credit__main--primary">
+                                <div class="credit__header">
+                                    <div class="credit__header--icon">
+                                        <img src="img/content/sber_logo.svg" class="ico-svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="credit__price">от <strong>444 444 ₽</strong>/мес</div>
+                                <ul class="credit__info">
+                                    <li>
+                                        <div class="credit__info--label">Срок</div>
+                                        <div class="credit__info--value">до 44 лет</div>
+                                    </li>
+                                    <li>
+                                        <div class="credit__info--label">Ставка</div>
+                                        <div class="credit__info--value">от 4,44%</div>
+                                    </li>
+                                    <li>
+                                        <div class="credit__info--label">Первый взнос</div>
+                                        <div class="credit__info--value">от 15%</div>
+                                    </li>
+                                </ul>
+                                <div class="credit__empty"></div>
+                                <button type="button" class="credit__toggle">
+                                    <i>
+                                        <svg class="ico-svg" viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+                                            <use xlink:href="img/sprites/sprite-mono.svg#angle-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                        </svg>
+                                    </i>
+                                </button>
+                            </div><!-- .credit__main -->
+                            <div class="credit__options">
+                                <div class="credit__main credit__main--secondary">
+                                    <div class="credit__header">
+                                        <div class="credit__header--title">Ипотека для молодых семей на Дальнем Востоке</div>
+                                    </div>
+                                    <div class="credit__price">от <strong>444 444 ₽</strong>/мес</div>
+                                    <ul class="credit__info">
+                                        <li>
+                                            <div class="credit__info--value">до 44 лет</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 4,44%</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 15%</div>
+                                        </li>
+                                    </ul>
+                                    <div class="credit__button">
+                                        <a href="#" class="btn btn-border">Оставить заявку</a>
+                                    </div>
+                                </div><!-- .credit__main -->
+                                <div class="credit__main credit__main--secondary">
+                                    <div class="credit__header">
+                                        <div class="credit__header--title">Для работников ОАО «РЖД»</div>
+                                    </div>
+                                    <div class="credit__price">от <strong>444 444 ₽</strong>/мес</div>
+                                    <ul class="credit__info">
+                                        <li>
+                                            <div class="credit__info--value">до 44 лет</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 4,44%</div>
+                                        </li>
+                                        <li>
+                                            <div class="credit__info--value">от 15%</div>
+                                        </li>
+                                    </ul>
+                                    <div class="credit__button">
+                                        <a href="#" class="btn btn-border">Оставить заявку</a>
+                                    </div>
+                                </div><!-- .credit__main -->
+                            </div><!-- .credit__options -->
+                        </div><!-- .credit -->
+
+                    </div>
+                    <div class="credit-block__view">
+                        <button class="btn">Показать еще 10</button>
+                    </div>
+                </div><!-- .credit__main -->
+            </div><!-- .credit -->
+        </div><!-- .section__content -->
+    </div><!-- .section -->
+
+    <div class="section">
+        <div class="section__header">
+            <div class="section__header--title">Инфраструктура</div>
+        </div><!-- .section__header -->
+        <div class="section__content">
+            <div class="object-map">
+                <a href="#" class="object-map__sm">
+                    <div class="object-map__sm--img">
+                        <img src="img/content/info-map.jpg" class="img-fluid" alt="">
+                    </div>
+                    <div class="object-map__sm--text">
+                        <span>Раскрыть карту</span>
+                    </div>
+                </a>
+            </div>
+            <div class="object-map__md">
+                <img src="img/content/objecct_map.jpg" class="img-fluid" alt="">
+            </div>
+        </div><!-- .section__content -->
+    </div><!-- .section -->
+
+    <div class="section">
+        <div class="section__header">
+            <div class="section__header--title">Отделка</div>
+        </div><!-- .section__header -->
+        <div class="section__content">
+            <div class="finishing">
+                <div class="finishing__nav finishing-nav">
+                    <div class="finishing-nav__switch">
+                        <div class="finishing-nav__label">
+                            <div class="finishing-nav__label--active">Тип отделки</div>
+                            <div class="finishing-nav__label--arrow">
+                                <svg class="ico-svg" viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="img/sprites/sprite-mono.svg#angle-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <ul class="finishing-nav__dropdown">
+                            <li class="finishing-nav__item" data-target="tab1">Стандартная</li>
+                            <li class="finishing-nav__item" data-target="tab1">Оптимальная</li>
+                            <li class="finishing-nav__item" data-target="tab1">Премиум</li>
+                        </ul>
+                    </div>
+                    <div class="finishing-nav__buttons">
+                        <button class="finishing-nav__button">Светлая</button>
+                        <button class="finishing-nav__button">Темная</button>
+                    </div>
+                </div><!-- .finishing__nav -->
+                <div class="finishing__media">
+                    <div class="finishing__media--image">
+                        <img src="img/content/finishing__gallery-image.jpg" class="img-fluid" alt="">
+                    </div>
+                    <div class="finishing__media--content">
+                        <div class="finishing__point finishing__point--right" style="left: 4.75%; top: 35.61%" data-text="Светодиодные светильники со сроком службы свыше 5 лет">
+                            <i>
+                                <svg class="ico-svg" viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="img/sprites/sprite-mono.svg#eye" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </i>
+                        </div><!-- .finishing__point -->
+                        <div class="finishing__point finishing__point--bottom" style="left: 42.66%; top: 13.20%" data-text="Светодиодные светильники со сроком службы свыше 5 лет">
+                            <i>
+                                <svg class="ico-svg" viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="img/sprites/sprite-mono.svg#eye" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </i>
+                        </div><!-- .finishing__point -->
+                        <div class="finishing__point finishing__point--right" style="left: 13.72%; top: 71.69%" data-text="Светодиодные светильники со сроком службы свыше 5 лет">
+                            <i>
+                                <svg class="ico-svg" viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="img/sprites/sprite-mono.svg#eye" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </i>
+                        </div><!-- .finishing__point -->
+                        <div class="finishing__point finishing__point--top" style="left: 48.09%; top: 61.79%" data-text="Светодиодные светильники со сроком службы свыше 5 лет">
+                            <i>
+                                <svg class="ico-svg" viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="img/sprites/sprite-mono.svg#eye" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </i>
+                        </div><!-- .finishing__point -->
+                        <div class="finishing__point finishing__point--left" style="left: 71.875%; top: 63.20%" data-text="Светодиодные светильники со сроком службы свыше 5 лет">
+                            <i>
+                                <svg class="ico-svg" viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="img/sprites/sprite-mono.svg#eye" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </i>
+                        </div><!-- .finishing__point -->
+
+                    </div>
+                </div>
+                <div class="finishing__list">
+                    <div class="accordion">
+                        <div class="accordion__item accordion-item">
+                            <div class="accordion__header accordion-control" aria-expanded="false">
+                                <div class="accordion__header--text">Стены</div>
+                                <div class="accordion__header--icon">
+                                    <svg class="ico-svg" viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+                                        <use xlink:href="img/sprites/sprite-mono.svg#angle-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                    </svg>
+                                </div>
+                            </div><!-- /.accordion__header -->
+                            <div class="accordion__content accordion-content" aria-hidden="true">
+                                <div class="accordion__content--wrap">
+                                    Пол оборудован системой подогрева с встроенной системой подачи немерзающей жидкости по трубам с целью сохранения тепла в самые холодные морозные дни
+                                </div>
+                            </div><!-- /.accordion__content -->
+                        </div><!-- /.accordion__item -->
+                        <div class="accordion__item accordion-item">
+                            <div class="accordion__header accordion-control" aria-expanded="false">
+                                <div class="accordion__header--text">Потолок</div>
+                                <div class="accordion__header--icon">
+                                    <svg class="ico-svg" viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+                                        <use xlink:href="img/sprites/sprite-mono.svg#angle-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                    </svg>
+                                </div>
+                            </div><!-- /.accordion__header -->
+                            <div class="accordion__content accordion-content" aria-hidden="true">
+                                <div class="accordion__content--wrap">
+                                    Пол оборудован системой подогрева с встроенной системой подачи немерзающей жидкости по трубам с целью сохранения тепла в самые холодные морозные дни
+                                </div>
+                            </div><!-- /.accordion__content -->
+                        </div><!-- /.accordion__item -->
+                        <div class="accordion__item accordion-item">
+                            <div class="accordion__header accordion-control" aria-expanded="false">
+                                <div class="accordion__header--text">Сантехника</div>
+                                <div class="accordion__header--icon">
+                                    <svg class="ico-svg" viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+                                        <use xlink:href="img/sprites/sprite-mono.svg#angle-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                    </svg>
+                                </div>
+                            </div><!-- /.accordion__header -->
+                            <div class="accordion__content accordion-content" aria-hidden="true">
+                                <div class="accordion__content--wrap">
+                                    Пол оборудован системой подогрева с встроенной системой подачи немерзающей жидкости по трубам с целью сохранения тепла в самые холодные морозные дни
+                                </div>
+                            </div><!-- /.accordion__content -->
+                        </div><!-- /.accordion__item -->
+                        <div class="accordion__item accordion-item">
+                            <div class="accordion__header accordion-control" aria-expanded="false">
+                                <div class="accordion__header--text">Двери</div>
+                                <div class="accordion__header--icon">
+                                    <svg class="ico-svg" viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+                                        <use xlink:href="img/sprites/sprite-mono.svg#angle-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                    </svg>
+                                </div>
+                            </div><!-- /.accordion__header -->
+                            <div class="accordion__content accordion-content" aria-hidden="true">
+                                <div class="accordion__content--wrap">
+                                    Пол оборудован системой подогрева с встроенной системой подачи немерзающей жидкости по трубам с целью сохранения тепла в самые холодные морозные дни
+                                </div>
+                            </div><!-- /.accordion__content -->
+                        </div><!-- /.accordion__item -->
+                        <div class="accordion__item accordion-item">
+                            <div class="accordion__header accordion-control" aria-expanded="false">
+                                <div class="accordion__header--text">Окна</div>
+                                <div class="accordion__header--icon">
+                                    <svg class="ico-svg" viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+                                        <use xlink:href="img/sprites/sprite-mono.svg#angle-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                    </svg>
+                                </div>
+                            </div><!-- /.accordion__header -->
+                            <div class="accordion__content accordion-content" aria-hidden="true">
+                                <div class="accordion__content--wrap">
+                                    Пол оборудован системой подогрева с встроенной системой подачи немерзающей жидкости по трубам с целью сохранения тепла в самые холодные морозные дни
+                                </div>
+                            </div><!-- /.accordion__content -->
+                        </div><!-- /.accordion__item -->
+                    </div><!-- /.accordion -->
+                </div>
+            </div><!-- .finishing -->
+        </div><!-- .section__content -->
+    </div><!-- .section -->
+
+    <div class="section bm-0">
+        <div class="section__header">
+            <div class="section__header--title">Доступны паркинги и кладовые</div>
+        </div><!-- .section__header -->
+        <div class="section__content">
+            <div class="offer-group">
+
+                <a href="#" class="offer-sm offer-sm--parking">
+                    <div class="offer-sm__content">
+                        <div class="offer-sm__title">Паркинги</div>
+                        <div class="offer-sm__text">Подземные охраняемые <br/>паркинги</div>
+                    </div>
+                    <div class="offer-sm__image offer-sm__image--parking">
+                        <img src="img/offer_sm__01.jpg" class="img-fluid" alt="">
+                    </div>
+                </a><!-- .offer-sm -->
+
+                <a href="#" class="offer-sm offer-sm--box">
+                    <div class="offer-sm__content">
+                        <div class="offer-sm__title">Кладовые</div>
+                        <div class="offer-sm__text">С вентиляция и автономным <br/>освещением помещения</div>
+                    </div>
+                    <div class="offer-sm__image offer-sm__image--box">
+                        <img src="img/offer_sm__02.jpg" class="img-fluid" alt="">
+                    </div>
+                </a><!-- .offer-sm -->
+
+            </div>
+        </div><!-- .section__content -->
+    </div><!-- .section -->
+
+{% endblock %}
+
+{% block h1 %}
+{% endblock %}

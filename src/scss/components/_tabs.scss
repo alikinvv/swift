@@ -1,0 +1,106 @@
+
+.tabs {
+    position: relative;
+
+    &__header {
+        margin-bottom: size-rel(32px);
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 2px solid #f1f1f1;
+    }
+
+    &__nav {
+        display: flex;
+        align-items: center;
+    }
+
+    &__list {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+    }
+
+    &__item {
+
+        &:not(:last-child) {
+            margin-right: 2px;
+        }
+    }
+
+    &__btn {
+        padding: size-rel(12px);
+        border: none;
+        color: $black;
+        cursor: pointer;
+        font-weight: 600;
+        font-size:  size-rel(12px);
+        line-height: size-rel(20px);
+        text-align: center;
+        letter-spacing: 0.06em;
+        background-color: #f0f0f0;
+        border-radius: 6px 6px 0 0;
+        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+        &:hover {
+            color: $white;
+            background-color: $black;
+        }
+
+        &--active {
+            color: $white;
+            background-color: $black;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+            pointer-events: none;
+        }
+    }
+
+    &__content {
+        display: none;
+        background-color: #fff;
+
+        &--active {
+            display: block;
+        }
+    }
+
+    &__arrow {
+        width: size-rel(40px);
+        height: size-rel(40px);
+        padding: 0;
+        border: none;
+        margin-left: 2px;
+        background-color: #f0f0f0;
+        border-radius: 4px 4px 0 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+
+        svg {
+            pointer-events: none;
+            fill: #000;
+            transition: fill 0.3s ease-in-out;
+        }
+
+        &:hover {
+            background-color: #000;
+
+            svg {
+                fill: #fff;
+            }
+        }
+
+        &--next {
+
+        }
+
+        &--prev {
+
+        }
+    }
+}

@@ -1,0 +1,816 @@
+{% extends "src/template/layout/_template.njk" %}
+
+{%- set page_hide_breadcrumb = false -%}
+{% set title = "Выбор квартир" %}
+{% set is_filter = true %}
+
+
+{% block content %}
+
+    {% include "src/template/parts/_filter.njk" %}
+
+    <div class="mobile-bar">
+        <div class="mobile-bar__item">
+            <select class="pretty-select">
+                <option value="Сначала дешевле">Сначала дешевле</option>
+                <option value="Сначала дороже">Сначала дороже</option>
+                <option value="С большей площадью">С большей площадью</option>
+                <option value="С меньшей площадью">С меньшей площадью</option>
+            </select>
+        </div><!--/.mobile-bar__item -->
+        <div class="mobile-bar__item">
+            <div class="btn btn-border btn-icon">
+                <i>
+                    <svg class="ico-svg" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg">
+                        <use xlink:href="img/sprites/sprite-mono.svg#map-marker-alt" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                    </svg>
+                </i>
+                <span>Смотреть на карте</span>
+            </div>
+        </div><!--/.mobile-bar__item -->
+    </div><!--/.mobile-bar -->
+
+    <div class="simple-bar">
+        <div class="simple-bar__item">
+            <div class="sorter">
+                <div class="sorter__header">Сортировать по</div>
+                <ul class="sorter__content">
+                    <li>
+                        <button class="sorter__item active">
+                            <span class="sorter__item--text">Цене</span>
+                            <span class="sorter__item--icon">
+                                <span></span>
+                            </span>
+                        </button><!--/.sorter__item -->
+                    </li>
+                    <li>
+                        <button class="sorter__item">
+                            <span class="sorter__item--text">Площади</span>
+                            <span class="sorter__item--icon">
+                                <span></span>
+                            </span>
+                        </button><!--/.sorter__item -->
+                    </li>
+                    <li>
+                        <button class="sorter__item">
+                            <span class="sorter__item--text">Сроку сдачи</span>
+                            <span class="sorter__item--icon">
+                                <span></span>
+                            </span>
+                        </button><!--/.sorter__item -->
+                    </li>
+                    <li>
+                        <button class="sorter__item">
+                            <span class="sorter__item--text">Расстоянию до метро</span>
+                            <span class="sorter__item--icon">
+                                <span></span>
+                            </span>
+                        </button><!--/.sorter__item -->
+                    </li>
+                </ul>
+            </div>
+        </div><!--/.simple-bar__item -->
+        <div class="simple-bar__item">
+            <a href="#" class="btn-link btn-icon">
+                <i>
+                    <svg class="ico-svg" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg">
+                        <use xlink:href="img/sprites/sprite-mono.svg#map-marker-alt" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                    </svg>
+                </i>
+                <span>Смотреть на карте</span>
+            </a>
+            <div class="display-switch">
+                <a href="#" class="display-switch__item" data-tippy-content="Подсказка" data-placement="карточками">
+                    <svg class="ico-svg" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+                        <use xlink:href="img/sprites/sprite-mono.svg#tile" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                    </svg>
+                </a>
+                <a href="#" class="display-switch__item active" data-tippy-content="Подсказка" data-placement="списком">
+                    <svg class="ico-svg" viewBox="0 0 15 12" xmlns="http://www.w3.org/2000/svg">
+                        <use xlink:href="img/sprites/sprite-mono.svg#list" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                    </svg>
+                </a>
+            </div>
+        </div><!--/.simple-bar__item -->
+    </div><!--/.simple-bar -->
+
+    <div class="flats-list">
+        <div class="flats-list__tr flats-list__header">
+            <div class="flats-list__th flats-list__td--image">План</div>
+            <div class="flats-list__th flats-list__td--about">Комнатность</div>
+            <div class="flats-list__th flats-list__td--floor">Этаж</div>
+            <div class="flats-list__th flats-list__td--name">Объект</div>
+            <div class="flats-list__th flats-list__td--base">Корпус</div>
+            <div class="flats-list__th flats-list__td--date">Срок сдачи</div>
+            <div class="flats-list__th flats-list__td--price">Цена</div>
+        </div>
+        <a href="#" class="flats-list__tr">
+            <div class="flats-list__td flats-list__td--image">
+                <div class="flats-list__image">
+                    <div class="flats-list__image--thumb">
+                        <img src="img/content/flats_list_image_sm.jpg" class="img-fluid" alt="">
+                    </div>
+                    <div class="flats-list__image--large">
+                        <img src="img/content/flats_list_image_lg.jpg" class="img-fluid" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="flats-list__td flats-list__td--about">
+                <div class="flats-list__title">1-Комнатная 25,32 м²</div>
+                <div class="flats-list__tags">
+                    <span class="flats-list__tag">Евро</span>
+                    <span class="flats-list__tag">С отделкой</span>
+                </div>
+            </div>
+            <div class="flats-list__td flats-list__td--floor">21 из 24</div>
+            <div class="flats-list__td flats-list__td--name">Хорошевский</div>
+            <div class="flats-list__td flats-list__td--base">4 корпус</div>
+            <div class="flats-list__td flats-list__td--date">II кв 2021</div>
+            <div class="flats-list__td flats-list__td--price">
+                <div class="flats-list__price">
+                    <div class="flats-list__price--total">8 521 420 ₽</div>
+                    <div class="flats-list__price--meter">30 000 ₽ за м<sup>2</sup></div>
+                </div>
+            </div>
+        </a><!--/.flats-list__tr -->
+        <a href="#" class="flats-list__tr">
+            <div class="flats-list__td flats-list__td--image">
+                <div class="flats-list__image">
+                    <div class="flats-list__image--thumb">
+                        <img src="img/content/flats_list_image_sm.jpg" class="img-fluid" alt="">
+                    </div>
+                    <div class="flats-list__image--large">
+                        <img src="img/content/flats_list_image_lg.jpg" class="img-fluid" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="flats-list__td flats-list__td--about">
+                <div class="flats-list__title">1-Комнатная 25,32 м²</div>
+                <div class="flats-list__tags">
+                    <span class="flats-list__tag">Евро</span>
+                    <span class="flats-list__tag">С отделкой</span>
+                </div>
+            </div>
+            <div class="flats-list__td flats-list__td--floor">21 из 24</div>
+            <div class="flats-list__td flats-list__td--name">Хорошевский</div>
+            <div class="flats-list__td flats-list__td--base">4 корпус</div>
+            <div class="flats-list__td flats-list__td--date">II кв 2021</div>
+            <div class="flats-list__td flats-list__td--price">
+                <div class="flats-list__price">
+                    <div class="flats-list__price--total">8 521 420 ₽</div>
+                    <div class="flats-list__price--meter">30 000 ₽ за м<sup>2</sup></div>
+                </div>
+            </div>
+        </a><!--/.flats-list__tr -->
+        <a href="#" class="flats-list__tr">
+            <div class="flats-list__td flats-list__td--image">
+                <div class="flats-list__image">
+                    <div class="flats-list__image--thumb">
+                        <img src="img/content/flats_list_image_sm.jpg" class="img-fluid" alt="">
+                    </div>
+                    <div class="flats-list__image--large">
+                        <img src="img/content/flats_list_image_lg.jpg" class="img-fluid" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="flats-list__td flats-list__td--about">
+                <div class="flats-list__title">1-Комнатная 25,32 м²</div>
+                <div class="flats-list__tags">
+                    <span class="flats-list__tag">Евро</span>
+                    <span class="flats-list__tag">С отделкой</span>
+                </div>
+            </div>
+            <div class="flats-list__td flats-list__td--floor">21 из 24</div>
+            <div class="flats-list__td flats-list__td--name">Хорошевский</div>
+            <div class="flats-list__td flats-list__td--base">4 корпус</div>
+            <div class="flats-list__td flats-list__td--date">II кв 2021</div>
+            <div class="flats-list__td flats-list__td--price">
+                <div class="flats-list__price">
+                    <div class="flats-list__price--total">8 521 420 ₽</div>
+                    <div class="flats-list__price--meter">30 000 ₽ за м<sup>2</sup></div>
+                </div>
+            </div>
+        </a><!--/.flats-list__tr -->
+        <a href="#" class="flats-list__tr">
+            <div class="flats-list__td flats-list__td--image">
+                <div class="flats-list__image">
+                    <div class="flats-list__image--thumb">
+                        <img src="img/content/flats_list_image_sm.jpg" class="img-fluid" alt="">
+                    </div>
+                    <div class="flats-list__image--large">
+                        <img src="img/content/flats_list_image_lg.jpg" class="img-fluid" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="flats-list__td flats-list__td--about">
+                <div class="flats-list__title">1-Комнатная 25,32 м²</div>
+                <div class="flats-list__tags">
+                    <span class="flats-list__tag">Евро</span>
+                    <span class="flats-list__tag">С отделкой</span>
+                </div>
+            </div>
+            <div class="flats-list__td flats-list__td--floor">21 из 24</div>
+            <div class="flats-list__td flats-list__td--name">Хорошевский</div>
+            <div class="flats-list__td flats-list__td--base">4 корпус</div>
+            <div class="flats-list__td flats-list__td--date">II кв 2021</div>
+            <div class="flats-list__td flats-list__td--price">
+                <div class="flats-list__price">
+                    <div class="flats-list__price--total">8 521 420 ₽</div>
+                    <div class="flats-list__price--meter">30 000 ₽ за м<sup>2</sup></div>
+                </div>
+            </div>
+        </a><!--/.flats-list__tr -->
+        <a href="#" class="flats-list__tr">
+            <div class="flats-list__td flats-list__td--image">
+                <div class="flats-list__image">
+                    <div class="flats-list__image--thumb">
+                        <img src="img/content/flats_list_image_sm.jpg" class="img-fluid" alt="">
+                    </div>
+                    <div class="flats-list__image--large">
+                        <img src="img/content/flats_list_image_lg.jpg" class="img-fluid" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="flats-list__td flats-list__td--about">
+                <div class="flats-list__title">1-Комнатная 25,32 м²</div>
+                <div class="flats-list__tags">
+                    <span class="flats-list__tag">Евро</span>
+                    <span class="flats-list__tag">С отделкой</span>
+                </div>
+            </div>
+            <div class="flats-list__td flats-list__td--floor">21 из 24</div>
+            <div class="flats-list__td flats-list__td--name">Хорошевский</div>
+            <div class="flats-list__td flats-list__td--base">4 корпус</div>
+            <div class="flats-list__td flats-list__td--date">II кв 2021</div>
+            <div class="flats-list__td flats-list__td--price">
+                <div class="flats-list__price">
+                    <div class="flats-list__price--total">8 521 420 ₽</div>
+                    <div class="flats-list__price--meter">30 000 ₽ за м<sup>2</sup></div>
+                </div>
+            </div>
+        </a><!--/.flats-list__tr -->
+        <a href="#" class="flats-list__tr">
+            <div class="flats-list__td flats-list__td--image">
+                <div class="flats-list__image">
+                    <div class="flats-list__image--thumb">
+                        <img src="img/content/flats_list_image_sm.jpg" class="img-fluid" alt="">
+                    </div>
+                    <div class="flats-list__image--large">
+                        <img src="img/content/flats_list_image_lg.jpg" class="img-fluid" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="flats-list__td flats-list__td--about">
+                <div class="flats-list__title">1-Комнатная 25,32 м²</div>
+                <div class="flats-list__tags">
+                    <span class="flats-list__tag">Евро</span>
+                    <span class="flats-list__tag">С отделкой</span>
+                </div>
+            </div>
+            <div class="flats-list__td flats-list__td--floor">21 из 24</div>
+            <div class="flats-list__td flats-list__td--name">Хорошевский</div>
+            <div class="flats-list__td flats-list__td--base">4 корпус</div>
+            <div class="flats-list__td flats-list__td--date">II кв 2021</div>
+            <div class="flats-list__td flats-list__td--price">
+                <div class="flats-list__price">
+                    <div class="flats-list__price--total">8 521 420 ₽</div>
+                    <div class="flats-list__price--meter">30 000 ₽ за м<sup>2</sup></div>
+                </div>
+            </div>
+        </a><!--/.flats-list__tr -->
+        <a href="#" class="flats-list__tr">
+            <div class="flats-list__td flats-list__td--image">
+                <div class="flats-list__image">
+                    <div class="flats-list__image--thumb">
+                        <img src="img/content/flats_list_image_sm.jpg" class="img-fluid" alt="">
+                    </div>
+                    <div class="flats-list__image--large">
+                        <img src="img/content/flats_list_image_lg.jpg" class="img-fluid" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="flats-list__td flats-list__td--about">
+                <div class="flats-list__title">1-Комнатная 25,32 м²</div>
+                <div class="flats-list__tags">
+                    <span class="flats-list__tag">Евро</span>
+                    <span class="flats-list__tag">С отделкой</span>
+                </div>
+            </div>
+            <div class="flats-list__td flats-list__td--floor">21 из 24</div>
+            <div class="flats-list__td flats-list__td--name">Хорошевский</div>
+            <div class="flats-list__td flats-list__td--base">4 корпус</div>
+            <div class="flats-list__td flats-list__td--date">II кв 2021</div>
+            <div class="flats-list__td flats-list__td--price">
+                <div class="flats-list__price">
+                    <div class="flats-list__price--total">8 521 420 ₽</div>
+                    <div class="flats-list__price--meter">30 000 ₽ за м<sup>2</sup></div>
+                </div>
+            </div>
+        </a><!--/.flats-list__tr -->
+        <a href="#" class="flats-list__tr">
+            <div class="flats-list__td flats-list__td--image">
+                <div class="flats-list__image">
+                    <div class="flats-list__image--thumb">
+                        <img src="img/content/flats_list_image_sm.jpg" class="img-fluid" alt="">
+                    </div>
+                    <div class="flats-list__image--large">
+                        <img src="img/content/flats_list_image_lg.jpg" class="img-fluid" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="flats-list__td flats-list__td--about">
+                <div class="flats-list__title">1-Комнатная 25,32 м²</div>
+                <div class="flats-list__tags">
+                    <span class="flats-list__tag">Евро</span>
+                    <span class="flats-list__tag">С отделкой</span>
+                </div>
+            </div>
+            <div class="flats-list__td flats-list__td--floor">21 из 24</div>
+            <div class="flats-list__td flats-list__td--name">Хорошевский</div>
+            <div class="flats-list__td flats-list__td--base">4 корпус</div>
+            <div class="flats-list__td flats-list__td--date">II кв 2021</div>
+            <div class="flats-list__td flats-list__td--price">
+                <div class="flats-list__price">
+                    <div class="flats-list__price--total">8 521 420 ₽</div>
+                    <div class="flats-list__price--meter">30 000 ₽ за м<sup>2</sup></div>
+                </div>
+            </div>
+        </a><!--/.flats-list__tr -->
+        <a href="#" class="flats-list__tr">
+            <div class="flats-list__td flats-list__td--image">
+                <div class="flats-list__image">
+                    <div class="flats-list__image--thumb">
+                        <img src="img/content/flats_list_image_sm.jpg" class="img-fluid" alt="">
+                    </div>
+                    <div class="flats-list__image--large">
+                        <img src="img/content/flats_list_image_lg.jpg" class="img-fluid" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="flats-list__td flats-list__td--about">
+                <div class="flats-list__title">1-Комнатная 25,32 м²</div>
+                <div class="flats-list__tags">
+                    <span class="flats-list__tag">Евро</span>
+                    <span class="flats-list__tag">С отделкой</span>
+                </div>
+            </div>
+            <div class="flats-list__td flats-list__td--floor">21 из 24</div>
+            <div class="flats-list__td flats-list__td--name">Хорошевский</div>
+            <div class="flats-list__td flats-list__td--base">4 корпус</div>
+            <div class="flats-list__td flats-list__td--date">II кв 2021</div>
+            <div class="flats-list__td flats-list__td--price">
+                <div class="flats-list__price">
+                    <div class="flats-list__price--total">8 521 420 ₽</div>
+                    <div class="flats-list__price--meter">30 000 ₽ за м<sup>2</sup></div>
+                </div>
+            </div>
+        </a><!--/.flats-list__tr -->
+        <a href="#" class="flats-list__tr">
+            <div class="flats-list__td flats-list__td--image">
+                <div class="flats-list__image">
+                    <div class="flats-list__image--thumb">
+                        <img src="img/content/flats_list_image_sm.jpg" class="img-fluid" alt="">
+                    </div>
+                    <div class="flats-list__image--large">
+                        <img src="img/content/flats_list_image_lg.jpg" class="img-fluid" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="flats-list__td flats-list__td--about">
+                <div class="flats-list__title">1-Комнатная 25,32 м²</div>
+                <div class="flats-list__tags">
+                    <span class="flats-list__tag">Евро</span>
+                    <span class="flats-list__tag">С отделкой</span>
+                </div>
+            </div>
+            <div class="flats-list__td flats-list__td--floor">21 из 24</div>
+            <div class="flats-list__td flats-list__td--name">Хорошевский</div>
+            <div class="flats-list__td flats-list__td--base">4 корпус</div>
+            <div class="flats-list__td flats-list__td--date">II кв 2021</div>
+            <div class="flats-list__td flats-list__td--price">
+                <div class="flats-list__price">
+                    <div class="flats-list__price--total">8 521 420 ₽</div>
+                    <div class="flats-list__price--meter">30 000 ₽ за м<sup>2</sup></div>
+                </div>
+            </div>
+        </a><!--/.flats-list__tr -->
+        <a href="#" class="flats-list__tr">
+            <div class="flats-list__td flats-list__td--image">
+                <div class="flats-list__image">
+                    <div class="flats-list__image--thumb">
+                        <img src="img/content/flats_list_image_sm.jpg" class="img-fluid" alt="">
+                    </div>
+                    <div class="flats-list__image--large">
+                        <img src="img/content/flats_list_image_lg.jpg" class="img-fluid" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="flats-list__td flats-list__td--about">
+                <div class="flats-list__title">1-Комнатная 25,32 м²</div>
+                <div class="flats-list__tags">
+                    <span class="flats-list__tag">Евро</span>
+                    <span class="flats-list__tag">С отделкой</span>
+                </div>
+            </div>
+            <div class="flats-list__td flats-list__td--floor">21 из 24</div>
+            <div class="flats-list__td flats-list__td--name">Хорошевский</div>
+            <div class="flats-list__td flats-list__td--base">4 корпус</div>
+            <div class="flats-list__td flats-list__td--date">II кв 2021</div>
+            <div class="flats-list__td flats-list__td--price">
+                <div class="flats-list__price">
+                    <div class="flats-list__price--total">8 521 420 ₽</div>
+                    <div class="flats-list__price--meter">30 000 ₽ за м<sup>2</sup></div>
+                </div>
+            </div>
+        </a><!--/.flats-list__tr -->
+        <a href="#" class="flats-list__tr">
+            <div class="flats-list__td flats-list__td--image">
+                <div class="flats-list__image">
+                    <div class="flats-list__image--thumb">
+                        <img src="img/content/flats_list_image_sm.jpg" class="img-fluid" alt="">
+                    </div>
+                    <div class="flats-list__image--large">
+                        <img src="img/content/flats_list_image_lg.jpg" class="img-fluid" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="flats-list__td flats-list__td--about">
+                <div class="flats-list__title">1-Комнатная 25,32 м²</div>
+                <div class="flats-list__tags">
+                    <span class="flats-list__tag">Евро</span>
+                    <span class="flats-list__tag">С отделкой</span>
+                </div>
+            </div>
+            <div class="flats-list__td flats-list__td--floor">21 из 24</div>
+            <div class="flats-list__td flats-list__td--name">Хорошевский</div>
+            <div class="flats-list__td flats-list__td--base">4 корпус</div>
+            <div class="flats-list__td flats-list__td--date">II кв 2021</div>
+            <div class="flats-list__td flats-list__td--price">
+                <div class="flats-list__price">
+                    <div class="flats-list__price--total">8 521 420 ₽</div>
+                    <div class="flats-list__price--meter">30 000 ₽ за м<sup>2</sup></div>
+                </div>
+            </div>
+        </a><!--/.flats-list__tr -->
+        <a href="#" class="flats-list__tr">
+            <div class="flats-list__td flats-list__td--image">
+                <div class="flats-list__image">
+                    <div class="flats-list__image--thumb">
+                        <img src="img/content/flats_list_image_sm.jpg" class="img-fluid" alt="">
+                    </div>
+                    <div class="flats-list__image--large">
+                        <img src="img/content/flats_list_image_lg.jpg" class="img-fluid" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="flats-list__td flats-list__td--about">
+                <div class="flats-list__title">1-Комнатная 25,32 м²</div>
+                <div class="flats-list__tags">
+                    <span class="flats-list__tag">Евро</span>
+                    <span class="flats-list__tag">С отделкой</span>
+                </div>
+            </div>
+            <div class="flats-list__td flats-list__td--floor">21 из 24</div>
+            <div class="flats-list__td flats-list__td--name">Хорошевский</div>
+            <div class="flats-list__td flats-list__td--base">4 корпус</div>
+            <div class="flats-list__td flats-list__td--date">II кв 2021</div>
+            <div class="flats-list__td flats-list__td--price">
+                <div class="flats-list__price">
+                    <div class="flats-list__price--total">8 521 420 ₽</div>
+                    <div class="flats-list__price--meter">30 000 ₽ за м<sup>2</sup></div>
+                </div>
+            </div>
+        </a><!--/.flats-list__tr -->
+        <a href="#" class="flats-list__tr">
+            <div class="flats-list__td flats-list__td--image">
+                <div class="flats-list__image">
+                    <div class="flats-list__image--thumb">
+                        <img src="img/content/flats_list_image_sm.jpg" class="img-fluid" alt="">
+                    </div>
+                    <div class="flats-list__image--large">
+                        <img src="img/content/flats_list_image_lg.jpg" class="img-fluid" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="flats-list__td flats-list__td--about">
+                <div class="flats-list__title">1-Комнатная 25,32 м²</div>
+                <div class="flats-list__tags">
+                    <span class="flats-list__tag">Евро</span>
+                    <span class="flats-list__tag">С отделкой</span>
+                </div>
+            </div>
+            <div class="flats-list__td flats-list__td--floor">21 из 24</div>
+            <div class="flats-list__td flats-list__td--name">Хорошевский</div>
+            <div class="flats-list__td flats-list__td--base">4 корпус</div>
+            <div class="flats-list__td flats-list__td--date">II кв 2021</div>
+            <div class="flats-list__td flats-list__td--price">
+                <div class="flats-list__price">
+                    <div class="flats-list__price--total">8 521 420 ₽</div>
+                    <div class="flats-list__price--meter">30 000 ₽ за м<sup>2</sup></div>
+                </div>
+            </div>
+        </a><!--/.flats-list__tr -->
+        <a href="#" class="flats-list__tr">
+            <div class="flats-list__td flats-list__td--image">
+                <div class="flats-list__image">
+                    <div class="flats-list__image--thumb">
+                        <img src="img/content/flats_list_image_sm.jpg" class="img-fluid" alt="">
+                    </div>
+                    <div class="flats-list__image--large">
+                        <img src="img/content/flats_list_image_lg.jpg" class="img-fluid" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="flats-list__td flats-list__td--about">
+                <div class="flats-list__title">1-Комнатная 25,32 м²</div>
+                <div class="flats-list__tags">
+                    <span class="flats-list__tag">Евро</span>
+                    <span class="flats-list__tag">С отделкой</span>
+                </div>
+            </div>
+            <div class="flats-list__td flats-list__td--floor">21 из 24</div>
+            <div class="flats-list__td flats-list__td--name">Хорошевский</div>
+            <div class="flats-list__td flats-list__td--base">4 корпус</div>
+            <div class="flats-list__td flats-list__td--date">II кв 2021</div>
+            <div class="flats-list__td flats-list__td--price">
+                <div class="flats-list__price">
+                    <div class="flats-list__price--total">8 521 420 ₽</div>
+                    <div class="flats-list__price--meter">30 000 ₽ за м<sup>2</sup></div>
+                </div>
+            </div>
+        </a><!--/.flats-list__tr -->
+        <a href="#" class="flats-list__tr">
+            <div class="flats-list__td flats-list__td--image">
+                <div class="flats-list__image">
+                    <div class="flats-list__image--thumb">
+                        <img src="img/content/flats_list_image_sm.jpg" class="img-fluid" alt="">
+                    </div>
+                    <div class="flats-list__image--large">
+                        <img src="img/content/flats_list_image_lg.jpg" class="img-fluid" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="flats-list__td flats-list__td--about">
+                <div class="flats-list__title">1-Комнатная 25,32 м²</div>
+                <div class="flats-list__tags">
+                    <span class="flats-list__tag">Евро</span>
+                    <span class="flats-list__tag">С отделкой</span>
+                </div>
+            </div>
+            <div class="flats-list__td flats-list__td--floor">21 из 24</div>
+            <div class="flats-list__td flats-list__td--name">Хорошевский</div>
+            <div class="flats-list__td flats-list__td--base">4 корпус</div>
+            <div class="flats-list__td flats-list__td--date">II кв 2021</div>
+            <div class="flats-list__td flats-list__td--price">
+                <div class="flats-list__price">
+                    <div class="flats-list__price--total">8 521 420 ₽</div>
+                    <div class="flats-list__price--meter">30 000 ₽ за м<sup>2</sup></div>
+                </div>
+            </div>
+        </a><!--/.flats-list__tr -->
+        <a href="#" class="flats-list__tr">
+            <div class="flats-list__td flats-list__td--image">
+                <div class="flats-list__image">
+                    <div class="flats-list__image--thumb">
+                        <img src="img/content/flats_list_image_sm.jpg" class="img-fluid" alt="">
+                    </div>
+                    <div class="flats-list__image--large">
+                        <img src="img/content/flats_list_image_lg.jpg" class="img-fluid" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="flats-list__td flats-list__td--about">
+                <div class="flats-list__title">1-Комнатная 25,32 м²</div>
+                <div class="flats-list__tags">
+                    <span class="flats-list__tag">Евро</span>
+                    <span class="flats-list__tag">С отделкой</span>
+                </div>
+            </div>
+            <div class="flats-list__td flats-list__td--floor">21 из 24</div>
+            <div class="flats-list__td flats-list__td--name">Хорошевский</div>
+            <div class="flats-list__td flats-list__td--base">4 корпус</div>
+            <div class="flats-list__td flats-list__td--date">II кв 2021</div>
+            <div class="flats-list__td flats-list__td--price">
+                <div class="flats-list__price">
+                    <div class="flats-list__price--total">8 521 420 ₽</div>
+                    <div class="flats-list__price--meter">30 000 ₽ за м<sup>2</sup></div>
+                </div>
+            </div>
+        </a><!--/.flats-list__tr -->
+        <a href="#" class="flats-list__tr">
+            <div class="flats-list__td flats-list__td--image">
+                <div class="flats-list__image">
+                    <div class="flats-list__image--thumb">
+                        <img src="img/content/flats_list_image_sm.jpg" class="img-fluid" alt="">
+                    </div>
+                    <div class="flats-list__image--large">
+                        <img src="img/content/flats_list_image_lg.jpg" class="img-fluid" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="flats-list__td flats-list__td--about">
+                <div class="flats-list__title">1-Комнатная 25,32 м²</div>
+                <div class="flats-list__tags">
+                    <span class="flats-list__tag">Евро</span>
+                    <span class="flats-list__tag">С отделкой</span>
+                </div>
+            </div>
+            <div class="flats-list__td flats-list__td--floor">21 из 24</div>
+            <div class="flats-list__td flats-list__td--name">Хорошевский</div>
+            <div class="flats-list__td flats-list__td--base">4 корпус</div>
+            <div class="flats-list__td flats-list__td--date">II кв 2021</div>
+            <div class="flats-list__td flats-list__td--price">
+                <div class="flats-list__price">
+                    <div class="flats-list__price--total">8 521 420 ₽</div>
+                    <div class="flats-list__price--meter">30 000 ₽ за м<sup>2</sup></div>
+                </div>
+            </div>
+        </a><!--/.flats-list__tr -->
+        <a href="#" class="flats-list__tr">
+            <div class="flats-list__td flats-list__td--image">
+                <div class="flats-list__image">
+                    <div class="flats-list__image--thumb">
+                        <img src="img/content/flats_list_image_sm.jpg" class="img-fluid" alt="">
+                    </div>
+                    <div class="flats-list__image--large">
+                        <img src="img/content/flats_list_image_lg.jpg" class="img-fluid" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="flats-list__td flats-list__td--about">
+                <div class="flats-list__title">1-Комнатная 25,32 м²</div>
+                <div class="flats-list__tags">
+                    <span class="flats-list__tag">Евро</span>
+                    <span class="flats-list__tag">С отделкой</span>
+                </div>
+            </div>
+            <div class="flats-list__td flats-list__td--floor">21 из 24</div>
+            <div class="flats-list__td flats-list__td--name">Хорошевский</div>
+            <div class="flats-list__td flats-list__td--base">4 корпус</div>
+            <div class="flats-list__td flats-list__td--date">II кв 2021</div>
+            <div class="flats-list__td flats-list__td--price">
+                <div class="flats-list__price">
+                    <div class="flats-list__price--total">8 521 420 ₽</div>
+                    <div class="flats-list__price--meter">30 000 ₽ за м<sup>2</sup></div>
+                </div>
+            </div>
+        </a><!--/.flats-list__tr -->
+    </div><!--/.flats-list -->
+
+    {% include "src/template/parts/_page-nav.njk" %}
+
+    <div class="section mb-0">
+        <div class="section__header">
+            <div class="section__header--title">Условия приобритения</div><!--/.section__header--title -->
+            <div class="section__header--nav">
+                <div class="section__header--buttons">
+                    <div class="section-nav">
+                        <button type="button" class="slider-button slider-button--prev conditions-prev">
+                            <i>
+                                <svg class="ico-svg" viewBox="0 0 192 512" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="img/sprites/sprite-mono.svg#angle-left" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </i>
+                        </button>
+                        <button type="button" class="slider-button slider-button--next conditions-next">
+                            <i>
+                                <svg class="ico-svg" viewBox="0 0 192 512" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="img/sprites/sprite-mono.svg#angle-right" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </i>
+                        </button>
+                    </div>
+                </div>
+            </div><!--/.section__header--nav -->
+        </div><!--/.section__header -->
+        <div class="section__content">
+            <div class="conditions">
+                <div class="swiper-container conditions__slider">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="#" class="conditions__item">
+                                <div class="conditions__wrap">
+                                    <div class="conditions__num">01</div>
+                                    <div class="conditions__title">Онлайн-бронирование</div>
+                                    <div class="conditions__text">от 4,44% до 30 лет</div>
+                                    <div class="conditions__footer">
+                                        <div class="conditions__footer--text">Перейти</div>
+                                        <div class="conditions__footer--arrow">
+                                            <svg class="ico-svg" viewBox="0 0 25 12" xmlns="http://www.w3.org/2000/svg">
+                                                <use xlink:href="img/sprites/sprite-mono.svg#arrow-right" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a><!--/.conditions__item -->
+                        </div><!--/.swiper-slide -->
+                        <div class="swiper-slide">
+                            <a href="#" class="conditions__item">
+                                <div class="conditions__wrap">
+                                    <div class="conditions__num">02</div>
+                                    <div class="conditions__title">Рассрочка</div>
+                                    <div class="conditions__text">Текст в две строки если нужно что нибудь подписать</div>
+                                    <div class="conditions__footer">
+                                        <div class="conditions__footer--text">Перейти</div>
+                                        <div class="conditions__footer--arrow">
+                                            <svg class="ico-svg" viewBox="0 0 25 12" xmlns="http://www.w3.org/2000/svg">
+                                                <use xlink:href="img/sprites/sprite-mono.svg#arrow-right" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a><!--/.conditions__item -->
+                        </div><!--/.swiper-slide -->
+                        <div class="swiper-slide">
+                            <a href="#" class="conditions__item">
+                                <div class="conditions__wrap">
+                                    <div class="conditions__num">03</div>
+                                    <div class="conditions__title">Трейд ин</div>
+                                    <div class="conditions__text">Текст в две строки если нужно что нибудь подписать</div>
+                                    <div class="conditions__footer">
+                                        <div class="conditions__footer--text">Перейти</div>
+                                        <div class="conditions__footer--arrow">
+                                            <svg class="ico-svg" viewBox="0 0 25 12" xmlns="http://www.w3.org/2000/svg">
+                                                <use xlink:href="img/sprites/sprite-mono.svg#arrow-right" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a><!--/.conditions__item -->
+                        </div><!--/.swiper-slide -->
+                        <div class="swiper-slide">
+                            <a href="#" class="conditions__item">
+                                <div class="conditions__wrap">
+                                    <div class="conditions__num">04</div>
+                                    <div class="conditions__title">Рефинансирование</div>
+                                    <div class="conditions__text">Текст в две строки если нужно что нибудь подписать</div>
+                                    <div class="conditions__footer">
+                                        <div class="conditions__footer--text">Перейти</div>
+                                        <div class="conditions__footer--arrow">
+                                            <svg class="ico-svg" viewBox="0 0 25 12" xmlns="http://www.w3.org/2000/svg">
+                                                <use xlink:href="img/sprites/sprite-mono.svg#arrow-right" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a><!--/.conditions__item -->
+                        </div><!--/.swiper-slide -->
+                        <div class="swiper-slide">
+                            <a href="#" class="conditions__item">
+                                <div class="conditions__wrap">
+                                    <div class="conditions__num">05</div>
+                                    <div class="conditions__title">Рассрочка</div>
+                                    <div class="conditions__text">Текст в две строки если нужно что нибудь подписать</div>
+                                    <div class="conditions__footer">
+                                        <div class="conditions__footer--text">Перейти</div>
+                                        <div class="conditions__footer--arrow">
+                                            <svg class="ico-svg" viewBox="0 0 25 12" xmlns="http://www.w3.org/2000/svg">
+                                                <use xlink:href="img/sprites/sprite-mono.svg#arrow-right" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a><!--/.conditions__item -->
+                        </div><!--/.swiper-slide -->
+                        <div class="swiper-slide">
+                            <a href="#" class="conditions__item">
+                                <div class="conditions__wrap">
+                                    <div class="conditions__num">06</div>
+                                    <div class="conditions__title">Трейд ин</div>
+                                    <div class="conditions__text">Текст в две строки если нужно что нибудь подписать</div>
+                                    <div class="conditions__footer">
+                                        <div class="conditions__footer--text">Перейти</div>
+                                        <div class="conditions__footer--arrow">
+                                            <svg class="ico-svg" viewBox="0 0 25 12" xmlns="http://www.w3.org/2000/svg">
+                                                <use xlink:href="img/sprites/sprite-mono.svg#arrow-right" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a><!--/.conditions__item -->
+                        </div><!--/.swiper-slide -->
+                        <div class="swiper-slide">
+                            <a href="#" class="conditions__item">
+                                <div class="conditions__wrap">
+                                    <div class="conditions__num">07</div>
+                                    <div class="conditions__title">Рефинансирование</div>
+                                    <div class="conditions__text">Текст в две строки если нужно что нибудь подписать</div>
+                                    <div class="conditions__footer">
+                                        <div class="conditions__footer--text">Перейти</div>
+                                        <div class="conditions__footer--arrow">
+                                            <svg class="ico-svg" viewBox="0 0 25 12" xmlns="http://www.w3.org/2000/svg">
+                                                <use xlink:href="img/sprites/sprite-mono.svg#arrow-right" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a><!--/.conditions__item -->
+                        </div><!--/.swiper-slide -->
+                    </div>
+                </div><!--/.conditions__slider -->
+            </div><!--/.conditions -->
+        </div><!--/.section__content -->
+    </div><!--/.section -->
+
+{% endblock %}

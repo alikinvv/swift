@@ -1,0 +1,507 @@
+{% extends "src/template/layout/_template.njk" %}
+
+{%- set page_hide_breadcrumb = false -%}
+{% set title = "Журнал" %}
+
+{% block content %}
+
+    <div class="tags">
+        <div class="swiper-container tags__slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <a href="#" class="tags__item active">Все статьи</a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" class="tags__item">Дом и уют</a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" class="tags__item">Закон и порядок</a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" class="tags__item">Сделка</a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" class="tags__item">Живут же люди</a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" class="tags__item">Кругозор</a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" class="tags__item">О покупке</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section__header">
+            <div class="section__header--title">Статьи</div><!--/.section__header--title -->
+            <div class="section__header--nav">
+                <a href="#" class="section__header--link">Все статьи</a>
+            </div><!--/.section__header--nav -->
+        </div><!--/.section__header -->
+        <div class="section__content">
+            <div class="grid-4">
+                <div class="article-item">
+                    <a href="#" class="article-item__media">
+                        <img src="img/content/best_post__01.jpg" class="img-fluid" alt="">
+                    </a><!--/.article-item__media -->
+                    <div class="article-item__content">
+                        <a href="#" class="article-item__tag">Просто о сложном</a>
+                        <a href="#" class="article-item__title">Зачем использовать переуступку и как это работает заголовок</a>
+                    </div>
+                    <div class="article-item__info">
+                        <div class="article-item__date">24 сентября 2024</div>
+                        <div class="article-item__time">
+                            <i class="article-item__time--icon">
+                                <svg class="ico-svg" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="img/sprites/sprite-mono.svg#time" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </i>
+                            <span class="article-item__time--text">10 минут</span>
+                        </div>
+                    </div><!--/.article-item__content -->
+                </div><!--/.article-item -->
+                <div class="article-item">
+                    <a href="#" class="article-item__media">
+                        <img src="img/content/best_post__02.jpg" class="img-fluid" alt="">
+                    </a><!--/.article-item__media -->
+                    <div class="article-item__content">
+                        <a href="#" class="article-item__tag">Просто о сложном</a>
+                        <a href="#" class="article-item__title">Как купить квартиру подешевле</a>
+                    </div>
+                    <div class="article-item__info">
+                        <div class="article-item__date">24 сентября 2024</div>
+                        <div class="article-item__time">
+                            <i class="article-item__time--icon">
+                                <svg class="ico-svg" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="img/sprites/sprite-mono.svg#time" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </i>
+                            <span class="article-item__time--text">10 минут</span>
+                        </div>
+                    </div><!--/.article-item__content -->
+                </div><!--/.article-item -->
+                <div class="article-item">
+                    <a href="#" class="article-item__media">
+                        <img src="img/content/best_post__03.jpg" class="img-fluid" alt="">
+                    </a><!--/.article-item__media -->
+                    <div class="article-item__content">
+                        <a href="#" class="article-item__tag">Просто о сложном</a>
+                        <a href="#" class="article-item__title">Что нужно знать для coбeceдoвaния в aгeнтcтвe нeдвижимocти</a>
+                    </div>
+                    <div class="article-item__info">
+                        <div class="article-item__date">24 сентября 2024</div>
+                        <div class="article-item__time">
+                            <i class="article-item__time--icon">
+                                <svg class="ico-svg" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="img/sprites/sprite-mono.svg#time" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </i>
+                            <span class="article-item__time--text">10 минут</span>
+                        </div>
+                    </div><!--/.article-item__content -->
+                </div><!--/.article-item -->
+                <div class="article-item">
+                    <a href="#" class="article-item__media">
+                        <img src="img/content/best_post__04.jpg" class="img-fluid" alt="">
+                    </a><!--/.article-item__media -->
+                    <div class="article-item__content">
+                        <a href="#" class="article-item__tag">Просто о сложном</a>
+                        <a href="#" class="article-item__title">Течет крыша, исправляем, звоним в жкх, жалуемся</a>
+                    </div>
+                    <div class="article-item__info">
+                        <div class="article-item__date">24 сентября 2024</div>
+                        <div class="article-item__time">
+                            <i class="article-item__time--icon">
+                                <svg class="ico-svg" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="img/sprites/sprite-mono.svg#time" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </i>
+                            <span class="article-item__time--text">10 минут</span>
+                        </div>
+                    </div><!--/.article-item__content -->
+                </div><!--/.article-item -->
+            </div>
+        </div><!--/.section__content -->
+        <div class="section__mobile">
+            <a href="#" class="btn">Смотреть все</a>
+        </div>
+    </div><!--/.section -->
+
+    <div class="section">
+        <div class="section__header">
+            <div class="section__header--title">Дом и уют</div><!--/.section__header--title -->
+            <div class="section__header--nav">
+                <a href="#" class="section__header--link">Все статьи</a>
+            </div><!--/.section__header--nav -->
+        </div><!--/.section__header -->
+        <div class="section__content">
+            <div class="grid-2">
+                <div class="article-item">
+                    <a href="#" class="article-item__media">
+                        <img src="img/content/journal_image_lg.jpg" class="img-fluid" alt="">
+                    </a><!--/.article-item__media -->
+                    <div class="article-item__content">
+                        <a href="#" class="article-item__title">Bo вpeмя интepвью зaчитaл pэп: 7 пpичин, из-зa кoтopыx oткaжyт нa coбeceдoвaнии в aгeнтcтвe нeдвижимocти</a>
+                    </div>
+                    <div class="article-item__info">
+                        <div class="article-item__date">24 сентября 2024</div>
+                        <div class="article-item__time">
+                            <i class="article-item__time--icon">
+                                <svg class="ico-svg" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="img/sprites/sprite-mono.svg#time" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </i>
+                            <span class="article-item__time--text">10 минут</span>
+                        </div>
+                    </div><!--/.article-item__content -->
+                </div><!--/.article-item -->
+                <div class="article-item">
+                    <a href="#" class="article-item__media">
+                        <img src="img/content/journal_image_lg.jpg" class="img-fluid" alt="">
+                    </a><!--/.article-item__media -->
+                    <div class="article-item__content">
+                        <a href="#" class="article-item__title">Популярные стили интерьера</a>
+                    </div>
+                    <div class="article-item__info">
+                        <div class="article-item__date">24 сентября 2024</div>
+                        <div class="article-item__time">
+                            <i class="article-item__time--icon">
+                                <svg class="ico-svg" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="img/sprites/sprite-mono.svg#time" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </i>
+                            <span class="article-item__time--text">10 минут</span>
+                        </div>
+                    </div><!--/.article-item__content -->
+                </div><!--/.article-item -->
+            </div>
+        </div><!--/.section__content -->
+        <div class="section__mobile">
+            <a href="#" class="btn">Смотреть все</a>
+        </div>
+    </div><!--/.section -->
+
+
+    <div class="section">
+        <div class="section__header">
+            <div class="section__header--title">Дом и уют</div><!--/.section__header--title -->
+            <div class="section__header--nav">
+                <a href="#" class="section__header--link">Все статьи</a>
+            </div><!--/.section__header--nav -->
+        </div><!--/.section__header -->
+        <div class="section__content">
+            <div class="grid-3">
+                <div class="article-item">
+                    <a href="#" class="article-item__media">
+                        <img src="img/content/journal_image_md__04.jpg" class="img-fluid" alt="">
+                    </a><!--/.article-item__media -->
+                    <div class="article-item__content">
+                        <a href="#" class="article-item__title">Bo вpeмя интepвью зaчитaл pэп: 7 пpичин, из-зa кoтopыx oткaжyт нa coбeceдoвaнии в aгeнтcтвe нeдвижимocти </a>
+                    </div>
+                    <div class="article-item__info">
+                        <div class="article-item__date">24 сентября 2024</div>
+                        <div class="article-item__time">
+                            <i class="article-item__time--icon">
+                                <svg class="ico-svg" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="img/sprites/sprite-mono.svg#time" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </i>
+                            <span class="article-item__time--text">10 минут</span>
+                        </div>
+                    </div><!--/.article-item__content -->
+                </div><!--/.article-item -->
+                <div class="article-item">
+                    <a href="#" class="article-item__media">
+                        <img src="img/content/journal_image_md__05.jpg" class="img-fluid" alt="">
+                    </a><!--/.article-item__media -->
+                    <div class="article-item__content">
+                        <a href="#" class="article-item__title">Как купить квартиру подешевле</a>
+                    </div>
+                    <div class="article-item__info">
+                        <div class="article-item__date">24 сентября 2024</div>
+                        <div class="article-item__time">
+                            <i class="article-item__time--icon">
+                                <svg class="ico-svg" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="img/sprites/sprite-mono.svg#time" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </i>
+                            <span class="article-item__time--text">10 минут</span>
+                        </div>
+                    </div><!--/.article-item__content -->
+                </div><!--/.article-item -->
+                <div class="article-item">
+                    <a href="#" class="article-item__media">
+                        <img src="img/content/journal_image_md__06.jpg" class="img-fluid" alt="">
+                    </a><!--/.article-item__media -->
+                    <div class="article-item__content">
+                        <a href="#" class="article-item__title">Зачем использовать переуступку и как это работает заголовок</a>
+                    </div>
+                    <div class="article-item__info">
+                        <div class="article-item__date">24 сентября 2024</div>
+                        <div class="article-item__time">
+                            <i class="article-item__time--icon">
+                                <svg class="ico-svg" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="img/sprites/sprite-mono.svg#time" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </i>
+                            <span class="article-item__time--text">10 минут</span>
+                        </div>
+                    </div><!--/.article-item__content -->
+                </div><!--/.article-item -->
+            </div>
+        </div><!--/.section__content -->
+        <div class="section__mobile">
+            <a href="#" class="btn">Смотреть все</a>
+        </div>
+    </div><!--/.section -->
+
+    <div class="section">
+        <div class="section__header">
+            <div class="section__header--title">Новостройки</div><!--/.section__header--title -->
+            <div class="section__header--nav">
+                <a href="#" class="section__header--link">Все статьи</a>
+            </div><!--/.section__header--nav -->
+        </div><!--/.section__header -->
+        <div class="section__content">
+            <div class="grid-2">
+                <div class="article-item">
+                    <a href="#" class="article-item__media">
+                        <div class="article-item__media--wrap">
+                            <img src="img/content/journal_image_lg__04.jpg" class="img-fluid" alt="">
+                        </div>
+                    </a><!--/.article-item__media -->
+                    <div class="article-item__content">
+                        <a href="#" class="article-item__title">Bo вpeмя интepвью зaчитaл pэп: 7 пpичин, из-зa кoтopыx oткaжyт нa coбeceдoвaнии в aгeнтcтвe нeдвижимocти</a>
+                    </div>
+                    <div class="article-item__info">
+                        <div class="article-item__date">24 сентября 2024</div>
+                        <div class="article-item__time">
+                            <i class="article-item__time--icon">
+                                <svg class="ico-svg" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="img/sprites/sprite-mono.svg#time" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </i>
+                            <span class="article-item__time--text">10 минут</span>
+                        </div>
+                    </div><!--/.article-item__content -->
+                </div><!--/.article-item -->
+                <div class="post-list">
+                    <div class="mini-post">
+                        <a href="#" class="mini-post__image">
+                            <div class="mini-post__image--wrap">
+                                <img src="images\content\journal_image_xs__01.jpg" class="img-fluid" alt="">
+                            </div>
+                        </a>
+                        <div class="mini-post__content">
+                            <a href="#" class="mini-post__title">Как купить квартиру подешевле</a>
+                            <div class="mini-post__info">
+                                <div class="mini-post__date">24 сентября 2024</div>
+                                <div class="mini-post__time">
+                                    <i class="mini-post__time--icon">
+                                        <svg class="ico-svg" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                            <use xlink:href="img/sprites/sprite-mono.svg#time" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                        </svg>
+                                    </i>
+                                    <span class="mini-post__time--text">10 минут</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mini-post">
+                        <a href="#" class="mini-post__image">
+                            <div class="mini-post__image--wrap">
+                                <img src="images\content\journal_image_xs__02.jpg" class="img-fluid" alt="">
+                            </div>
+                        </a>
+                        <div class="mini-post__content">
+                            <a href="#" class="mini-post__title">Как купить квартиру подешевле и кому это нужно переуступка заголовок</a>
+                            <div class="mini-post__info">
+                                <div class="mini-post__date">24 сентября 2024</div>
+                                <div class="mini-post__time">
+                                    <i class="mini-post__time--icon">
+                                        <svg class="ico-svg" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                            <use xlink:href="img/sprites/sprite-mono.svg#time" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                        </svg>
+                                    </i>
+                                    <span class="mini-post__time--text">10 минут</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mini-post">
+                        <a href="#" class="mini-post__image">
+                            <div class="mini-post__image--wrap">
+                                <img src="images\content\journal_image_xs__03.jpg" class="img-fluid" alt="">
+                            </div>
+                        </a>
+                        <div class="mini-post__content">
+                            <a href="#" class="mini-post__title">Как купить квартиру подешевле и кому это нужно переуступка заголовок</a>
+                            <div class="mini-post__info">
+                                <div class="mini-post__date">24 сентября 2024</div>
+                                <div class="mini-post__time">
+                                    <i class="mini-post__time--icon">
+                                        <svg class="ico-svg" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                            <use xlink:href="img/sprites/sprite-mono.svg#time" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                        </svg>
+                                    </i>
+                                    <span class="mini-post__time--text">10 минут</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--/.section__content -->
+        <div class="section__mobile">
+            <a href="#" class="btn">Смотреть все</a>
+        </div>
+    </div><!--/.section -->
+
+    <div class="section">
+        <div class="section__header">
+            <div class="section__header--title">Дом и уют</div><!--/.section__header--title -->
+            <div class="section__header--nav">
+                <a href="#" class="section__header--link">Все статьи</a>
+            </div><!--/.section__header--nav -->
+        </div><!--/.section__header -->
+        <div class="section__content">
+            <div class="grid-3">
+                <div class="article-item">
+                    <a href="#" class="article-item__media">
+                        <img src="img/content/journal_image_md__01.jpg" class="img-fluid" alt="">
+                    </a><!--/.article-item__media -->
+                    <div class="article-item__content">
+                        <a href="#" class="article-item__title">Bo вpeмя интepвью зaчитaл pэп: 7 пpичин, из-зa кoтopыx oткaжyт нa coбeceдoвaнии в aгeнтcтвe нeдвижимocти </a>
+                    </div>
+                    <div class="article-item__info">
+                        <div class="article-item__date">24 сентября 2024</div>
+                        <div class="article-item__time">
+                            <i class="article-item__time--icon">
+                                <svg class="ico-svg" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="img/sprites/sprite-mono.svg#time" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </i>
+                            <span class="article-item__time--text">10 минут</span>
+                        </div>
+                    </div><!--/.article-item__content -->
+                </div><!--/.article-item -->
+                <div class="article-item">
+                    <a href="#" class="article-item__media">
+                        <img src="img/content/journal_image_md__02.jpg" class="img-fluid" alt="">
+                    </a><!--/.article-item__media -->
+                    <div class="article-item__content">
+                        <a href="#" class="article-item__title">Как купить квартиру подешевле</a>
+                    </div>
+                    <div class="article-item__info">
+                        <div class="article-item__date">24 сентября 2024</div>
+                        <div class="article-item__time">
+                            <i class="article-item__time--icon">
+                                <svg class="ico-svg" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="img/sprites/sprite-mono.svg#time" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </i>
+                            <span class="article-item__time--text">10 минут</span>
+                        </div>
+                    </div><!--/.article-item__content -->
+                </div><!--/.article-item -->
+                <div class="article-item">
+                    <a href="#" class="article-item__media">
+                        <img src="img/content/journal_image_md__03.jpg" class="img-fluid" alt="">
+                    </a><!--/.article-item__media -->
+                    <div class="article-item__content">
+                        <a href="#" class="article-item__title">Зачем использовать переуступку и как это работает заголовок</a>
+                    </div>
+                    <div class="article-item__info">
+                        <div class="article-item__date">24 сентября 2024</div>
+                        <div class="article-item__time">
+                            <i class="article-item__time--icon">
+                                <svg class="ico-svg" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="img/sprites/sprite-mono.svg#time" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </i>
+                            <span class="article-item__time--text">10 минут</span>
+                        </div>
+                    </div><!--/.article-item__content -->
+                </div><!--/.article-item -->
+            </div>
+        </div><!--/.section__content -->
+        <div class="section__mobile">
+            <a href="#" class="btn">Смотреть все</a>
+        </div>
+    </div><!--/.section -->
+
+    <div class="section mb-0">
+        <div class="section__header">
+            <div class="section__header--title">Закон и порядок</div><!--/.section__header--title -->
+            <div class="section__header--nav">
+                <a href="#" class="section__header--link">Все статьи</a>
+            </div><!--/.section__header--nav -->
+        </div><!--/.section__header -->
+        <div class="section__content">
+            <div class="grid-2">
+                <div class="article-item">
+                    <a href="#" class="article-item__media">
+                        <img src="img/content/journal_image_lg__02.jpg" class="img-fluid" alt="">
+                    </a><!--/.article-item__media -->
+                    <div class="article-item__content">
+                        <a href="#" class="article-item__title">Bo вpeмя интepвью зaчитaл pэп: 7 пpичин, из-зa кoтopыx oткaжyт нa coбeceдoвaнии в aгeнтcтвe нeдвижимocти</a>
+                    </div>
+                    <div class="article-item__info">
+                        <div class="article-item__time">
+                            <i class="article-item__time--icon">
+                                <svg class="ico-svg" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="img/sprites/sprite-mono.svg#time" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </i>
+                            <span class="article-item__time--text">10 минут</span>
+                        </div>
+                    </div><!--/.article-item__content -->
+                </div><!--/.article-item -->
+                <div class="article-item">
+                    <a href="#" class="article-item__media">
+                        <img src="img/content/journal_image_lg__03.jpg" class="img-fluid" alt="">
+                    </a><!--/.article-item__media -->
+                    <div class="article-item__content">
+                        <a href="#" class="article-item__title">Популярные стили интерьера</a>
+                    </div>
+                    <div class="article-item__info">
+                        <div class="article-item__date">24 сентября 2024</div>
+                        <div class="article-item__time">
+                            <i class="article-item__time--icon">
+                                <svg class="ico-svg" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="img/sprites/sprite-mono.svg#time" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </i>
+                            <span class="article-item__time--text">10 минут</span>
+                        </div>
+                    </div><!--/.article-item__content -->
+                </div><!--/.article-item -->
+            </div>
+        </div><!--/.section__content -->
+        <div class="section__mobile">
+            <a href="#" class="btn">Смотреть все</a>
+        </div>
+    </div><!--/.section -->
+
+{% endblock %}
+
+
+{% block breadcrumb %}
+    <div class="breadcrumb breadcrumb--hide-desktop">
+        <a href="#" class="breadcrumb__back">
+            <i class="breadcrumb__back--icon">
+                <svg class="ico-svg" viewBox="0 0 192 512" xmlns="http://www.w3.org/2000/svg">
+                    <use xlink:href="img/sprites/sprite-mono.svg#angle-left" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                </svg>
+            </i>
+            <span class="breadcrumb__back--text">Главная</span>
+            <i class="breadcrumb__back--points">
+                <svg class="ico-svg" viewBox="0 0 16 9" xmlns="http://www.w3.org/2000/svg">
+                    <use xlink:href="img/sprites/sprite-color.svg#more" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                </svg>
+            </i>
+        </a>
+    </div><!-- /.breadcrumb -->
+{% endblock %}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  {% block head %}
+    <meta charset="utf-8">
+    <title>{{ title }}</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:image" content="img/dest/preview.jpg">
+
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/styles/choices.min.css" />
+    <link rel="stylesheet" href="css/main.css">
+  {% endblock %}
+</head>
+
+<body>
+<div class="root">
+
+    {% block header %}
+        {% include "src/template/parts/_header.njk" %}
+    {% endblock %}
+
+    <div class="root__wrap">
+
+        {% block sidebar %}
+            {% include "src/template/parts/_sidebar.njk" %}
+        {% endblock %}
+
+        <div class="root__page {% if is_filter %} root__page--is-filter{% endif %}">
+
+            {% block main %}
+                <section class="root__main">
+                    <div class="container-fluid">
+                        {% if not page_hide_breadcrumb %}
+                            {% block breadcrumb %}
+                                {% include "src/template/parts/_breadcrumb.njk" %}
+                            {% endblock %}
+                        {% endif %}
+
+                        {% block h1 %}
+                            <h1>{{ title }}</h1>
+                        {% endblock %}
+
+                        {% block content %}
+
+                        {% endblock %}
+                    </div>
+                </section>
+            {% endblock %}
+
+            {% block footer %}
+                {% include "src/template/parts/_footer.njk" %}
+            {% endblock %}
+        </div>
+
+    </div>
+
+</div>
+
+  {% block scripts %}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.4.0/dist/lazyload.min.js"></script>
+    <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script src="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/scripts/choices.min.js"></script>
+    <script src="js/app.js"></script>
+  {% endblock %}
+
+</body>
+
+</html>

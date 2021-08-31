@@ -1,0 +1,21 @@
+.collapse {
+
+    &-control {
+
+    }
+
+    &-content {
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        will-change: max-height;
+        transition: all 0.3s ease-out;
+    }
+
+    &.open {
+
+        .collapse-content {
+            opacity: 1;
+        }
+    }
+}

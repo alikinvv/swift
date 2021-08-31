@@ -1,0 +1,133 @@
+.breadcrumb {
+    font-size: 0;
+    line-height: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: size-rel(54px);
+
+    &__back {
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+        color: $accent;
+        text-decoration: none;
+        font-size: size-rel(12px);
+        line-height: size-rel(22px);
+
+        &:hover {
+            color: $accent;
+            text-decoration: none;
+
+        }
+
+        &--icon {
+            font-size: 0;
+            line-height: 0;
+            height: size-rel(16px);
+            margin-right: size-rel(8px);
+            display: inline-block;
+            fill: $accent;
+        }
+
+        &--text {
+            white-space: nowrap;
+            display: inline-block;
+        }
+
+        &--points {
+            font-size: 0;
+            line-height: 0;
+            height: size-rel(9px);
+            margin-left: size-rel(24px);
+            display: inline-block;
+            stroke: $accent;
+        }
+    }
+
+    &__main {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: none;
+        font-size: size-rel(10px);
+        line-height: size-rel(20px);
+
+        li {
+            position: relative;
+            padding-right: 20px;
+
+            &:before {
+                right: size-rel(8px);
+                top: calc(50% - 2px);
+                width: 3px;
+                height: 3px;
+                content: '';
+                font-size: 0;
+                line-height: 0;
+                border-radius: 50%;
+                position: absolute;
+                background: $gray;
+                display: inline-block;
+            }
+
+            &:last-child {
+                padding-right: 0;
+
+                &:before {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &__item {
+        white-space: nowrap;
+        font-size: size-rel(12px);
+        line-height: size-rel(22px);
+        color: $secondary;
+        text-decoration: none;
+
+        &:hover {
+            color: $primary;
+            text-decoration: none;
+        }
+
+        &.active {
+            color: $primary;
+            text-decoration: none;
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        height: size-rel(70px);
+        margin-bottom: size-rel(16px);
+
+        &--hide-desktop {
+            opacity: 0;
+            margin-bottom: 0;
+            visibility: hidden;
+        }
+
+        &__back {
+            display: none;
+        }
+
+        &__main {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+    }
+
+    @include media-breakpoint-up(xl) {}
+
+    @include media-breakpoint-up(xxl) {
+
+        &__main {
+            font-size: size-rel(12px);
+            line-height: size-rel(22px);
+        }
+    }
+}

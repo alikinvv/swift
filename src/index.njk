@@ -1,0 +1,20 @@
+{% extends "src/template/layout/_template.njk" %}
+
+{%- set page_hide_breadcrumb = true -%}
+{% set title = "Список страниц" %}
+
+{% block content %}
+
+    <ul>
+        <li><a href="_ui-kit.html">UI kit</a></li>
+        <li><a href="listing-zhk.html">Листинг ЖК</a></li>
+        <li><a href="listing-zhk-not-found.html">Листинг ЖК - не найдено</a></li>
+        <li><a href="apartments.html">Выбор квартир</a></li>
+        <li><a href="apartments_list.html">Выбор квартир - Список</a></li>
+        <li><a href="article.html">Статья</a></li>
+        <li><a href="journal.html">Журнал</a></li>
+        <li><a href="object.html">Детальная ЖК</a></li>
+        <li><a href="flat.html">Квартира</a></li>
+    </ul>
+
+{% endblock %}
