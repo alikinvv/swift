@@ -12,7 +12,6 @@
         margin-bottom: size-rel(40px);
 
         &--block {
-
             &:not(:last-child) {
                 margin-bottom: size-rel(40px);
             }
@@ -25,7 +24,6 @@
         list-style: none;
 
         > li {
-
             &:not(:last-child) {
                 margin-bottom: size-rel(8px);
             }
@@ -33,7 +31,6 @@
     }
 
     &__worktime {
-
     }
 
     &__phone {
@@ -70,7 +67,7 @@
 
         &--title {
             font-weight: 600;
-            font-size: size-rel(14px);
+            font-size: size-rel(16px);
             line-height: size-rel(24px);
             margin-bottom: size-rel(24px);
         }
@@ -96,11 +93,9 @@
     }
 
     &__data {
-
     }
 
     &__search {
-
         &--label {
             color: $secondary;
         }
@@ -147,7 +142,6 @@
     }
 
     @media (min-width: $screen-xs) {
-
         &__main {
             display: flex;
             flex-wrap: wrap;
@@ -164,12 +158,9 @@
     }
 
     @include media-breakpoint-up(sm) {
-
     }
 
-
     @include media-breakpoint-up(md) {
-
         &__top {
             display: flex;
             justify-content: space-between;
@@ -216,12 +207,10 @@
     }
 
     @include media-breakpoint-up(xl) {
-
         &__top {
             padding-top: size-rel(80px);
             padding-bottom: size-rel(80px);
         }
-
     }
 
     @include media-breakpoint-up(xxl) {
@@ -245,7 +234,6 @@
             width: calc(100% - 495px);
         }
     }
-
 }
 
 .footer-bottom {
@@ -261,10 +249,18 @@
         margin: 0 0 size-rel(24px) 0;
 
         > li {
-
             &:not(:last-child) {
                 margin-bottom: size-rel(16px);
             }
+        }
+    }
+
+    &__link {
+        font-size: 12px;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
         }
     }
 
@@ -274,7 +270,6 @@
         list-style: none;
 
         > li {
-
             &:not(:last-child) {
                 margin-bottom: size-rel(16px);
             }
@@ -317,14 +312,12 @@
     }
 
     @include media-breakpoint-up(sm) {
-
         &__info {
             display: flex;
             align-items: center;
             justify-content: space-between;
 
             > li {
-
                 &:not(:last-child) {
                     margin-bottom: 0;
                     margin-right: size-rel(40px);
@@ -341,7 +334,6 @@
             align-items: center;
 
             > li {
-
                 &:not(:last-child) {
                     margin-bottom: 0;
                     margin-right: size-rel(40px);
@@ -394,7 +386,6 @@
 
         &:focus,
         &:active {
-
             .social__link--gray {
                 z-index: 10;
                 opacity: 1;
@@ -407,7 +398,6 @@
         }
 
         &:hover {
-
             .social__link--gray {
                 z-index: 1;
                 opacity: 0;
@@ -421,9 +411,7 @@
     }
 
     @include media-breakpoint-up(lg) {
-
         &__link {
-
             &--color {
                 z-index: 1;
                 opacity: 0;
@@ -435,7 +423,6 @@
             }
 
             &:hover {
-
                 .social__link--gray {
                     z-index: 1;
                     opacity: 0;
@@ -451,19 +438,14 @@
 }
 
 .footer-nav {
-
     &__group {
-
         &:not(:last-child) {
             margin-bottom: size-rel(40px);
         }
 
         &--open {
-
             .footer-nav {
-
                 &__toggle {
-
                     &--icon {
                         transform: rotate(180deg);
                     }
@@ -474,9 +456,8 @@
                 }
 
                 &__menu {
-
                     li {
-                        &:nth-child(n+10) {
+                        &:nth-child(n + 10) {
                             display: block;
                         }
                     }
@@ -493,10 +474,6 @@
         margin-bottom: size-rel(16px);
     }
 
-    &__content {
-
-    }
-
     &__menu {
         margin: 0;
         padding: 0;
@@ -507,7 +484,7 @@
         li {
             margin-bottom: size-rel(16px);
 
-            &:nth-child(n+10) {
+            &:nth-child(n + 10) {
                 display: none;
             }
 
@@ -533,8 +510,6 @@
         display: flex;
         align-items: center;
         color: $accent;
-        font-size: size-rel(12px);
-        line-height: size-rel(22px);
 
         svg {
             fill: $accent;
@@ -565,7 +540,6 @@
     }
 
     @include media-breakpoint-up(md) {
-
         &__group {
             width: calc(33.33% - 0.75rem);
 
@@ -576,22 +550,18 @@
     }
 
     @include media-breakpoint-up(lg) {
-
         &__group {
             width: calc(33.33% - 0.75rem);
 
             &:last-child {
-          //      width: 180px;
+                //      width: 180px;
             }
 
             &--open {
-
                 .footer-nav {
-
                     &__menu {
-
                         li {
-                            &:nth-child(n+14) {
+                            &:nth-child(n + 14) {
                                 display: block;
                             }
                         }
@@ -601,15 +571,14 @@
         }
 
         &__menu {
-
             li {
                 margin-bottom: size-rel(8px);
 
-                &:nth-child(n+10) {
+                &:nth-child(n + 10) {
                     display: block;
                 }
 
-                &:nth-child(n+14) {
+                &:nth-child(n + 14) {
                     display: none;
                 }
 
@@ -625,7 +594,6 @@
     }
 
     @include media-breakpoint-up(xl) {
-
         &__group {
             width: 240px;
 
@@ -635,16 +603,13 @@
         }
 
         &__menu {
-
             li {
                 margin-bottom: size-rel(8px);
             }
         }
     }
 
-
     @include media-breakpoint-up(xxl) {
-
         &__group {
             width: calc(33.33% - 1.5rem);
 

@@ -17,7 +17,7 @@
     }
 
     &__header {
-        padding: size-rel(24px) 0;
+        padding: size-rel(24px) 0 80px;
     }
 
     &__footer {
@@ -43,7 +43,6 @@
         list-style: none;
 
         li {
-
             &:not(:last-child) {
                 margin-bottom: 8px;
             }
@@ -80,7 +79,6 @@
     }
 
     &__primary {
-        margin: auto 0;
         padding: 0;
         list-style: none;
         font-weight: 500;
@@ -95,10 +93,10 @@
                 position: relative;
                 display: inline-block;
                 text-decoration: none;
-                transition: .2s;
+                transition: 0.2s;
 
                 &:before {
-                    left: -14px;
+                    left: -21px;
                     opacity: 0;
                     content: '';
                     visibility: hidden;
@@ -110,28 +108,25 @@
                     border-radius: 50%;
                     display: inline-block;
                     position: absolute;
-                    transition: .2s;
+                    transition: 0.2s;
                     background: $accent;
                 }
 
                 &:hover {
                     color: $secondary;
                     text-decoration: none;
-                    transition: .2s;
+                    transition: 0.2s;
 
                     &:before {
-                        opacity: 1;
-                        visibility: visible;
-                        transition: .2s;
+                        opacity: 0;
                     }
                 }
 
                 &.active {
-
                     &:before {
                         opacity: 1;
                         visibility: visible;
-                        transition: .2s;
+                        transition: 0.2s;
                     }
 
                     &:hover {
@@ -153,13 +148,13 @@
         background: $accent;
         display: flex;
         flex-direction: column;
-        transition: .5s;
+        transition: 0.5s;
 
         &--open {
             opacity: 1;
             margin-left: 0;
             visibility: visible;
-            transition: .5s;
+            transition: 0.5s;
         }
     }
 
@@ -184,18 +179,17 @@
                 position: relative;
                 display: inline-block;
                 text-decoration: none;
-                transition: .2s;
+                transition: 0.2s;
                 opacity: 1;
 
                 &:hover {
                     color: $white;
                     text-decoration: none;
-                    transition: .2s;
+                    transition: 0.2s;
                     opacity: 0.5;
                 }
 
                 &.active {
-
                     &:hover {
                         opacity: 1;
                     }
@@ -234,7 +228,6 @@
         width: size-rel(270px);
 
         &__logo {
-
         }
 
         &__header {
@@ -307,9 +300,7 @@
         }
 
         &__contact {
-
             li {
-
                 &:not(:last-child) {
                     margin-bottom: 0;
                 }
@@ -346,4 +337,3 @@
         }
     }
 }
-

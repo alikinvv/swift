@@ -2,5 +2,13 @@
     "tabWidth": 4,
     "singleQuote": true,
     "printWidth": 160,
-    "bracketSpacing": true
+    "bracketSpacing": true,
+    "overrides": [
+        {
+            "files": "*.njk",
+            "options": {
+                "parser": "html"
+            }
+        }
+    ]
 }

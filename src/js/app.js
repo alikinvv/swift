@@ -784,3 +784,7 @@ let flatMedia = function () {
     });
 };
 flatMedia();
+
+$('body').on('click', '.scrolltop', () => {
+    $('html, body').stop().animate({ scrollTop: 0 }, 500, 'swing');
+});

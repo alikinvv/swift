@@ -760,3 +760,8 @@ var flatMedia = function flatMedia() {
 };
 
 flatMedia();
+$('body').on('click', '.scrolltop', function () {
+  $('html, body').stop().animate({
+    scrollTop: 0
+  }, 500, 'swing');
+});

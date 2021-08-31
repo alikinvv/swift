@@ -35,7 +35,6 @@
     }
 
     @include media-breakpoint-up(lg) {
-
         &__header {
             display: none;
         }
@@ -54,7 +53,6 @@
     }
 
     @include media-breakpoint-up(xl) {
-
         &__page {
             padding-left: size-rel(270px);
         }
@@ -64,9 +62,7 @@
         }
     }
 
-
     @include media-breakpoint-up(xxl) {
-
         &__page {
             padding-left: size-rel(365px);
         }
@@ -74,7 +70,6 @@
 }
 
 .container-fluid {
-
     @include media-breakpoint-up(lg) {
         padding-left: size-rel(40px);
         padding-right: size-rel(40px);
@@ -183,9 +178,7 @@
     }
 
     @include media-breakpoint-up(sm) {
-
         &__header {
-
             &--sm {
                 display: flex;
                 align-items: center;
@@ -228,9 +221,7 @@
     }
 
     @include media-breakpoint-up(xxl) {
-
         &__header {
-
             &--title {
                 letter-spacing: -0.02rem;
                 font-size: size-rel(32px);
@@ -241,7 +232,6 @@
 }
 
 .viewed {
-
     &__slider {
         overflow: visible;
     }
@@ -251,25 +241,24 @@
     }
 
     @include media-breakpoint-up(sm) {
-
         .swiper-slide {
             width: 288px;
         }
     }
 
-    @include media-breakpoint-up(md) {}
+    @include media-breakpoint-up(md) {
+    }
 
     @include media-breakpoint-up(lg) {
-
         .swiper-slide {
             width: 230px;
         }
     }
 
-    @include media-breakpoint-up(xl) {}
+    @include media-breakpoint-up(xl) {
+    }
 
     @include media-breakpoint-up(xxl) {
-
         .swiper-slide {
             width: 326px;
         }
@@ -303,7 +292,7 @@
     align-items: center;
     justify-content: center;
     background: $white;
-    transition: .2s;
+    transition: 0.2s;
 
     &.swiper-button-disabled {
         opacity: 0.2;
@@ -331,7 +320,7 @@
     &:hover {
         background: $accent;
         border-color: $accent;
-        transition: .2s;
+        transition: 0.2s;
 
         svg {
             fill: $white;
@@ -360,14 +349,12 @@
     }
 
     &__button {
-
         .btn {
             width: 100%;
         }
     }
 
     @media (min-width: $screen-xs) {
-
         &__grid {
             grid-template-columns: 1fr 1fr;
         }
@@ -459,9 +446,7 @@
     }
 
     @include media-breakpoint-up(lg) {
-
         &__media {
-
             &--wrap {
                 margin: 0;
             }
@@ -570,7 +555,7 @@
                 display: inline-block;
                 background: $secondary;
                 position: absolute;
-                transition: .3s;
+                transition: 0.3s;
             }
 
             span {
@@ -594,9 +579,7 @@
         }
 
         &.active {
-
             .sorter__item--icon {
-
                 span,
                 &:after,
                 &:before {
@@ -606,9 +589,7 @@
         }
 
         &.sorter-invert {
-
             .sorter__item--icon {
-
                 span {
                     width: size-rel(6px);
                 }
@@ -725,7 +706,6 @@
     }
 
     @include media-breakpoint-up(xxl) {
-
         &__item {
             font-size: size-rel(14px);
             line-height: size-rel(22px);
@@ -763,7 +743,6 @@
     }
 
     @include media-breakpoint-up(lg) {
-
     }
 
     @include media-breakpoint-up(xl) {
@@ -865,7 +844,6 @@
     }
 
     @include media-breakpoint-up(lg) {
-
         &__image {
             width: size-rel(120px);
 
@@ -876,7 +854,6 @@
     }
 
     @include media-breakpoint-up(xxl) {
-
         &__image {
             width: size-rel(160px);
         }
@@ -955,15 +932,13 @@
         line-height: 0;
         display: inline-block;
         transform: rotate(0deg);
-        transition: .3s;
+        transition: 0.3s;
     }
 
     &.open {
-
         .btn-view__icon {
             transform: rotate(180deg);
-            transition: .3s;
-
+            transition: 0.3s;
         }
     }
 
@@ -985,17 +960,14 @@
     grid-row-gap: size-rel(24px);
 
     &__elem {
-
-        &:nth-child(n+5) {
+        &:nth-child(n + 5) {
             display: none;
         }
     }
 
     &--open {
-
         .docs__elem {
-
-            &:nth-child(n+5) {
+            &:nth-child(n + 5) {
                 display: block;
             }
         }
@@ -1034,7 +1006,6 @@
         grid-template-columns: 1fr 1fr;
 
         &__elem {
-
         }
     }
 
@@ -1044,12 +1015,11 @@
         grid-template-columns: 1fr 1fr 1fr;
 
         &__elem {
-
-            &:nth-child(n+5) {
+            &:nth-child(n + 5) {
                 display: block;
             }
 
-            &:nth-child(n+7) {
+            &:nth-child(n + 7) {
                 display: none;
             }
         }
@@ -1060,10 +1030,8 @@
         }
 
         &--open {
-
             .docs__elem {
-
-                &:nth-child(n+7) {
+                &:nth-child(n + 7) {
                     display: block;
                 }
             }
@@ -1119,7 +1087,6 @@
         }
 
         &--text {
-
         }
     }
 
@@ -1174,13 +1141,38 @@
         line-height: size-rel(22px);
         padding: size-rel(2px) size-rel(8px);
     }
-
 }
 
+.scrolltop {
+    @include r(1279) {
+        bottom: 140px;
+        right: 15px;
+    }
 
-@media (min-width: $screen-xs) {}
-@include media-breakpoint-up(sm) {}
-@include media-breakpoint-up(md) {}
-@include media-breakpoint-up(lg) {}
-@include media-breakpoint-up(xl) {}
-@include media-breakpoint-up(xxl) {}
+    @include r(1023) {
+        bottom: 180px;
+    }
+
+    @include r(567) {
+        bottom: 80px;
+    }
+
+    position: absolute;
+    right: 47px;
+    bottom: 112px;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    border: 3px solid #fff;
+    z-index: 10;
+    background: url('../img/select_arrow_hover_white.svg') no-repeat center $red;
+    background-size: 20px;
+    cursor: pointer;
+    box-shadow: 2px 2px 40px rgba(0, 0, 0, 0.08);
+    transition: $trans;
+
+    &:hover {
+        box-shadow: none;
+        background-color: darken($color: $red, $amount: 20%);
+    }
+}
