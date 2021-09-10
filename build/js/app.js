@@ -951,11 +951,12 @@ $('body').on('click', '.location__close', function () {
   $('html, body').toggleClass('overflow');
   $('.location').toggleClass('active');
 });
-$('body').on('click', '.location .btn-reset', function () {
+$('body').on('click', '.location .btn-reset', function (e) {
   $('.tabs__content--active .location__content input[type="checkbox"]').prop('checked', false);
   $('.tabs__content--active .MetroMap_station_item,.tabs__content--active .MetroMap_stop,.tabs__content--active .MetroMap_transit_group,.tabs__content--active .MetroMap_line_item').removeClass('selected');
   $('.tabs__content--active circle[r="8"]').attr('r', 6);
   $('.tabs__btn--active').removeClass('hasFilter');
+  $(e.currentTarget).removeClass('show');
 });
 $('body').on('change', '.location .checkbox-group__input', function () {
   if ($('.location .tabs__content--active .checkbox-group__input:checked').length === 0) {

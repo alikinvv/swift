@@ -1043,13 +1043,14 @@ $('body').on('click', '.location__close', () => {
     $('.location').toggleClass('active');
 });
 
-$('body').on('click', '.location .btn-reset', () => {
+$('body').on('click', '.location .btn-reset', (e) => {
     $('.tabs__content--active .location__content input[type="checkbox"]').prop('checked', false);
     $(
         '.tabs__content--active .MetroMap_station_item,.tabs__content--active .MetroMap_stop,.tabs__content--active .MetroMap_transit_group,.tabs__content--active .MetroMap_line_item'
     ).removeClass('selected');
     $('.tabs__content--active circle[r="8"]').attr('r', 6);
     $('.tabs__btn--active').removeClass('hasFilter');
+    $(e.currentTarget).removeClass('show');
 });
 
 $('body').on('change', '.location .checkbox-group__input', () => {
