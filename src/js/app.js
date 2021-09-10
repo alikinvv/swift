@@ -6,74 +6,68 @@ let canUseWebp = () => {
     return false;
 };
 
-let lazyImages = () => {
-    if (canUseWebp() === false) {
-        const lazyBgItems = document.querySelectorAll('.lazy[data-bg-fallback]');
+if (canUseWebp() === false) {
+    const lazyBgItems = document.querySelectorAll('.lazy[data-bg-fallback]');
 
-        lazyBgItems.forEach((item) => {
-            const srcBgFallback = item.getAttribute('data-bg-fallback');
-            item.setAttribute('data-bg', srcBgFallback);
-        });
-    }
-
-    // eslint-disable-next-line no-unused-vars
-    const lazyLoadInstance = new LazyLoad({
-        elements_selector: '.lazy',
+    lazyBgItems.forEach((item) => {
+        const srcBgFallback = item.getAttribute('data-bg-fallback');
+        item.setAttribute('data-bg', srcBgFallback);
     });
-};
+}
 
-let mobileNav = () => {
-    const pageNavToggle = document.querySelectorAll('.nav-toggle');
+// eslint-disable-next-line no-unused-vars
+const lazyLoadInstance = new LazyLoad({
+    elements_selector: '.lazy',
+});
 
-    if (pageNavToggle) {
-        pageNavToggle.forEach((el) => {
-            el.addEventListener('click', (e) => {
-                const self = document.querySelector('.root');
-                self.classList.toggle('nav-open');
-                $('.mobile-nav__second').removeClass('mobile-nav__second--open');
-                return false;
-            });
-        });
-    }
+const pageNavToggle = document.querySelectorAll('.nav-toggle');
 
-    $('.mobile-nav__next').on('click', function (e) {
-        e.preventDefault();
-        let secondNav = '.' + $(this).attr('data-nav');
-        $('.mobile-nav__subnav').removeClass('active');
-        $(secondNav).addClass('active');
-        $('.mobile-nav__second').addClass('mobile-nav__second--open');
-    });
-
-    $('.mobile-nav__back').on('click', function (e) {
-        e.preventDefault();
-        $('.mobile-nav__second').removeClass('mobile-nav__second--open');
-    });
-};
-
-let collapce = () => {
-    const collapseControl = document.querySelectorAll('.collapse-control');
-
-    collapseControl.forEach((el) => {
+if (pageNavToggle) {
+    pageNavToggle.forEach((el) => {
         el.addEventListener('click', (e) => {
-            const self = e.currentTarget.closest('.collapse');
-            const control = self.querySelector('.collapse-control');
-            const content = self.querySelector('.collapse-content');
-
-            self.classList.toggle('open');
-
-            if (self.classList.contains('open')) {
-                control.setAttribute('aria-expanded', true);
-                content.setAttribute('aria-hidden', false);
-                content.style.maxHeight = content.scrollHeight + 'px';
-            } else {
-                control.setAttribute('aria-expanded', false);
-                content.setAttribute('aria-hidden', true);
-                content.style.maxHeight = null;
-            }
+            const self = document.querySelector('.root');
+            self.classList.toggle('nav-open');
+            $('.mobile-nav__second').removeClass('mobile-nav__second--open');
             return false;
         });
     });
-};
+}
+
+$('.mobile-nav__next').on('click', function (e) {
+    e.preventDefault();
+    let secondNav = '.' + $(this).attr('data-nav');
+    $('.mobile-nav__subnav').removeClass('active');
+    $(secondNav).addClass('active');
+    $('.mobile-nav__second').addClass('mobile-nav__second--open');
+});
+
+$('.mobile-nav__back').on('click', function (e) {
+    e.preventDefault();
+    $('.mobile-nav__second').removeClass('mobile-nav__second--open');
+});
+
+const collapseControl = document.querySelectorAll('.collapse-control');
+
+collapseControl.forEach((el) => {
+    el.addEventListener('click', (e) => {
+        const self = e.currentTarget.closest('.collapse');
+        const control = self.querySelector('.collapse-control');
+        const content = self.querySelector('.collapse-content');
+
+        self.classList.toggle('open');
+
+        if (self.classList.contains('open')) {
+            control.setAttribute('aria-expanded', true);
+            content.setAttribute('aria-hidden', false);
+            content.style.maxHeight = content.scrollHeight + 'px';
+        } else {
+            control.setAttribute('aria-expanded', false);
+            content.setAttribute('aria-hidden', true);
+            content.style.maxHeight = null;
+        }
+        return false;
+    });
+});
 
 let maskPhone = (selector, masked = '+7 (___) ___-__-__') => {
     const elems = document.querySelectorAll(selector);
@@ -114,90 +108,66 @@ let maskPhone = (selector, masked = '+7 (___) ___-__-__') => {
     }
 };
 
-let tabs = () => {
-    const tabs = document.querySelector('.tabs');
-    const tabsBtn = document.querySelectorAll('.tabs__btn');
-    const tabsContent = document.querySelectorAll('.tabs__content');
+const tabs = document.querySelector('.tabs');
+const tabsBtn = document.querySelectorAll('.tabs__btn');
+const tabsContent = document.querySelectorAll('.tabs__content');
 
-    if (tabs) {
-        tabs.addEventListener('click', (e) => {
-            if (e.target.classList.contains('tabs__btn')) {
-                const tabsPath = e.target.dataset.tabsPath;
-                tabsBtn.forEach((el) => {
-                    el.classList.remove('tabs__btn--active');
+if (tabs) {
+    tabs.addEventListener('click', (e) => {
+        if (e.target.classList.contains('tabs__btn')) {
+            const tabsPath = e.target.dataset.tabsPath;
+            tabsBtn.forEach((el) => {
+                el.classList.remove('tabs__btn--active');
+            });
+            document.querySelector(`[data-tabs-path="${tabsPath}"]`).classList.add('tabs__btn--active');
+            tabsHandler(tabsPath);
+
+            $('.tabs')
+                .find('.bar')
+                .animate({
+                    width: $('.tabs').find('.tabs__btn--active').width(),
+                    left: $('.tabs').find('.tabs__btn--active').position().left,
                 });
-                document.querySelector(`[data-tabs-path="${tabsPath}"]`).classList.add('tabs__btn--active');
-                tabsHandler(tabsPath);
-            }
-
-            if (e.target.classList.contains('tabs__arrow--prev')) {
-                let activeBtn = document.querySelector('.tabs__btn--active');
-                let activeParent = activeBtn.closest('.tabs__item');
-                let previousParent = activeParent.previousElementSibling;
-
-                if (previousParent) {
-                    let prevActive = previousParent.querySelector('.tabs__btn');
-                    tabsBtn.forEach((el) => {
-                        el.classList.remove('tabs__btn--active');
-                    });
-                    prevActive.classList.add('tabs__btn--active');
-
-                    let path = prevActive.dataset.tabsPath;
-                    tabsHandler(path);
-                }
-            }
-
-            if (e.target.classList.contains('tabs__arrow--next')) {
-                let activeBtn = document.querySelector('.tabs__btn--active');
-                let activeParent = activeBtn.closest('.tabs__item');
-                let nextParent = activeParent.nextElementSibling;
-
-                if (nextParent) {
-                    let nextActive = nextParent.querySelector('.tabs__btn');
-                    tabsBtn.forEach((el) => {
-                        el.classList.remove('tabs__btn--active');
-                    });
-                    nextActive.classList.add('tabs__btn--active');
-
-                    let path = nextActive.dataset.tabsPath;
-                    tabsHandler(path);
-                }
-            }
-        });
-    }
-
-    const tabsHandler = (path) => {
-        tabsContent.forEach((el) => {
-            el.classList.remove('tabs__content--active');
-        });
-        document.querySelector(`[data-tabs-target="${path}"]`).classList.add('tabs__content--active');
-    };
-};
-
-let accordion = () => {
-    const accordions = document.querySelectorAll('.accordion-control');
-
-    accordions.forEach((el) => {
-        el.addEventListener('click', (e) => {
-            const self = e.currentTarget.closest('.accordion-item');
-            const control = self.querySelector('.accordion-control');
-            const content = self.querySelector('.accordion-content');
-
-            self.classList.toggle('open');
-
-            // если открыт аккордеон
-            if (self.classList.contains('open')) {
-                control.setAttribute('aria-expanded', true);
-                content.setAttribute('aria-hidden', false);
-                content.style.maxHeight = content.scrollHeight + 'px';
-            } else {
-                control.setAttribute('aria-expanded', false);
-                content.setAttribute('aria-hidden', true);
-                content.style.maxHeight = null;
-            }
-        });
+        }
     });
+
+    $('.tabs')
+        .find('.bar')
+        .css('left', $('.tabs').find('.tabs__btn--active').position().left)
+        .animate({
+            width: $('.tabs').find('.tabs__btn--active').width(),
+        });
+}
+
+const tabsHandler = (path) => {
+    tabsContent.forEach((el) => {
+        el.classList.remove('tabs__content--active');
+    });
+    document.querySelector(`[data-tabs-target="${path}"]`).classList.add('tabs__content--active');
 };
+
+const accordions = document.querySelectorAll('.accordion-control');
+
+accordions.forEach((el) => {
+    el.addEventListener('click', (e) => {
+        const self = e.currentTarget.closest('.accordion-item');
+        const control = self.querySelector('.accordion-control');
+        const content = self.querySelector('.accordion-content');
+
+        self.classList.toggle('open');
+
+        // если открыт аккордеон
+        if (self.classList.contains('open')) {
+            control.setAttribute('aria-expanded', true);
+            content.setAttribute('aria-hidden', false);
+            content.style.maxHeight = content.scrollHeight + 'px';
+        } else {
+            control.setAttribute('aria-expanded', false);
+            content.setAttribute('aria-hidden', true);
+            content.style.maxHeight = null;
+        }
+    });
+});
 
 let textInputBoxPlugin = function ($) {
     $.fn.textInputBox = function (boxClass) {
@@ -237,17 +207,10 @@ let textInputBoxPlugin = function ($) {
     };
 };
 
-lazyImages();
-tabs();
-mobileNav();
-collapce();
-accordion();
 maskPhone('input[name="phone"]');
 
 // Select
-const selectElem = document.querySelectorAll('.pretty-select');
-
-selectElem.forEach((el) => {
+document.querySelectorAll('.pretty-select').forEach((el) => {
     const prettySelect = new Choices(el, {
         searchEnabled: false,
     });
@@ -272,35 +235,29 @@ $('.footer-nav__view').on('click', function (e) {
     $(this).closest('.footer-nav__content').find('.footer-nav__menu').toggleClass('open');
 });
 
-let footerNavToggle = function () {
-    const footerNavControl = document.querySelectorAll('.footer-nav__toggle');
-    footerNavControl.forEach((el) => {
-        el.addEventListener('click', (e) => {
-            const self = e.currentTarget.closest('.footer-nav__group');
-            self.classList.toggle('footer-nav__group--open');
-            return false;
-        });
+const footerNavControl = document.querySelectorAll('.footer-nav__toggle');
+footerNavControl.forEach((el) => {
+    el.addEventListener('click', (e) => {
+        const self = e.currentTarget.closest('.footer-nav__group');
+        self.classList.toggle('footer-nav__group--open');
+        return false;
     });
-};
-footerNavToggle();
+});
 
-let sideNav = function () {
-    $('.sidebar__primary--toggle').on('mouseenter', function () {
-        let sideNavTarget = '.' + $(this).attr('data-nav');
-        $('.sidebar__subnav').removeClass('active');
-        $(sideNavTarget).addClass('active');
-        $('.sidebar__second').addClass('sidebar__second--open');
-    });
+$('.sidebar__primary--toggle').on('mouseenter', function () {
+    let sideNavTarget = '.' + $(this).attr('data-nav');
+    $('.sidebar__subnav').removeClass('active');
+    $(sideNavTarget).addClass('active');
+    $('.sidebar__second').addClass('sidebar__second--open');
+});
 
-    $('.sidebar__primary--link').on('mouseenter', function () {
-        $('.sidebar__second').removeClass('sidebar__second--open');
-    });
+$('.sidebar__primary--link').on('mouseenter', function () {
+    $('.sidebar__second').removeClass('sidebar__second--open');
+});
 
-    $('.sidebar').on('mouseleave', function () {
-        $('.sidebar__second').removeClass('sidebar__second--open');
-    });
-};
-sideNav();
+$('.sidebar').on('mouseleave', function () {
+    $('.sidebar__second').removeClass('sidebar__second--open');
+});
 
 //Breadcrumb
 const breadcrumb = new Swiper('.breadcrumb-slider', {
@@ -310,102 +267,362 @@ const breadcrumb = new Swiper('.breadcrumb-slider', {
 });
 
 // Base Range
-let rangeField = function () {
-    let $range = $('.range-field-slider');
-    $range.ionRangeSlider({
-        grid: false,
-        skin: 'round',
-        onChange: function (data) {},
-    });
+let $area = $('.slider-area');
+let areamin = 1;
+let areamax = 400;
+let areafrom = 15;
+let areato = 270;
 
-    $range.on('change', function (data) {
-        let $inp = $(this);
-        let $rangeField = $inp.closest('.range');
-        let rangeFrom = $inp.data('from');
-        let rangeTo = $inp.data('to');
-        let rangeMax = $inp.attr('data-max');
-        let rangeParam = $inp.attr('data-param');
-        let rangeValues = $inp.attr('data-range-values');
-        let $rangeValFrom = $rangeField.find('.range__value--from');
-        let $rangeValTo = $rangeField.find('.range__value--to');
-        let $rangePercent = $rangeField.find('.range__value--percent');
-        let rangePercentValue = Math.ceil((rangeFrom * 100) / rangeMax) + '%';
+let $cost = $('.slider-cost');
+let costmin = 0.5;
+let costmax = 150;
+let costfrom = 5.9;
+let costto = 127.7;
 
-        if (rangeValues) {
-            let arrRangeValues = rangeValues.split(',');
-            let arrRangeFrom = arrRangeValues[rangeFrom];
-            let arrRangeTo = arrRangeValues[rangeTo];
+let $floor = $('.slider-floor');
+let floormin = 0;
+let floormax = 30;
+let floorfrom = 7;
+let floorto = 22;
 
-            $rangeValFrom.text(arrRangeFrom);
-            $rangeValTo.text(arrRangeTo);
-        } else {
-            $rangeValFrom.text(rangeFrom);
-            $rangeValTo.text(rangeTo);
-        }
+let $date = $('.slider-date');
+let datemin = 0;
+let datemax = 13;
+let datefrom = 1;
+let dateto = 14;
 
-        $rangePercent.text(rangePercentValue);
-    });
+let $price = $('.slider-price');
+let pricemin = 500000;
+let pricemax = 50000000;
+let pricefrom = 3000000;
 
-    $('.range__dropdown--button').on('click', function (e) {
-        e.preventDefault();
-        let $this = $(this);
-        let $range = $this.closest('.range');
-        if ($this.hasClass('active')) {
-            $this.removeClass('active');
-            $range.removeClass('range--fix-dropdown');
-        } else {
-            $range.find('.range__dropdown--button').removeClass('active');
-            $this.addClass('active');
-            $range.addClass('range--fix-dropdown');
-        }
-    });
+let $first = $('.slider-first');
+let firstmin = 500000;
+let firstmax = 15000000;
+let firstfrom = 3000000;
+
+let $time = $('.slider-time');
+let timemin = 1;
+let timemax = 30;
+let timefrom = 10;
+
+let instance;
+
+$area.ionRangeSlider({
+    grid: false,
+    skin: 'round',
+    min: areamin,
+    max: areamax,
+    type: 'double',
+    from: areafrom,
+    to: areato,
+    step: 1,
+    onChange: function (data) {
+        sliderChange(data, 'area');
+    },
+});
+
+$cost.ionRangeSlider({
+    grid: false,
+    skin: 'round',
+    min: costmin,
+    max: costmax,
+    type: 'double',
+    from: costfrom,
+    to: costto,
+    step: 0.1,
+    onChange: function (data) {
+        sliderChange(data, 'cost');
+    },
+});
+
+$floor.ionRangeSlider({
+    grid: false,
+    skin: 'round',
+    min: floormin,
+    max: floormax,
+    type: 'double',
+    from: floorfrom,
+    to: floorto,
+    step: 1,
+    onChange: function (data) {
+        sliderChange(data, 'floor');
+    },
+});
+
+$date.ionRangeSlider({
+    grid: false,
+    skin: 'round',
+    onChange: function (data) {},
+});
+
+$price.ionRangeSlider({
+    grid: false,
+    skin: 'round',
+    min: pricemin,
+    max: pricemax,
+    type: 'single',
+    from: pricefrom,
+    step: 1,
+    onChange: function (data) {
+        sliderChange(data, 'price');
+    },
+});
+
+$first.ionRangeSlider({
+    grid: false,
+    skin: 'round',
+    min: firstmin,
+    max: firstmax,
+    type: 'single',
+    from: firstfrom,
+    step: 1,
+    onChange: function (data) {
+        sliderChange(data, 'first');
+    },
+});
+
+$time.ionRangeSlider({
+    grid: false,
+    skin: 'round',
+    min: timemin,
+    max: timemax,
+    type: 'single',
+    from: timefrom,
+    step: 1,
+    onChange: function (data) {
+        sliderChange(data, 'time');
+    },
+});
+
+let sliderChange = (data, slider) => {
+    let $sliderFrom = $(`input.range__value--from[data-slider="${slider}"]`);
+    let $sliderTo = $(`input.range__value--to[data-slider="${slider}"]`);
+
+    $sliderFrom.val(data.from);
+
+    if ($sliderTo.length > 0) {
+        $sliderTo.val(data.to);
+    }
+
+    if ($(`.slider-${slider}`).closest('.range').find('.range__value--percent').length > 0) {
+        $(`.slider-${slider}`)
+            .closest('.range')
+            .find('.range__value--percent')
+            .text(Math.ceil((data.from * 100) / data.max) + '%');
+    }
 };
-rangeField();
+
+$('.range__value--from').on('change', function () {
+    var val = $(this).prop('value');
+    var instance = null;
+
+    if ($(this).attr('data-slider') === 'area') {
+        areafrom = $area.closest('.range').find('.range__value--from').val();
+        areato = $area.closest('.range').find('.range__value--to').val();
+
+        instance = $area.data('ionRangeSlider');
+
+        val = validateFrom(val, areamin, areato);
+
+        instance.update({
+            from: val,
+        });
+    }
+
+    if ($(this).attr('data-slider') === 'cost') {
+        costfrom = $cost.closest('.range').find('.range__value--from').val();
+        costto = $cost.closest('.range').find('.range__value--to').val();
+
+        instance = $cost.data('ionRangeSlider');
+
+        val = validateFrom(val, costmin, costto);
+
+        instance.update({
+            from: val,
+        });
+    }
+
+    if ($(this).attr('data-slider') === 'floor') {
+        floorfrom = $floor.closest('.range').find('.range__value--from').val();
+        floorto = $floor.closest('.range').find('.range__value--to').val();
+
+        instance = $floor.data('ionRangeSlider');
+
+        val = validateFrom(val, floormin, floorto);
+
+        instance.update({
+            from: val,
+        });
+    }
+
+    $(this).prop('value', val);
+});
+
+let setFrom = (from, to, $slider, val, min) => {
+    var instance = null;
+    from = $slider.closest('.range').find('.range__value--from').val();
+    to = $slider.closest('.range').find('.range__value--to').val();
+
+    instance = $slider.data('ionRangeSlider');
+
+    val = parseFloat(val);
+    val = validateFrom(val, min, to);
+
+    instance.update({
+        from: val,
+    });
+
+    $slider.closest('.range').find('.range__value--from').val(0);
+};
+
+let validateFrom = (val, min, to) => {
+    if (parseFloat(val) < min) {
+        val = min;
+    } else if (parseFloat(val) > to) {
+        val = to;
+    }
+
+    return val;
+};
+
+$('.range__value--to').on('change', function () {
+    var val = $(this).prop('value');
+    var instance = null;
+
+    if ($(this).attr('data-slider') === 'area') {
+        areafrom = $area.closest('.range').find('.range__value--from').val();
+        areato = $area.closest('.range').find('.range__value--to').val();
+
+        instance = $area.data('ionRangeSlider');
+
+        val = validateTo(val, areamax, areafrom);
+
+        instance.update({
+            to: val,
+        });
+    }
+
+    if ($(this).attr('data-slider') === 'cost') {
+        costfrom = $cost.closest('.range').find('.range__value--from').val();
+        costto = $cost.closest('.range').find('.range__value--to').val();
+
+        instance = $cost.data('ionRangeSlider');
+
+        val = validateTo(val, costmax, costfrom);
+
+        instance.update({
+            to: val,
+        });
+    }
+
+    if ($(this).attr('data-slider') === 'floor') {
+        floorfrom = $floor.closest('.range').find('.range__value--from').val();
+        floorto = $floor.closest('.range').find('.range__value--to').val();
+
+        instance = $floor.data('ionRangeSlider');
+
+        val = validateTo(val, floormax, floorfrom);
+
+        instance.update({
+            to: val,
+        });
+    }
+
+    $(this).prop('value', val);
+});
+
+let setTo = (from, to, $slider, val, max) => {
+    from = $slider.closest('.range').find('.range__value--from').val();
+    to = $slider.closest('.range').find('.range__value--to').val();
+
+    instance = $slider.data('ionRangeSlider');
+
+    val = validateTo(val, max, from);
+
+    instance.update({
+        to: val,
+    });
+
+    $slider.closest('.range').find('.range__value--to').val(val);
+};
+
+let validateTo = (val, max, from) => {
+    if (parseFloat(val) < from) {
+        val = from;
+    } else if (parseFloat(val) > max) {
+        val = max;
+    }
+
+    return val;
+};
+
+$date.on('change', function () {
+    let $inp = $(this);
+    let $rangeField = $inp.closest('.range');
+    let rangeFrom = $inp.data('from');
+    let rangeTo = $inp.data('to');
+    let rangeValues = $inp.attr('data-range-values');
+    let $rangeValFrom = $rangeField.find('.range__value--from');
+    let $rangeValTo = $rangeField.find('.range__value--to');
+
+    let arrRangeValues = rangeValues.split(',');
+    let arrRangeFrom = arrRangeValues[rangeFrom];
+    let arrRangeTo = arrRangeValues[rangeTo];
+
+    $rangeValFrom.text(arrRangeFrom);
+    $rangeValTo.text(arrRangeTo);
+});
+
+$('.range__dropdown--button').on('click', function (e) {
+    e.preventDefault();
+    let $this = $(this);
+    let $range = $this.closest('.range');
+    if ($this.hasClass('active')) {
+        $this.removeClass('active');
+        $range.removeClass('range--fix-dropdown');
+    } else {
+        $range.find('.range__dropdown--button').removeClass('active');
+        $this.addClass('active');
+        $range.addClass('range--fix-dropdown');
+    }
+});
 
 // drop-down list field
-let prettyField = function () {
-    $('.field__select').on('click', function (e) {
-        e.preventDefault();
-        let $this = $(this);
-        let $field = $this.closest('.field');
-        $field.toggleClass('is-open');
-    });
+$('.field__select').on('click', function (e) {
+    e.preventDefault();
+    let $this = $(this);
+    let $field = $this.closest('.field');
+    $field.toggleClass('is-open');
+});
 
-    $('.field__dropdown--item').on('click', function (e) {
-        e.preventDefault();
-        let $field = $(this).closest('.field');
-        $field.removeClass('is-open');
-    });
+$('.field__dropdown--item').on('click', function (e) {
+    e.preventDefault();
+    let $field = $(this).closest('.field');
+    $field.removeClass('is-open');
+});
 
-    $('.field__dropdown--clear').on('click', function (e) {
-        e.preventDefault();
-        let $field = $(this).closest('.field');
-        $field.removeClass('is-open');
-    });
+$('.field__dropdown--clear').on('click', function (e) {
+    e.preventDefault();
+    let $field = $(this).closest('.field');
+    $field.removeClass('is-open');
+});
 
-    $body.on('click', function (event) {
-        if ($(event.target).closest('.field').length === 0) {
-            $('.field').removeClass('is-open');
-        }
-    });
+$body.on('click', function (event) {
+    if ($(event.target).closest('.field').length === 0) {
+        $('.field').removeClass('is-open');
+    }
+});
 
-    document.querySelectorAll('.field__dropdown--scroll').forEach((el) => {
-        new SimpleBar(el);
-    });
-};
-prettyField();
+document.querySelectorAll('.field__dropdown--scroll').forEach((el) => {
+    new SimpleBar(el);
+});
 
 // Item
 $('.item__toggle').on('click', function (e) {
     e.preventDefault();
     let $item = $(this).closest('.item');
     $item.toggleClass('item--switch');
-});
-$('.item__tags--toggle').on('click', function (e) {
-    e.preventDefault();
-    let $item = $(this).closest('.item__tags');
-    $item.toggleClass('open');
-    $item.find('.item__tags--dropdown').slideToggle('fast');
 });
 
 // Condition slider
@@ -428,7 +645,7 @@ const serviceSlider = new Swiper('.conditions__slider', {
 
         1760: {
             slidesPerView: 'auto',
-            spaceBetween: 40,
+            spaceBetween: 24,
         },
     },
 });
@@ -489,31 +706,27 @@ const articlesSlider = new Swiper('.articles-slider', {
     },
 });
 
-// filter
-let filter = function () {
-    $('.filter-toggle').on('click', function (e) {
-        e.preventDefault();
-        $('.filter-mobile').toggleClass('open');
-    });
+$('.filter-toggle').on('click', function (e) {
+    e.preventDefault();
+    $('.filter-mobile').toggleClass('open');
+});
 
-    $('.filter-mobile-accept').on('click', function (e) {
-        e.preventDefault();
-        $('.filter-mobile').removeClass('open');
-    });
+$('.filter-mobile-accept').on('click', function (e) {
+    e.preventDefault();
+    $('.filter-mobile').removeClass('open');
+});
 
-    $('.filter-mobile__toggle').on('click', function (e) {
-        e.preventDefault();
-        $(this).toggleClass('filter-mobile__toggle--open');
-        $('.filter-mobile__secondary').toggleClass('filter-mobile__secondary--open');
-    });
+$('.filter-mobile__toggle').on('click', function (e) {
+    e.preventDefault();
+    $(this).toggleClass('filter-mobile__toggle--open');
+    $('.filter-mobile__secondary').toggleClass('filter-mobile__secondary--open');
+});
 
-    $('.filter__toggle').on('click', function (e) {
-        e.preventDefault();
-        $(this).toggleClass('filter__toggle--open');
-        $('.filter__secondary').slideToggle('fast');
-    });
-};
-filter();
+$('.filter__toggle').on('click', function (e) {
+    e.preventDefault();
+    $(this).toggleClass('filter__toggle--open');
+    $('.filter__secondary').slideToggle('fast');
+});
 
 // sorter__item
 
@@ -559,6 +772,10 @@ const postGallerySlider = new Swiper('.post-gallery__slider', {
         nextEl: '.slider-next',
         prevEl: '.slider-prev',
     },
+    pagination: {
+        el: '.swiper-pagination',
+        type: 'fraction',
+    },
 });
 
 $('.subscribe__close').on('click', function (e) {
@@ -598,6 +815,32 @@ const objectPromoSlider = new Swiper('.object-promo-slider', {
     },
 });
 
+const objectPromoSliderFull = new Swiper('.object-promo-slider-full', {
+    slidesPerView: 1,
+    spaceBetween: 8,
+    loop: true,
+    autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        type: 'fraction',
+    },
+    navigation: {
+        nextEl: '.object-promo-next',
+        prevEl: '.object-promo-prev',
+    },
+    breakpoints: {
+        768: {
+            spaceBetween: 16,
+        },
+        1200: {
+            spaceBetween: 24,
+        },
+    },
+});
+
 const objectFlatsSlider = new Swiper('.object-flats-slider', {
     slidesPerView: 'auto',
     spaceBetween: 24,
@@ -626,61 +869,55 @@ const objectFlatsSlider = new Swiper('.object-flats-slider', {
     },
 });
 
-let finishing = function () {
-    $('.finishing-nav__label').on('click', function (e) {
-        e.preventDefault();
-        let $this = $(this);
-        let $elem = $this.closest('.finishing-nav__switch');
-        $elem.toggleClass('finishing-nav__switch--open');
-    });
+$('.finishing-nav__label').on('click', function (e) {
+    e.preventDefault();
+    let $this = $(this);
+    let $elem = $this.closest('.finishing-nav__switch');
+    $elem.toggleClass('finishing-nav__switch--open');
+});
 
-    $('.finishing-nav__item').on('click', function (e) {
-        e.preventDefault();
-        let $this = $(this);
-        let $switch = $(this).closest('.finishing-nav__switch');
-        let $elem = $this.closest('.finishing');
-        let Tab = $this.attr('data-target');
-        let thisName = $this.text();
+$('.finishing-nav__item').on('click', function (e) {
+    e.preventDefault();
+    let $this = $(this);
+    let $switch = $(this).closest('.finishing-nav__switch');
+    let $elem = $this.closest('.finishing');
+    let Tab = $this.attr('data-target');
+    let thisName = $this.text();
 
-        $switch.removeClass('finishing-nav__switch--open');
-        $switch.find('.finishing-nav__label--active').text(thisName);
-    });
+    $switch.removeClass('finishing-nav__switch--open');
+    $switch.find('.finishing-nav__label--active').text(thisName);
+});
 
-    $body.on('click', function (event) {
-        if ($(event.target).closest('.finishing-nav__switch').length === 0) {
-            $('.finishing-nav__switch').removeClass('finishing-nav__switch--open');
-        }
-    });
-};
-finishing();
+$body.on('click', function (event) {
+    if ($(event.target).closest('.finishing-nav__switch').length === 0) {
+        $('.finishing-nav__switch').removeClass('finishing-nav__switch--open');
+    }
+});
 
-let projectProgress = function () {
-    const projectProgressSlider = new Swiper('.project-progress-slider', {
-        slidesPerView: 'auto',
-        spaceBetween: 16,
-        loop: false,
-        simulateTouch: true,
-        navigation: {
-            nextEl: '.progress-next',
-            prevEl: '.progress-prev',
+const projectProgressSlider = new Swiper('.project-progress-slider', {
+    slidesPerView: 'auto',
+    spaceBetween: 16,
+    loop: false,
+    simulateTouch: true,
+    navigation: {
+        nextEl: '.progress-next',
+        prevEl: '.progress-prev',
+    },
+    breakpoints: {
+        768: {
+            slidesPerView: 'auto',
+            spaceBetween: 16,
         },
-        breakpoints: {
-            768: {
-                slidesPerView: 'auto',
-                spaceBetween: 16,
-            },
-            1200: {
-                slidesPerView: 'auto',
-                spaceBetween: 24,
-            },
-            1760: {
-                slidesPerView: 'auto',
-                spaceBetween: 40,
-            },
+        1200: {
+            slidesPerView: 'auto',
+            spaceBetween: 24,
         },
-    });
-};
-projectProgress();
+        1760: {
+            slidesPerView: 'auto',
+            spaceBetween: 40,
+        },
+    },
+});
 
 // credit filter
 $('.credit-filter__toggle').on('click', function (e) {
@@ -688,12 +925,9 @@ $('.credit-filter__toggle').on('click', function (e) {
     $('.credit-filter__additional').slideToggle('fast');
 });
 
-$('.credit__toggle').on('click', function (e) {
-    e.preventDefault();
-    let $item = $(this).closest('.credit');
-
-    $item.toggleClass('credit--open');
-    $item.find('.credit__options').slideToggle('fast');
+$('.credit__main--primary').on('click', function () {
+    $(this).closest('.credit').toggleClass('credit--open');
+    $(this).closest('.credit').find('.credit__options').slideToggle('fast');
 });
 
 const postSlider = new Swiper('.post-slider', {
@@ -724,67 +958,323 @@ $('.docs-view').on('click', function (e) {
     $('.docs').toggleClass('docs--open');
 });
 
-let projectTop = function () {
-    const bar = document.querySelector('.top-bar');
+const bar = document.querySelector('.top-bar');
 
-    if (bar) {
-        let $bar = $(bar);
-        let $h = $bar.offset().top;
+if (bar) {
+    let $bar = $(bar);
+    let $h = $bar.offset().top;
 
-        $(window).scroll(function () {
-            if ($(window).scrollTop() > $h) {
-                $bar.addClass('top-bar--visible');
-            } else {
-                $bar.removeClass('top-bar--visible');
-            }
-        });
-    }
-};
-projectTop();
-
-// Flat Gallery
-let flatMedia = function () {
-    const flatThumbs = new Swiper('.flat-media-thumbs', {
-        slidesPerView: 4,
-        spaceBetween: 16,
-        loop: true,
-        freeMode: true,
-        watchSlidesVisibility: true,
-        watchSlidesProgress: true,
+    $(window).scroll(function () {
+        if ($(window).scrollTop() > $h) {
+            $bar.addClass('top-bar--visible');
+        } else {
+            $bar.removeClass('top-bar--visible');
+        }
     });
+}
 
-    const flatGallery = new Swiper('.flat-media-gallery', {
-        slidesPerView: 1,
-        spaceBetween: 16,
-        loop: true,
-        thumbs: {
-            swiper: flatThumbs,
+const flatThumbs = new Swiper('.flat-media-thumbs', {
+    slidesPerView: 4,
+    spaceBetween: 16,
+    loop: true,
+    freeMode: true,
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
+});
+
+const flatGallery = new Swiper('.flat-media-gallery', {
+    slidesPerView: 1,
+    spaceBetween: 16,
+    loop: true,
+    thumbs: {
+        swiper: flatThumbs,
+    },
+    navigation: {
+        nextEl: '.gallery-next',
+        prevEl: '.gallery-prev',
+    },
+    breakpoints: {
+        768: {
+            slidesPerView: 'auto',
+            spaceBetween: 16,
         },
-        navigation: {
-            nextEl: '.gallery-next',
-            prevEl: '.gallery-prev',
+        1024: {
+            slidesPerView: 1,
+            spaceBetween: 24,
         },
-        breakpoints: {
-            768: {
-                slidesPerView: 'auto',
-                spaceBetween: 16,
-            },
-            1024: {
-                slidesPerView: 1,
-                spaceBetween: 24,
-            },
-        },
-    });
+    },
+});
 
-    $('.flat-info-view').on('click', function (e) {
-        e.preventDefault();
+$('.flat-info-view').on('click', function (e) {
+    e.preventDefault();
 
-        $(this).toggleClass('open');
-        $('.flat__info--advance').slideToggle('fast');
-    });
-};
-flatMedia();
+    $(this).toggleClass('open');
+    $('.flat__info--advance').slideToggle('fast');
+});
 
+// scrolltop button
 $('body').on('click', '.scrolltop', () => {
     $('html, body').stop().animate({ scrollTop: 0 }, 500, 'swing');
+});
+
+// click on checkbox tooltip on mobile
+$('body').on('click', '.btn-checkbox', (e) => {
+    if ($(window).width() <= 1279) {
+        if ($(e.target)[0].tagName === 'use' || $(e.target)[0].tagName === 'svg') {
+            let $input = $(e.currentTarget).find('input');
+
+            if ($input.is(':checked')) {
+                $input.prop('checked', false);
+            } else {
+                $input.prop('checked', true);
+            }
+        }
+    }
+});
+
+// location
+$('body').on('click', '.open-location', () => {
+    $('html, body').toggleClass('overflow');
+    $('.location').toggleClass('active');
+});
+
+$('body').on('click', '.location__close', () => {
+    $('html, body').toggleClass('overflow');
+    $('.location').toggleClass('active');
+});
+
+$('body').on('click', '.location .btn-reset', () => {
+    $('.location__content input[type="checkbox"]').prop('checked', false);
+    $('.tabs__btn--active').removeClass('hasFilter');
+});
+
+$('body').on('change', '.location .checkbox-group__input', () => {
+    if ($('.location .checkbox-group__input:checked').length === 0) {
+        $('.tabs__btn--active').removeClass('hasFilter');
+    } else {
+        $('.tabs__btn--active').addClass('hasFilter');
+    }
+});
+
+// set target tab
+$('body').on('click', '[open-tab]', (e) => {
+    $('.tabs__btn').removeClass('tabs__btn--active');
+    $('.tabs__content').removeClass('tabs__content--active');
+    $(`.tabs__btn[data-tabs-path="${$(e.currentTarget).attr('open-tab')}"]`).addClass('tabs__btn--active');
+    $(`.tabs__content[data-tabs-target="${$(e.currentTarget).attr('open-tab')}"]`).addClass('tabs__content--active');
+
+    $('.tabs')
+        .find('.bar')
+        .animate({
+            width: $('.tabs').find('.tabs__btn--active').width(),
+            left: $('.tabs').find('.tabs__btn--active').position().left,
+        });
+});
+
+$('body').on('click', 'a[data-view]', (e) => {
+    $('a[data-view]').removeClass('active');
+    $('div[data-view]').removeClass('active');
+    $(`a[data-view="${$(e.currentTarget).attr('data-view')}"]`).addClass('active');
+    $(`div[data-view="${$(e.currentTarget).attr('data-view')}"]`).addClass('active');
+});
+
+// google map
+function initMap() {
+    let map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: 55.776212, lng: 37.750353 },
+        zoom: 13,
+    });
+
+    const icons = {
+        house: {
+            icon: 'img/marker.png',
+        },
+        shop: {},
+        pharmacy: {
+            icon: 'img/icons/pharmacy.svg',
+        },
+        policlinic: {
+            icon: 'img/icons/policlinic.svg',
+        },
+        restaurant: {
+            icon: 'img/icons/restaurant.svg',
+        },
+        school: {
+            icon: 'img/icons/school.svg',
+        },
+        kinder: {
+            icon: 'img/icons/kinder.svg',
+        },
+        mall: {
+            icon: 'img/icons/mall.svg',
+        },
+        temples: {
+            icon: 'img/icons/temples.svg',
+        },
+    };
+
+    const house = {
+        type: 'house',
+        icon: 'img/marker.png',
+        items: [
+            {
+                name: 'Пятерочка',
+                addr: 'Московский проспект 4, корпус 12',
+                position: new google.maps.LatLng(55.782838, 37.738592),
+            },
+        ],
+    };
+
+    const shop = {
+        type: 'shop',
+        icon: 'img/icons/shop.svg',
+        items: [
+            {
+                name: 'Пятерочка',
+                addr: 'Московский проспект 4, корпус 12',
+                position: new google.maps.LatLng(55.776212, 37.750353),
+            },
+            {
+                name: 'Пятерочка',
+                addr: 'Московский проспект 4, корпус 12',
+                position: new google.maps.LatLng(55.777314, 37.745887),
+            },
+        ],
+    };
+
+    const pharmacy = {
+        type: 'pharmacy',
+        icon: 'img/icons/pharmacy.svg',
+        items: [
+            {
+                name: 'Пятерочка',
+                addr: 'Московский проспект 4, корпус 12',
+                position: new google.maps.LatLng(55.783382, 37.73202),
+            },
+            {
+                name: 'Пятерочка',
+                addr: 'Московский проспект 4, корпус 12',
+                position: new google.maps.LatLng(55.764132, 37.710215),
+            },
+        ],
+    };
+
+    function setMarkers(markers) {
+        for (let i = 0; i < markers.items.length; i++) {
+            const marker = new google.maps.Marker({
+                position: markers.items[i].position,
+                icon: markers.icon,
+                map: map,
+            });
+
+            const infowindow = new google.maps.InfoWindow({
+                content: `<div class="marker-name">${markers.items[i].name}</div><div class="marker-addr">${markers.items[i].addr}</div>`,
+            });
+
+            if ($(window).width() > 1024) {
+                marker.addListener('mouseover', () => {
+                    infowindow.open({
+                        anchor: marker,
+                        map,
+                        shouldFocus: false,
+                    });
+                });
+
+                marker.addListener('mouseout', () => {
+                    infowindow.close();
+                });
+            } else {
+                marker.addListener('click', () => {
+                    setTimeout(() => {
+                        infowindow.open({
+                            anchor: marker,
+                            map,
+                            shouldFocus: false,
+                        });
+                    }, 100);
+                });
+
+                map.addListener('click', () => {
+                    infowindow.close();
+                });
+            }
+        }
+    }
+
+    setMarkers(house);
+    setMarkers(shop);
+    setMarkers(pharmacy);
+}
+
+$('body').on('change', '.map .checkbox-group__input', (e) => {
+    if (!$(e.currentTarget).is(':checked')) {
+        $(`#map img[src="img/icons/${$(e.currentTarget).val()}.svg"]`).show();
+    } else {
+        $(`#map img[src="img/icons/${$(e.currentTarget).val()}.svg"]`).hide();
+    }
+});
+
+$('body').on('click', '.map__toggle:not(.is-hide)', () => {
+    $('.map__controls-list').slideUp();
+    $('.map__toggle').addClass('is-hide').text('Развернуть');
+});
+
+$('body').on('click', '.map__toggle.is-hide', () => {
+    $('.map__controls-list').slideDown();
+    $('.map__toggle').removeClass('is-hide').text('Свернуть');
+});
+
+$('body').on('click', '.map:not(.active)', (e) => {
+    if ($(window).width() <= 767) {
+        $(e.currentTarget).addClass('active');
+        $('html, body').addClass('overflow');
+    }
+});
+
+$('body').on('click', '.map.active .map__close', () => {
+    $('.map').removeClass('active');
+    $('html, body').removeClass('overflow');
+});
+
+$('body').on('click', '.map.active .btn-mobile', () => {
+    $('.map__controls').addClass('active');
+});
+
+$('body').on('click', '.map__controls-close', () => {
+    $('.map__controls').removeClass('active');
+});
+
+// rightmodal
+$('body').on('click', '.nav-box__btn', (e) => {
+    $('.nav-box__btn').removeClass('active');
+    $(e.currentTarget).toggleClass('active');
+    $('.rightmodal').removeClass('show');
+    $('.rightmodal').toggleClass('show');
+
+    if ($(window).width() >= 768) {
+        hideRightmodal();
+    }
+
+    if ($(window).width() < 768) {
+        hideRightmodal();
+        $('html, body').addClass('overflow');
+    }
+});
+
+$('body').on('click', '.rightmodal__close', () => {
+    $('.rightmodal').removeClass('show');
+    $('html, body').removeClass('overflow');
+});
+
+let hideRightmodal = () => {
+    $(window).scroll(() => {
+        $('.rightmodal').removeClass('show');
+        $('.nav-box__btn').removeClass('active');
+    });
+};
+
+$('body').on('click', '.item__tags--toggle', (e) => {
+    if ($(window).width() <= 1024) {
+        $(e.currentTarget).parent().find('.item__tag').toggleClass('active');
+    }
 });

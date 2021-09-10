@@ -20,6 +20,11 @@
         }
     }
 
+    .highlighted {
+        background: rgba($red, 0.3);
+        padding: 3px 0;
+    }
+
     &__meta {
         margin: 0 0 0 0;
         padding: 0;
@@ -29,13 +34,12 @@
         display: flex;
         flex-wrap: wrap;
         align-items: center;
+        color: #818285;
 
         &--item {
             display: flex;
             align-items: center;
             margin-right: size-rel(16px);
-
-
         }
 
         &--icon {
@@ -47,7 +51,7 @@
 
             svg {
                 fill: none;
-                stroke: $primary;
+                stroke: #818285;
             }
         }
 
@@ -117,7 +121,6 @@
         }
 
         &--name {
-
         }
 
         &--staff {
@@ -131,7 +134,6 @@
     }
 
     &__block {
-
         &--sidebar {
             padding-top: size-rel(40px);
         }
@@ -144,7 +146,6 @@
             line-height: size-rel(22px);
 
             li {
-
                 &:not(:last-child) {
                     margin-bottom: size-rel(24px);
                 }
@@ -153,7 +154,6 @@
     }
 
     @include media-breakpoint-up(sm) {
-
         &__tags {
             margin-right: size-rel(-16px);
             margin-bottom: size-rel(16px);
@@ -179,7 +179,6 @@
         }
 
         &__author {
-
             &--photo {
                 width: size-rel(70px);
             }
@@ -226,9 +225,7 @@
             }
 
             &--footnote {
-
                 li {
-
                     &:not(:last-child) {
                         margin-bottom: size-rel(120px);
                     }
@@ -238,17 +235,13 @@
     }
 
     @include media-breakpoint-up(xl) {
-
         &__content {
             max-width: size-rel(936px);
         }
 
         &__block {
-
             &--footnote {
-
                 li {
-
                     &:not(:last-child) {
                         margin-bottom: size-rel(70px);
                     }
@@ -263,7 +256,6 @@
     }
 
     @include media-breakpoint-up(xxl) {
-
         &__content {
             width: size-rel(936px);
         }
@@ -282,17 +274,11 @@
 .post-nav {
     font-weight: 500;
     padding-top: size-rel(40px);
-    font-size: size-rel(12px);
     line-height: size-rel(22px);
 
     &__item {
-
         &--prev {
             margin-bottom: size-rel(24px);
-        }
-
-        &--next {
-
         }
     }
 
@@ -337,7 +323,6 @@
     }
 
     &__title {
-
     }
 
     @include media-breakpoint-up(sm) {
@@ -349,7 +334,7 @@
             flex-direction: column;
 
             &--prev {
-                margin-bottom: 0
+                margin-bottom: 0;
             }
 
             &--next {
@@ -383,29 +368,25 @@
     }
 
     &--alert {
-
         &:before {
-            background: #FF0000;
+            background: #ff0000;
         }
     }
 
     &--base {
-
         &:before {
             background: $gray;
         }
     }
 
     &--info {
-
         &:before {
-            background: #84D400;
+            background: #84d400;
         }
     }
 }
 
 .post-projects {
-
     &__header {
         font-weight: 500;
         font-size: size-rel(16px);
@@ -414,7 +395,6 @@
     }
 
     &__main {
-
     }
 
     &__slider {
@@ -444,11 +424,9 @@
     }
 
     &__developer {
-
     }
 
     &__name {
-
     }
 
     &__price {
@@ -456,9 +434,7 @@
     }
 
     @include media-breakpoint-up(sm) {
-
         &__slider {
-
             .swiper-slide {
                 width: auto;
             }
@@ -473,13 +449,14 @@
         }
     }
 
-    @include media-breakpoint-up(md) {}
-    @include media-breakpoint-up(lg) {}
-    @include media-breakpoint-up(xl) {}
+    @include media-breakpoint-up(md) {
+    }
+    @include media-breakpoint-up(lg) {
+    }
+    @include media-breakpoint-up(xl) {
+    }
     @include media-breakpoint-up(xxl) {
-
         &__slider {
-
             .swiper-slide {
                 width: 326px;
             }
@@ -516,14 +493,12 @@
     }
 
     @include media-breakpoint-up(sm) {
-
         li {
             padding-left: 23px;
         }
     }
 
     @include media-breakpoint-up(xl) {
-
         li {
             padding-left: 23px;
 
@@ -534,7 +509,6 @@
     }
 
     @include media-breakpoint-up(xxl) {
-
         li {
             padding-left: 25px;
 
@@ -546,10 +520,8 @@
 }
 
 .post-gallery {
-
-    &__item {
-
-    }
+    overflow: hidden;
+    position: relative;
 
     &__image {
         max-width: 100%;
@@ -564,7 +536,8 @@
     &__text {
         overflow: hidden;
         text-overflow: ellipsis;
-        height: size-rel(44px);
+        color: #818285;
+        font-size: 12px;
     }
 
     .slider-button {
@@ -574,17 +547,32 @@
     }
 
     .slider-prev {
-        left: 0;
+        left: 16px;
     }
 
     .slider-next {
-        right: 0;
+        right: 16px;
+    }
+
+    .swiper-pagination {
+        @include r(767) {
+            display: none;
+        }
+
+        @include centerXa;
+        bottom: 38px;
+        display: inline-block;
+        background: $primary;
+        color: #fff;
+        font-size: 14px;
+        width: auto;
+        padding: 2px 8px;
+        border-radius: 4px;
+        line-height: 1.71;
     }
 
     @include media-breakpoint-up(sm) {
-
         &__image {
-
             &--wrap {
                 margin: 0;
             }
@@ -599,7 +587,7 @@
 ol {
     padding: 0;
     margin: 0 0 size-rel(24px) 0;
-    counter-reset:li;
+    counter-reset: li;
     list-style: none;
 
     li {
@@ -610,21 +598,20 @@ ol {
             margin-bottom: size-rel(24px);
         }
 
-
         &:before {
             top: 0;
             left: 0;
             color: $accent;
             position: absolute;
-            content: counter(li)'.';
+            content: counter(li) '.';
             counter-increment: li;
         }
     }
 
-    @include media-breakpoint-up(sm) {}
+    @include media-breakpoint-up(sm) {
+    }
 
     @include media-breakpoint-up(xl) {
-
         li {
             padding-left: 25px;
         }
@@ -647,7 +634,6 @@ ol {
         }
 
         &:last-child {
-
             .compare__column {
                 border-bottom: none;
             }
@@ -669,7 +655,6 @@ ol {
         padding: size-rel(8px) size-rel(24px);
 
         &__row {
-
             &--header {
                 font-weight: 600;
                 font-size: size-rel(20px);
@@ -723,7 +708,6 @@ ol {
         }
 
         &:hover {
-
             svg {
                 stroke: $accent;
             }
@@ -789,14 +773,16 @@ ol {
         &__input {
             margin-bottom: size-rel(32px);
         }
-
     }
 }
 
-@include media-breakpoint-up(sm) {}
-@include media-breakpoint-up(md) {}
-@include media-breakpoint-up(lg) {}
-@include media-breakpoint-up(xl) {}
-@include media-breakpoint-up(xxl) {}
-
-
+@include media-breakpoint-up(sm) {
+}
+@include media-breakpoint-up(md) {
+}
+@include media-breakpoint-up(lg) {
+}
+@include media-breakpoint-up(xl) {
+}
+@include media-breakpoint-up(xxl) {
+}

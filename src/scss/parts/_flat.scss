@@ -32,10 +32,6 @@
             color: $accent;
         }
 
-        &--street {
-
-        }
-
         &__media {
             margin-bottom: size-rel(40px);
         }
@@ -43,10 +39,7 @@
 
     &__media {
         margin-bottom: size-rel(40px);
-    }
-
-    &__content {
-
+        overflow: hidden;
     }
 
     &__info {
@@ -95,9 +88,7 @@
     }
 
     @include media-breakpoint-up(sm) {
-
         &__specifications {
-
             li {
                 width: auto;
 
@@ -182,9 +173,7 @@
         }
 
         &__specifications {
-
             li {
-
                 &:not(:last-child) {
                     margin-right: size-rel(24px);
                 }
@@ -193,7 +182,6 @@
     }
 
     @include media-breakpoint-up(lg) {
-
     }
 
     @include media-breakpoint-up(xl) {
@@ -201,7 +189,6 @@
     }
 
     @include media-breakpoint-up(xxl) {
-
         &__article {
             font-size: size-rel(12px);
             line-height: size-rel(22px);
@@ -220,7 +207,6 @@
         }
 
         &__info {
-
             &--base {
                 margin-bottom: size-rel(40px);
             }
@@ -231,7 +217,6 @@
         }
 
         &__specifications {
-
             &--label {
                 font-size: size-rel(14px);
                 line-height: size-rel(24px);
@@ -253,11 +238,26 @@
     }
 
     &__buttons {
-
         &--wrap {
             display: flex;
             align-items: center;
             margin-top: size-rel(-20px);
+            margin-left: 20px;
+
+            button {
+                cursor: pointer;
+                width: auto;
+                height: auto;
+                margin-left: 0;
+
+                &:hover path {
+                    stroke: $red;
+                }
+
+                path {
+                    transition: $trans;
+                }
+            }
         }
     }
 
@@ -302,7 +302,6 @@
     }
 
     @include media-breakpoint-up(xxl) {
-
         &__title {
             font-size: size-rel(32px);
             line-height: size-rel(40px);
@@ -311,7 +310,6 @@
 }
 
 .flat-media {
-
     &__gallery {
         position: relative;
     }
@@ -374,9 +372,7 @@
     }
 
     @include media-breakpoint-up(sm) {
-
         &__gallery {
-
             .swiper-slide {
                 width: size-rel(568px);
             }
@@ -391,7 +387,6 @@
         }
 
         &__nav {
-
             &--prev {
                 left: size-rel(8px);
             }
@@ -403,8 +398,6 @@
     }
 
     @include media-breakpoint-up(md) {
-
-
         &__item {
             height: size-rel(370px);
 
@@ -415,7 +408,6 @@
     }
 
     @include media-breakpoint-up(lg) {
-
         &__gallery {
             margin-bottom: size-rel(24px);
         }
@@ -426,7 +418,6 @@
     }
 
     @include media-breakpoint-up(xxl) {
-
         &__item {
             height: size-rel(510px);
 
@@ -491,7 +482,6 @@
         padding-top: size-rel(24px);
 
         &--item {
-
             &:not(:last-child) {
                 margin-bottom: size-rel(8px);
             }
@@ -506,7 +496,6 @@
         margin-bottom: size-rel(40px);
 
         &__credit {
-
             &--xs {
                 display: none;
             }
@@ -522,7 +511,6 @@
             align-items: center;
 
             &--item {
-
                 &:not(:last-child) {
                     margin-bottom: 0;
                     margin-right: size-rel(16px);
@@ -551,10 +539,13 @@
     }
 }
 
-
-
-@include media-breakpoint-up(sm) {}
-@include media-breakpoint-up(md) {}
-@include media-breakpoint-up(lg) {}
-@include media-breakpoint-up(xl) {}
-@include media-breakpoint-up(xxl) {}
+@include media-breakpoint-up(sm) {
+}
+@include media-breakpoint-up(md) {
+}
+@include media-breakpoint-up(lg) {
+}
+@include media-breakpoint-up(xl) {
+}
+@include media-breakpoint-up(xxl) {
+}

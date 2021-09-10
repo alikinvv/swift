@@ -6,6 +6,18 @@
     box-sizing: border-box;
 }
 
+html,
+body {
+    &.overflow {
+        @include r(1279) {
+            margin-right: 0;
+        }
+
+        overflow: hidden;
+        margin-right: 9px;
+    }
+}
+
 html {
     height: 100%;
 }

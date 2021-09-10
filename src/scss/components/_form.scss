@@ -1,4 +1,4 @@
-input:not([type=checkbox]):not([type=radio]),
+input:not([type='checkbox']):not([type='radio']),
 textarea,
 select {
     -webkit-appearance: none;
@@ -6,25 +6,36 @@ select {
     appearance: none;
 }
 
-input, textarea {
+input,
+textarea {
     outline: none;
-    &:focus:required:invalid { border-color: red }
-    &:required:valid { border-color: green }
+    &:focus:required:invalid {
+        border-color: red;
+    }
+    &:required:valid {
+        border-color: green;
+    }
 }
 
-option::selection {background: #ccc;}
-option::-moz-selection {background: #ccc;}
-option::-webkit-selection {background: #ccc; color:#fff;}
+option::selection {
+    background: #ccc;
+}
+option::-moz-selection {
+    background: #ccc;
+}
+option::-webkit-selection {
+    background: #ccc;
+    color: #fff;
+}
 
 .field {
     display: block;
     position: relative;
     background: $white;
     border-radius: $border-radius;
-    $input-selector: "input[type=text], input[type=email], input[type=password], textarea";
+    $input-selector: 'input[type=text], input[type=email], input[type=password], textarea';
 
     #{$input-selector} {
-
         margin: 0;
         width: 100%;
         z-index: 1;
@@ -43,7 +54,7 @@ option::-webkit-selection {background: #ccc; color:#fff;}
         border: 1px solid $gray;
         border-radius: $border-radius;
         @include placeholder($secondary);
-        transition: .3s;
+        transition: 0.3s;
 
         &::-ms-clear {
             display: none;
@@ -53,7 +64,7 @@ option::-webkit-selection {background: #ccc; color:#fff;}
 
         &:hover {
             border-color: $primary;
-            transition: .3s;
+            transition: 0.3s;
         }
 
         &:focus,
@@ -61,21 +72,42 @@ option::-webkit-selection {background: #ccc; color:#fff;}
             outline: none;
             border-color: $primary;
             @include placeholder(transparent);
-            transition: .3s;
+            transition: 0.3s;
         }
     }
 
-
     &.error {
-
         #{$input-selector} {
             border-color: $accent;
         }
     }
 
+    &-link {
+        @include fcsb;
+        margin: 0;
+        width: 100%;
+        z-index: 1;
+        position: relative;
+        height: 3rem;
+        outline: 0;
+        color: #5b3d38;
+        box-shadow: none;
+        font-weight: 400;
+        font-size: 0.75rem;
+        line-height: 1.5rem;
+        background: 0 0;
+        vertical-align: middle;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        transition: 0.3s;
+        padding-right: 1rem;
+
+        input {
+            border: 0 !important;
+        }
+    }
+
     &__select {
-        right: size-rel(16px);
-        top: size-rel(9px);
         z-index: 10;
         color: $accent;
         cursor: pointer;
@@ -83,7 +115,6 @@ option::-webkit-selection {background: #ccc; color:#fff;}
         white-space: nowrap;
         font-size: size-rel(12px);
         line-height: size-rel(24px);
-        position: absolute;
         display: flex;
         align-items: center;
 
@@ -111,14 +142,14 @@ option::-webkit-selection {background: #ccc; color:#fff;}
         padding: size-rel(8px) 0;
         max-height: size-rel(408px);
         position: absolute;
- //       overflow: hidden;
+        //       overflow: hidden;
         border-radius: 8px;
         background: $white;
         font-size: size-rel(12px);
         line-height: size-rel(24px);
         box-shadow: 2px 2px 40px rgba(0, 0, 0, 0.08);
         transform: translateY(50%);
-        transition: .3s;
+        transition: 0.3s;
 
         &--scroll {
             height: 100%;
@@ -186,13 +217,12 @@ option::-webkit-selection {background: #ccc; color:#fff;}
             height: 9px;
             margin-left: size-rel(8px);
 
-                svg {
-                    fill: none;
-                    stroke: $primary;
-                }
+            svg {
+                fill: none;
+                stroke: $primary;
+            }
 
             &:hover {
-
                 svg {
                     fill: none;
                     stroke: $accent;
@@ -201,16 +231,8 @@ option::-webkit-selection {background: #ccc; color:#fff;}
         }
 
         .simplebar-scrollbar {
-
             &:before {
                 background-color: $gray;
-            }
-        }
-
-        .simplebar-track {
-
-            &.simplebar-vertical {
-                width: 8px;
             }
         }
     }
@@ -222,9 +244,8 @@ option::-webkit-selection {background: #ccc; color:#fff;}
             opacity: 1;
             visibility: visible;
             transform: translateY(0%);
-            transition: .3s;
+            transition: 0.3s;
         }
-
     }
 
     &__icon {
@@ -242,15 +263,12 @@ option::-webkit-selection {background: #ccc; color:#fff;}
     }
 
     @include media-breakpoint-up(sm) {
-
         &__dropdown {
             min-width: 320px;
         }
     }
 
-
     @include media-breakpoint-up(xxl) {
-
         #{$input-selector} {
             font-size: size-rel(14px);
         }
@@ -266,7 +284,6 @@ option::-webkit-selection {background: #ccc; color:#fff;}
 }
 
 .form-line {
-
     margin: 0;
     width: 100%;
     z-index: 1;
@@ -300,13 +317,76 @@ option::-webkit-selection {background: #ccc; color:#fff;}
     }
 }
 
-
 .checkbox {
     font-size: 0;
     line-height: 0;
     font-weight: 400;
     position: relative;
     display: inline-block;
+
+    &.toggle {
+        @include r(1500) {
+            font-size: 10px;
+        }
+
+        font-size: 12px;
+
+        input {
+            display: none;
+
+            &:checked + label {
+                &::before {
+                    border-color: $red;
+                    background: $red;
+                }
+
+                &::after {
+                    background: #fff;
+                    left: 25px;
+                }
+            }
+        }
+
+        label {
+            padding-left: 56px;
+            position: relative;
+            cursor: pointer;
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: -3px;
+                width: 40px;
+                height: 20px;
+                border: 1px solid #ccc;
+                border-radius: 50px;
+                transition: $trans;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background: #ccc;
+                top: 2px;
+                left: 6px;
+                transition: $trans;
+            }
+
+            &:hover {
+                &::before {
+                    border-color: #818285;
+                }
+
+                &::after {
+                    background: #818285;
+                }
+            }
+        }
+    }
 
     &__input {
         top: 0;
@@ -336,7 +416,7 @@ option::-webkit-selection {background: #ccc; color:#fff;}
             display: block;
             position: absolute;
             border-radius: 2px;
-            border: 1px solid #565656
+            border: 1px solid #565656;
         }
 
         &:after {
@@ -354,9 +434,7 @@ option::-webkit-selection {background: #ccc; color:#fff;}
         }
     }
 
-
     &__input:checked + .checkbox__label {
-
         &::before {
             border-color: #000;
         }
@@ -370,7 +448,6 @@ option::-webkit-selection {background: #ccc; color:#fff;}
     &__input:disabled + .checkbox__label {
         opacity: 0.4;
     }
-
 }
 
 .form-group {
@@ -381,7 +458,7 @@ option::-webkit-selection {background: #ccc; color:#fff;}
     display: block;
     position: relative;
     background: transparent;
-    $input-selector: "input[type=text], input[type=email], input[type=password], textarea";
+    $input-selector: 'input[type=text], input[type=email], input[type=password], textarea';
 
     &:after {
         left: 0;
@@ -394,7 +471,7 @@ option::-webkit-selection {background: #ccc; color:#fff;}
         font-size: size-rel(12px);
         line-height: size-rel(22px);
         content: attr(data-placeholder);
-        transition: .2s;
+        transition: 0.2s;
     }
 
     i {
@@ -407,11 +484,10 @@ option::-webkit-selection {background: #ccc; color:#fff;}
         font-size: size-rel(20px);
         line-height: size-rel(20px);
         position: absolute;
-        color: #B4B3B1;
+        color: #b4b3b1;
     }
 
     &:hover {
-
         &:after {
             color: black;
         }
@@ -438,7 +514,7 @@ option::-webkit-selection {background: #ccc; color:#fff;}
         }
 
         &:focus {
-            border-bottom-color: #151D33;
+            border-bottom-color: #151d33;
         }
 
         &:focus::placeholder {
@@ -450,10 +526,10 @@ option::-webkit-selection {background: #ccc; color:#fff;}
         }
 
         &:disabled {
-            color: #D0D0D0;
+            color: #d0d0d0;
 
             &::placeholder {
-                color: #D0D0D0;
+                color: #d0d0d0;
             }
         }
     }
@@ -468,12 +544,11 @@ option::-webkit-selection {background: #ccc; color:#fff;}
             font-weight: 500;
             font-size: size-rel(10px);
             line-height: size-rel(14px);
-            transition: .2s;
+            transition: 0.2s;
         }
     }
 
     &_required {
-
         &::after {
             //   left: 10px;
         }
@@ -493,24 +568,22 @@ option::-webkit-selection {background: #ccc; color:#fff;}
     }
 
     &_success {
-
         #{$input-selector} {
-            border-color: #151D33;
+            border-color: #151d33;
         }
         &:after {
-            color: #151D33;
+            color: #151d33;
         }
     }
 
     &_error {
-
         #{$input-selector} {
             color: brown;
             border-bottom-color: brown;
         }
 
         &:after {
-            color: #B2B2B2
+            color: #b2b2b2;
         }
     }
 
@@ -559,7 +632,7 @@ option::-webkit-selection {background: #ccc; color:#fff;}
         color: $secondary;
         background: $white;
         font-size: size-rel(12px);
-        line-height: size-rel(16px)
+        line-height: size-rel(16px);
     }
 
     &__item {
@@ -597,7 +670,6 @@ option::-webkit-selection {background: #ccc; color:#fff;}
     }
 
     @include media-breakpoint-up(xxl) {
-
         &__label {
             min-width: size-rel(32px);
             min-height: size-rel(32px);
@@ -619,23 +691,22 @@ option::-webkit-selection {background: #ccc; color:#fff;}
     &__row {
         display: flex;
         align-items: center;
-    }
 
-    &__item {
-        position: relative;
-        padding: 0 size-rel(8px);
+        .checkbox-group__item {
+            position: relative;
+            padding: 0 size-rel(8px);
 
-        &:not(:last-child) {
-
-            &:before {
-                right: 0;
-                top: calc(50% - 0.5rem);
-                content: '';
-                width: 1px;
-                display: block;
-                height: size-rel(16px);
-                background: $gray;
-                position: absolute;
+            &:not(:last-child) {
+                &:before {
+                    right: 0;
+                    top: calc(50% - 0.5rem);
+                    content: '';
+                    width: 1px;
+                    display: block;
+                    height: size-rel(16px);
+                    background: $gray;
+                    position: absolute;
+                }
             }
         }
     }
@@ -659,6 +730,36 @@ option::-webkit-selection {background: #ccc; color:#fff;}
         &:checked + .checkbox-group__label {
             color: $white;
             background: $accent;
+
+            &.checkbox-mark {
+                @include r(1023) {
+                    background: #f5f5f5;
+                }
+
+                color: $primary;
+                background: transparent;
+
+                &::before {
+                    background: url('../img/icons/check.svg') no-repeat center $red;
+                    background-size: 8px;
+                    border-color: $red;
+                }
+            }
+        }
+
+        &[disabled] {
+            pointer-events: none;
+            user-select: none;
+
+            & + .checkbox-group__label {
+                color: #ccc;
+                pointer-events: none;
+                user-select: none;
+
+                &::before {
+                    border: 1px solid #f5f5f5;
+                }
+            }
         }
     }
 
@@ -674,10 +775,58 @@ option::-webkit-selection {background: #ccc; color:#fff;}
         font-size: size-rel(12px);
         line-height: size-rel(22px);
         padding: size-rel(4px) size-rel(8px);
+
+        &.checkbox-mark {
+            @include r(1500) {
+                font-size: 12px;
+                padding-left: 20px;
+                padding-top: 3px;
+                padding-bottom: 3px;
+            }
+
+            @include r(1023) {
+                padding: 11px 16px 11px 36px;
+                width: 100%;
+            }
+
+            color: $primary;
+            padding-left: 28px;
+            font-weight: 400;
+            font-size: 14px;
+            white-space: normal;
+            border-radius: 0;
+
+            &::before {
+                @include r(1500) {
+                    width: 12px;
+                    height: 12px;
+                }
+
+                @include r(1023) {
+                    left: 16px;
+                }
+
+                content: '';
+                width: 16px;
+                height: 16px;
+                @include centerYa;
+                left: 0;
+                border: 1px solid #cccccc;
+                transition: background-color 0.2s ease-in-out;
+            }
+        }
+
+        &.checkbox-500 {
+            @include r(1500) {
+                font-size: 14px;
+            }
+
+            font-weight: 500;
+            font-size: 16px;
+        }
     }
 
     @include media-breakpoint-up(xxl) {
-
         &__label {
             font-size: size-rel(14px);
         }
@@ -699,17 +848,26 @@ option::-webkit-selection {background: #ccc; color:#fff;}
         font-size: size-rel(14px);
         line-height: size-rel(24px);
         border: 1px solid $gray;
-        background: $gray-light;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        transition: $trans;
 
         svg {
             fill: $gray;
+            transition: $trans;
         }
 
         &:hover {
-            border-color: $accent;
+            @media (hover: hover) and (pointer: fine) {
+                border-color: $accent;
+                background-color: $accent;
+                color: #fff;
+
+                svg {
+                    fill: #fff;
+                }
+            }
         }
     }
 
@@ -721,7 +879,7 @@ option::-webkit-selection {background: #ccc; color:#fff;}
         font-size: 0;
         line-height: 0;
         margin-left: size-rel(6px);
-        height: size-rel(18px);
+        height: size-rel(15px);
         display: inline-block;
     }
 

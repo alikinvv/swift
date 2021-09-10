@@ -1,0 +1,686 @@
+<div class="location">
+    <div class="location__close"></div>
+    <div class="location__sidebar sidebar"></div>
+    <div class="location__body">
+        <div class="container-fluid">
+            <div class="tabs">
+                <div class="tabs__header">
+                    <ul class="tabs__list">
+                        <li class="tabs__item">
+                            <button class="tabs__btn tabs__btn--active" data-tabs-path="metro">Метро</button>
+                        </li>
+                        <li class="tabs__item">
+                            <button class="tabs__btn hasFilter" data-tabs-path="district">Район</button>
+                        </li>
+                    </ul>
+                    <div class="bar"></div>
+                </div>
+
+                <div class="tabs__content tabs__content--active" data-tabs-target="metro">
+                    {% include "src/template/parts/_metro.njk" %}
+                </div>
+
+                <div class="tabs__content" data-tabs-target="district">
+                    <div class="location__content">
+                        <div class="location__list custom-scroll">
+                            <div class="location__col">
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark checkbox-500">САО</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" checked name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Орехово-Борисово
+                                            Северное</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Восточное Измайлово</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" disabled name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">0 доступных, неактивный
+                                            чекбокс</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Метрогородок</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Десёновское</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="location__col">
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" checked name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark checkbox-500">САО</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Метрогородок</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Воскресенское</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" checked name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Десёновское</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Марушкинское</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Кокошкино</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="location__col">
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark checkbox-500">САО</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Десёновское</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" checked name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Марушкинское</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Кокошкино</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="location__col">
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark checkbox-500">САО</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Орехово-Борисово
+                                            Северное</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" checked name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Воскресенское</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" checked name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Марушкинское</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Кокошкино</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="location__col">
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark checkbox-500">САО</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Орехово-Борисово
+                                            Северное</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Восточное Измайлово</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Метрогородок</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Десёновское</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="location__col">
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark checkbox-500">САО</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Метрогородок</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Воскресенское</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Десёновское</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Марушкинское</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Кокошкино</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="location__col">
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark checkbox-500">САО</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Десёновское</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Марушкинское</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Кокошкино</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="location__col">
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark checkbox-500">САО</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Орехово-Борисово
+                                            Северное</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Воскресенское</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Марушкинское</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Кокошкино</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="location__col">
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark checkbox-500">САО</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" checked name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Орехово-Борисово
+                                            Северное</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Восточное Измайлово</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" disabled name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">0 доступных, неактивный
+                                            чекбокс</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Метрогородок</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Десёновское</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="location__col">
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" checked name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark checkbox-500">САО</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Метрогородок</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Воскресенское</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" checked name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Десёновское</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Марушкинское</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Кокошкино</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="location__col">
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark checkbox-500">САО</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Десёновское</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" checked name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Марушкинское</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Кокошкино</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="location__col">
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark checkbox-500">САО</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Орехово-Борисово
+                                            Северное</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" checked name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Воскресенское</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" checked name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Марушкинское</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Кокошкино</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="location__col">
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark checkbox-500">САО</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" checked name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Орехово-Борисово
+                                            Северное</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Восточное Измайлово</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" disabled name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">0 доступных, неактивный
+                                            чекбокс</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Метрогородок</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Десёновское</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="location__col">
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" checked name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark checkbox-500">САО</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Метрогородок</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Воскресенское</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" checked name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Десёновское</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Марушкинское</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Кокошкино</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="location__col">
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark checkbox-500">САО</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Десёновское</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" checked name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Марушкинское</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Кокошкино</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="location__col">
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark checkbox-500">САО</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Орехово-Борисово
+                                            Северное</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" checked name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Воскресенское</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" checked name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Марушкинское</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                            value="">
+                                        <span class="checkbox-group__label checkbox-mark">Кокошкино</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="location__controls">
+                    <button class="btn" type="button">Показать 4444 квартир</button>
+                    <button class="btn-reset btn-reset--outline">
+                        <svg width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7 1.5L1 7.5" stroke="#FF502F" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M1 1.5L7 7.5" stroke="#FF502F" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+
+                        <span>Сбросить 20 станций</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

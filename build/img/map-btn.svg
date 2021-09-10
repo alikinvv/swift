@@ -1,0 +1,22 @@
+<svg width="240" height="48" viewBox="0 0 240 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect opacity="0.8" x="-49" y="-40" width="338" height="128" fill="#F5F5F5"/>
+<circle opacity="0.1" cx="117.5" cy="21.5" r="36.5" fill="#CCCCCC"/>
+<path opacity="0.1" d="M-55.3828 71.5L9.65241 53.7657L49.5703 102.26L-41.6143 121.992L-55.3828 71.5Z" fill="#C4C4C4"/>
+<rect x="-38" y="-49" width="7.4474" height="340.932" transform="rotate(-64.2526 -38 -49)" fill="white"/>
+<rect x="-62.9961" y="60.7529" width="2.97864" height="363.045" transform="rotate(-101.866 -62.9961 60.7529)" fill="white"/>
+<path d="M-63.6094 69.6486L-62.9969 72.5636L61.8012 46.3426L70.5 31.5L55.6476 21.5918L-63.6094 46.6486L-62.9969 49.5636L56.26 24.5068L66.5 32L61.1887 43.4276L-63.6094 69.6486Z" fill="white"/>
+<rect x="-42.7373" y="113.225" width="4.52615" height="363.045" transform="rotate(-118.735 -42.7373 113.225)" fill="white"/>
+<rect x="11.7969" y="173.072" width="2.97864" height="261.474" transform="rotate(-144.752 11.7969 173.072)" fill="white"/>
+<rect x="91.9453" y="203.295" width="2.97864" height="251.566" transform="rotate(-171.274 91.9453 203.295)" fill="white"/>
+<rect x="173.984" y="196.696" width="6.18949" height="251.766" transform="rotate(162.875 173.984 196.696)" fill="white"/>
+<path d="M105 -12.5L86 3L83 8.5L81.5 29L86 40.5L96.5 51.5L113 57.5L128.5 56.5L141.5 49.5L150.5 37L153.5 14L150.5 4.5L138.5 -8.5L122.5 -14.5L105 -12.5Z" stroke="white" stroke-width="5"/>
+<path d="M33 27.5L14.5 10L2 33.5" stroke="white" stroke-width="3"/>
+<path d="M25 20.5L32.4068 9M44 -9L32.4068 9M57 23L59.3222 17.5M66.5 0.5L59.3222 17.5M32.4068 9L59.3222 17.5" stroke="white" stroke-width="3"/>
+<path d="M218.5 -19L129 61.5L195.581 88M229.5 101.5L195.581 88M272 -39.5L177 80.6045L136.5 88M80.5 78L107.5 84M62.5 46L67.5 50.5M11 56.5L40 91M-37.5 66L7 84L13.5 101.5M-51 -28.5L-35.3278 78M-29 121L-35.3278 78M-47.5 68.5L-55.5 81.25M-63.5 94L-55.5 81.25M-55.5 81.25L-35.3278 78M208 71L195.581 88" stroke="white" stroke-width="4"/>
+<path d="M220.5 76.5V97.5M223 71.5L253.5 38.5436M297.5 -9L253.5 38.5436M253.5 -5L274 13M194 6L233 35M233 35C220.2 41 212.333 40.1667 210 39L173.5 24M233 35C237 32.6957 246.7 30.1785 253.5 38.5436" stroke="white" stroke-width="3"/>
+<path d="M109 57L92.5 80M111 73L103.5 82M84.5 43L82 54.5L51 94" stroke="white" stroke-width="3"/>
+<path d="M3 35L-7 -7.57143M-34 41.5L-22.9259 -4.5M-22.9259 -4.5L-14.5 -39.5L-7 -7.57143M-22.9259 -4.5L-7 -7.57143" stroke="white" stroke-width="4"/>
+<circle cx="117.5" cy="21.5" r="14" fill="#F5F5F5" stroke="white" stroke-width="7"/>
+<defs>
+</defs>
+</svg>

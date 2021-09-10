@@ -1,4 +1,4 @@
-
+{# 
 <div class="filter-mobile">
     <div class="filter-mobile__wrap">
         <div class="filter-mobile__main">
@@ -49,24 +49,16 @@
                                 <div class="range__main">
                                     <div class="range__item range__item--double">
                                         <div class="range__label">от</div>
-                                        <div class="range__value range__value--from">5.9</div>
+                                        <input value="5.9" type="number" data-slider="cost" class="range__value range__value--from">
                                     </div>
                                     <div class="range__divider"></div>
                                     <div class="range__item range__item--double">
                                         <div class="range__label">до</div>
-                                        <div class="range__value range__value--to">120.7</div>
+                                        <input value="120.7" type="number" data-slider="cost" class="range__value range__value--to">
                                     </div>
                                 </div>
                                 <div class="range__slider">
-                                    <input type="text" class="range-field-slider"
-                                           data-type="double"
-                                           data-min="0.5"
-                                           data-max="150"
-                                           data-to="120.7"
-                                           data-from="5.9"
-                                           data-step="0.1"
-                                           data-postfix=""
-                                    >
+                                    <input type="text" class="range-field-slider slider-cost">
                                 </div>
                             </div>
                         </div><!--/.filter-mobile__item -->
@@ -76,39 +68,43 @@
                                 <div class="range__main">
                                     <div class="range__item range__item--double">
                                         <div class="range__label">от</div>
-                                        <div class="range__value range__value--from">15</div>
+                                        <input value="15" type="number" data-slider="area" class="range__value range__value--from">
                                     </div>
                                     <div class="range__divider"></div>
                                     <div class="range__item range__item--double">
                                         <div class="range__label">до</div>
-                                        <div class="range__value range__value--to">270</div>
+                                        <input value="270" type="number" data-slider="area" class="range__value range__value--to">
                                     </div>
                                 </div>
                                 <div class="range__slider">
-                                    <input type="text" class="range-field-slider"
-                                           data-type="double"
-                                           data-min="1"
-                                           data-max="400"
-                                           data-to="270"
-                                           data-from="15"
-                                           data-step="1"
-                                           data-postfix=""
-                                    >
+                                    <input type="text" class="range-field-slider slider-area">
                                 </div>
                             </div>
                         </div><!--/.filter-mobile__item -->
                         <div class="filter-mobile__item">
-                            <div class="range__slider">
-                                <input type="text" class="range-field-slider"
-                                       data-type="double"
-                                       data-min="0"
-                                       data-max="13"
-                                       data-to="14"
-                                       data-from="1"
-                                       data-postfix=""
-                                       data-range-values="Сдан,III кв 2021,IV кв 2021,I кв 2022,II кв 2022,III кв 2022,IV кв 2022,I кв 2023,II кв 2023,III кв 2023,IV кв 2023,I кв 2024,II кв 2024,III кв 2024,IV кв 2024"
-                                       data-param="term"
-                                >
+                            <div class="range">
+                                <div class="range__title">Срок сдачи</div>
+                                    <div class="range__main">
+                                        <div class="range__item">
+                                            <div class="range__value range__value--from">Сдан</div>
+                                        </div>
+                                        <div class="range__divider"></div>
+                                        <div class="range__item">
+                                            <div class="range__value range__value--to">IV кв 2024</div>
+                                        </div>
+                                    </div>
+                                <div class="range__slider">
+                                    <input type="text" class="range-field-slider slider-date"
+                                        data-type="double"
+                                        data-min="0"
+                                        data-max="13"
+                                        data-to="14"
+                                        data-from="1"
+                                        data-postfix=""
+                                        data-range-values="Сдан,III кв 2021,IV кв 2021,I кв 2022,II кв 2022,III кв 2022,IV кв 2022,I кв 2023,II кв 2023,III кв 2023,IV кв 2023,I кв 2024,II кв 2024,III кв 2024,IV кв 2024"
+                                        data-param="term"
+                                    >
+                                </div>
                             </div>
                         </div><!--/.filter-mobile__item -->
                     </div><!--/.filter-mobile__row -->
@@ -128,7 +124,7 @@
                                 <input type="text" class="field__input" name="field" placeholder="Поиск">
                                 <div class="field__select">
                                     <span class="field__select--counter">10</span>
-                                    <span class="field__select--text">Поиск</span>
+                                    <span class="field__select--text open-location">Поиск</span>
                                 </div>
                                 <div class="field__dropdown">
                                     <div class="field__dropdown--scroll">
@@ -297,22 +293,15 @@
                                 <div class="range__title">Этаж</div>
                                 <div class="range__main">
                                     <div class="range__item">
-                                        <div class="range__value range__value--from">7</div>
+                                        <input value="7" type="number" data-slider="floor" class="range__value range__value--from">
                                     </div>
                                     <div class="range__divider"></div>
                                     <div class="range__item">
-                                        <div class="range__value range__value--to">22</div>
+                                        <input value="22" type="number" data-slider="floor" class="range__value range__value--to">
                                     </div>
                                 </div>
                                 <div class="range__slider">
-                                    <input type="text" class="range-field-slider"
-                                           data-type="double"
-                                           data-min="0"
-                                           data-max="30"
-                                           data-to="22"
-                                           data-from="7"
-                                           data-postfix=""
-                                    >
+                                    <input type="text" class="range-field-slider slider-floor">
                                 </div>
                                 <ul class="range__dropdown">
                                     <li>
@@ -435,7 +424,7 @@
     <div class="filter-mobile__button filter-mobile-accept">
         <button type="button" class="btn btn-md">Показать 1256 квартир</button>
     </div><!--/.filter-mobile__footer -->
-</div><!--/.filter-mobile -->
+</div><!--/.filter-mobile --> #}
 
 <button class="mobile-filter-button filter-toggle">
     <i class="mobile-filter-button__icon">
@@ -484,24 +473,16 @@
                 <div class="range__main">
                     <div class="range__item range__item--double">
                         <div class="range__label">от</div>
-                        <div class="range__value range__value--from">5.9</div>
+                        <input value="5.9" type="number" data-slider="cost" class="range__value range__value--from">
                     </div>
                     <div class="range__divider"></div>
                     <div class="range__item range__item--double">
                         <div class="range__label">до</div>
-                        <div class="range__value range__value--to">120.7</div>
+                        <input value="120.7" type="number" data-slider="cost" class="range__value range__value--to">
                     </div>
                 </div>
                 <div class="range__slider">
-                    <input type="text" class="range-field-slider"
-                           data-type="double"
-                           data-min="0.5"
-                           data-max="150"
-                           data-to="120.7"
-                           data-from="5.9"
-                           data-step="0.1"
-                           data-postfix=""
-                    >
+                    <input type="text" class="range-field-slider slider-cost">
                 </div>
             </div>
         </div><!--/.filter__primary--item -->
@@ -511,24 +492,16 @@
                 <div class="range__main">
                     <div class="range__item range__item--double">
                         <div class="range__label">от</div>
-                        <div class="range__value range__value--from">15</div>
+                        <input value="15" type="number" data-slider="area" class="range__value range__value--from">
                     </div>
                     <div class="range__divider"></div>
                     <div class="range__item range__item--double">
                         <div class="range__label">до</div>
-                        <div class="range__value range__value--to">270</div>
+                        <input value="270" type="number" data-slider="area" class="range__value range__value--to">
                     </div>
                 </div>
                 <div class="range__slider">
-                    <input type="text" class="range-field-slider"
-                           data-type="double"
-                           data-min="1"
-                           data-max="400"
-                           data-to="270"
-                           data-from="15"
-                           data-step="1"
-                           data-postfix=""
-                    >
+                    <input type="text" class="range-field-slider slider-area">
                 </div>
             </div>
         </div><!--/.filter__primary--item -->
@@ -545,7 +518,7 @@
                     </div>
                 </div>
                 <div class="range__slider">
-                    <input type="text" class="range-field-slider"
+                    <input type="text" class="range-field-slider slider-date"
                            data-type="double"
                            data-min="0"
                            data-max="13"
@@ -562,164 +535,10 @@
     <div class="filter__secondary">
         <div class="filter__secondary--row">
             <div class="filter__secondary--item">
-                <div class="field">
+                <div class="field field-link">
                     <input type="text" class="field__input" name="field" placeholder="Поиск">
                     <div class="field__select">
-                        <span class="field__select--counter">10</span>
-                        <span class="field__select--text">Расположение</span>
-                    </div>
-                    <div class="field__dropdown">
-                        <div class="field__dropdown--scroll">
-                            <ul class="field__dropdown--list">
-                                <li class="field__dropdown--del">
-                                    <i>
-                                        <svg class="ico-svg" viewBox="0 0 8 9" xmlns="http://www.w3.org/2000/svg">
-                                            <use xlink:href="img/sprites/sprite-mono.svg#clear" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                                        </svg>
-                                    </i>
-                                    <span>Очистить все</span>
-                                </li>
-                                <li class="field__dropdown--item" data-value="Аэропорт">
-                                    <div class="field__dropdown--icon">
-                                        <img src="img/support/line_gray.svg" class="ico-svg" alt="">
-                                    </div>
-                                    <div class="field__dropdown--text">Аэропорт</div>
-                                    <div class="field__dropdown--clear">
-                                        <svg class="ico-svg" viewBox="0 0 8 9" xmlns="http://www.w3.org/2000/svg">
-                                            <use xlink:href="img/sprites/sprite-mono.svg#clear" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                                        </svg>
-                                    </div>
-                                </li>
-                                <li class="field__dropdown--item" data-value="Авиамоторная">
-                                    <div class="field__dropdown--icon">
-                                        <img src="img/support/line_gray_blue_yellow.svg" class="ico-svg" alt="">
-                                    </div>
-                                    <div class="field__dropdown--text">Авиамоторная</div>
-                                    <div class="field__dropdown--clear">
-                                        <svg class="ico-svg" viewBox="0 0 8 9" xmlns="http://www.w3.org/2000/svg">
-                                            <use xlink:href="img/sprites/sprite-mono.svg#clear" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                                        </svg>
-                                    </div>
-                                </li>
-                                <li class="field__dropdown--item" data-value="б-р Адмирала Ушакова">
-                                    <div class="field__dropdown--icon">
-                                        <img src="img/support/line_brown.svg" class="ico-svg" alt="">
-                                    </div>
-                                    <div class="field__dropdown--text">б-р Адмирала Ушакова</div>
-                                    <div class="field__dropdown--clear">
-                                        <svg class="ico-svg" viewBox="0 0 8 9" xmlns="http://www.w3.org/2000/svg">
-                                            <use xlink:href="img/sprites/sprite-mono.svg#clear" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                                        </svg>
-                                    </div>
-                                </li>
-                                <li class="field__dropdown--item" data-value="б-р Дмитрия Донского">
-                                    <div class="field__dropdown--icon">
-                                        <img src="img/support/line_rose.svg" class="ico-svg" alt="">
-                                    </div>
-                                    <div class="field__dropdown--text">б-р Дмитрия Донского</div>
-                                    <div class="field__dropdown--clear">
-                                        <svg class="ico-svg" viewBox="0 0 8 9" xmlns="http://www.w3.org/2000/svg">
-                                            <use xlink:href="img/sprites/sprite-mono.svg#clear" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                                        </svg>
-                                    </div>
-                                </li>
-                                <li class="field__dropdown--item" data-value="Лермонтовский пр-т">
-                                    <div class="field__dropdown--icon">
-                                        <img src="img/support/line_light_green.svg" class="ico-svg" alt="">
-                                    </div>
-                                    <div class="field__dropdown--text">Лермонтовский пр-т</div>
-                                    <div class="field__dropdown--clear">
-                                        <svg class="ico-svg" viewBox="0 0 8 9" xmlns="http://www.w3.org/2000/svg">
-                                            <use xlink:href="img/sprites/sprite-mono.svg#clear" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                                        </svg>
-                                    </div>
-                                </li>
-                                <li class="field__dropdown--item" data-value="Северное измайлово">
-                                    <div class="field__dropdown--text">Северное измайлово</div>
-                                    <div class="field__dropdown--clear">
-                                        <svg class="ico-svg" viewBox="0 0 8 9" xmlns="http://www.w3.org/2000/svg">
-                                            <use xlink:href="img/sprites/sprite-mono.svg#clear" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                                        </svg>
-                                    </div>
-                                </li>
-                                <li class="field__dropdown--item" data-value="Соколиная гора">
-                                    <div class="field__dropdown--text">Соколиная гора</div>
-                                    <div class="field__dropdown--clear">
-                                        <svg class="ico-svg" viewBox="0 0 8 9" xmlns="http://www.w3.org/2000/svg">
-                                            <use xlink:href="img/sprites/sprite-mono.svg#clear" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                                        </svg>
-                                    </div>
-                                </li>
-                                <li class="field__dropdown--item" data-value="Соколиная гора">
-                                    <div class="field__dropdown--text">Соколиная гора</div>
-                                    <div class="field__dropdown--clear">
-                                        <svg class="ico-svg" viewBox="0 0 8 9" xmlns="http://www.w3.org/2000/svg">
-                                            <use xlink:href="img/sprites/sprite-mono.svg#clear" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                                        </svg>
-                                    </div>
-                                </li>
-                                <li class="field__dropdown--item" data-value="Чертаново">
-                                    <div class="field__dropdown--text">Чертаново</div>
-                                    <div class="field__dropdown--clear">
-                                        <svg class="ico-svg" viewBox="0 0 8 9" xmlns="http://www.w3.org/2000/svg">
-                                            <use xlink:href="img/sprites/sprite-mono.svg#clear" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                                        </svg>
-                                    </div>
-                                </li>
-                                <li class="field__dropdown--item" data-value="Рассказовка">
-                                    <div class="field__dropdown--text">Рассказовка</div>
-                                    <div class="field__dropdown--clear">
-                                        <svg class="ico-svg" viewBox="0 0 8 9" xmlns="http://www.w3.org/2000/svg">
-                                            <use xlink:href="img/sprites/sprite-mono.svg#clear" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                                        </svg>
-                                    </div>
-                                </li>
-                                <li class="field__dropdown--item" data-value="Отрадное">
-                                    <div class="field__dropdown--icon">
-                                        <img src="img/support/line_gray.svg" class="ico-svg" alt="">
-                                    </div>
-                                    <div class="field__dropdown--text">Отрадное</div>
-                                    <div class="field__dropdown--clear">
-                                        <svg class="ico-svg" viewBox="0 0 8 9" xmlns="http://www.w3.org/2000/svg">
-                                            <use xlink:href="img/sprites/sprite-mono.svg#clear" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                                        </svg>
-                                    </div>
-                                </li>
-                                <li class="field__dropdown--item" data-value="Выхино">
-                                    <div class="field__dropdown--icon">
-                                        <img src="img/support/line_light_green.svg" class="ico-svg" alt="">
-                                    </div>
-                                    <div class="field__dropdown--text">Выхино</div>
-                                    <div class="field__dropdown--clear">
-                                        <svg class="ico-svg" viewBox="0 0 8 9" xmlns="http://www.w3.org/2000/svg">
-                                            <use xlink:href="img/sprites/sprite-mono.svg#clear" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                                        </svg>
-                                    </div>
-                                </li>
-                                <li class="field__dropdown--item" data-value="Полежаевская">
-                                    <div class="field__dropdown--icon">
-                                        <img src="img/support/line_rose.svg" class="ico-svg" alt="">
-                                    </div>
-                                    <div class="field__dropdown--text">Полежаевская</div>
-                                    <div class="field__dropdown--clear">
-                                        <svg class="ico-svg" viewBox="0 0 8 9" xmlns="http://www.w3.org/2000/svg">
-                                            <use xlink:href="img/sprites/sprite-mono.svg#clear" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                                        </svg>
-                                    </div>
-                                </li>
-                                <li class="field__dropdown--item" data-value="Савеловская">
-                                    <div class="field__dropdown--icon">
-                                        <img src="img/support/line_gray.svg" class="ico-svg" alt="">
-                                    </div>
-                                    <div class="field__dropdown--text">Савеловская</div>
-                                    <div class="field__dropdown--clear">
-                                        <svg class="ico-svg" viewBox="0 0 8 9" xmlns="http://www.w3.org/2000/svg">
-                                            <use xlink:href="img/sprites/sprite-mono.svg#clear" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                                        </svg>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
+                        <span class="field__select--text open-location" open-tab="district">Локация</span>
                     </div>
                 </div>
             </div><!-- /.filter__secondary--item -->
@@ -734,23 +553,16 @@
                 <div class="range">
                     <div class="range__title">Этаж</div>
                     <div class="range__main">
-                        <div class="range__item">
-                            <div class="range__value range__value--from">7</div>
+                        <div class="range__item range__item--double">
+                            <input value="7" type="number" data-slider="floor" class="range__value range__value--from">
                         </div>
                         <div class="range__divider"></div>
-                        <div class="range__item">
-                            <div class="range__value range__value--to">22</div>
+                        <div class="range__item range__item--double">
+                            <input value="22" type="number" data-slider="floor" class="range__value range__value--to">
                         </div>
                     </div>
                     <div class="range__slider">
-                        <input type="text" class="range-field-slider"
-                               data-type="double"
-                               data-min="0"
-                               data-max="30"
-                               data-to="22"
-                               data-from="7"
-                               data-postfix=""
-                        >
+                        <input type="text" class="range-field-slider slider-floor">
                     </div>
                     <ul class="range__dropdown">
                         <li>
@@ -824,12 +636,12 @@
     <div class="filter__actions">
         <div class="filter__actions__column">
             <button type="button" class="btn btn-filter">Показать 1256 квартир</button>
+            <button type="button" class="btn btn-map open-location" open-tab="metro"><img src="img/icons/about-icon-06_red.svg" alt=""> Смотреть на карте</button>
             <button class="btn-reset">
-                <i>
-                    <svg class="ico-svg" viewBox="0 0 8 9" xmlns="http://www.w3.org/2000/svg">
-                        <use xlink:href="img/sprites/sprite-mono.svg#clear" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                    </svg>
-                </i>
+                <svg width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 1.5L1 7.5" stroke="#FF502F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M1 1.5L7 7.5" stroke="#FF502F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
                 <span>Очистить фильтры</span>
             </button>
         </div><!--/.filter__actions__column -->

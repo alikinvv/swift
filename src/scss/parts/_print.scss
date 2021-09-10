@@ -1,0 +1,285 @@
+.print {
+    width: 620px;
+    min-width: 620px;
+    padding: 0 24px;
+
+    &.type2 {
+        .print__image {
+            @include fcsb;
+            padding-right: 24px;
+
+            img {
+                max-height: 208px;
+
+                &:first-child {
+                    max-width: 100%;
+                }
+
+                &:last-child {
+                    width: 208px;
+                    margin-left: 16px;
+                    flex-shrink: 0;
+                }
+            }
+        }
+
+        .print__result {
+            @include fcn;
+            margin-bottom: 32px;
+        }
+
+        .print__info {
+            width: 100%;
+            @include fesb;
+        }
+    }
+
+    &.type3 {
+        position: relative;
+
+        .print__image {
+            width: 100%;
+
+            img {
+                width: 100%;
+                max-height: initial;
+            }
+        }
+
+        .print__logo {
+            position: absolute;
+            top: 0;
+            left: 48px;
+            z-index: 2;
+        }
+    }
+
+    &__header {
+        @include fcn;
+        margin-bottom: 24px;
+
+        &-office {
+            font-size: 10px;
+            font-weight: 500;
+            margin-bottom: -6px;
+        }
+
+        &-addr {
+            font-size: 9px;
+            margin-bottom: -6px;
+        }
+
+        &-time {
+            color: #818285;
+            font-size: 8px;
+            margin-bottom: -6px;
+        }
+    }
+
+    &__phone {
+        font-size: 12px;
+        font-weight: 500;
+        color: $primary;
+        text-decoration: none;
+        display: block;
+        margin-bottom: -6px;
+    }
+
+    &__site {
+        color: $red;
+        font-size: 10px;
+    }
+
+    &__logo {
+        background: $primary;
+        -webkit-print-color-adjust: exact;
+        width: 140px;
+        height: 140px;
+        @include fcc;
+        margin-right: 34px;
+
+        img {
+            width: 100px;
+        }
+    }
+
+    &__vendor {
+        font-size: 10px;
+        margin-bottom: 2px;
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: 16px;
+        margin-bottom: 2px;
+    }
+
+    &__addr {
+        font-size: 10px;
+        margin-bottom: -6px;
+    }
+
+    &__stop {
+        @include fcn;
+        margin-bottom: 18px;
+
+        &-item {
+            margin-right: 16px;
+            position: relative;
+            padding-left: 20px;
+            font-size: 10px;
+            @include fcn;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 8px;
+                left: 0;
+                width: 10px;
+                height: 10px;
+                border: 2px solid $red;
+                border-radius: 50%;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            img {
+                margin-right: 4.4px;
+                margin-left: 11px;
+            }
+
+            span:first-child {
+                position: relative;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 10px;
+                    right: -7px;
+                    width: 3px;
+                    height: 3px;
+                    border-radius: 50%;
+                    background: #818285;
+                    -webkit-print-color-adjust: exact;
+                }
+            }
+        }
+    }
+
+    &__image {
+        text-align: center;
+        margin-bottom: 18px;
+
+        img {
+            max-height: 274px;
+        }
+    }
+
+    &__info {
+        @include fssb;
+    }
+
+    &__table {
+        &-row {
+            @include fcn;
+            font-size: 10px;
+            padding: 2px 8px;
+
+            &:nth-child(odd) {
+                background: #f1f1f1;
+                -webkit-print-color-adjust: exact;
+            }
+
+            span {
+                &:first-child {
+                    min-width: 107px;
+                }
+
+                &:last-child {
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+
+    &__date {
+        margin-top: 31px;
+        color: #818285;
+        font-size: 10px;
+    }
+
+    &__result {
+        &-item {
+            margin-right: 40px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    &__label {
+        font-size: 10px;
+        margin-bottom: -6px;
+    }
+
+    &__value {
+        font-weight: 600;
+        font-size: 16px;
+    }
+
+    &__tags {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 16px;
+    }
+
+    &__tag {
+        font-size: 10px;
+        background: #dfdfdf;
+        -webkit-print-color-adjust: exact;
+        border-radius: 4px;
+        padding: 2px 8px;
+        margin-right: 4px;
+        line-height: 2;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__from {
+        font-size: 10px;
+        margin-bottom: -6px;
+    }
+
+    &__price {
+        font-weight: 600;
+        font-size: 16px;
+        margin-bottom: 2px;
+    }
+
+    &__square {
+        font-size: 10px;
+        margin-bottom: -6px;
+    }
+
+    &__mortgage {
+        font-size: 10px;
+    }
+
+    &__icon {
+        @include fcc;
+        font-size: 10px;
+
+        img {
+            margin-right: 8px;
+        }
+    }
+
+    &__qr {
+        margin-top: 41px;
+    }
+}

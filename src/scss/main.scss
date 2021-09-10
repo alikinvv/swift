@@ -23,11 +23,14 @@
 @import './layout/post';
 @import './layout/object';
 
-@import './parts/header';
-@import './parts/footer';
-@import './parts/sidebar';
+// parts
 @import './parts/conditions';
-@import './parts/item';
-@import './parts/filter';
 @import './parts/credit';
+@import './parts/filter';
 @import './parts/flat';
+@import './parts/footer';
+@import './parts/header';
+@import './parts/item';
+@import './parts/location';
+@import './parts/print';
+@import './parts/sidebar';

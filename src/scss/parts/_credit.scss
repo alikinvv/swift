@@ -1,11 +1,17 @@
 .credit-block {
-
     &__filter {
+        @include r(1360) {
+            width: 215px;
+        }
+
+        @include r(1023) {
+            width: 100%;
+        }
+
         margin-bottom: size-rel(54px);
-    }
-
-    &__main {
-
+        @include fssb;
+        width: 326px;
+        flex-shrink: 0;
     }
 
     &__view {
@@ -16,8 +22,16 @@
         }
     }
 
-    @include media-breakpoint-up(sm) {
+    &__main {
+        @include r(1023) {
+            margin-left: 0;
+        }
 
+        width: 100%;
+        margin-left: 40px;
+    }
+
+    @include media-breakpoint-up(sm) {
         &__view {
             text-align: center;
 
@@ -30,38 +44,12 @@
     @include media-breakpoint-up(xl) {
         display: flex;
         justify-content: space-between;
-
-        &__filter {
-            width: 230px;
-            flex-shrink: 0;
-            margin: 0;
-        }
-
-        &__main {
-            width: calc(100% - 270px);
-        }
     }
-
-    @include media-breakpoint-up(xxl) {
-
-        &__filter {
-            width: size-rel(323px);
-            flex-shrink: 0;
-            margin: 0;
-        }
-
-        &__main {
-            width: calc(100% - 363px);
-        }
-    }
-
 }
 
 .credit-filter {
-
-    &__main {
-
-    }
+    margin: 0;
+    width: 100%;
 
     &__item {
         margin-bottom: size-rel(30px);
@@ -114,7 +102,6 @@
     }
 
     @include media-breakpoint-up(xl) {
-
         &__item {
             margin-bottom: size-rel(40px);
         }
@@ -126,19 +113,18 @@
     font-size: size-rel(12px);
     line-height: size-rel(22px);
     margin-bottom: size-rel(24px);
+    cursor: pointer;
 
     &--open {
-
         &:before {
             opacity: 0;
             visibility: hidden;
         }
 
         .credit__toggle {
-
             i {
                 transform: rotate(180deg);
-                transition: .3s;
+                transition: 0.3s;
             }
         }
     }
@@ -156,18 +142,48 @@
         box-shadow: 2px 2px 18px 2px rgba(0, 0, 0, 0.05);
     }
 
+    &-block {
+        @include r(1023) {
+            display: block;
+        }
+
+        display: flex;
+    }
+
     &__main {
+        @include r(1500) {
+            padding: 22px 18px;
+        }
+
         z-index: 10;
         background: $white;
         position: relative;
         border-radius: 8px;
-        padding: size-rel(16px) size-rel(24px);
         box-shadow: 2px 2px 18px 2px rgba(0, 0, 0, 0.05);
+        padding: 28px 32px;
+
+        &--primary {
+            .credit__price {
+                @include r(1023) {
+                    margin-right: 12px;
+                }
+
+                @include r(767) {
+                    margin-right: 0;
+                }
+
+                font-size: 16px;
+            }
+        }
 
         &--secondary {
             margin-left: -4px;
-            margin-top: size-rel(16px);
-            border-left: 4px solid #84D400;
+            border-left: 4px solid #84d400;
+            cursor: default;
+
+            & + .credit__main--secondary {
+                margin-top: 17px;
+            }
         }
     }
 
@@ -191,7 +207,7 @@
 
     &__toggle {
         top: size-rel(16px);
-        right: size-rel(16px);
+        right: 24px;
         z-index: 10;
         outline: none;
         font-size: 0;
@@ -200,8 +216,8 @@
         background: $white;
         border-radius: 4px;
         position: absolute;
-        width: size-rel(28px);
-        height: size-rel(28px);
+        width: 30px;
+        height: 30px;
         border: 1px solid $gray;
         display: flex;
         align-items: center;
@@ -211,7 +227,7 @@
         i {
             height: 16px;
             display: inline-block;
-            transition: .3s;
+            transition: 0.3s;
         }
     }
 
@@ -226,6 +242,7 @@
             color: $secondary;
             font-size: size-rel(10px);
             line-height: size-rel(20px);
+            margin-bottom: 5px;
         }
 
         &__value {
@@ -238,6 +255,7 @@
 
         .btn {
             width: 100%;
+            padding: 11px 18px;
         }
     }
 
@@ -245,20 +263,19 @@
         z-index: 5;
         display: none;
         position: relative;
+        padding-left: 4px;
+        padding-top: 25px;
     }
 
     @include media-breakpoint-up(sm) {
-
         &__main {
             display: flex;
             align-items: center;
-            min-height: size-rel(104px);
-            padding: size-rel(8px) size-rel(16px);
 
             &--secondary {
-
                 .credit__info--value {
-                    font-size: size-rel(12px);
+                    font-size: 12px;
+                    font-weight: 500;
                 }
             }
         }
@@ -297,8 +314,7 @@
 
             &--value {
                 font-weight: 500;
-                font-size: size-rel(14px);
-                line-height: size-rel(24px);
+                font-size: 14px;
             }
         }
 
@@ -331,16 +347,8 @@
     @include media-breakpoint-up(md) {
         margin-bottom: size-rel(24px);
 
-        &__main {
-            min-height: size-rel(80px);
-
-            &--secondary {
-                margin-top: size-rel(8px);
-            }
-        }
-
         &__header {
-            width: size-rel(180px);
+            width: 8.25rem;
             margin-right: size-rel(24px);
         }
 
@@ -349,30 +357,20 @@
         }
 
         &__info {
-            width: size-rel(260px);
+            width: 13.25rem;
         }
 
         &__button {
-            width: size-rel(200px);
+            width: 10.5rem;
         }
 
         &__empty {
-            width: size-rel(200px);
+            width: 10.5rem;
         }
-    }
-
-    @include media-breakpoint-up(lg) {
-
     }
 
     @include media-breakpoint-up(xl) {
-
-        &__main {
-            padding-left: size-rel(24px);
-        }
-
         &__header {
-
             &--icon {
                 margin-left: 0;
             }
@@ -405,9 +403,7 @@
         }
 
         &__main {
-
             &--secondary {
-
                 .credit__price {
                     font-size: size-rel(14px);
                     line-height: size-rel(24px);
@@ -443,6 +439,8 @@
             width: size-rel(200px);
         }
     }
-
 }
 
+.sticky-wrapper {
+    width: 100%;
+}

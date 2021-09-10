@@ -2,6 +2,10 @@
     z-index: 5;
     position: relative;
 
+    &:hover .range__main {
+        border-color: $secondary;
+    }
+
     &__main {
         z-index: 20;
         background: $white;
@@ -12,10 +16,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-
-        &:hover {
-            border-color: $primary;
-        }
+        transition: $trans;
     }
 
     &__title {
@@ -26,8 +27,8 @@
         position: absolute;
         color: $secondary;
         background: $white;
-        font-size: size-rel(12px);
-        line-height: size-rel(16px)
+        font-size: 14px;
+        line-height: size-rel(16px);
     }
 
     &__divider {
@@ -44,8 +45,24 @@
         justify-content: center;
         width: calc(50% - 1px);
 
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type='number'] {
+            -moz-appearance: textfield;
+        }
+
         &--double {
-            justify-content: space-evenly;
+            justify-content: center;
+
+            input {
+                border: 0;
+                text-align: center;
+                width: 30px;
+            }
         }
 
         &--single {
@@ -53,6 +70,11 @@
             text-align: left;
             justify-content: flex-start;
             padding-left: size-rel(24px);
+
+            input {
+                border: 0;
+                width: 100%;
+            }
         }
 
         &--percent {
@@ -115,75 +137,101 @@
         }
 
         .irs-handle {
+            @include r(1400) {
+                width: 17px;
+                height: 17px;
+                margin-top: -2px;
+                margin-left: -1px;
+            }
+
             border: none;
             cursor: pointer;
             top: size-rel(-6px);
-            width: size-rel(12px);
-            height: size-rel(12px);
+            width: 13px;
+            height: 13px;
             border-radius: 4px;
             background: $accent;
             transform: rotate(45deg);
             box-shadow: none;
 
             &:before {
+                @include r(1400) {
+                    width: 7.07px;
+                    height: 7.07px;
+                    transition: none;
+                }
+
                 z-index: 20;
                 content: '';
                 display: block;
                 background: $white;
                 position: absolute;
                 border-radius: 50%;
-                width: size-rel(6px);
-                height: size-rel(6px);
-                top: calc(50% - 3px);
-                left: calc(50% - 3px);
-                transition: .3s;
+                width: 5.37px;
+                height: 5.37px;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
             }
 
             &:after {
+                @include r(1400) {
+                    width: 13px;
+                    height: 13px;
+                    opacity: 1;
+                    transition: none;
+                }
+
                 z-index: 10;
                 content: '';
                 opacity: 0;
-                transition: .3s;
-                top: calc(50% - 8px);
-                left: calc(50% - 8px);
+                transition: 0.2s;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
                 border-radius: 6px;
-                width: size-rel(16px);
-                height: size-rel(16px);
+                width: 13px;
+                height: 13px;
                 position: absolute;
                 background: $accent;
             }
 
             &:hover {
                 background: $accent;
+                width: 17px;
+                height: 17px;
+                margin-top: -2px;
+                margin-left: -1px;
 
                 &:before {
-                    width: size-rel(8px);
-                    height: size-rel(8px);
-                    top: calc(50% - 4px);
-                    left: calc(50% - 4px);
-                    transition: .3s;
+                    width: 7.07px;
+                    height: 7.07px;
                 }
 
                 &:after {
                     opacity: 1;
-                    transition: .2s;
+                    transition: 0.2s;
+                    width: 17px;
+                    height: 17px;
                 }
             }
 
             &.state_hover {
                 background: $accent;
+                width: 17px;
+                height: 17px;
+                margin-top: -2px;
+                margin-left: -1px;
 
                 &:after {
                     opacity: 1;
-                    transition: .3s;
+                    transition: 0.2s;
                 }
 
                 &:before {
-                    width: size-rel(8px);
-                    height: size-rel(8px);
-                    top: calc(50% - 4px);
-                    left: calc(50% - 4px);
-                    transition: .3s;
+                    width: 7.07px;
+                    height: 7.07px;
+                    transition: 0.2s;
                 }
             }
         }
@@ -213,7 +261,6 @@
         }
 
         &--focus {
-
             .range-field__placeholder {
                 opacity: 0;
                 visibility: hidden;
@@ -225,24 +272,22 @@
         }
 
         &--disabled {
-
             .range-field {
-
                 &__main {
                     background: rgba(0, 0, 0, 0.05);
                     border-color: transparent;
                 }
 
                 &__input {
-                    opacity: .5;
+                    opacity: 0.5;
                 }
 
                 &__placeholder {
-                    opacity: .5;
+                    opacity: 0.5;
                 }
 
                 &__percent {
-                    opacity: .5;
+                    opacity: 0.5;
                 }
             }
         }
@@ -264,7 +309,7 @@
         align-items: center;
         opacity: 0;
         visibility: hidden;
-        transition: .25s;
+        transition: 0.25s;
 
         li {
             width: 50%;
@@ -272,7 +317,6 @@
             padding: 0 size-rel(8px);
 
             &:first-child {
-
                 &:before {
                     right: 0;
                     top: calc(50% - 0.5rem);
@@ -323,7 +367,7 @@
         .range__dropdown {
             opacity: 1;
             visibility: visible;
-            transition: .25s;
+            transition: 0.25s;
         }
     }
 
@@ -333,7 +377,7 @@
         .range__dropdown {
             opacity: 1;
             visibility: visible;
-            transition: .25s;
+            transition: 0.25s;
         }
     }
 }
