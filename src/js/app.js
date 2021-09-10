@@ -20,19 +20,6 @@ const lazyLoadInstance = new LazyLoad({
     elements_selector: '.lazy',
 });
 
-const pageNavToggle = document.querySelectorAll('.nav-toggle');
-
-if (pageNavToggle) {
-    pageNavToggle.forEach((el) => {
-        el.addEventListener('click', (e) => {
-            const self = document.querySelector('.root');
-            self.classList.toggle('nav-open');
-            $('.mobile-nav__second').removeClass('mobile-nav__second--open');
-            return false;
-        });
-    });
-}
-
 $('.mobile-nav__next').on('click', function (e) {
     e.preventDefault();
     let secondNav = '.' + $(this).attr('data-nav');
@@ -1449,3 +1436,32 @@ $('body').on('click', '.select__count', (e) => {
     $(e.currentTarget).closest('.select').find('.select__input').val('');
     $(e.currentTarget).remove();
 });
+
+// hamburger
+let initMobileMenu = () => {
+    if ($(window).width() <= 1023 && $('.hamburger').length === 0) {
+        $('.header .header__main').prepend('<div class="hamburger nav-toggle"><span></span></div>');
+    } else if ($(window).width() > 1023 && $('.hamburger').length > 0) {
+        $('.hamburger').remove();
+    }
+};
+
+initMobileMenu();
+
+$('body').on('click', '.hamburger', (e) => {
+    $(e.currentTarget).toggleClass('active');
+    $('.menu').addClass('active');
+});
+
+const pageNavToggle = document.querySelectorAll('.nav-toggle');
+
+if (pageNavToggle) {
+    pageNavToggle.forEach((el) => {
+        el.addEventListener('click', (e) => {
+            const self = document.querySelector('.root');
+            self.classList.toggle('nav-open');
+            $('.mobile-nav__second').removeClass('mobile-nav__second--open');
+            return false;
+        });
+    });
+}

@@ -77,13 +77,11 @@
     }
 
     @include media-breakpoint-up(sm) {
-
         &__hamburger {
             min-width: 128px;
         }
 
         &__phone {
-
             &--text {
                 display: inline-block;
             }
@@ -92,79 +90,90 @@
 }
 
 .hamburger {
-    width: 22px;
-    height: 16px;
-    margin: 0;
-    padding: 0;
-    font-size: 0;
-    line-height: 0;
-    border: none;
-    outline: none;
-    cursor: pointer;
+    @include r(767) {
+        flex-shrink: 0;
+        width: 30px;
+        height: 25px;
+        margin-right: 10px;
+    }
+
+    width: 38px;
+    height: 28px;
     position: relative;
-    display: inline-block;
+    cursor: pointer;
+    margin-right: 2vw;
     background: transparent;
+    border: 0;
 
-    &__inner {
-        top: calc(50% - 1px);
-        left: calc(50% - 11px);
-        width: 22px;
-        height: 2px;
-        position: absolute;
-        transition-property: transform;
-        transition-duration: .2s;
-        transition-timing-function: ease;
-        border-radius: 3px;
-        background-color: $accent;
+    &.active {
+        span {
+            background: transparent;
 
-        &:after,
-        &:before {
-            left: calc(50% - 11px);
-            width: 22px;
-            height: 2px;
-            content: '';
-            display: inline-block;
-            position: absolute;
-            transition-property: transform;
-            transition-duration: .15s;
-            transition-timing-function: ease;
-            border-radius: 3px;
-            background-color: $accent;
-        }
+            &::before {
+                top: 0;
+                transform: rotate(45deg);
+                transition: top 0.2s ease-in-out, transform 0.2s ease-in-out 0.2s;
+            }
 
-        &:after {
-            top: -8px;
-        }
-
-        &:before {
-            bottom: -8px;
+            &::after {
+                bottom: 0;
+                transform: rotate(-45deg);
+                transition: bottom 0.2s ease-in-out, transform 0.2s ease-in-out 0.2s;
+            }
         }
     }
 
-    &.hamburger-open {
+    span {
+        @include r(767) {
+            height: 3px;
+        }
 
-        .hamburger__inner {
-            background: transparent;
-            transform: rotate(360deg);
-            transition: .2s;
+        width: 100%;
+        height: 5px;
+        background: $red;
+        position: absolute;
+        top: 12px;
+        transition: background 0.2s ease-in-out 0.1s;
+        pointer-events: none;
+        user-select: none;
 
-            &:after {
-                top: 0;
-                transform: rotate(45deg);
+        &::before,
+        &::after {
+            @include r(767) {
+                height: 3px;
             }
 
-            &:before {
-                bottom: 0;
-                transform: rotate(-45deg);
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 5px;
+            background: $red;
+            left: 0;
+        }
+
+        &::before {
+            @include r(767) {
+                top: -10px;
             }
+
+            top: -12px;
+            transition: top 0.2s ease-in-out 0.2s, transform 0.2s ease-in-out;
+        }
+
+        &::after {
+            @include r(767) {
+                bottom: -10px;
+            }
+
+            bottom: -12px;
+            transition: bottom 0.2s ease-in-out 0.2s, transform 0.2s ease-in-out;
         }
     }
 }
 
 .nav-open {
-
     .header__nav {
-        transition: .3s;
+        transition: 0.3s;
         transform: translateX(0);
     }
 
@@ -174,11 +183,10 @@
     }
 
     .hamburger {
-
         &__inner {
             background: transparent;
             transform: rotate(360deg);
-            transition: .2s;
+            transition: 0.2s;
 
             &:after {
                 top: 0;
@@ -194,7 +202,7 @@
 
     .mobile-nav {
         transform: translateY(0);
-        transition: .4s;
+        transition: 0.4s;
     }
 }
 
@@ -218,7 +226,6 @@
         line-height: size-rel(22px);
 
         li {
-
             a {
                 color: $primary;
                 text-decoration: none;
@@ -241,7 +248,7 @@
                     border-radius: 50%;
                     display: inline-block;
                     position: absolute;
-                    transition: .2s;
+                    transition: 0.2s;
                     background: $accent;
                 }
 
@@ -267,11 +274,10 @@
                 }
 
                 &.active {
-
                     &:before {
                         opacity: 1;
                         visibility: visible;
-                        transition: .2s;
+                        transition: 0.2s;
                     }
                 }
             }
@@ -292,11 +298,11 @@
         background: $white;
         margin-left: -100%;
         padding: size-rel(72px) 0 size-rel(16px) 0;
-        transition: .3s;
+        transition: 0.3s;
 
         &--open {
             margin-left: 0;
-            transition: .3s;
+            transition: 0.3s;
         }
     }
 
@@ -339,10 +345,14 @@
     }
 }
 
-@include media-breakpoint-up(md) {}
+@include media-breakpoint-up(md) {
+}
 
-@include media-breakpoint-up(lg) {}
+@include media-breakpoint-up(lg) {
+}
 
-@include media-breakpoint-up(xl) {}
+@include media-breakpoint-up(xl) {
+}
 
-@include media-breakpoint-up(xxl) {}
+@include media-breakpoint-up(xxl) {
+}
