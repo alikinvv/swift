@@ -17,7 +17,684 @@
                 </div>
 
                 <div class="tabs__content tabs__content--active" data-tabs-target="metro">
-                    {% include "src/template/parts/_metro.njk" %}
+                    <div class="metro">
+                        <div class="metro__filter field">
+                            <input type="text" class="metro__search" placeholder="Поиск по станции">
+
+                            <div class="select checkbox">
+                                <input type="text" class="select__input" placeholder="Линия">
+                                <div class="select__dropdown custom-scroll">
+                                    <div class="select__item" data-value="Таганско-Краснопренсненская">
+                                        <div class="checkbox-group__item">
+                                            <label class="checkbox-group__button">
+                                                <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                    value="">
+                                                <span class="checkbox-group__label checkbox-mark checkbox-500">
+                                                    <span class="line red"></span>
+                                                    Таганско-Краснопренсненская
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="select__item" data-value="Авиамоторная">
+                                        <div class="checkbox-group__item">
+                                            <label class="checkbox-group__button">
+                                                <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                    value="">
+                                                <span class="checkbox-group__label checkbox-mark checkbox-500">
+                                                    <span class="line gray fill"></span>
+                                                    Авиамоторная
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="select__item" data-value="б-р Адмирала Ушакова">
+                                        <div class="checkbox-group__item">
+                                            <label class="checkbox-group__button">
+                                                <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                    value="">
+                                                <span class="checkbox-group__label checkbox-mark checkbox-500">
+                                                    <span class="line lightblue fill"></span>
+                                                    б-р Адмирала Ушакова
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="select__item" data-value="Лермонтовский пр-т">
+                                        <div class="checkbox-group__item">
+                                            <label class="checkbox-group__button">
+                                                <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                    value="">
+                                                <span class="checkbox-group__label checkbox-mark checkbox-500">
+                                                    <span class="line green fill"></span>
+                                                    Лермонтовский пр-т
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="select__item" data-value="б-р Дмитрия Донского">
+                                        <div class="checkbox-group__item">
+                                            <label class="checkbox-group__button">
+                                                <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                    value="">
+                                                <span class="checkbox-group__label checkbox-mark checkbox-500">
+                                                    <span class="line pink fill"></span>
+                                                    б-р Дмитрия Донского
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="select__item" data-value="МЦД-1">
+                                        <div class="checkbox-group__item">
+                                            <label class="checkbox-group__button">
+                                                <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                    value="">
+                                                <span class="checkbox-group__label checkbox-mark checkbox-500">
+                                                    <span class="line blue"></span>
+                                                    МЦД-1
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="select__item" data-value="Центральное кольцо">
+                                        <div class="checkbox-group__item">
+                                            <label class="checkbox-group__button">
+                                                <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                    value="">
+                                                <span class="checkbox-group__label checkbox-mark checkbox-500">
+                                                    <span class="line lightblue fill"></span>
+                                                    Центральное кольцо
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="select__item" data-value="Таганско-Краснопренсненская">
+                                        <div class="checkbox-group__item">
+                                            <label class="checkbox-group__button">
+                                                <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                    value="">
+                                                <span class="checkbox-group__label checkbox-mark checkbox-500">
+                                                    <span class="line red"></span>
+                                                    Таганско-Краснопренсненская
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="select__item" data-value="Авиамоторная">
+                                        <div class="checkbox-group__item">
+                                            <label class="checkbox-group__button">
+                                                <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                    value="">
+                                                <span class="checkbox-group__label checkbox-mark checkbox-500">
+                                                    <span class="line gray fill"></span>
+                                                    Авиамоторная
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="select__item" data-value="б-р Адмирала Ушакова">
+                                        <div class="checkbox-group__item">
+                                            <label class="checkbox-group__button">
+                                                <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                    value="">
+                                                <span class="checkbox-group__label checkbox-mark checkbox-500">
+                                                    <span class="line lightblue fill"></span>
+                                                    б-р Адмирала Ушакова
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="select__item" data-value="Лермонтовский пр-т">
+                                        <div class="checkbox-group__item">
+                                            <label class="checkbox-group__button">
+                                                <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                    value="">
+                                                <span class="checkbox-group__label checkbox-mark checkbox-500">
+                                                    <span class="line green fill"></span>
+                                                    Лермонтовский пр-т
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="select__item" data-value="б-р Дмитрия Донского">
+                                        <div class="checkbox-group__item">
+                                            <label class="checkbox-group__button">
+                                                <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                    value="">
+                                                <span class="checkbox-group__label checkbox-mark checkbox-500">
+                                                    <span class="line pink fill"></span>
+                                                    б-р Дмитрия Донского
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="select__item" data-value="МЦД-1">
+                                        <div class="checkbox-group__item">
+                                            <label class="checkbox-group__button">
+                                                <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                    value="">
+                                                <span class="checkbox-group__label checkbox-mark checkbox-500">
+                                                    <span class="line blue"></span>
+                                                    МЦД-1
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="select__item" data-value="Центральное кольцо">
+                                        <div class="checkbox-group__item">
+                                            <label class="checkbox-group__button">
+                                                <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                    value="">
+                                                <span class="checkbox-group__label checkbox-mark checkbox-500">
+                                                    <span class="line lightblue fill"></span>
+                                                    Центральное кольцо
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="select metro-time">
+                                <input type="text" class="select__input" placeholder="Время до метро" value="">
+                                <div class="select__dropdown custom-scroll">
+                                    <div class="select__item" data-value="1">1</div>
+                                    <div class="select__item" data-value="2">2</div>
+                                    <div class="select__item" data-value="3">3</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {% include "src/template/parts/_metro.njk" %}
+                        <div class="metro__controls">
+                            <button class="metro__zoom" id="zoom-in"><img src="img/icons/zoom-in.svg" alt=""></button>
+                            <button class="metro__zoom" id="zoom-out"><img src="img/icons/zoom-out.svg" alt=""></button>
+                        </div>
+                    </div>
+
+                    <div class="metro-mobile">
+                        <div class="location__content">
+                            <div class="metro__filter field">
+                                <input type="text" class="metro__search" placeholder="Поиск по станции">
+
+                                <div class="select metro-time">
+                                    <input type="text" class="select__input" placeholder="Время до метро" value="">
+                                    <div class="select__dropdown custom-scroll">
+                                        <div class="select__item" data-value="1">1</div>
+                                        <div class="select__item" data-value="2">2</div>
+                                        <div class="select__item" data-value="3">3</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="location__list custom-scroll">
+                                <div class="location__col">
+                                    <div class="metro__title"><span class="line red"></span> Таганско-Краснопренсненская
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">Авиамоторная</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">ул Академика Янгеля</span>
+                                        </label>
+                                    </div>
+
+                                </div>
+
+                                <div class="location__col">
+                                    <div class="metro__title"><span class="line blue"></span> МЦД-1
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">САО</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">б-р Адмирала
+                                                Ушакова</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">Лермонтовский пр-т</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">ул Академика Янгеля</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">Раменки</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="location__col">
+                                    <div class="metro__title"><span class="line green"></span> Аэропорт
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">Новый город</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">пр-т Ленина</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">Садовое кольцо</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">Выставочная</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">Митино</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">Строгино</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="location__col">
+                                    <div class="metro__title"><span class="line blue"></span> МЦД-1
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">САО</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">б-р Адмирала
+                                                Ушакова</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">Лермонтовский пр-т</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">ул Академика Янгеля</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">Раменки</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="location__col">
+                                    <div class="metro__title"><span class="line red"></span> Таганско-Краснопренсненская
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">Авиамоторная</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">ул Академика Янгеля</span>
+                                        </label>
+                                    </div>
+
+                                </div>
+
+                                <div class="location__col">
+                                    <div class="metro__title"><span class="line blue"></span> МЦД-1
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">САО</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">б-р Адмирала
+                                                Ушакова</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">Лермонтовский пр-т</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">ул Академика Янгеля</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">Раменки</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="location__col">
+                                    <div class="metro__title"><span class="line green"></span> Аэропорт
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">Новый город</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">пр-т Ленина</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">Садовое кольцо</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">Выставочная</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">Митино</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">Строгино</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="location__col">
+                                    <div class="metro__title"><span class="line blue"></span> МЦД-1
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">САО</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">б-р Адмирала
+                                                Ушакова</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">Лермонтовский пр-т</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">ул Академика Янгеля</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">Раменки</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="location__col">
+                                    <div class="metro__title"><span class="line red"></span> Таганско-Краснопренсненская
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">Авиамоторная</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">ул Академика Янгеля</span>
+                                        </label>
+                                    </div>
+
+                                </div>
+
+                                <div class="location__col">
+                                    <div class="metro__title"><span class="line blue"></span> МЦД-1
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">САО</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">б-р Адмирала
+                                                Ушакова</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">Лермонтовский пр-т</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">ул Академика Янгеля</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">Раменки</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="location__col">
+                                    <div class="metro__title"><span class="line green"></span> Аэропорт
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">Новый город</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">пр-т Ленина</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">Садовое кольцо</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">Выставочная</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">Митино</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">Строгино</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="location__col">
+                                    <div class="metro__title"><span class="line blue"></span> МЦД-1
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">САО</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">б-р Адмирала
+                                                Ушакова</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">Лермонтовский пр-т</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">ул Академика Янгеля</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-group__item">
+                                        <label class="checkbox-group__button">
+                                            <input type="checkbox" class="checkbox-group__input" name="check-group"
+                                                value="">
+                                            <span class="checkbox-group__label checkbox-mark">Раменки</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="tabs__content" data-tabs-target="district">

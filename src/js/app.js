@@ -1044,12 +1044,16 @@ $('body').on('click', '.location__close', () => {
 });
 
 $('body').on('click', '.location .btn-reset', () => {
-    $('.location__content input[type="checkbox"]').prop('checked', false);
+    $('.tabs__content--active .location__content input[type="checkbox"]').prop('checked', false);
+    $(
+        '.tabs__content--active .MetroMap_station_item,.tabs__content--active .MetroMap_stop,.tabs__content--active .MetroMap_transit_group,.tabs__content--active .MetroMap_line_item'
+    ).removeClass('selected');
+    $('.tabs__content--active circle[r="8"]').attr('r', 6);
     $('.tabs__btn--active').removeClass('hasFilter');
 });
 
 $('body').on('change', '.location .checkbox-group__input', () => {
-    if ($('.location .checkbox-group__input:checked').length === 0) {
+    if ($('.location .tabs__content--active .checkbox-group__input:checked').length === 0) {
         $('.tabs__btn--active').removeClass('hasFilter');
     } else {
         $('.tabs__btn--active').addClass('hasFilter');
@@ -1078,132 +1082,134 @@ $('body').on('click', 'a[data-view]', (e) => {
     $(`div[data-view="${$(e.currentTarget).attr('data-view')}"]`).addClass('active');
 });
 
-// google map
-function initMap() {
-    let map = new google.maps.Map(document.getElementById('map'), {
-        center: { lat: 55.776212, lng: 37.750353 },
-        zoom: 13,
-    });
+if ($('#map').length > 0) {
+    // google map
+    function initMap() {
+        let map = new google.maps.Map(document.getElementById('map'), {
+            center: { lat: 55.776212, lng: 37.750353 },
+            zoom: 13,
+        });
 
-    const icons = {
-        house: {
+        const icons = {
+            house: {
+                icon: 'img/marker.png',
+            },
+            shop: {},
+            pharmacy: {
+                icon: 'img/icons/pharmacy.svg',
+            },
+            policlinic: {
+                icon: 'img/icons/policlinic.svg',
+            },
+            restaurant: {
+                icon: 'img/icons/restaurant.svg',
+            },
+            school: {
+                icon: 'img/icons/school.svg',
+            },
+            kinder: {
+                icon: 'img/icons/kinder.svg',
+            },
+            mall: {
+                icon: 'img/icons/mall.svg',
+            },
+            temples: {
+                icon: 'img/icons/temples.svg',
+            },
+        };
+
+        const house = {
+            type: 'house',
             icon: 'img/marker.png',
-        },
-        shop: {},
-        pharmacy: {
+            items: [
+                {
+                    name: 'Пятерочка',
+                    addr: 'Московский проспект 4, корпус 12',
+                    position: new google.maps.LatLng(55.782838, 37.738592),
+                },
+            ],
+        };
+
+        const shop = {
+            type: 'shop',
+            icon: 'img/icons/shop.svg',
+            items: [
+                {
+                    name: 'Пятерочка',
+                    addr: 'Московский проспект 4, корпус 12',
+                    position: new google.maps.LatLng(55.776212, 37.750353),
+                },
+                {
+                    name: 'Пятерочка',
+                    addr: 'Московский проспект 4, корпус 12',
+                    position: new google.maps.LatLng(55.777314, 37.745887),
+                },
+            ],
+        };
+
+        const pharmacy = {
+            type: 'pharmacy',
             icon: 'img/icons/pharmacy.svg',
-        },
-        policlinic: {
-            icon: 'img/icons/policlinic.svg',
-        },
-        restaurant: {
-            icon: 'img/icons/restaurant.svg',
-        },
-        school: {
-            icon: 'img/icons/school.svg',
-        },
-        kinder: {
-            icon: 'img/icons/kinder.svg',
-        },
-        mall: {
-            icon: 'img/icons/mall.svg',
-        },
-        temples: {
-            icon: 'img/icons/temples.svg',
-        },
-    };
+            items: [
+                {
+                    name: 'Пятерочка',
+                    addr: 'Московский проспект 4, корпус 12',
+                    position: new google.maps.LatLng(55.783382, 37.73202),
+                },
+                {
+                    name: 'Пятерочка',
+                    addr: 'Московский проспект 4, корпус 12',
+                    position: new google.maps.LatLng(55.764132, 37.710215),
+                },
+            ],
+        };
 
-    const house = {
-        type: 'house',
-        icon: 'img/marker.png',
-        items: [
-            {
-                name: 'Пятерочка',
-                addr: 'Московский проспект 4, корпус 12',
-                position: new google.maps.LatLng(55.782838, 37.738592),
-            },
-        ],
-    };
-
-    const shop = {
-        type: 'shop',
-        icon: 'img/icons/shop.svg',
-        items: [
-            {
-                name: 'Пятерочка',
-                addr: 'Московский проспект 4, корпус 12',
-                position: new google.maps.LatLng(55.776212, 37.750353),
-            },
-            {
-                name: 'Пятерочка',
-                addr: 'Московский проспект 4, корпус 12',
-                position: new google.maps.LatLng(55.777314, 37.745887),
-            },
-        ],
-    };
-
-    const pharmacy = {
-        type: 'pharmacy',
-        icon: 'img/icons/pharmacy.svg',
-        items: [
-            {
-                name: 'Пятерочка',
-                addr: 'Московский проспект 4, корпус 12',
-                position: new google.maps.LatLng(55.783382, 37.73202),
-            },
-            {
-                name: 'Пятерочка',
-                addr: 'Московский проспект 4, корпус 12',
-                position: new google.maps.LatLng(55.764132, 37.710215),
-            },
-        ],
-    };
-
-    function setMarkers(markers) {
-        for (let i = 0; i < markers.items.length; i++) {
-            const marker = new google.maps.Marker({
-                position: markers.items[i].position,
-                icon: markers.icon,
-                map: map,
-            });
-
-            const infowindow = new google.maps.InfoWindow({
-                content: `<div class="marker-name">${markers.items[i].name}</div><div class="marker-addr">${markers.items[i].addr}</div>`,
-            });
-
-            if ($(window).width() > 1024) {
-                marker.addListener('mouseover', () => {
-                    infowindow.open({
-                        anchor: marker,
-                        map,
-                        shouldFocus: false,
-                    });
+        function setMarkers(markers) {
+            for (let i = 0; i < markers.items.length; i++) {
+                const marker = new google.maps.Marker({
+                    position: markers.items[i].position,
+                    icon: markers.icon,
+                    map: map,
                 });
 
-                marker.addListener('mouseout', () => {
-                    infowindow.close();
+                const infowindow = new google.maps.InfoWindow({
+                    content: `<div class="marker-name">${markers.items[i].name}</div><div class="marker-addr">${markers.items[i].addr}</div>`,
                 });
-            } else {
-                marker.addListener('click', () => {
-                    setTimeout(() => {
+
+                if ($(window).width() > 1024) {
+                    marker.addListener('mouseover', () => {
                         infowindow.open({
                             anchor: marker,
                             map,
                             shouldFocus: false,
                         });
-                    }, 100);
-                });
+                    });
 
-                map.addListener('click', () => {
-                    infowindow.close();
-                });
+                    marker.addListener('mouseout', () => {
+                        infowindow.close();
+                    });
+                } else {
+                    marker.addListener('click', () => {
+                        setTimeout(() => {
+                            infowindow.open({
+                                anchor: marker,
+                                map,
+                                shouldFocus: false,
+                            });
+                        }, 100);
+                    });
+
+                    map.addListener('click', () => {
+                        infowindow.close();
+                    });
+                }
             }
         }
-    }
 
-    setMarkers(house);
-    setMarkers(shop);
-    setMarkers(pharmacy);
+        setMarkers(house);
+        setMarkers(shop);
+        setMarkers(pharmacy);
+    }
 }
 
 $('body').on('change', '.map .checkbox-group__input', (e) => {
@@ -1273,8 +1279,172 @@ let hideRightmodal = () => {
     });
 };
 
+// item tags on touch devices
 $('body').on('click', '.item__tags--toggle', (e) => {
     if ($(window).width() <= 1024) {
         $(e.currentTarget).parent().find('.item__tag').toggleClass('active');
     }
+});
+
+// metro
+if ($('#metro').length > 0 && $(window).width() >= 1280) {
+    var panZoom = svgPanZoom('#metro', {
+        zoomEnabled: true,
+        controlIconsEnabled: false,
+        zoomScaleSensitivity: 0.5,
+        minZoom: 1,
+        maxZoom: 5,
+        dblClickZoomEnabled: false,
+    });
+
+    setTimeout(() => {
+        panZoom.zoom(2.5);
+    }, 100);
+
+    document.getElementById('zoom-in').addEventListener('click', function (ev) {
+        ev.preventDefault();
+
+        panZoom.zoomIn();
+    });
+
+    document.getElementById('zoom-out').addEventListener('click', function (ev) {
+        ev.preventDefault();
+
+        panZoom.zoomOut();
+    });
+}
+
+if ($(window).width() < 1280) {
+    $('.metro').remove();
+}
+
+$('body').on('click', '.MetroMap_line_item:not(.selected)', (e) => {
+    let id = $(e.currentTarget).attr('id').replace('MetroMap_line_', '');
+
+    $(e.currentTarget).addClass('selected');
+    mapClassAdd(id, 'selected');
+    resetButton();
+});
+
+$('body').on('click', '.MetroMap_line_item.selected', (e) => {
+    let id = $(e.currentTarget).attr('id').replace('MetroMap_line_', '');
+
+    $(e.currentTarget).removeClass('selected');
+    mapClassRemove(id, 'selected');
+    resetButton();
+});
+
+$('body').on('mouseover', '.MetroMap_line_item', (e) => {
+    let id = $(e.currentTarget).attr('id').replace('MetroMap_line_', '');
+    mapClassAdd(id, 'hover');
+});
+
+$('body').on('mouseleave', '.MetroMap_line_item', (e) => {
+    let id = $(e.currentTarget).attr('id').replace('MetroMap_line_', '');
+    mapClassRemove(id, 'hover');
+});
+
+$('body').on('click', '.MetroMap_station_item', (e) => {
+    let id = $(e.currentTarget).attr('id').replace('MetroMap_station_', '');
+    $(e.currentTarget).toggleClass('selected');
+    $(`.MetroMap_to_${id}`).toggleClass('selected');
+    resetButton();
+});
+
+$('body').on('mouseover', '.MetroMap_station_item', (e) => {
+    let id = $(e.currentTarget).attr('id').replace('MetroMap_station_', '');
+    $(e.currentTarget).addClass('hover');
+    $(`.MetroMap_to_${id}`).addClass('hover').find('circle').attr('r', '8');
+});
+
+$('body').on('mouseleave', '.MetroMap_station_item', (e) => {
+    let id = $(e.currentTarget).attr('id').replace('MetroMap_station_', '');
+    $(e.currentTarget).removeClass('hover');
+    $(`.MetroMap_to_${id}`).removeClass('hover').find('circle').attr('r', '6');
+});
+
+let resetButton = () => {
+    let count = $('.MetroMap_station_item.selected').length;
+
+    if (count > 0) {
+        $('.location__controls .btn-reset').addClass('show');
+        $('.location__controls .btn-reset span').text(`Сбросить ${count} станций`);
+        $('.tabs__btn--active').addClass('hasFilter');
+    } else {
+        $('.location__controls .btn-reset').removeClass('show');
+        $('.tabs__btn--active').removeClass('hasFilter');
+    }
+};
+
+let mapClassAdd = (id, cl) => {
+    $(`#MetroMap_stations #MetroMap_l_${id} .MetroMap_station_item`).addClass(cl);
+
+    for (let i = 0; i < $(`#MetroMap_stations #MetroMap_l_${id} .MetroMap_station_item`).length; i++) {
+        if ($(`#MetroMap_stations #MetroMap_l_${id} .MetroMap_station_item:nth-child(${i})`).attr('id') !== undefined) {
+            let num = $(`#MetroMap_stations #MetroMap_l_${id} .MetroMap_station_item:nth-child(${i})`).attr('id').replace('MetroMap_station_', '');
+            $(`.MetroMap_to_${num}`).addClass(cl).find('circle').attr('r', '8');
+        }
+    }
+};
+
+let mapClassRemove = (id, cl) => {
+    $(`#MetroMap_stations #MetroMap_l_${id} .MetroMap_station_item`).removeClass(cl);
+
+    for (let i = 0; i < $(`#MetroMap_stations #MetroMap_l_${id} .MetroMap_station_item`).length; i++) {
+        if ($(`#MetroMap_stations #MetroMap_l_${id} .MetroMap_station_item:nth-child(${i})`).attr('id') !== undefined) {
+            let num = $(`#MetroMap_stations #MetroMap_l_${id} .MetroMap_station_item:nth-child(${i})`).attr('id').replace('MetroMap_station_', '');
+            $(`.MetroMap_to_${num}`).removeClass(cl).find('circle').attr('r', '6');
+        }
+    }
+};
+
+// select
+$('body').on('click', '.select:not(.active)', (e) => {
+    $(e.currentTarget).toggleClass('active');
+});
+
+$('body').on('click', '.select.active', (e) => {
+    if ($(e.target)[0].classList[0] === 'select') {
+        $(e.currentTarget).toggleClass('active');
+    }
+});
+
+$('body').on('click', '.select__item', (e) => {
+    let $select = $(e.currentTarget).closest('.select');
+    let $input = $select.find('.select__input');
+
+    if (!$select.hasClass('checkbox')) {
+        $select.removeClass('active');
+        $input.val($(e.currentTarget).attr('data-value'));
+    } else {
+        let value = '';
+        let count = $select.find(`.select__item input:checked`).length;
+
+        for (let i = 0; i < $select.find('.select__item').length; i++) {
+            if ($select.find(`.select__item:nth-child(${i})`).find('input').is(':checked')) {
+                value += `${$select.find(`.select__item:nth-child(${i})`).attr('data-value')}, `;
+            }
+        }
+
+        if (count > 1) {
+            if ($select.find('.select__count').length === 0) {
+                $input.after('<div class="select__count"></div>');
+            }
+
+            $select.find('.select__count').text(count);
+        }
+
+        if (count <= 1 && $select.find('.select__count').length > 0) {
+            $select.find('.select__count').remove();
+        }
+
+        $input.val(value);
+    }
+});
+
+$('body').on('click', '.select__count', (e) => {
+    $(e.currentTarget).closest('.select').removeClass('active');
+    $(e.currentTarget).closest('.select').find('.checkbox-group__input').prop('checked', false);
+    $(e.currentTarget).closest('.select').find('.select__input').val('');
+    $(e.currentTarget).remove();
 });

@@ -1,0 +1,164 @@
+.location.active .metro path {
+    pointer-events: visibleStroke;
+}
+
+.metro {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    &-mobile {
+        @include r(1279) {
+            display: block;
+        }
+
+        height: 100%;
+        display: none;
+
+        .metro__filter {
+            @include r(767) {
+                display: block;
+                margin-bottom: 15px;
+
+                & > * {
+                    width: 100% !important;
+                    box-shadow: none !important;
+                }
+            }
+
+            position: static;
+            margin-bottom: 40px;
+
+            .metro-time {
+                @include r(767) {
+                    margin-left: 0;
+                    margin-top: 8px;
+                }
+
+                margin-left: 16px;
+            }
+        }
+
+        .line {
+            width: 8px;
+            height: 8px;
+        }
+
+        .location__list {
+            @include r(767) {
+                height: 75%;
+            }
+
+            height: 85%;
+        }
+    }
+
+    &__title {
+        @include r(767) {
+            padding-left: 16px;
+            padding-right: 36px;
+        }
+
+        font-weight: 500;
+        font-size: 12px;
+        margin-bottom: 16px;
+    }
+
+    &__map {
+        width: 100% !important;
+        height: 100% !important;
+
+        circle,
+        path,
+        text {
+            user-select: none;
+            transition: all 0.1s ease-in-out;
+        }
+    }
+
+    &__controls {
+        @include centerYa;
+        right: 10px;
+        @include fcc;
+        flex-direction: column;
+    }
+
+    &__zoom {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        box-shadow: 2px 2px 40px rgba(0, 0, 0, 0.08);
+        background: #fff;
+        border: 0;
+        margin-bottom: 16px;
+        @include fcc;
+        cursor: pointer;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__filter {
+        position: absolute;
+        top: 24px;
+        left: 24px;
+        @include fcn;
+
+        & > * {
+            box-shadow: 2px 2px 40px rgba(0, 0, 0, 0.08) !important;
+        }
+
+        .select.checkbox {
+            margin: 0 16px;
+            width: 308px;
+        }
+
+        .metro-time {
+            width: 171px;
+        }
+    }
+
+    &__search {
+        width: 290px !important;
+    }
+
+    .MetroMap_station_item,
+    .MetroMap_line .MetroMap_top {
+        cursor: pointer;
+    }
+
+    .MetroMap_station_item.selected {
+        .MetroMap_bg {
+            opacity: 1 !important;
+            fill: $red !important;
+        }
+
+        text {
+            fill: #fff !important;
+        }
+    }
+
+    .MetroMap_station_item.hover,
+    .MetroMap_stations_group.hover {
+        .MetroMap_bg {
+            opacity: 1;
+            fill: #fff;
+        }
+
+        text {
+            fill: $red;
+        }
+    }
+
+    .MetroMap_transit_group.selected circle,
+    .MetroMap_stop.selected circle {
+        fill: #000;
+        stroke: $red;
+    }
+
+    .MetroMap_transit_group.hover circle,
+    .MetroMap_stop.hover circle {
+        stroke-width: 2;
+    }
+}

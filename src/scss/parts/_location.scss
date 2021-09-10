@@ -170,6 +170,16 @@
             @include r(1023) {
                 display: none;
             }
+
+            opacity: 0;
+            pointer-events: none;
+            user-select: none;
+
+            &.show {
+                opacity: 1;
+                pointer-events: all;
+                user-select: initial;
+            }
         }
     }
 }
