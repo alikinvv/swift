@@ -138,15 +138,6 @@ gulp.task('svg', function () {
             })
         )
         .pipe(gp.replace('&gt;', '>'))
-        .pipe(
-            gp.svgSprite({
-                mode: {
-                    symbol: {
-                        sprite: '../sprite.svg',
-                    },
-                },
-            })
-        )
         .pipe(gulp.dest('build/img'));
 });
 
@@ -172,4 +163,4 @@ gulp.task('watch', function () {
 
 gulp.task('default', gulp.series(gulp.parallel('nunjucks', 'css', 'js:dev', 'img:dev'), gulp.parallel('watch', 'server')));
 gulp.task('dev', gulp.series(gulp.parallel('nunjucks', 'css:build', 'js:dev'), gulp.parallel('watch', 'server')));
-gulp.task('build', gulp.series(gulp.parallel('nunjucks', 'css:build', 'css:libs', 'js:build', 'img:build', 'fonts:build')));
+gulp.task('build', gulp.series(gulp.parallel('nunjucks', 'css:build', 'css:libs', 'js:build', 'img:build', 'fonts:build', 'svg')));
