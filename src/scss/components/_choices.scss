@@ -354,6 +354,10 @@ $choices-icon-cross-inverse: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjEiI
         [dir='rtl'] & {
             text-align: right;
         }
+
+        &::after {
+            display: none;
+        }
     }
 
     .#{$choices-selector}__item--selectable {

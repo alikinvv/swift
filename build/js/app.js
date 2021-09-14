@@ -634,7 +634,7 @@ var articlesSlider = new Swiper('.articles-slider', {
 });
 $('.filter-toggle').on('click', function (e) {
   e.preventDefault();
-  $('.filter-mobile').toggleClass('open');
+  $('.filter').toggleClass('open');
 });
 $('.filter-mobile-accept').on('click', function (e) {
   e.preventDefault();

@@ -1,44 +1,14 @@
 .filter-mobile {
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    opacity: 0;
-    visibility: hidden;
-    z-index: 1500;
-    position: fixed;
-    background: $white;
-    display: flex;
-    flex-direction: column;
-    transition: 0.3s;
-
-    &.open {
-        opacity: 1;
-        visibility: visible;
-        transition: 0.3s;
-    }
-
-    &__wrap {
-        overflow-y: auto;
-        height: calc(100% - 56px);
-    }
-
-    &__button {
-        .btn {
-            width: 100%;
-            border-radius: 0;
-        }
-    }
-
-    &__main {
-        padding: size-rel(40px) size-rel(16px) size-rel(24px) size-rel(16px);
-    }
-
     &__header {
+        @include r(1023) {
+            display: flex;
+        }
+
         margin-bottom: size-rel(40px);
-        display: flex;
         align-items: center;
         justify-content: space-between;
+        padding: 0 16px;
+        display: none;
 
         &--title {
             color: $primary;
@@ -63,169 +33,14 @@
             }
         }
     }
-
-    &__params {
-        margin: 0;
-        list-style: none;
-        white-space: nowrap;
-        font-size: size-rel(12px);
-        line-height: size-rel(22px);
-        padding: size-rel(24px) 0 size-rel(40px) size-rel(24px);
-        display: flex;
-        flex-wrap: wrap;
-
-        &--item {
-            padding-right: size-rel(16px);
-        }
-
-        &--title {
-            color: $secondary;
-        }
-
-        &--value {
-            color: $primary;
-            display: flex;
-            align-items: center;
-        }
-
-        &--del {
-            font-size: 0;
-            line-height: 0;
-            height: 6px;
-            margin-left: size-rel(8px);
-            display: inline-block;
-
-            svg {
-                stroke: $accent;
-            }
-        }
-    }
-
-    &__row {
-        margin: 0 size-rel(-12px);
-    }
-
-    &__item {
-        margin-bottom: size-rel(40px);
-        padding: 0 size-rel(12px);
-    }
-
-    &__secondary {
-        display: none;
-        padding-top: size-rel(16px);
-
-        &--open {
-            display: block;
-        }
-    }
-
-    &__toggle {
-        border: none;
-        outline: none;
-        cursor: pointer;
-        font-weight: 500;
-        color: $accent;
-        margin-bottom: size-rel(24px);
-        font-size: size-rel(12px);
-        line-height: size-rel(22px);
-        background: transparent;
-        display: flex;
-        align-items: center;
-
-        &--text {
-            display: inline-block;
-            margin-right: size-rel(8px);
-        }
-
-        &--icon {
-            font-size: 0;
-            line-height: 0;
-            height: 12px;
-            display: inline-block;
-
-            transform: rotate(0deg);
-            transition: 0.3s;
-        }
-
-        svg {
-            fill: $accent;
-        }
-
-        &--open {
-            .filter-mobile__toggle--icon {
-                transform: rotate(180deg);
-                transition: 0.3s;
-            }
-        }
-    }
-
-    &__reset {
-        display: flex;
-        justify-content: center;
-        padding-top: size-rel(16px);
-    }
-
-    &__cancel {
-        border: none;
-        outline: none;
-        cursor: pointer;
-        font-weight: 500;
-        color: $secondary;
-        font-size: size-rel(12px);
-        line-height: size-rel(22px);
-        background: transparent;
-        display: flex;
-        align-items: center;
-
-        &--text {
-            display: inline-block;
-        }
-
-        &--icon {
-            font-size: 0;
-            line-height: 0;
-            height: 9px;
-            display: inline-block;
-            margin-right: size-rel(8px);
-
-            svg {
-                stroke: $secondary;
-                fill: none;
-            }
-        }
-    }
-
-    &__content {
-        max-width: size-rel(568px);
-    }
-
-    .btn-checkbox {
-        width: 100%;
-    }
-
-    .checkbox-group {
-        width: 100%;
-    }
-
-    @include media-breakpoint-up(sm) {
-        &__row {
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        &__item {
-            width: 50%;
-        }
-    }
-    @include media-breakpoint-up(md) {
-    }
-    @include media-breakpoint-up(lg) {
-        display: none !important;
-    }
 }
 
 .mobile-filter-button {
-    z-index: 1000;
+    @include r(1023) {
+        display: flex;
+    }
+
+    z-index: 2001;
     position: fixed;
     left: 0;
     width: 100%;
@@ -243,6 +58,7 @@
     cursor: pointer;
     font-size: size-rel(10px);
     line-height: size-rel(20px);
+    display: none;
 
     &__icon {
         fill: none;
@@ -269,32 +85,81 @@
         font-size: size-rel(14px);
         line-height: size-rel(20px);
     }
-
-    @include media-breakpoint-up(lg) {
-        display: none !important;
-    }
 }
 
 .filter {
-    display: none;
+    @include r(1023) {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: #fff;
+        z-index: 2000;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 40px 0;
+        display: none;
+    }
+
+    @include r(767) {
+        overflow: scroll;
+        -webkit-overflow-scrolling: touch;
+    }
+
     margin-bottom: size-rel(80px);
 
+    &.open {
+        display: block;
+    }
+
     &__primary {
+        @include r(1023) {
+            margin: 0;
+            @include flexlist(12px);
+        }
+
+        @include r(767) {
+            width: 100%;
+            margin: 0;
+        }
+
         display: flex;
         margin: 0 size-rel(-12px);
 
         &--item {
+            @include r(1023) {
+                @include flexitem(50%, 12px, 24px);
+            }
+
+            @include r(767) {
+                width: 100% !important;
+                margin: 0 0 24px !important;
+            }
+
             width: calc(25% - 0.5rem);
             padding: 0 size-rel(12px);
             margin-bottom: size-rel(24px);
 
             &:first-child {
+                @include r(1023) {
+                    @include flexitem(50%, 12px, 24px);
+                }
+
                 width: calc(25% + 1.5rem);
             }
         }
     }
 
     &__actions {
+        @include r(1023) {
+            flex-wrap: wrap;
+            margin-top: 30px;
+            padding: 0 16px;
+            margin-bottom: 0;
+        }
+
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -302,6 +167,13 @@
         padding-top: size-rel(16px);
 
         &__column {
+            @include r(1023) {
+                &:first-child {
+                    order: 2;
+                    width: 100%;
+                }
+            }
+
             display: flex;
             align-items: center;
         }
@@ -309,6 +181,10 @@
 
     .btn-map,
     .btn-filter {
+        @include r(1023) {
+            display: none;
+        }
+
         margin-right: size-rel(40px);
     }
 
@@ -316,7 +192,23 @@
         padding: 12px 45px;
     }
 
+    .btn-reset {
+        @include r(1023) {
+            width: 100%;
+            padding: 20px 0;
+            color: #818285;
+
+            path {
+                stroke: #818285;
+            }
+        }
+    }
+
     &__toggle {
+        @include r(1023) {
+            color: $red;
+        }
+
         border: none;
         outline: none;
         cursor: pointer;
@@ -368,19 +260,50 @@
     }
 
     &__secondary {
+        @include r(1023) {
+            margin-top: 12px;
+        }
+
+        @include r(767) {
+            margin-top: 0;
+        }
+
         display: none;
         padding-bottom: size-rel(24px);
 
         &--row {
+            @include r(1023) {
+                @include flexlist(12px);
+            }
+
+            @include r(767) {
+                width: 100%;
+                margin: 0;
+            }
+
             display: flex;
             margin: 0 size-rel(-12px);
             margin-bottom: size-rel(24px);
         }
 
         &--item {
+            @include r(1023) {
+                @include flexitem(50%, 12px, 24px);
+                width: calc(50% - 24px) !important;
+            }
+
+            @include r(767) {
+                width: 100% !important;
+                margin: 0 0 24px;
+            }
+
             padding: 0 size-rel(12px);
 
             &:nth-child(1) {
+                @include r(1023) {
+                    width: 100% !important;
+                }
+
                 width: 34%;
             }
 
@@ -393,11 +316,30 @@
             }
 
             &:nth-child(4) {
+                @include r(1023) {
+                    width: 100% !important;
+                    margin-bottom: 36px;
+                }
+
+                @include r(767) {
+                    margin-bottom: 24px;
+                }
+
                 width: 19%;
             }
         }
 
         &--inline {
+            @include r(1023) {
+                @include flexlist(12px);
+                padding: 0 12px;
+            }
+
+            @include r(767) {
+                width: 100%;
+                margin: 0;
+            }
+
             margin: 0;
             padding: 0;
             list-style: none;
@@ -405,17 +347,50 @@
             align-items: center;
 
             > li {
+                @include r(1023) {
+                    @include flexitem(50%, 12px, 24px);
+                    width: calc(50% - 24px) !important;
+
+                    .checkbox-group,
+                    .btn-checkbox {
+                        width: 100%;
+                    }
+                }
+
+                @include r(767) {
+                    width: 100% !important;
+                    margin: 0 0 24px;
+
+                    .checkbox-group__row .checkbox-group__item {
+                        width: 50%;
+                        display: flex;
+                        justify-content: center;
+                    }
+                }
+
                 margin-right: size-rel(24px);
             }
         }
     }
 
     &__params {
+        @include r(1023) {
+            margin-bottom: 0;
+        }
+
+        @include r(767) {
+            margin-bottom: 30px;
+        }
+
         margin-bottom: size-rel(40px);
         font-size: size-rel(12px);
         line-height: size-rel(22px);
 
         &--list {
+            @include r(1023) {
+                padding: 0 16px 10px;
+            }
+
             margin: 0;
             padding: 0;
             list-style: none;
@@ -425,6 +400,14 @@
         }
 
         &--item {
+            @include r(1023) {
+                margin-bottom: 5px;
+
+                &:first-child {
+                    color: #818285;
+                }
+            }
+
             margin-right: size-rel(24px);
         }
 
