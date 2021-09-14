@@ -1,13 +1,8 @@
-@import url(//db.onlinewebfonts.com/c/23a02e8af5ef33a9b496dd524401550f?family=YS+Text+Regular);
-
 @font-face {
     font-family: 'YSText-Regular';
-    src: url('//db.onlinewebfonts.com/t/23a02e8af5ef33a9b496dd524401550f.eot');
-    src: url('//db.onlinewebfonts.com/t/23a02e8af5ef33a9b496dd524401550f.eot?#iefix') format('embedded-opentype'),
-        url('//db.onlinewebfonts.com/t/23a02e8af5ef33a9b496dd524401550f.woff2') format('woff2'),
-        url('//db.onlinewebfonts.com/t/23a02e8af5ef33a9b496dd524401550f.woff') format('woff'),
-        url('//db.onlinewebfonts.com/t/23a02e8af5ef33a9b496dd524401550f.ttf') format('truetype'),
-        url('//db.onlinewebfonts.com/t/23a02e8af5ef33a9b496dd524401550f.svg#YS Text Regular') format('svg');
+    src: local('YandexSansDisplay-Regular'), local('YandexSansDisplay-Regular'), url('../fonts/YandexSansDisplay-Regular.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
 }
 
 // Montserrat
