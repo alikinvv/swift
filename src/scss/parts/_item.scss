@@ -585,10 +585,19 @@
     }
 
     &__title {
+        @include r(1279) {
+            min-height: 32px;
+        }
+
+        @include r(767) {
+            min-height: initial;
+        }
+
         font-weight: 600;
         font-size: size-rel(16px);
         line-height: size-rel(16px);
         margin-bottom: 8px;
+        min-height: 40px;
     }
 
     &__district {
@@ -1520,5 +1529,11 @@
                 padding-left: size-rel(48px);
             }
         }
+    }
+}
+
+.viewed .item__title {
+    @include r(767) {
+        min-height: 32px;
     }
 }
