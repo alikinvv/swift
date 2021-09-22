@@ -91,8 +91,8 @@
     }
 
     &__logo {
-        background: $primary;
-        -webkit-print-color-adjust: exact;
+        background-color: unset;
+        box-shadow: inset 0 0 0 1000px $primary;
         width: 140px;
         height: 140px;
         @include fcc;
@@ -161,8 +161,8 @@
                     width: 3px;
                     height: 3px;
                     border-radius: 50%;
-                    background: #818285;
-                    -webkit-print-color-adjust: exact;
+                    background-color: unset;
+                    box-shadow: inset 0 0 0 1000px #818285;
                 }
             }
         }
@@ -188,8 +188,8 @@
             padding: 2px 8px;
 
             &:nth-child(odd) {
-                background: #f1f1f1;
-                -webkit-print-color-adjust: exact;
+                background-color: unset;
+                box-shadow: inset 0 0 0 1000px #f1f1f1;
             }
 
             span {
@@ -237,13 +237,14 @@
     }
 
     &__tag {
+        background-color: unset;
+        box-shadow: inset 0 0 0 1000px #dfdfdf;
         font-size: 10px;
-        background: #dfdfdf;
-        -webkit-print-color-adjust: exact;
         border-radius: 4px;
         padding: 2px 8px;
         margin-right: 4px;
         line-height: 2;
+        display: inline-block;
 
         &:last-child {
             margin-right: 0;

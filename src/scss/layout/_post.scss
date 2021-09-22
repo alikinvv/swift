@@ -394,9 +394,6 @@
         margin-bottom: size-rel(16px);
     }
 
-    &__main {
-    }
-
     &__slider {
         overflow: visible;
 
@@ -424,12 +421,17 @@
     }
 
     &__developer {
+        color: $red;
     }
 
     &__name {
+        font-weight: 500;
+        font-size: 14px;
     }
 
     &__price {
+        font-weight: 500;
+        font-size: 14px;
         color: $primary !important;
     }
 
