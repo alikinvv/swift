@@ -554,6 +554,25 @@ $('.item__toggle').on('click', function (e) {
   e.preventDefault();
   var $item = $(this).closest('.item');
   $item.toggleClass('item--switch');
+});
+
+if ($(window).width() > 1024) {
+  $('.item__tags--toggle').on('mouseover', function (e) {
+    var $item = $(this).closest('.item__tags');
+    $item.addClass('show');
+  });
+  $('.item__tags--toggle').on('mouseleave', function (e) {
+    var $item = $(this).closest('.item__tags');
+    $item.removeClass('show');
+  });
+} // item tags on touch devices
+
+
+$('body').on('click', '.item__tags--toggle', function (e) {
+  if ($(window).width() <= 1024) {
+    $(e.currentTarget).parent().find('.item__tag').toggleClass('active');
+    $(e.currentTarget).toggleClass('active');
+  }
 }); // Condition slider
 
 var serviceSlider = new Swiper('.conditions__slider', {
@@ -914,7 +933,12 @@ $('body').on('click', '.scrolltop', function () {
   $('html, body').stop().animate({
     scrollTop: 0
   }, 500, 'swing');
-}); // click on checkbox tooltip on mobile
+});
+
+if ($('.post').length > 0) {
+  $('.scrolltop').addClass('top');
+} // click on checkbox tooltip on mobile
+
 
 $('body').on('click', '.btn-checkbox', function (e) {
   if ($(window).width() <= 1279) {
@@ -1149,14 +1173,8 @@ var hideRightmodal = function hideRightmodal() {
     $('.rightmodal').removeClass('show');
     $('.nav-box__btn').removeClass('active');
   });
-}; // item tags on touch devices
+}; // metro
 
-
-$('body').on('click', '.item__tags--toggle', function (e) {
-  if ($(window).width() <= 1024) {
-    $(e.currentTarget).parent().find('.item__tag').toggleClass('active');
-  }
-}); // metro
 
 if ($('#metro').length > 0 && $(window).width() >= 1280) {
   var panZoom = svgPanZoom('#metro', {
@@ -1328,4 +1346,18 @@ if (pageNavToggle) {
       return false;
     });
   });
-}
+} // mobile breadcrumbs
+
+
+$('body').on('click', '.breadcrumb__toggle', function (e) {
+  $(e.currentTarget).toggleClass('active');
+  $('.breadcrumb__main').toggleClass('active');
+}); // subscribe input
+
+$('body').on('blur', '.subscribe input', function (e) {
+  if ($(e.currentTarget).val() !== '') {
+    $(e.currentTarget).addClass('fill');
+  } else {
+    $(e.currentTarget).removeClass('fill');
+  }
+});

@@ -20,6 +20,15 @@
         }
     }
 
+    h3 a,
+    .post__block--footnote a,
+    p a {
+        &:hover {
+            text-decoration: underline;
+            opacity: 0.5;
+        }
+    }
+
     .highlighted {
         background: rgba($red, 0.3);
         padding: 3px 0;
@@ -283,10 +292,14 @@
     }
 
     &__link {
-        display: flex;
+        display: inline-flex;
         align-items: center;
         color: $accent;
         text-decoration: none;
+
+        &:hover span {
+            text-decoration: underline;
+        }
 
         svg {
             fill: $accent;
@@ -322,23 +335,18 @@
         }
     }
 
-    &__title {
-    }
-
     @include media-breakpoint-up(sm) {
         display: flex;
         justify-content: space-between;
 
         &__item {
-            display: flex;
-            flex-direction: column;
-
             &--prev {
                 margin-bottom: 0;
             }
 
             &--next {
                 align-items: flex-end;
+                text-align: right;
             }
         }
 
@@ -522,8 +530,13 @@
 }
 
 .post-gallery {
+    @include r(1023) {
+        max-width: 100%;
+    }
+
     overflow: hidden;
     position: relative;
+    max-width: 770px;
 
     &__image {
         max-width: 100%;
@@ -682,7 +695,6 @@ ol {
 }
 
 .subscribe {
-    position: relative;
     background: $gray-light;
     padding: size-rel(40px) size-rel(24px);
 
@@ -731,6 +743,42 @@ ol {
 
     &__input {
         margin-bottom: size-rel(16px);
+        position: relative;
+
+        .placeholder {
+            @include centerYa;
+            left: 0;
+            font-size: 14px;
+            color: #818285;
+            transition: $trans;
+        }
+
+        input {
+            border: 0;
+            box-shadow: 0px 1px 0px #cccccc;
+            transition: $trans;
+            color: $primary;
+            font-size: 14px;
+
+            &:hover {
+                box-shadow: 0px 1px 0px $red;
+
+                & + .placeholder {
+                    color: $primary;
+                }
+            }
+
+            &.fill,
+            &:focus {
+                box-shadow: 0px 1px 0px $red;
+
+                & + .placeholder {
+                    margin-top: -18px;
+                    font-size: 10px;
+                    color: #818285;
+                }
+            }
+        }
     }
 
     &__button {
@@ -750,6 +798,12 @@ ol {
         padding: size-rel(16px);
         background: $white;
         box-shadow: 2px 2px 40px rgba(0, 0, 0, 0.08);
+        position: fixed;
+        right: 45px;
+        bottom: 90px;
+        width: 230px;
+        height: 312px;
+        z-index: 20;
 
         &__close {
             opacity: 1;
@@ -759,6 +813,12 @@ ol {
 
     @include media-breakpoint-up(xxl) {
         padding: size-rel(40px);
+        position: fixed;
+        right: 45px;
+        bottom: 90px;
+        width: 326px;
+        height: 388px;
+        z-index: 20;
 
         &__title {
             font-size: size-rel(20px);

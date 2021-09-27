@@ -612,6 +612,26 @@ $('.item__toggle').on('click', function (e) {
     $item.toggleClass('item--switch');
 });
 
+if ($(window).width() > 1024) {
+    $('.item__tags--toggle').on('mouseover', function (e) {
+        let $item = $(this).closest('.item__tags');
+        $item.addClass('show');
+    });
+
+    $('.item__tags--toggle').on('mouseleave', function (e) {
+        let $item = $(this).closest('.item__tags');
+        $item.removeClass('show');
+    });
+}
+
+// item tags on touch devices
+$('body').on('click', '.item__tags--toggle', (e) => {
+    if ($(window).width() <= 1024) {
+        $(e.currentTarget).parent().find('.item__tag').toggleClass('active');
+        $(e.currentTarget).toggleClass('active');
+    }
+});
+
 // Condition slider
 const serviceSlider = new Swiper('.conditions__slider', {
     slidesPerView: 'auto',
@@ -1004,6 +1024,10 @@ $('body').on('click', '.scrolltop', () => {
     $('html, body').stop().animate({ scrollTop: 0 }, 500, 'swing');
 });
 
+if ($('.post').length > 0) {
+    $('.scrolltop').addClass('top');
+}
+
 // click on checkbox tooltip on mobile
 $('body').on('click', '.btn-checkbox', (e) => {
     if ($(window).width() <= 1279) {
@@ -1267,13 +1291,6 @@ let hideRightmodal = () => {
     });
 };
 
-// item tags on touch devices
-$('body').on('click', '.item__tags--toggle', (e) => {
-    if ($(window).width() <= 1024) {
-        $(e.currentTarget).parent().find('.item__tag').toggleClass('active');
-    }
-});
-
 // metro
 if ($('#metro').length > 0 && $(window).width() >= 1280) {
     var panZoom = svgPanZoom('#metro', {
@@ -1465,3 +1482,18 @@ if (pageNavToggle) {
         });
     });
 }
+
+// mobile breadcrumbs
+$('body').on('click', '.breadcrumb__toggle', (e) => {
+    $(e.currentTarget).toggleClass('active');
+    $('.breadcrumb__main').toggleClass('active');
+});
+
+// subscribe input
+$('body').on('blur', '.subscribe input', (e) => {
+    if ($(e.currentTarget).val() !== '') {
+        $(e.currentTarget).addClass('fill');
+    } else {
+        $(e.currentTarget).removeClass('fill');
+    }
+});

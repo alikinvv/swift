@@ -25,6 +25,10 @@
         flex-direction: column;
 
         &--is-filter {
+            @include r(1279) {
+                padding-bottom: 0;
+            }
+
             padding-bottom: size-rel(56px);
         }
     }
@@ -924,8 +928,8 @@
     fill: $accent;
 
     &:hover {
-        fill: $accent;
-        color: $accent;
+        fill: $primary;
+        color: $primary;
         text-decoration: none;
     }
 
@@ -940,13 +944,11 @@
         line-height: 0;
         display: inline-block;
         transform: rotate(0deg);
-        transition: 0.3s;
     }
 
     &.open {
         .btn-view__icon {
             transform: rotate(180deg);
-            transition: 0.3s;
         }
     }
 
@@ -1149,27 +1151,51 @@
 }
 
 .scrolltop {
-    @include r(1279) {
-        bottom: 140px;
+    @include r(1260) {
         right: 15px;
     }
 
     @include r(1023) {
-        bottom: 180px;
+        bottom: 130px;
     }
 
     @include r(567) {
         bottom: 80px;
     }
 
-    position: absolute;
+    @include r(767) {
+        bottom: 20px;
+    }
+
+    &.top {
+        @include r(1700) {
+            bottom: 410px;
+        }
+
+        @include r(1260) {
+            right: 15px;
+            bottom: 85px;
+        }
+
+        @include r(1023) {
+            bottom: 130px;
+        }
+
+        @include r(767) {
+            bottom: 20px;
+        }
+
+        bottom: 500px;
+    }
+
+    position: fixed;
     right: 47px;
-    bottom: 112px;
+    bottom: 85px;
     border-radius: 50%;
     width: 48px;
     height: 48px;
     border: 3px solid #fff;
-    z-index: 10;
+    z-index: 30;
     background: url('../img/select_arrow_hover_white.svg') no-repeat center $red;
     background-size: 20px;
     cursor: pointer;
@@ -1181,6 +1207,44 @@
         background-color: darken($color: $red, $amount: 20%);
     }
 }
+
+// .scrolltop {
+//     @include r(1700) {
+//         bottom: 410px;
+//     }
+
+//     @include r(1260) {
+//         right: 15px;
+//         bottom: 85px;
+//     }
+
+//     @include r(1023) {
+//         bottom: 130px;
+//     }
+
+//     @include r(567) {
+//         bottom: 80px;
+//     }
+
+//     position: fixed;
+//     right: 47px;
+//     bottom: 500px;
+//     border-radius: 50%;
+//     width: 48px;
+//     height: 48px;
+//     border: 3px solid #fff;
+//     z-index: 30;
+//     background: url('../img/select_arrow_hover_white.svg') no-repeat center $red;
+//     background-size: 20px;
+//     cursor: pointer;
+//     box-shadow: 2px 2px 40px rgba(0, 0, 0, 0.08);
+//     transition: $trans;
+
+//     &:hover {
+//         box-shadow: none;
+//         background-color: darken($color: $red, $amount: 20%);
+//     }
+// }
 
 .tippy-box {
     background: $primary;

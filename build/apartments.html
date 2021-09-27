@@ -296,13 +296,15 @@
             </svg>
         </i>
         <span class="breadcrumb__back--text">Назад</span>
-        <i class="breadcrumb__back--points">
-            <svg class="ico-svg" viewBox="0 0 16 9" xmlns="http://www.w3.org/2000/svg">
-                <use xlink:href="img/sprites/sprite-color.svg#more" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-            </svg>
-        </i>
     </a>
-    <ul class="breadcrumb__main">
+    <div class="breadcrumb__toggle">
+        <svg width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 7.5V7.51" stroke="#FF502F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M8 7.5V7.51" stroke="#FF502F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M2 7.5V7.51" stroke="#FF502F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </div>
+    <ul class="breadcrumb__main custom-scroll">
         <li>
             <a href="javascript:void(0)" class="breadcrumb__item">Москва</a>
         </li>
@@ -731,12 +733,12 @@
                 <span class="flat-item__info--elem">Этаж 24 из 48</span>
             </div>
         </a>
-        <a href="javascript:void(0)" class="flat-item">
+        <a href="javascript:void(0)" class="flat-item not-found">
             <div class="flat-item__completion">Сдача IV кв 2021</div>
             <div class="flat-item__object">Петр Великий и Екатерина Великая</div>
             <div class="flat-item__media">
                 <div class="flat-item__media--image">
-                    <img src="img/content/flat_image.png" class="img-fluid" alt="">
+                    <img src="img/content/not-found.png" class="img-fluid" alt="">
                 </div>
             </div>
             <div class="flat-item__title">1-комнатная 38,25 м<sup>2</sup></div>
@@ -1207,10 +1209,10 @@
             </a>
             <a href="javascript:void(0)" class="flat-item">
                 <div class="flat-item__media--image">
-                    <img src="img/content/flats_list_image_lg.png" class="img-fluid" alt="">
+                    <img src="img/content/flat-vertical.png" class="img-fluid" alt="">
                 </div>
 
-                <span class="flat-item__popup"><img src="img/content/flats_list_image_lg.png" class="img-fluid" alt=""></span>
+                <span class="flat-item__popup"><img src="img/content/flat-vertical.png" class="img-fluid" alt=""></span>
 
                 <div class="flat__rooms">
                     <div class="flat-item__title">4-комнатная 244,47 м<sup>2</sup></div>
@@ -7960,7 +7962,6 @@
                     <div class="footer__office">
                         <div class="footer__office--title">Центральный офис</div>
                         <div class="footer__office--address">г. Москва, Ленинградский пр-т, д. 31А стр. 1</div>
-                        <a href="tel:89872346790" class="footer__office--phone">8 987 234 67 90</a>
                     </div>
                     <div class="footer__data">
                         Агентство недвижимости Стрижи<br />

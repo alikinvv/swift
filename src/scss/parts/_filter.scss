@@ -205,21 +205,17 @@
     }
 
     &__toggle {
-        @include r(1023) {
-            color: $red;
-        }
-
         border: none;
         outline: none;
         cursor: pointer;
         font-weight: 500;
-        color: $secondary;
+        color: $red;
         font-size: size-rel(12px);
         line-height: size-rel(22px);
         background: transparent;
         display: flex;
         align-items: center;
-        transition: 0.3s;
+        transition: $trans;
 
         &--text {
             display: inline-block;
@@ -232,23 +228,25 @@
             height: 12px;
             display: inline-block;
             transform: rotate(0deg);
-            transition: 0.3s;
         }
 
         svg {
             fill: $accent;
+            transition: $trans;
         }
 
         &--open {
             .filter__toggle--icon {
                 transform: rotate(180deg);
-                transition: 0.3s;
             }
         }
 
         &:hover {
-            color: $accent;
-            transition: 0.3s;
+            color: $primary;
+
+            svg {
+                fill: $primary;
+            }
         }
 
         &.active {

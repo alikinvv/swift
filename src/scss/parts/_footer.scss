@@ -66,8 +66,12 @@
         margin-bottom: size-rel(24px);
 
         &--title {
+            @include r(1400) {
+                font-size: 14px;
+            }
+
             font-weight: 600;
-            font-size: size-rel(16px);
+            font-size: 16px;
             line-height: size-rel(24px);
             margin-bottom: size-rel(24px);
         }
