@@ -1,5 +1,7 @@
 "use strict";
 
+var _this = void 0;
+
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
@@ -1352,9 +1354,42 @@ $('body').on('blur', '.subscribe input', function (e) {
   } else {
     $(e.currentTarget).removeClass('fill');
   }
-});
+}); // set same height cards
 
 for (var i = 0; i < $('.item__content').length; i++) {
   var $this = $('.item__content').eq(i);
   $this.find('.item__content--hover').css('height', $this.find('.item__content--base').outerHeight());
+} // flat menu
+
+
+var lastScrollTop = 0;
+
+if ($('.object-header').length > 0) {
+  $(window).scroll(function () {
+    var st = $(_this).scrollTop();
+
+    for (var _i = 0; _i < $('.menu-step').length; _i++) {
+      if ($(document).scrollTop() + $(window).height() * 0.7 > $('.menu-step').eq(_i).offset().top && !$('body').hasClass('animate')) {
+        $('.top-bar__nav li').removeClass('active');
+        $(".top-bar__nav li[data-menu=\"".concat($('.menu-step').eq(_i).attr('data-menu'), "\"]")).addClass('active');
+      }
+
+      if (!st > lastScrollTop && $(document).scrollTop() + $(window).height() * 0.7 < $('.menu-step').eq(_i).offset().top + $('.menu-step').outerHeight() && !$('body').hasClass('animate')) {
+        $('.top-bar__nav li').removeClass('active');
+      }
+    }
+
+    lastScrollTop = st;
+  });
 }
+
+$('body').on('click', '.top-bar__nav li', function (e) {
+  $('.top-bar__nav li').removeClass('active');
+  $(e.currentTarget).addClass('active');
+  $('body').addClass('animate');
+  $('html, body').stop().animate({
+    scrollTop: $(".menu-step[data-menu=\"".concat($(e.currentTarget).attr('data-menu'), "\"]")).offset().top - $(window).height() * 0.1
+  }, 500, 'swing', function () {
+    $('body').removeClass('animate');
+  });
+});
