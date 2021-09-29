@@ -118,7 +118,9 @@
                     transition: 0.2s;
 
                     &:before {
-                        opacity: 0;
+                        opacity: 1;
+                        visibility: visible;
+                        transition: 0.2s;
                     }
                 }
 

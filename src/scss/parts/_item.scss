@@ -369,15 +369,8 @@
         }
 
         &--map {
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1;
-            display: block;
-            position: absolute;
-            opacity: 0;
-            visibility: hidden;
             transition: 0.3s;
+            display: none;
         }
     }
 
@@ -441,6 +434,7 @@
             justify-content: center;
             border: 1px solid $gray;
             margin-left: size-rel(6px);
+            cursor: pointer;
 
             svg {
                 fill: $secondary;
@@ -554,22 +548,12 @@
         padding: size-rel(12px) size-rel(16px) size-rel(16px) size-rel(16px);
 
         &--base {
-            pointer-events: all;
-            user-select: initial;
-            opacity: 1;
+            display: block;
+            padding-top: 2px;
         }
 
         &--hover {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: #fff;
-            padding: 0.75rem 1rem calc(1rem + 2px) 1rem;
-            opacity: 0;
-            pointer-events: none;
-            user-select: none;
-            z-index: 2;
+            display: none;
         }
     }
 
@@ -580,7 +564,6 @@
         white-space: nowrap;
         font-size: size-rel(10px);
         line-height: size-rel(20px);
-        margin-bottom: size-rel(4px);
         display: flex;
         align-items: center;
 
@@ -686,7 +669,6 @@
     &__price {
         font-size: size-rel(10px);
         line-height: size-rel(19px);
-        padding-top: size-rel(4px);
 
         &--table {
             width: 200px;
@@ -780,15 +762,11 @@
         .item {
             &__media {
                 &--image {
-                    opacity: 0;
-                    visibility: hidden;
-                    transition: 0.3s;
+                    display: none;
                 }
 
                 &--map {
-                    opacity: 1;
-                    visibility: visible;
-                    transition: 0.3s;
+                    display: block;
                 }
             }
 
@@ -799,7 +777,6 @@
 
                 &--hover {
                     display: block;
-                    opacity: 1;
                 }
             }
 
@@ -891,29 +868,21 @@
             .item {
                 &__media {
                     &--image {
-                        opacity: 0;
-                        visibility: hidden;
-                        transition: 0.3s;
+                        display: none;
                     }
 
                     &--map {
-                        opacity: 1;
-                        visibility: visible;
-                        transition: 0.3s;
+                        display: block;
                     }
                 }
 
                 &__content {
                     &--base {
-                        opacity: 0;
-                        pointer-events: none;
-                        user-select: none;
+                        display: none;
                     }
 
                     &--hover {
-                        opacity: 1;
-                        pointer-events: all;
-                        user-select: initial;
+                        display: block;
                     }
                 }
             }
@@ -1129,9 +1098,9 @@
     &__tags {
         min-height: size-rel(36px);
         display: flex;
-        flex-wrap: wrap;
         align-items: flex-start;
         margin-right: size-rel(-4px);
+        white-space: nowrap;
     }
 
     &__tag {

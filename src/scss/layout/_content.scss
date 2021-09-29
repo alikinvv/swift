@@ -1084,6 +1084,21 @@
         align-items: center;
         color: $secondary;
         fill: $secondary;
+        position: relative;
+
+        &:before {
+            right: -12px;
+            top: calc(50% - 2px);
+            content: '';
+            width: 4px;
+            height: 4px;
+            font-size: 0;
+            line-height: 0;
+            display: block;
+            position: absolute;
+            background: $gray;
+            border-radius: 50%;
+        }
 
         &--icon {
             font-size: 0;
@@ -1091,9 +1106,6 @@
             height: size-rel(14px);
             display: inline-block;
             margin-right: size-rel(4px);
-        }
-
-        &--text {
         }
     }
 
@@ -1165,27 +1177,6 @@
 
     @include r(767) {
         bottom: 20px;
-    }
-
-    &.top {
-        @include r(1700) {
-            bottom: 410px;
-        }
-
-        @include r(1260) {
-            right: 15px;
-            bottom: 85px;
-        }
-
-        @include r(1023) {
-            bottom: 130px;
-        }
-
-        @include r(767) {
-            bottom: 20px;
-        }
-
-        bottom: 500px;
     }
 
     position: fixed;
@@ -1282,4 +1273,14 @@
 
 .fancybox__container {
     z-index: 2000;
+}
+
+.page {
+    &-filter {
+        .scrolltop {
+            @include r(767) {
+                bottom: 65px;
+            }
+        }
+    }
 }

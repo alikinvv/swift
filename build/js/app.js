@@ -213,7 +213,17 @@ tippy('[data-tippy-content]'); // Input + placeholder
 
 var $body = $('body');
 textInputBoxPlugin($);
-$body.textInputBox(); // Custom scroll
+$body.textInputBox(); // mobile breadcrumbs
+
+$('body').on('click', '.breadcrumb__toggle', function (e) {
+  $(e.currentTarget).toggleClass('active');
+  $('.breadcrumb__main').toggleClass('active');
+});
+
+if ($(window).width() < 768) {
+  $('.breadcrumb__main').addClass('custom-scroll');
+} // Custom scroll
+
 
 document.querySelectorAll('.custom-scroll').forEach(function (el) {
   new SimpleBar(el);
@@ -933,12 +943,7 @@ $('body').on('click', '.scrolltop', function () {
   $('html, body').stop().animate({
     scrollTop: 0
   }, 500, 'swing');
-});
-
-if ($('.post').length > 0) {
-  $('.scrolltop').addClass('top');
-} // click on checkbox tooltip on mobile
-
+}); // click on checkbox tooltip on mobile
 
 $('body').on('click', '.btn-checkbox', function (e) {
   if ($(window).width() <= 1279) {
@@ -1322,19 +1327,11 @@ $('body').on('click', '.select__count', function (e) {
   $(e.currentTarget).remove();
 }); // hamburger
 
-var initMobileMenu = function initMobileMenu() {
-  if ($(window).width() <= 1023 && $('.hamburger').length === 0) {
-    $('.header .header__main').prepend('<div class="hamburger nav-toggle"><span></span></div>');
-  } else if ($(window).width() > 1023 && $('.hamburger').length > 0) {
-    $('.hamburger').remove();
-  }
-};
-
-initMobileMenu();
 $('body').on('click', '.hamburger', function (e) {
   $(e.currentTarget).toggleClass('active');
   $('.menu').addClass('active');
-});
+}); // mobile menu
+
 var pageNavToggle = document.querySelectorAll('.nav-toggle');
 
 if (pageNavToggle) {
@@ -1346,13 +1343,8 @@ if (pageNavToggle) {
       return false;
     });
   });
-} // mobile breadcrumbs
+} // subscribe input
 
-
-$('body').on('click', '.breadcrumb__toggle', function (e) {
-  $(e.currentTarget).toggleClass('active');
-  $('.breadcrumb__main').toggleClass('active');
-}); // subscribe input
 
 $('body').on('blur', '.subscribe input', function (e) {
   if ($(e.currentTarget).val() !== '') {
@@ -1361,3 +1353,8 @@ $('body').on('blur', '.subscribe input', function (e) {
     $(e.currentTarget).removeClass('fill');
   }
 });
+
+for (var i = 0; i < $('.item__content').length; i++) {
+  var $this = $('.item__content').eq(i);
+  $this.find('.item__content--hover').css('height', $this.find('.item__content--base').outerHeight());
+}

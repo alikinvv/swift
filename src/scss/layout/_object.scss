@@ -9,6 +9,26 @@
             max-height: 684px;
             overflow: hidden;
 
+            .object-promo__item {
+                @include r(1500) {
+                    height: 528px;
+                }
+
+                @include r(1023) {
+                    height: 432px;
+                }
+
+                @include r(767) {
+                    height: 320px;
+
+                    img {
+                        display: none;
+                    }
+                }
+
+                height: 684px;
+            }
+
             .slider-button {
                 @include r(767) {
                     display: block;
@@ -590,6 +610,10 @@
 
     &__image {
         margin-bottom: size-rel(16px);
+
+        img {
+            max-height: 64px;
+        }
     }
 
     &__type {
@@ -1967,7 +1991,7 @@
 }
 
 .rightmodal {
-    @include r(1500) {
+    @include r(1380) {
         padding: 45px 30px 0;
         width: 400px;
     }
@@ -1993,7 +2017,7 @@
     }
 
     &__close {
-        @include r(1500) {
+        @include r(1380) {
             right: 20px;
             top: 10px;
             width: 30px;
