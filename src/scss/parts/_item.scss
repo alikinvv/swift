@@ -159,6 +159,8 @@
             }
 
             &__media--image {
+                width: 56px;
+                height: 56px;
                 margin: 0;
                 position: relative;
 
@@ -176,7 +178,7 @@
                 &::before {
                     content: '';
                     @include centerYa;
-                    left: 18px;
+                    left: 33px;
                     width: 18px;
                     height: 18px;
                     background: url('../img/icons/zoom.svg') no-repeat center;
@@ -1064,9 +1066,27 @@
         margin-bottom: size-rel(16px);
 
         &--image {
+            @include r(1500) {
+                height: 107px;
+            }
+
+            @include r(1023) {
+                height: 202px;
+            }
+
+            @include r(767) {
+                height: 152px;
+            }
+
             display: block;
             margin: 0 auto;
             max-width: size-rel(180px);
+            height: 184px;
+            @include fcc;
+
+            img {
+                max-height: 100%;
+            }
         }
     }
 
