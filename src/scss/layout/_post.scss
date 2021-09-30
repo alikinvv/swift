@@ -800,10 +800,10 @@ ol {
         box-shadow: 2px 2px 40px rgba(0, 0, 0, 0.08);
         position: fixed;
         right: 45px;
-        bottom: 150px;
+        bottom: 32px;
         width: 230px;
         height: 312px;
-        z-index: 20;
+        z-index: 40;
 
         &__close {
             opacity: 1;
@@ -815,10 +815,10 @@ ol {
         padding: size-rel(40px);
         position: fixed;
         right: 45px;
-        bottom: 150px;
+        bottom: 32px;
         width: 326px;
         height: 388px;
-        z-index: 20;
+        z-index: 40;
 
         &__title {
             font-size: size-rel(20px);

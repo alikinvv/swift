@@ -1159,7 +1159,7 @@ $('body').on('click', '.nav-box__btn', function (e) {
   $('.nav-box__btn').removeClass('active');
   $(e.currentTarget).toggleClass('active');
   $('.rightmodal').removeClass('show');
-  $('.rightmodal').toggleClass('show');
+  $(".rightmodal[data-rightmodal=\"".concat($(e.currentTarget).attr('data-rightmodal'), "\"]")).toggleClass('show');
 
   if ($(window).width() >= 768) {
     hideRightmodal();
