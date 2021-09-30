@@ -6,6 +6,11 @@
         overflow: visible;
 
         &-full {
+            @include r(767) {
+                margin-left: -16px;
+                width: calc(100% + 32px);
+            }
+
             max-height: 684px;
             overflow: hidden;
 
@@ -34,11 +39,11 @@
                     display: block;
 
                     &.object-promo__nav--prev {
-                        left: 15px;
+                        left: 0px;
                     }
 
                     &.object-promo__nav--next {
-                        right: 15px;
+                        right: 0px;
                     }
                 }
 
