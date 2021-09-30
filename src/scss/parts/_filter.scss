@@ -2,6 +2,7 @@
     &__header {
         @include r(1023) {
             display: flex;
+            margin-bottom: 40px;
         }
 
         margin-bottom: size-rel(40px);
@@ -18,6 +19,13 @@
         }
 
         &--close {
+            @include r(1023) {
+                position: relative;
+                right: 4px;
+                top: 2px;
+                height: 19px;
+            }
+
             font-size: 0;
             line-height: 0;
             margin: 0;
@@ -111,13 +119,17 @@
     margin-bottom: size-rel(80px);
 
     &.open {
-        display: block;
+        display: flex;
+        flex-direction: column;
     }
 
     &__primary {
         @include r(1023) {
             margin: 0;
             @include flexlist(12px);
+            padding-right: 22.5%;
+            padding-left: 13px;
+            order: 1;
         }
 
         @include r(767) {
@@ -130,7 +142,12 @@
 
         &--item {
             @include r(1023) {
-                @include flexitem(50%, 12px, 24px);
+                @include flexitem(50%, 16px, 24px);
+                padding: 0;
+
+                &:nth-child(odd) {
+                    margin-right: 10px !important;
+                }
             }
 
             @include r(767) {
@@ -144,7 +161,8 @@
 
             &:first-child {
                 @include r(1023) {
-                    @include flexitem(50%, 12px, 24px);
+                    @include flexitem(50%, 16px, 24px);
+                    padding: 0;
                 }
 
                 width: calc(25% + 1.5rem);
@@ -155,9 +173,9 @@
     &__actions {
         @include r(1023) {
             flex-wrap: wrap;
-            margin-top: 30px;
             padding: 0 16px;
             margin-bottom: 0;
+            order: 3;
         }
 
         display: flex;
@@ -195,8 +213,9 @@
     .btn-reset {
         @include r(1023) {
             width: 100%;
-            padding: 20px 0;
+            padding: 20px 0 23px;
             color: #818285;
+            margin-top: 19px;
 
             path {
                 stroke: #818285;
@@ -205,6 +224,10 @@
     }
 
     &__toggle {
+        @include r(1023) {
+            display: none;
+        }
+
         border: none;
         outline: none;
         cursor: pointer;
@@ -216,6 +239,17 @@
         display: flex;
         align-items: center;
         transition: $trans;
+
+        &.mobile {
+            @include r(1023) {
+                order: 2;
+                @include fcn;
+                margin-top: 25px;
+                margin-left: 11px;
+            }
+
+            display: none;
+        }
 
         &--text {
             display: inline-block;
@@ -260,6 +294,11 @@
     &__secondary {
         @include r(1023) {
             margin-top: 12px;
+            order: 3;
+            padding-top: 28px;
+            padding-left: 4px;
+            padding-right: 22.5%;
+            padding-bottom: 0;
         }
 
         @include r(767) {
@@ -288,6 +327,55 @@
             @include r(1023) {
                 @include flexitem(50%, 12px, 24px);
                 width: calc(50% - 24px) !important;
+
+                .checkbox-group__row {
+                    justify-content: center;
+                }
+
+                &:nth-child(1) {
+                    order: 1;
+                }
+
+                &:nth-child(2) {
+                    order: 3;
+                    padding-right: 0;
+                }
+
+                &:nth-child(3) {
+                    order: 2;
+                    width: 100% !important;
+
+                    .range {
+                        @include fcsb;
+
+                        &:hover .range__main {
+                            border-color: #ccc;
+                        }
+
+                        & > * {
+                            width: 100%;
+                        }
+                    }
+
+                    .range-wrap {
+                        position: relative;
+                        margin-right: 25px;
+                    }
+
+                    .range__dropdown {
+                        position: static;
+                        visibility: visible;
+                        opacity: 1;
+                        border-radius: 8px;
+                        padding: 6px 0;
+                        margin-bottom: 0;
+                    }
+                }
+
+                &:nth-child(4) {
+                    order: 4;
+                    padding-left: 0;
+                }
             }
 
             @include r(767) {
@@ -315,7 +403,6 @@
 
             &:nth-child(4) {
                 @include r(1023) {
-                    width: 100% !important;
                     margin-bottom: 36px;
                 }
 
@@ -374,6 +461,7 @@
     &__params {
         @include r(1023) {
             margin-bottom: 0;
+            order: 5;
         }
 
         @include r(767) {
@@ -520,6 +608,11 @@
 }
 
 .filter-progress {
+    @include r(1023) {
+        order: 4;
+        margin-bottom: 24px;
+    }
+
     height: 1px;
     position: relative;
     background: $gray;

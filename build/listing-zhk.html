@@ -454,8 +454,17 @@
                     >
                 </div>
             </div>
-        </div><!--/.filter__primary--item -->
-    </div><!--/.filter__primary -->
+        </div>
+    </div>
+    <button class="filter__toggle mobile">
+        <span class="filter__toggle--text">Дополнительные фильтры</span>
+        <i class="filter__toggle--icon">
+            <svg class="ico-svg" viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="img/sprites/sprite-mono.svg#angle-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+            </svg>
+        </i>
+    </button>
+
     <div class="filter__secondary">
         <div class="filter__secondary--row">
             <div class="filter__secondary--item">
@@ -465,28 +474,30 @@
                         <span class="field__select--text open-location" open-tab="district">Локация</span>
                     </div>
                 </div>
-            </div><!-- /.filter__secondary--item -->
+            </div>
             <div class="filter__secondary--item">
                 <select name="select" class="pretty-select">
                     <option value="Не выбрано">Прописка</option>
                     <option value="Эконом">Нужна</option>
                     <option value="Стандарт">Не нужна</option>
                 </select>
-            </div><!-- /.filter__secondary--item -->
+            </div>
             <div class="filter__secondary--item">
                 <div class="range">
-                    <div class="range__title">Этаж</div>
-                    <div class="range__main">
-                        <div class="range__item range__item--double">
-                            <input value="7" type="number" data-slider="floor" class="range__value range__value--from">
+                    <div class="range-wrap">
+                        <div class="range__title">Этаж</div>
+                        <div class="range__main">
+                            <div class="range__item range__item--double">
+                                <input value="7" type="number" data-slider="floor" class="range__value range__value--from">
+                            </div>
+                            <div class="range__divider"></div>
+                            <div class="range__item range__item--double">
+                                <input value="22" type="number" data-slider="floor" class="range__value range__value--to">
+                            </div>
                         </div>
-                        <div class="range__divider"></div>
-                        <div class="range__item range__item--double">
-                            <input value="22" type="number" data-slider="floor" class="range__value range__value--to">
+                        <div class="range__slider">
+                            <input type="text" class="range-field-slider slider-floor">
                         </div>
-                    </div>
-                    <div class="range__slider">
-                        <input type="text" class="range-field-slider slider-floor">
                     </div>
                     <ul class="range__dropdown">
                         <li>
@@ -568,7 +579,7 @@
                 </svg>
                 <span>Очистить фильтры</span>
             </button>
-        </div><!--/.filter__actions__column -->
+        </div>
         <div class="filter__actions__column">
             <button class="filter__toggle">
                 <span class="filter__toggle--text">Дополнительные фильтры</span>
@@ -577,9 +588,9 @@
                         <use xlink:href="img/sprites/sprite-mono.svg#angle-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
                     </svg>
                 </i>
-            </button><!--/.filter__toggle -->
-        </div><!--/.filter__actions__column -->
-    </div><!-- /.filter__actions -->
+            </button>
+        </div>
+    </div>
     <div class="filter__params">
         <ul class="filter__params--list">
             <li class="filter__params--item">
@@ -615,26 +626,6 @@
                     </div>
                 </div>
             </li><!--/.filter__params--item -->
-            <li class="filter__params--item">
-                <div class="filter__params--value">
-                    <div class="filter__params--label">3-комнатные</div>
-                    <div class="filter__params--del">
-                        <svg class="ico-svg" viewBox="0 0 8 9" xmlns="http://www.w3.org/2000/svg">
-                            <use xlink:href="img/sprites/sprite-mono.svg#clear" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                        </svg>
-                    </div>
-                </div>
-            </li><!--/.filter__params--item -->
-            <li class="filter__params--item">
-                <div class="filter__params--value">
-                    <div class="filter__params--label">С отделкой</div>
-                    <div class="filter__params--del">
-                        <svg class="ico-svg" viewBox="0 0 8 9" xmlns="http://www.w3.org/2000/svg">
-                            <use xlink:href="img/sprites/sprite-mono.svg#clear" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                        </svg>
-                    </div>
-                </div>
-            </li><!--/.filter__params--item -->
         </ul>
     </div>
     <div class="filter__progress filter-progress">
@@ -651,8 +642,11 @@
                 <option value="С большей площадью">С большей площадью</option>
                 <option value="С меньшей площадью">С меньшей площадью</option>
             </select>
-        </div><!--/.mobile-bar__item -->
-    </div><!--/.mobile-bar -->
+        </div>
+        <div class="mobile-bar__item">
+            <button type="button" class="btn btn-map open-location" open-tab="metro"><img src="img/icons/about-icon-06_red.svg" alt=""> Смотреть на карте</button>
+        </div>
+    </div>
 
     <div class="simple-bar">
         <div class="simple-bar__item">

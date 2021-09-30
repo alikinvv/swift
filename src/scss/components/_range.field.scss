@@ -20,6 +20,10 @@
     }
 
     &__title {
+        @include r(1023) {
+            font-size: 12px;
+        }
+
         left: size-rel(8px);
         top: size-rel(-9px);
         z-index: 30;

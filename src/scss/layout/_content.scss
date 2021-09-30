@@ -101,6 +101,13 @@
     grid-row-gap: size-rel(8px);
     grid-column-gap: size-rel(16px);
 
+    .btn-map {
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+        width: 100%;
+    }
+
     &--disable {
         opacity: 0.4;
         position: relative;
