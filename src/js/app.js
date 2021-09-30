@@ -1287,6 +1287,7 @@ $('body').on('click', '.nav-box__btn', (e) => {
 
 $('body').on('click', '.rightmodal__close', () => {
     $('.rightmodal').removeClass('show');
+    $('.nav-box__btn').removeClass('active');
     $('html, body').removeClass('overflow');
 });
 

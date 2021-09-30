@@ -1172,6 +1172,7 @@ $('body').on('click', '.nav-box__btn', function (e) {
 });
 $('body').on('click', '.rightmodal__close', function () {
   $('.rightmodal').removeClass('show');
+  $('.nav-box__btn').removeClass('active');
   $('html, body').removeClass('overflow');
 });
 
