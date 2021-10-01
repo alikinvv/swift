@@ -1661,8 +1661,20 @@
 
         @include r(767) {
             width: 100% !important;
-            margin: 0 0 20px !important;
-            background: none !important;
+            margin: 0 0 24px !important;
+            padding: 25px 25px;
+            height: 240px;
+
+            &:first-child {
+                padding: 25px 24px 24px;
+                background-size: 120%;
+                background-position: 119% 79%;
+                height: initial;
+
+                .offer__title {
+                    font-size: 14px;
+                }
+            }
         }
 
         padding: 32px 40px;
@@ -1697,6 +1709,11 @@
             margin-bottom: 16px;
         }
 
+        @include r(767) {
+            font-size: 10px;
+            margin-bottom: 8px;
+        }
+
         font-size: 12px;
         margin-bottom: 8px;
     }
@@ -1718,6 +1735,11 @@
             font-size: 16px;
         }
 
+        @include r(767) {
+            font-size: 14px;
+            margin-bottom: 19px;
+        }
+
         font-weight: 600;
         font-size: 20px;
         color: $red;
@@ -1726,6 +1748,10 @@
     }
 
     &__text {
+        @include r(767) {
+            font-size: 12px;
+        }
+
         font-size: 14px;
         line-height: 1.71;
     }
@@ -1737,6 +1763,12 @@
 
         @include r(1023) {
             margin-top: 37px;
+        }
+
+        @include r(767) {
+            margin-top: 193px;
+            width: 100%;
+            font-size: 10px;
         }
 
         margin-top: 40px;
