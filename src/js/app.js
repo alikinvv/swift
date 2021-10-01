@@ -1562,3 +1562,11 @@ $('body').on('click', '.top-bar__nav li', (e) => {
             }
         );
 });
+
+// sticky elements
+
+if ($(window).width() >= 1024) {
+    var sticky = new Sticky('.credit-filter', {
+        marginTop: 100,
+    });
+}

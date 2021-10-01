@@ -1413,4 +1413,10 @@ $('body').on('click', '.top-bar__nav li', function (e) {
   }, 500, 'swing', function () {
     $('body').removeClass('animate');
   });
-});
+}); // sticky elements
+
+if ($(window).width() >= 1024) {
+  var sticky = new Sticky('.credit-filter', {
+    marginTop: 100
+  });
+}
