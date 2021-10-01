@@ -72,7 +72,6 @@ var maskPhone = function maskPhone(selector) {
     var template = masked,
         def = template.replace(/\D/g, ''),
         val = this.value.replace(/\D/g, '');
-    console.log(template);
     var i = 0,
         newValue = template.replace(/[_\d]/g, function (a) {
       return i < val.length ? val.charAt(i++) || def.charAt(i) : a;
@@ -345,6 +344,8 @@ $price.ionRangeSlider({
   min: pricemin,
   max: pricemax,
   type: 'single',
+  prettify_enabled: true,
+  prettify_separator: ' ',
   from: pricefrom,
   step: 1,
   onChange: function onChange(data) {
@@ -358,6 +359,8 @@ $first.ionRangeSlider({
   max: firstmax,
   type: 'single',
   from: firstfrom,
+  prettify_enabled: true,
+  prettify_separator: ' ',
   step: 1,
   onChange: function onChange(data) {
     sliderChange(data, 'first');
@@ -375,14 +378,22 @@ $time.ionRangeSlider({
     sliderChange(data, 'time');
   }
 });
+$('body').on('keypress', '.range__value', function (event) {
+  return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46 || event.charCode == 44 || event.charCode == 0;
+});
+$('body').on('keyup', '.range__value', function (event) {
+  this.value = this.value.replace(/ /g, '');
+  var number = this.value;
+  this.value = number.replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+});
 
 var sliderChange = function sliderChange(data, slider) {
   var $sliderFrom = $("input.range__value--from[data-slider=\"".concat(slider, "\"]"));
   var $sliderTo = $("input.range__value--to[data-slider=\"".concat(slider, "\"]"));
-  $sliderFrom.val(data.from);
+  $sliderFrom.val(data.from_pretty);
 
   if ($sliderTo.length > 0) {
-    $sliderTo.val(data.to);
+    $sliderTo.val(data.to_pretty);
   }
 
   if ($(".slider-".concat(slider)).closest('.range').find('.range__value--percent').length > 0) {
@@ -391,8 +402,17 @@ var sliderChange = function sliderChange(data, slider) {
 };
 
 $('.range__value--from').on('change', function () {
-  var val = $(this).prop('value');
+  var val = $(this).prop('value').replace(/ /g, '');
   var instance = null;
+
+  if ($(this).attr('data-slider') === 'price') {
+    pricefrom = $price.closest('.range').find('.range__value--from').val();
+    instance = $price.data('ionRangeSlider');
+    val = validateFrom(val, pricemin);
+    instance.update({
+      from: val
+    });
+  }
 
   if ($(this).attr('data-slider') === 'area') {
     areafrom = $area.closest('.range').find('.range__value--from').val();

@@ -114,6 +114,13 @@
     margin-bottom: size-rel(24px);
     cursor: pointer;
 
+    &:hover {
+        &::before {
+            margin-top: -8px;
+            box-shadow: none;
+        }
+    }
+
     &--open {
         &:before {
             opacity: 0;
@@ -139,6 +146,7 @@
         position: absolute;
         border-radius: 0 0 8px 8px;
         box-shadow: 2px 2px 18px 2px rgba(0, 0, 0, 0.05);
+        transition: $trans;
     }
 
     &-block {
