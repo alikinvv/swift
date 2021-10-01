@@ -1639,12 +1639,22 @@
         }
 
         @include r(1023) {
-            @include flexitem(50%, 5px);
+            @include flexitem(50%, 10px);
+            padding: 33px 44px;
+            margin-bottom: 24px !important;
+            height: 326px;
 
             &:first-child {
-                @include r(1023) {
-                    @include flexitem(100%, 10px);
-                    background-size: 60%;
+                @include flexitem(100%, 10px);
+                background-size: 60%;
+                background-position: 95% bottom;
+                height: initial;
+                padding: 31px 40px 40px;
+
+                .offer__title {
+                    font-size: 16px;
+                    margin-bottom: 0;
+                    max-width: 100%;
                 }
             }
         }
@@ -1669,6 +1679,10 @@
             width: 50%;
 
             .offer__text {
+                @include r(1023) {
+                    max-width: 48%;
+                }
+
                 @include r(767) {
                     max-width: 100%;
                 }
@@ -1679,17 +1693,31 @@
     }
 
     &__desc {
+        @include r(1023) {
+            margin-bottom: 16px;
+        }
+
         font-size: 12px;
         margin-bottom: 8px;
     }
 
     &__title {
+        @include r(1023) {
+            font-size: 14px;
+            margin-bottom: 9px;
+            max-width: 74%;
+        }
+
         font-weight: 600;
         font-size: 20px;
         line-height: 1.6;
     }
 
     &__price {
+        @include r(1023) {
+            font-size: 16px;
+        }
+
         font-weight: 600;
         font-size: 20px;
         color: $red;
@@ -1705,6 +1733,10 @@
     .btn {
         @include r(1279) {
             margin-top: 20px;
+        }
+
+        @include r(1023) {
+            margin-top: 37px;
         }
 
         margin-top: 40px;
