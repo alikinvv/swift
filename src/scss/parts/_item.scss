@@ -71,6 +71,10 @@
             &:hover {
                 box-shadow: 2px 2px 40px rgba(0, 0, 0, 0.08);
                 z-index: 2;
+
+                .flat-item__media--image::before {
+                    opacity: 1;
+                }
             }
 
             & > div {
@@ -163,21 +167,10 @@
                 margin: 0;
                 position: relative;
 
-                &:hover {
-                    &::before {
-                        opacity: 1;
-                    }
-
-                    & + .flat-item__popup {
-                        opacity: 1;
-                        top: -7px;
-                    }
-                }
-
                 &::before {
                     content: '';
                     @include centerYa;
-                    left: 33px;
+                    left: 32px;
                     width: 18px;
                     height: 18px;
                     background: url('../img/icons/zoom.svg') no-repeat center;
@@ -197,18 +190,33 @@
                 box-shadow: 2px 2px 40px rgba(0, 0, 0, 0.08);
                 border-radius: 8px;
                 position: absolute;
-                top: 20px;
+                bottom: 20px;
                 left: 0;
-                transform: translateY(-100%);
+                transform: translateY(100%);
                 display: block;
                 pointer-events: none;
                 user-select: none;
                 opacity: 0;
-                transition: $trans;
 
                 img {
                     height: 146px;
                     width: auto;
+                }
+
+                &.bottom {
+                    bottom: initial;
+                    top: 0;
+                    transform: translateY(-100%);
+                }
+
+                &.show {
+                    opacity: 1;
+                    bottom: -7px;
+
+                    &.bottom {
+                        bottom: initial;
+                        top: -7px;
+                    }
                 }
             }
 
@@ -274,6 +282,16 @@
         border: 1px solid #cccccc;
         padding: 14px 55px;
         margin-bottom: 16px;
+        background: #fff;
+        z-index: 10;
+
+        &[style] {
+            box-shadow: 2px 2px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        &[style=''] {
+            box-shadow: none;
+        }
 
         & > div {
             padding-right: 5px;
