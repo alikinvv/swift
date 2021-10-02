@@ -214,7 +214,14 @@
     }
 
     .btn-filter {
+        font-size: 14px;
+        font-weight: 500;
         padding: 12px 45px;
+    }
+
+    .btn-map {
+        font-size: 14px;
+        font-weight: 500;
     }
 
     .btn-reset {
@@ -265,6 +272,8 @@
         &--text {
             display: inline-block;
             margin-right: size-rel(8px);
+            font-size: 14px;
+            font-weight: 500;
         }
 
         &--icon {

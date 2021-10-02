@@ -652,6 +652,7 @@ option::-webkit-selection {
         visibility: hidden;
         position: absolute;
 
+        &:hover + .options-inline__label,
         &:checked + .options-inline__label {
             color: $white;
             background: $accent;
@@ -727,6 +728,7 @@ option::-webkit-selection {
         visibility: hidden;
         position: absolute;
 
+        &:hover + .checkbox-group__label,
         &:checked + .checkbox-group__label {
             color: $white;
             background: $accent;
