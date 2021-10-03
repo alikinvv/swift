@@ -1291,3 +1291,137 @@
         }
     }
 }
+
+.datepicker {
+    border-radius: 0;
+    border: 0;
+    box-shadow: 2px 2px 40px rgba(0, 0, 0, 0.08);
+
+    &--pointer {
+        display: none;
+    }
+
+    &--nav {
+        border: 0;
+        padding-bottom: 0;
+
+        &-action {
+            width: 32px;
+            height: 32px;
+            transition: $trans;
+
+            &[data-action='prev'] {
+                background: url('../img/icons/angle-left-gray.svg') no-repeat center;
+                background-size: 7px;
+            }
+
+            &[data-action='next'] {
+                background: url('../img/icons/angle-right-gray.svg') no-repeat center;
+                background-size: 7px;
+            }
+
+            &:hover {
+                &[data-action='prev'] {
+                    background: url('../img/icons/angle-left-white.svg') no-repeat center $red;
+                    background-size: 7px;
+                }
+
+                &[data-action='next'] {
+                    background: url('../img/icons/angle-right-white.svg') no-repeat center $red;
+                    background-size: 7px;
+                }
+            }
+
+            svg {
+                display: none;
+            }
+        }
+
+        &-title {
+            color: $primary;
+            font-size: 16px;
+
+            &:hover {
+                color: #fff;
+                background: $red;
+
+                i {
+                    color: #fff;
+                }
+            }
+
+            i {
+                color: $primary;
+            }
+        }
+    }
+
+    &--day {
+        &-name {
+            color: $primary;
+            text-transform: lowercase;
+            font-size: 10px;
+
+            &.-weekend- {
+                color: $red;
+            }
+        }
+    }
+
+    &--cell {
+        &-day {
+            color: $primary;
+            border-radius: 0;
+
+            &.-selected- {
+                background: $red;
+
+                &:hover {
+                    background: $red;
+                }
+            }
+        }
+
+        &-month {
+            color: $primary;
+            border-radius: 0;
+
+            &.-selected- {
+                background: $red;
+
+                &:hover {
+                    background: $red;
+                }
+
+                &.-current- {
+                    background: $red;
+                }
+            }
+
+            &.-current- {
+                color: $red;
+            }
+        }
+
+        &-year {
+            color: $primary;
+            border-radius: 0;
+
+            &.-selected- {
+                background: $red;
+
+                &:hover {
+                    background: $red;
+                }
+
+                &.-current- {
+                    background: $red;
+                }
+            }
+
+            &.-current- {
+                color: $red;
+            }
+        }
+    }
+}
