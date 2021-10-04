@@ -169,8 +169,8 @@
 
                 &::before {
                     content: '';
-                    @include centerYa;
-                    left: 32px;
+                    @include center;
+                    left: 50%;
                     width: 18px;
                     height: 18px;
                     background: url('../img/icons/zoom.svg') no-repeat center;

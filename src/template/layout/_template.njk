@@ -3,7 +3,7 @@
     <div class="root">
 
         {% block header %}
-        {% include "src/template/parts/_header.njk" %}
+            {% include "src/template/parts/_header.njk" %}
         {% endblock %}
 
         <div class="root__wrap">
@@ -23,9 +23,11 @@
                         {% endblock %}
                         {% endif %}
 
-                        {% block h1 %}
-                        <h1>{{ title }}</h1>
-                        {% endblock %}
+                        {% if not hide_h1 %}
+                            {% block h1 %}
+                                <h1>{{ title }}</h1>
+                            {% endblock %}
+                        {% endif %}
 
                         {% block content %}
 
@@ -34,9 +36,11 @@
                 </section>
                 {% endblock %}
 
-                {% block footer %}
-                {% include "src/template/parts/_footer.njk" %}
-                {% endblock %}
+                {% if not hide_footer %}
+                    {% block footer %}
+                        {% include "src/template/parts/_footer.njk" %}
+                    {% endblock %}
+                {% endif %}
             </div>
 
         </div>

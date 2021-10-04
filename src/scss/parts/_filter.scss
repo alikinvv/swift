@@ -279,14 +279,17 @@
         &--icon {
             font-size: 0;
             line-height: 0;
-            height: 12px;
             display: inline-block;
             transform: rotate(0deg);
+            transition: $trans;
         }
 
         svg {
-            fill: $accent;
             transition: $trans;
+
+            path {
+                transition: $trans;
+            }
         }
 
         &--open {
@@ -298,8 +301,8 @@
         &:hover {
             color: $primary;
 
-            svg {
-                fill: $primary;
+            svg path {
+                stroke: $primary;
             }
         }
 

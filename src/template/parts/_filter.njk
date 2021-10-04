@@ -8,7 +8,7 @@
     {# <span class="mobile-filter-button__value">4</span> #}
 </button>
 
-<div class="filter">
+<div class="filter {% if filter_scroll %}custom-scroll{% endif %}">
     <div class="filter-mobile__header">
         <div class="filter-mobile__header--title">Фильтры</div>
         <button type="button" class="filter-mobile__header--close filter-toggle">
@@ -115,8 +115,8 @@
     <button class="filter__toggle mobile">
         <span class="filter__toggle--text">Дополнительные фильтры</span>
         <i class="filter__toggle--icon">
-            <svg class="ico-svg" viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
-                <use xlink:href="img/sprites/sprite-mono.svg#angle-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+            <svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 5.5L5 1.5L9 5.5" stroke="#FF502F" stroke-width="1.5"/>
             </svg>
         </i>
     </button>
@@ -240,8 +240,8 @@
             <button class="filter__toggle">
                 <span class="filter__toggle--text">Дополнительные фильтры</span>
                 <i class="filter__toggle--icon">
-                    <svg class="ico-svg" viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
-                        <use xlink:href="img/sprites/sprite-mono.svg#angle-down" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                    <svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 5.5L5 1.5L9 5.5" stroke="#FF502F" stroke-width="1.5"/>
                     </svg>
                 </i>
             </button>

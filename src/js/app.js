@@ -1526,7 +1526,7 @@ $('body').on('blur', '.subscribe input', (e) => {
 });
 
 // set same height cards
-for (let i = 0; i < $('.item__content').length; i++) {
+for (let i = 0; i < $('.items-grid').length; i++) {
     let $this = $('.item__content').eq(i);
     $this.find('.item__content--hover').css('height', $this.find('.item__content--base').outerHeight());
 }
@@ -1583,4 +1583,147 @@ $('body').on('mouseenter', '.flat-item__media--image', (e) => {
 
 $('body').on('mouseleave', '.flat-item__media--image', (e) => {
     $(e.currentTarget).parent().find('.flat-item__popup').removeClass('show').removeClass('bottom');
+});
+
+//yandex map page
+ymaps.ready(function () {
+    var myIcon = ymaps.templateLayoutFactory.createClass(
+        '<div class="yandex__wrap">' +
+            '<div class="yandex__dot">' +
+            '<div class="yandex__count">' +
+            '{{ properties.count }}' +
+            '</div><div class="yandex__price">' +
+            '{{ properties.price }}' +
+            '</div>' +
+            '</div>' +
+            '</div>'
+    );
+
+    var myMap = new ymaps.Map(
+            'yandex',
+            {
+                center: [55.751574, 37.573856],
+                zoom: 9,
+                controls: ['fullscreenControl'],
+            },
+            {
+                searchControlProvider: 'yandex#search',
+            }
+        ),
+        // Создаём макет содержимого.
+        myPlacemark = new ymaps.Placemark(
+            [55.713443, 37.549197],
+            {
+                count: '3',
+                price: 'от 44,44 млн ₽',
+                balloonContentBody: `<div class="item">
+                    <div class="item__header">
+                        <a href="javascript:void(0)" class="item__media">
+                            <div class="item__media--image">
+                                <img src="img/content/item_image__01.jpg" class="img-fluid" alt="">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item__content">
+                        <div class="item__content--base">
+                            <div class="item__info">
+                                <div class="item__info--completion">Сдача IV кв 2022</div>
+                                <div class="item__info--developer">ЛСР недвижимость</div>
+                            </div>
+                            <div class="item__title">Мосфильмовский</div>
+                            <div class="item__district">
+                                <div class="item__district--icon" style="background-color: #FFD702;"></div>
+                                <div class="item__district--name">Сокол</div>
+                                <div class="item__district--distance">
+                                    <i>
+                                        <svg class="ico-svg" viewBox="0 0 10 15" xmlns="http://www.w3.org/2000/svg">
+                                            <use xlink:href="img/sprites/sprite-mono.svg#distanceicon" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                        </svg>
+                                    </i>
+                                    <span>12 минут</span>
+                                </div>
+                            </div>
+                            <div class="item__data">
+                                <div class="item__data--price">от 28,61 млн ₽</div>
+                                <div class="item__data--apartments">43 квартиры</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>`,
+            },
+            {
+                iconLayout: 'default#imageWithContent',
+                // Размеры метки.
+                iconImageSize: [48, 48],
+                // Смещение левого верхнего угла иконки относительно
+                // её "ножки" (точки привязки).
+                iconImageOffset: [-24, -24],
+                // Смещение слоя с содержимым относительно слоя с картинкой.
+                iconContentOffset: [15, 15],
+                // Макет содержимого.
+                iconContentLayout: myIcon,
+            }
+        ),
+        myPlacemark2 = new ymaps.Placemark(
+            [55.684758, 37.738521],
+            {
+                balloonContentBody: `<div class="item">
+                    <div class="item__header">
+                        <a href="javascript:void(0)" class="item__media">
+                            <div class="item__media--image">
+                                <img src="img/content/item_image__01.jpg" class="img-fluid" alt="">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item__content">
+                        <div class="item__content--base">
+                            <div class="item__info">
+                                <div class="item__info--completion">Сдача IV кв 2022</div>
+                                <div class="item__info--developer">ЛСР недвижимость</div>
+                            </div>
+                            <div class="item__title">Мосфильмовский</div>
+                            <div class="item__district">
+                                <div class="item__district--icon" style="background-color: #FFD702;"></div>
+                                <div class="item__district--name">Сокол</div>
+                                <div class="item__district--distance">
+                                    <i>
+                                        <svg class="ico-svg" viewBox="0 0 10 15" xmlns="http://www.w3.org/2000/svg">
+                                            <use xlink:href="img/sprites/sprite-mono.svg#distanceicon" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                        </svg>
+                                    </i>
+                                    <span>12 минут</span>
+                                </div>
+                            </div>
+                            <div class="item__data">
+                                <div class="item__data--price">от 28,61 млн ₽</div>
+                                <div class="item__data--apartments">43 квартиры</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>`,
+            },
+            {
+                iconLayout: 'default#image',
+                iconImageHref: '/img/icons/map-dot.svg',
+                iconImageSize: [12, 12],
+                iconImageOffset: [-6, -6],
+            }
+        );
+
+    myMap.events.add('click', (e) => e.get('target').balloon.close());
+    myMap.geoObjects.add(myPlacemark).add(myPlacemark2);
+});
+
+$('body').on('click', '.yandex__grid', (e) => {
+    $(e.currentTarget).toggle();
+    $('.filter').toggle();
+    $('.yandex__list').toggle();
+    $('.yandex__back').show();
+});
+
+$('body').on('click', '.yandex__back', (e) => {
+    $(e.currentTarget).toggle();
+    $('.filter').toggle();
+    $('.yandex__list').toggle();
+    $('.yandex__grid').show();
 });

@@ -1388,7 +1388,7 @@ $('body').on('blur', '.subscribe input', function (e) {
   }
 }); // set same height cards
 
-for (var i = 0; i < $('.item__content').length; i++) {
+for (var i = 0; i < $('.items-grid').length; i++) {
   var $this = $('.item__content').eq(i);
   $this.find('.item__content--hover').css('height', $this.find('.item__content--base').outerHeight());
 } // flat menu
@@ -1434,4 +1434,56 @@ $('body').on('mouseenter', '.flat-item__media--image', function (e) {
 });
 $('body').on('mouseleave', '.flat-item__media--image', function (e) {
   $(e.currentTarget).parent().find('.flat-item__popup').removeClass('show').removeClass('bottom');
+}); //yandex map page
+
+ymaps.ready(function () {
+  var myIcon = ymaps.templateLayoutFactory.createClass('<div class="yandex__wrap">' + '<div class="yandex__dot">' + '<div class="yandex__count">' + '{{ properties.count }}' + '</div><div class="yandex__price">' + '{{ properties.price }}' + '</div>' + '</div>' + '</div>');
+  var myMap = new ymaps.Map('yandex', {
+    center: [55.751574, 37.573856],
+    zoom: 9,
+    controls: ['fullscreenControl']
+  }, {
+    searchControlProvider: 'yandex#search'
+  }),
+      // Создаём макет содержимого.
+  myPlacemark = new ymaps.Placemark([55.713443, 37.549197], {
+    count: '3',
+    price: 'от 44,44 млн ₽',
+    balloonContentBody: "<div class=\"item\">\n                    <div class=\"item__header\">\n                        <a href=\"javascript:void(0)\" class=\"item__media\">\n                            <div class=\"item__media--image\">\n                                <img src=\"img/content/item_image__01.jpg\" class=\"img-fluid\" alt=\"\">\n                            </div>\n                        </a>\n                    </div>\n                    <div class=\"item__content\">\n                        <div class=\"item__content--base\">\n                            <div class=\"item__info\">\n                                <div class=\"item__info--completion\">\u0421\u0434\u0430\u0447\u0430 IV \u043A\u0432 2022</div>\n                                <div class=\"item__info--developer\">\u041B\u0421\u0420 \u043D\u0435\u0434\u0432\u0438\u0436\u0438\u043C\u043E\u0441\u0442\u044C</div>\n                            </div>\n                            <div class=\"item__title\">\u041C\u043E\u0441\u0444\u0438\u043B\u044C\u043C\u043E\u0432\u0441\u043A\u0438\u0439</div>\n                            <div class=\"item__district\">\n                                <div class=\"item__district--icon\" style=\"background-color: #FFD702;\"></div>\n                                <div class=\"item__district--name\">\u0421\u043E\u043A\u043E\u043B</div>\n                                <div class=\"item__district--distance\">\n                                    <i>\n                                        <svg class=\"ico-svg\" viewBox=\"0 0 10 15\" xmlns=\"http://www.w3.org/2000/svg\">\n                                            <use xlink:href=\"img/sprites/sprite-mono.svg#distanceicon\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"></use>\n                                        </svg>\n                                    </i>\n                                    <span>12 \u043C\u0438\u043D\u0443\u0442</span>\n                                </div>\n                            </div>\n                            <div class=\"item__data\">\n                                <div class=\"item__data--price\">\u043E\u0442 28,61 \u043C\u043B\u043D \u20BD</div>\n                                <div class=\"item__data--apartments\">43 \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u044B</div>\n                            </div>\n                        </div>\n                    </div>\n                </div>"
+  }, {
+    iconLayout: 'default#imageWithContent',
+    // Размеры метки.
+    iconImageSize: [48, 48],
+    // Смещение левого верхнего угла иконки относительно
+    // её "ножки" (точки привязки).
+    iconImageOffset: [-24, -24],
+    // Смещение слоя с содержимым относительно слоя с картинкой.
+    iconContentOffset: [15, 15],
+    // Макет содержимого.
+    iconContentLayout: myIcon
+  }),
+      myPlacemark2 = new ymaps.Placemark([55.684758, 37.738521], {
+    balloonContentBody: "<div class=\"item\">\n                    <div class=\"item__header\">\n                        <a href=\"javascript:void(0)\" class=\"item__media\">\n                            <div class=\"item__media--image\">\n                                <img src=\"img/content/item_image__01.jpg\" class=\"img-fluid\" alt=\"\">\n                            </div>\n                        </a>\n                    </div>\n                    <div class=\"item__content\">\n                        <div class=\"item__content--base\">\n                            <div class=\"item__info\">\n                                <div class=\"item__info--completion\">\u0421\u0434\u0430\u0447\u0430 IV \u043A\u0432 2022</div>\n                                <div class=\"item__info--developer\">\u041B\u0421\u0420 \u043D\u0435\u0434\u0432\u0438\u0436\u0438\u043C\u043E\u0441\u0442\u044C</div>\n                            </div>\n                            <div class=\"item__title\">\u041C\u043E\u0441\u0444\u0438\u043B\u044C\u043C\u043E\u0432\u0441\u043A\u0438\u0439</div>\n                            <div class=\"item__district\">\n                                <div class=\"item__district--icon\" style=\"background-color: #FFD702;\"></div>\n                                <div class=\"item__district--name\">\u0421\u043E\u043A\u043E\u043B</div>\n                                <div class=\"item__district--distance\">\n                                    <i>\n                                        <svg class=\"ico-svg\" viewBox=\"0 0 10 15\" xmlns=\"http://www.w3.org/2000/svg\">\n                                            <use xlink:href=\"img/sprites/sprite-mono.svg#distanceicon\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"></use>\n                                        </svg>\n                                    </i>\n                                    <span>12 \u043C\u0438\u043D\u0443\u0442</span>\n                                </div>\n                            </div>\n                            <div class=\"item__data\">\n                                <div class=\"item__data--price\">\u043E\u0442 28,61 \u043C\u043B\u043D \u20BD</div>\n                                <div class=\"item__data--apartments\">43 \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u044B</div>\n                            </div>\n                        </div>\n                    </div>\n                </div>"
+  }, {
+    iconLayout: 'default#image',
+    iconImageHref: '/img/icons/map-dot.svg',
+    iconImageSize: [12, 12],
+    iconImageOffset: [-6, -6]
+  });
+  myMap.events.add('click', function (e) {
+    return e.get('target').balloon.close();
+  });
+  myMap.geoObjects.add(myPlacemark).add(myPlacemark2);
+});
+$('body').on('click', '.yandex__grid', function (e) {
+  $(e.currentTarget).toggle();
+  $('.filter').toggle();
+  $('.yandex__list').toggle();
+  $('.yandex__back').show();
+});
+$('body').on('click', '.yandex__back', function (e) {
+  $(e.currentTarget).toggle();
+  $('.filter').toggle();
+  $('.yandex__list').toggle();
+  $('.yandex__grid').show();
 });
