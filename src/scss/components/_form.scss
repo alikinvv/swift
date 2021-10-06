@@ -928,6 +928,12 @@ option::-webkit-selection {
         }
     }
 
+    &.fill {
+        .select__input {
+            border-color: $red;
+        }
+    }
+
     &::before {
         content: '';
         position: absolute;

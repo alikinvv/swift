@@ -112,10 +112,26 @@
         .select.checkbox {
             margin: 0 16px;
             width: 308px;
+
+            &.active input {
+                border-color: $red;
+            }
         }
 
         .metro-time {
             width: 171px;
+        }
+
+        .btn-reset {
+            padding: 13px 15px;
+            color: $red;
+            width: 100%;
+            justify-content: flex-start;
+            display: none;
+
+            &:hover {
+                background: #f5f5f5;
+            }
         }
     }
 

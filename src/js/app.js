@@ -220,11 +220,6 @@ if ($(window).width() < 768) {
     $('.breadcrumb__main').addClass('custom-scroll');
 }
 
-// Custom scroll
-document.querySelectorAll('.custom-scroll').forEach((el) => {
-    new SimpleBar(el);
-});
-
 $('.footer-nav__view').on('click', function (e) {
     e.preventDefault();
     $(this).toggleClass('open');
@@ -1085,14 +1080,18 @@ $('body').on('click', '.location__close', () => {
     $('.location').toggleClass('active');
 });
 
-$('body').on('click', '.location .btn-reset', (e) => {
+$('body').on('click', '.metro__filter .btn-reset, .location .btn-reset', (e) => {
+    $('.select.ln .select__input').val('');
+    $('.select.ln .select__count').remove();
+    $('.metro__filter .checkbox-group__input').prop('checked', false);
     $('.tabs__content--active .location__content input[type="checkbox"]').prop('checked', false);
     $(
         '.tabs__content--active .MetroMap_station_item,.tabs__content--active .MetroMap_stop,.tabs__content--active .MetroMap_transit_group,.tabs__content--active .MetroMap_line_item'
     ).removeClass('selected');
     $('.tabs__content--active circle[r="8"]').attr('r', 6);
     $('.tabs__btn--active').removeClass('hasFilter');
-    $(e.currentTarget).removeClass('show');
+    $('.location__controls .btn-reset').removeClass('show');
+    $('.metro__filter .btn-reset').hide();
 });
 
 $('body').on('change', '.location .checkbox-group__input', () => {
@@ -1365,12 +1364,61 @@ if ($(window).width() < 1280) {
     $('.metro').remove();
 }
 
+for (let i = 0; i < $('.MetroMap_line_item').length; i++) {
+    $('.ln .btn-reset').after(`
+    <div class="select__item" data-value="${$('.MetroMap_line_item').eq(i).attr('data-name')}">
+            <div class="checkbox-group__item">
+                <label class="checkbox-group__button">
+                    <input type="checkbox" class="checkbox-group__input" name="check-group" value="">
+                    <span class="checkbox-group__label checkbox-mark checkbox-500">
+                        <span class="line fill" style="background-color: ${$('.MetroMap_line_item').eq(i).find('.MetroMap_top').attr('stroke')}"></span>
+                        ${$('.MetroMap_line_item').eq(i).attr('data-name')}
+                    </span>
+                </label>
+            </div>
+        </div>
+    `);
+}
+
+let lines = 0;
+
 $('body').on('click', '.MetroMap_line_item:not(.selected)', (e) => {
     let id = $(e.currentTarget).attr('id').replace('MetroMap_line_', '');
 
     $(e.currentTarget).addClass('selected');
     mapClassAdd(id, 'selected');
     resetButton();
+
+    let $select = $('.select.ln');
+    let selectValue = '';
+
+    for (let i = 0; i < $('.MetroMap_line_item.selected').length; i++) {
+        selectValue += $('.MetroMap_line_item.selected').eq(i).attr('data-name') + ', ';
+    }
+
+    lines++;
+
+    if (lines > 1) {
+        if ($select.find('.select__count').length === 0) {
+            $select.find('.select__input').after('<div class="select__count"></div>');
+        }
+
+        $select.find('.select__count').text(lines);
+    }
+
+    console.log(selectValue);
+
+    if (lines <= 1 && $select.find('.select__count').length > 0) {
+        $select.find('.select__count').remove();
+    }
+
+    $select.find('.select__input').val(selectValue);
+    $select
+        .find(`.select__item[data-value="${$(e.currentTarget).attr('data-name')}"]`)
+        .find('.checkbox-group__input')
+        .prop('checked', true);
+
+    console.log(lines);
 });
 
 $('body').on('click', '.MetroMap_line_item.selected', (e) => {
@@ -1379,6 +1427,35 @@ $('body').on('click', '.MetroMap_line_item.selected', (e) => {
     $(e.currentTarget).removeClass('selected');
     mapClassRemove(id, 'selected');
     resetButton();
+
+    let $select = $('.select.ln');
+    let selectValue = '';
+
+    for (let i = 0; i < $('.MetroMap_line_item.selected').length; i++) {
+        selectValue += $('.MetroMap_line_item.selected').eq(i).attr('data-name') + ', ';
+    }
+
+    lines--;
+
+    if (lines > 1) {
+        if ($select.find('.select__count').length === 0) {
+            $select.find('.select__input').after('<div class="select__count"></div>');
+        }
+
+        $select.find('.select__count').text(lines);
+    }
+
+    if (lines === 1 && $select.find('.select__count').length > 0) {
+        $select.find('.select__count').remove();
+    }
+
+    console.log(lines);
+
+    $select.find('.select__input').val(selectValue);
+    $select
+        .find(`.select__item[data-value="${$(e.currentTarget).attr('data-name')}"]`)
+        .find('.checkbox-group__input')
+        .prop('checked', false);
 });
 
 $('body').on('mouseover', '.MetroMap_line_item', (e) => {
@@ -1415,10 +1492,12 @@ let resetButton = () => {
 
     if (count > 0) {
         $('.location__controls .btn-reset').addClass('show');
+        $('.metro__filter .btn-reset').show().css('display', 'flex');
         $('.location__controls .btn-reset span').text(`Сбросить ${count} станций`);
         $('.tabs__btn--active').addClass('hasFilter');
     } else {
         $('.location__controls .btn-reset').removeClass('show');
+        $('.metro__filter .btn-reset').hide();
         $('.tabs__btn--active').removeClass('hasFilter');
     }
 };
@@ -1454,6 +1533,12 @@ $('body').on('click', '.select.active', (e) => {
     if ($(e.target)[0].classList[0] === 'select') {
         $(e.currentTarget).toggleClass('active');
     }
+
+    if ($(e.currentTarget).find('.select__input').val() !== '') {
+        $(e.currentTarget).addClass('fill');
+    } else {
+        $(e.currentTarget).removeClass('fill');
+    }
 });
 
 $('body').on('click', '.select__item', (e) => {
@@ -1483,6 +1568,28 @@ $('body').on('click', '.select__item', (e) => {
 
         if (count <= 1 && $select.find('.select__count').length > 0) {
             $select.find('.select__count').remove();
+        }
+
+        if ($(e.currentTarget).find('.checkbox-group__input').is(':checked')) {
+            $(`.MetroMap_line_item[data-name="${$(e.currentTarget).attr('data-value')}"]`).addClass('selected');
+
+            let id = $(`.MetroMap_line_item[data-name="${$(e.currentTarget).attr('data-value')}"]`)
+                .attr('id')
+                .replace('MetroMap_line_', '');
+
+            $(e.currentTarget).addClass('selected');
+            mapClassAdd(id, 'selected');
+            resetButton();
+        } else {
+            $(`.MetroMap_line_item[data-name="${$(e.currentTarget).attr('data-value')}"]`).removeClass('selected');
+
+            let id = $(`.MetroMap_line_item[data-name="${$(e.currentTarget).attr('data-value')}"]`)
+                .attr('id')
+                .replace('MetroMap_line_', '');
+
+            $(e.currentTarget).removeClass('selected');
+            mapClassRemove(id, 'selected');
+            resetButton();
         }
 
         $input.val(value);
@@ -1726,4 +1833,9 @@ $('body').on('click', '.yandex__back', (e) => {
     $('.filter').toggle();
     $('.yandex__list').toggle();
     $('.yandex__grid').show();
+});
+
+// Custom scroll
+document.querySelectorAll('.custom-scroll').forEach((el) => {
+    new SimpleBar(el);
 });

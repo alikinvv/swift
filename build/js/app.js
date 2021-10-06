@@ -223,12 +223,8 @@ $('body').on('click', '.breadcrumb__toggle', function (e) {
 
 if ($(window).width() < 768) {
   $('.breadcrumb__main').addClass('custom-scroll');
-} // Custom scroll
+}
 
-
-document.querySelectorAll('.custom-scroll').forEach(function (el) {
-  new SimpleBar(el);
-});
 $('.footer-nav__view').on('click', function (e) {
   e.preventDefault();
   $(this).toggleClass('open');
@@ -989,12 +985,16 @@ $('body').on('click', '.location__close', function () {
   $('html, body').toggleClass('overflow');
   $('.location').toggleClass('active');
 });
-$('body').on('click', '.location .btn-reset', function (e) {
+$('body').on('click', '.metro__filter .btn-reset, .location .btn-reset', function (e) {
+  $('.select.ln .select__input').val('');
+  $('.select.ln .select__count').remove();
+  $('.metro__filter .checkbox-group__input').prop('checked', false);
   $('.tabs__content--active .location__content input[type="checkbox"]').prop('checked', false);
   $('.tabs__content--active .MetroMap_station_item,.tabs__content--active .MetroMap_stop,.tabs__content--active .MetroMap_transit_group,.tabs__content--active .MetroMap_line_item').removeClass('selected');
   $('.tabs__content--active circle[r="8"]').attr('r', 6);
   $('.tabs__btn--active').removeClass('hasFilter');
-  $(e.currentTarget).removeClass('show');
+  $('.location__controls .btn-reset').removeClass('show');
+  $('.metro__filter .btn-reset').hide();
 });
 $('body').on('change', '.location .checkbox-group__input', function () {
   if ($('.location .tabs__content--active .checkbox-group__input:checked').length === 0) {
@@ -1241,17 +1241,72 @@ if ($(window).width() < 1280) {
   $('.metro').remove();
 }
 
+for (var i = 0; i < $('.MetroMap_line_item').length; i++) {
+  $('.ln .btn-reset').after("\n    <div class=\"select__item\" data-value=\"".concat($('.MetroMap_line_item').eq(i).attr('data-name'), "\">\n            <div class=\"checkbox-group__item\">\n                <label class=\"checkbox-group__button\">\n                    <input type=\"checkbox\" class=\"checkbox-group__input\" name=\"check-group\" value=\"\">\n                    <span class=\"checkbox-group__label checkbox-mark checkbox-500\">\n                        <span class=\"line fill\" style=\"background-color: ").concat($('.MetroMap_line_item').eq(i).find('.MetroMap_top').attr('stroke'), "\"></span>\n                        ").concat($('.MetroMap_line_item').eq(i).attr('data-name'), "\n                    </span>\n                </label>\n            </div>\n        </div>\n    "));
+}
+
+var lines = 0;
 $('body').on('click', '.MetroMap_line_item:not(.selected)', function (e) {
   var id = $(e.currentTarget).attr('id').replace('MetroMap_line_', '');
   $(e.currentTarget).addClass('selected');
   mapClassAdd(id, 'selected');
   resetButton();
+  var $select = $('.select.ln');
+  var selectValue = '';
+
+  for (var _i = 0; _i < $('.MetroMap_line_item.selected').length; _i++) {
+    selectValue += $('.MetroMap_line_item.selected').eq(_i).attr('data-name') + ', ';
+  }
+
+  lines++;
+
+  if (lines > 1) {
+    if ($select.find('.select__count').length === 0) {
+      $select.find('.select__input').after('<div class="select__count"></div>');
+    }
+
+    $select.find('.select__count').text(lines);
+  }
+
+  console.log(selectValue);
+
+  if (lines <= 1 && $select.find('.select__count').length > 0) {
+    $select.find('.select__count').remove();
+  }
+
+  $select.find('.select__input').val(selectValue);
+  $select.find(".select__item[data-value=\"".concat($(e.currentTarget).attr('data-name'), "\"]")).find('.checkbox-group__input').prop('checked', true);
+  console.log(lines);
 });
 $('body').on('click', '.MetroMap_line_item.selected', function (e) {
   var id = $(e.currentTarget).attr('id').replace('MetroMap_line_', '');
   $(e.currentTarget).removeClass('selected');
   mapClassRemove(id, 'selected');
   resetButton();
+  var $select = $('.select.ln');
+  var selectValue = '';
+
+  for (var _i2 = 0; _i2 < $('.MetroMap_line_item.selected').length; _i2++) {
+    selectValue += $('.MetroMap_line_item.selected').eq(_i2).attr('data-name') + ', ';
+  }
+
+  lines--;
+
+  if (lines > 1) {
+    if ($select.find('.select__count').length === 0) {
+      $select.find('.select__input').after('<div class="select__count"></div>');
+    }
+
+    $select.find('.select__count').text(lines);
+  }
+
+  if (lines === 1 && $select.find('.select__count').length > 0) {
+    $select.find('.select__count').remove();
+  }
+
+  console.log(lines);
+  $select.find('.select__input').val(selectValue);
+  $select.find(".select__item[data-value=\"".concat($(e.currentTarget).attr('data-name'), "\"]")).find('.checkbox-group__input').prop('checked', false);
 });
 $('body').on('mouseover', '.MetroMap_line_item', function (e) {
   var id = $(e.currentTarget).attr('id').replace('MetroMap_line_', '');
@@ -1283,10 +1338,12 @@ var resetButton = function resetButton() {
 
   if (count > 0) {
     $('.location__controls .btn-reset').addClass('show');
+    $('.metro__filter .btn-reset').show().css('display', 'flex');
     $('.location__controls .btn-reset span').text("\u0421\u0431\u0440\u043E\u0441\u0438\u0442\u044C ".concat(count, " \u0441\u0442\u0430\u043D\u0446\u0438\u0439"));
     $('.tabs__btn--active').addClass('hasFilter');
   } else {
     $('.location__controls .btn-reset').removeClass('show');
+    $('.metro__filter .btn-reset').hide();
     $('.tabs__btn--active').removeClass('hasFilter');
   }
 };
@@ -1294,9 +1351,9 @@ var resetButton = function resetButton() {
 var mapClassAdd = function mapClassAdd(id, cl) {
   $("#MetroMap_stations #MetroMap_l_".concat(id, " .MetroMap_station_item")).addClass(cl);
 
-  for (var i = 0; i < $("#MetroMap_stations #MetroMap_l_".concat(id, " .MetroMap_station_item")).length; i++) {
-    if ($("#MetroMap_stations #MetroMap_l_".concat(id, " .MetroMap_station_item:nth-child(").concat(i, ")")).attr('id') !== undefined) {
-      var num = $("#MetroMap_stations #MetroMap_l_".concat(id, " .MetroMap_station_item:nth-child(").concat(i, ")")).attr('id').replace('MetroMap_station_', '');
+  for (var _i3 = 0; _i3 < $("#MetroMap_stations #MetroMap_l_".concat(id, " .MetroMap_station_item")).length; _i3++) {
+    if ($("#MetroMap_stations #MetroMap_l_".concat(id, " .MetroMap_station_item:nth-child(").concat(_i3, ")")).attr('id') !== undefined) {
+      var num = $("#MetroMap_stations #MetroMap_l_".concat(id, " .MetroMap_station_item:nth-child(").concat(_i3, ")")).attr('id').replace('MetroMap_station_', '');
       $(".MetroMap_to_".concat(num)).addClass(cl).find('circle').attr('r', '8');
     }
   }
@@ -1305,9 +1362,9 @@ var mapClassAdd = function mapClassAdd(id, cl) {
 var mapClassRemove = function mapClassRemove(id, cl) {
   $("#MetroMap_stations #MetroMap_l_".concat(id, " .MetroMap_station_item")).removeClass(cl);
 
-  for (var i = 0; i < $("#MetroMap_stations #MetroMap_l_".concat(id, " .MetroMap_station_item")).length; i++) {
-    if ($("#MetroMap_stations #MetroMap_l_".concat(id, " .MetroMap_station_item:nth-child(").concat(i, ")")).attr('id') !== undefined) {
-      var num = $("#MetroMap_stations #MetroMap_l_".concat(id, " .MetroMap_station_item:nth-child(").concat(i, ")")).attr('id').replace('MetroMap_station_', '');
+  for (var _i4 = 0; _i4 < $("#MetroMap_stations #MetroMap_l_".concat(id, " .MetroMap_station_item")).length; _i4++) {
+    if ($("#MetroMap_stations #MetroMap_l_".concat(id, " .MetroMap_station_item:nth-child(").concat(_i4, ")")).attr('id') !== undefined) {
+      var num = $("#MetroMap_stations #MetroMap_l_".concat(id, " .MetroMap_station_item:nth-child(").concat(_i4, ")")).attr('id').replace('MetroMap_station_', '');
       $(".MetroMap_to_".concat(num)).removeClass(cl).find('circle').attr('r', '6');
     }
   }
@@ -1321,6 +1378,12 @@ $('body').on('click', '.select.active', function (e) {
   if ($(e.target)[0].classList[0] === 'select') {
     $(e.currentTarget).toggleClass('active');
   }
+
+  if ($(e.currentTarget).find('.select__input').val() !== '') {
+    $(e.currentTarget).addClass('fill');
+  } else {
+    $(e.currentTarget).removeClass('fill');
+  }
 });
 $('body').on('click', '.select__item', function (e) {
   var $select = $(e.currentTarget).closest('.select');
@@ -1333,9 +1396,9 @@ $('body').on('click', '.select__item', function (e) {
     var value = '';
     var count = $select.find(".select__item input:checked").length;
 
-    for (var i = 0; i < $select.find('.select__item').length; i++) {
-      if ($select.find(".select__item:nth-child(".concat(i, ")")).find('input').is(':checked')) {
-        value += "".concat($select.find(".select__item:nth-child(".concat(i, ")")).attr('data-value'), ", ");
+    for (var _i5 = 0; _i5 < $select.find('.select__item').length; _i5++) {
+      if ($select.find(".select__item:nth-child(".concat(_i5, ")")).find('input').is(':checked')) {
+        value += "".concat($select.find(".select__item:nth-child(".concat(_i5, ")")).attr('data-value'), ", ");
       }
     }
 
@@ -1349,6 +1412,22 @@ $('body').on('click', '.select__item', function (e) {
 
     if (count <= 1 && $select.find('.select__count').length > 0) {
       $select.find('.select__count').remove();
+    }
+
+    if ($(e.currentTarget).find('.checkbox-group__input').is(':checked')) {
+      $(".MetroMap_line_item[data-name=\"".concat($(e.currentTarget).attr('data-value'), "\"]")).addClass('selected');
+      var id = $(".MetroMap_line_item[data-name=\"".concat($(e.currentTarget).attr('data-value'), "\"]")).attr('id').replace('MetroMap_line_', '');
+      $(e.currentTarget).addClass('selected');
+      mapClassAdd(id, 'selected');
+      resetButton();
+    } else {
+      $(".MetroMap_line_item[data-name=\"".concat($(e.currentTarget).attr('data-value'), "\"]")).removeClass('selected');
+
+      var _id = $(".MetroMap_line_item[data-name=\"".concat($(e.currentTarget).attr('data-value'), "\"]")).attr('id').replace('MetroMap_line_', '');
+
+      $(e.currentTarget).removeClass('selected');
+      mapClassRemove(_id, 'selected');
+      resetButton();
     }
 
     $input.val(value);
@@ -1388,8 +1467,8 @@ $('body').on('blur', '.subscribe input', function (e) {
   }
 }); // set same height cards
 
-for (var i = 0; i < $('.items-grid').length; i++) {
-  var $this = $('.item__content').eq(i);
+for (var _i6 = 0; _i6 < $('.items-grid').length; _i6++) {
+  var $this = $('.item__content').eq(_i6);
   $this.find('.item__content--hover').css('height', $this.find('.item__content--base').outerHeight());
 } // flat menu
 
@@ -1400,13 +1479,13 @@ if ($('.object-header').length > 0) {
   $(window).scroll(function () {
     var st = $(_this).scrollTop();
 
-    for (var _i = 0; _i < $('.menu-step').length; _i++) {
-      if ($(document).scrollTop() + $(window).height() * 0.7 > $('.menu-step').eq(_i).offset().top && !$('body').hasClass('animate')) {
+    for (var _i7 = 0; _i7 < $('.menu-step').length; _i7++) {
+      if ($(document).scrollTop() + $(window).height() * 0.7 > $('.menu-step').eq(_i7).offset().top && !$('body').hasClass('animate')) {
         $('.top-bar__nav li').removeClass('active');
-        $(".top-bar__nav li[data-menu=\"".concat($('.menu-step').eq(_i).attr('data-menu'), "\"]")).addClass('active');
+        $(".top-bar__nav li[data-menu=\"".concat($('.menu-step').eq(_i7).attr('data-menu'), "\"]")).addClass('active');
       }
 
-      if (!st > lastScrollTop && $(document).scrollTop() + $(window).height() * 0.7 < $('.menu-step').eq(_i).offset().top + $('.menu-step').outerHeight() && !$('body').hasClass('animate')) {
+      if (!st > lastScrollTop && $(document).scrollTop() + $(window).height() * 0.7 < $('.menu-step').eq(_i7).offset().top + $('.menu-step').outerHeight() && !$('body').hasClass('animate')) {
         $('.top-bar__nav li').removeClass('active');
       }
     }
@@ -1486,4 +1565,8 @@ $('body').on('click', '.yandex__back', function (e) {
   $('.filter').toggle();
   $('.yandex__list').toggle();
   $('.yandex__grid').show();
+}); // Custom scroll
+
+document.querySelectorAll('.custom-scroll').forEach(function (el) {
+  new SimpleBar(el);
 });
