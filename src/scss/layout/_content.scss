@@ -2,7 +2,6 @@
     width: 100%;
     min-height: 100vh;
     max-width: 100%;
-    overflow: hidden;
 
     &__header {
         top: 0;
@@ -16,6 +15,7 @@
         margin: 0 auto;
         max-width: 1900px;
         position: relative;
+        overflow: hidden;
     }
 
     &__page {
@@ -1837,4 +1837,8 @@
             background: transparent !important;
         }
     }
+}
+
+.fancybox__thumbs {
+    display: none !important;
 }

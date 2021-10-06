@@ -1573,3 +1573,6 @@ $('body').on('click', '.yandex__back', function (e) {
 document.querySelectorAll('.custom-scroll').forEach(function (el) {
   new SimpleBar(el);
 });
+Fancybox.bind('[data-fancybox]', {
+  placeFocusBack: false
+});

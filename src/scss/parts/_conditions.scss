@@ -74,7 +74,6 @@
     }
 
     @include media-breakpoint-up(sm) {
-
         &__item {
             height: size-rel(192px);
         }
@@ -85,7 +84,6 @@
     }
 
     @include media-breakpoint-up(md) {
-
         &__item {
             height: size-rel(164px);
         }
@@ -96,16 +94,14 @@
     }
 
     @include media-breakpoint-up(lg) {
-
         &__item {
-
             &:hover {
                 color: $white;
                 background: $accent;
 
                 .conditions__wrap {
                     transform: translateY(-3.25rem);
-                    transition: transform .3s;
+                    transition: transform 0.3s;
                 }
 
                 .conditions__num {
@@ -116,7 +112,7 @@
 
         &__wrap {
             transform: translateY(0);
-            transition: transform .3s;
+            transition: transform 0.3s;
         }
 
         &__text {
@@ -131,9 +127,7 @@
     }
 
     @include media-breakpoint-up(xxl) {
-
         &__slider {
-
             .swiper-slide {
                 width: 326px;
             }
@@ -145,10 +139,9 @@
             line-height: size-rel(24px);
 
             &:hover {
-
                 .conditions__wrap {
                     transform: translateY(-2.75rem);
-                    transition: transform .4s;
+                    transition: transform 0.4s;
                 }
             }
         }
