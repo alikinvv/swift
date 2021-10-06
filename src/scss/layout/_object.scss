@@ -24,7 +24,8 @@
                 }
 
                 @include r(767) {
-                    height: 320px;
+                    height: 404px;
+                    background-position: 40% 0;
 
                     img {
                         display: none;
