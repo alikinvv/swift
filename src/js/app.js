@@ -763,6 +763,7 @@ $('.filter__toggle').on('click', function (e) {
     e.preventDefault();
     $(this).toggleClass('filter__toggle--open');
     $('.filter__secondary').slideToggle('fast');
+    $('.yandex-btn').toggleClass('active');
 });
 
 // sorter__item
@@ -1738,25 +1739,25 @@ if ($('#yandex').length > 0) {
                         <div class="item__content">
                             <div class="item__content--base">
                                 <div class="item__info">
-                                    <div class="item__info--completion">Сдача IV кв 2022</div>
-                                    <div class="item__info--developer">ЛСР недвижимость</div>
+                                    <div class="item__info--completion">Дома сданы</div>
+                                    <div class="item__info--developer">Гранель</div>
                                 </div>
-                                <div class="item__title">Мосфильмовский</div>
+                                <div class="item__title">Боярский палисадник</div>
                                 <div class="item__district">
                                     <div class="item__district--icon" style="background-color: #FFD702;"></div>
-                                    <div class="item__district--name">Сокол</div>
+                                    <div class="item__district--name">Раменки</div>
                                     <div class="item__district--distance">
                                         <i>
                                             <svg class="ico-svg" viewBox="0 0 10 15" xmlns="http://www.w3.org/2000/svg">
                                                 <use xlink:href="img/sprites/sprite-mono.svg#distanceicon" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
                                             </svg>
                                         </i>
-                                        <span>12 минут</span>
+                                        <span>22 минуты</span>
                                     </div>
                                 </div>
                                 <div class="item__data">
-                                    <div class="item__data--price">от 28,61 млн ₽</div>
-                                    <div class="item__data--apartments">43 квартиры</div>
+                                    <div class="item__data--price">от 15,3 млн ₽</div>
+                                    <div class="item__data--apartments">440 квартир</div>
                                 </div>
                             </div>
                         </div>

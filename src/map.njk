@@ -9,7 +9,13 @@
 {% block content %}
 
 <div class="yandex__filter">
-    {% include "src/template/parts/_filter.njk" %}
+    <div class="yandex__top">
+        {% include "src/template/parts/_filter.njk" %}
+
+        <div class="yandex-btn">
+            <button   button type="button" class="btn btn-filter">Показать 1256 квартир</button>
+        </div>
+    </div>
 
     <div class="yandex__list">
         <div class="yandex__back">
