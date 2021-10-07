@@ -36,44 +36,82 @@
             }
 
             .slider-button {
-                @include r(767) {
-                    display: block;
+                @include r(1279) {
+                    display: none;
+                }
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                width: 50%;
+                height: 100%;
+                opacity: 0;
 
-                    &.object-promo__nav--prev {
-                        left: 0px;
-                    }
-
-                    &.object-promo__nav--next {
-                        right: 0px;
-                    }
+                &.object-promo__nav--prev {
+                    left: 0px;
                 }
 
-                display: none;
+                &.object-promo__nav--next {
+                    right: 0px;
+                }
             }
         }
 
         .swiper-pagination {
             @include r(1279) {
-                width: 60px;
-                height: 60px;
-            }
-
-            @include r(767) {
                 display: none;
             }
 
-            left: 81px;
+            @include fcc;
+            position: fixed;
             width: 80px;
             height: 80px;
+            background-color: #ffffff;
+            // background: url('../img/cursor.svg') no-repeat center;
+            background-size: contain;
+            pointer-events: none;
+            z-index: 999;
+            transition: all;
+            cursor: none;
+            display: none;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
             border-radius: 50%;
-            @include fcc;
-            font-size: 14px;
-            font-weight: 500;
-            z-index: 3;
-            background: #fff;
-            margin: 0;
-            top: 50%;
-            transform: translateY(-50%);
+
+            &.left::before {
+                opacity: 1;
+            }
+
+            &.right::after {
+                opacity: 1;
+            }
+
+            &::before {
+                content: '';
+                @include centerYa;
+                left: -25px;
+                background: url('../img/icons/direction.svg') no-repeat center;
+                background-size: contain;
+                width: 17px;
+                height: 17px;
+                opacity: 0;
+                transition: $trans;
+            }
+
+            &::after {
+                content: '';
+                @include centerYa;
+                right: -25px;
+                background: url('../img/icons/direction-right.svg') no-repeat center;
+                background-size: contain;
+                width: 17px;
+                height: 17px;
+                opacity: 0;
+                transition: $trans;
+            }
         }
     }
 
