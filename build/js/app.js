@@ -996,7 +996,7 @@ $('body').on('click', '.metro__filter .btn-reset, .location .btn-reset', functio
   $('.tabs__content--active circle[r="8"]').attr('r', 6);
   $('.tabs__btn--active').removeClass('hasFilter');
   $('.location__controls .btn-reset').removeClass('show');
-  $('.metro__filter .btn-reset').hide();
+  $('.metro__filter .btn-reset').removeClass('active');
 });
 $('body').on('change', '.location .checkbox-group__input', function () {
   if ($('.location .tabs__content--active .checkbox-group__input:checked').length === 0) {
@@ -1340,12 +1340,12 @@ var resetButton = function resetButton() {
 
   if (count > 0) {
     $('.location__controls .btn-reset').addClass('show');
-    $('.metro__filter .btn-reset').show().css('display', 'flex');
+    $('.metro__filter .btn-reset').addClass('active');
     $('.location__controls .btn-reset span').text("\u0421\u0431\u0440\u043E\u0441\u0438\u0442\u044C ".concat(count, " \u0441\u0442\u0430\u043D\u0446\u0438\u0439"));
     $('.tabs__btn--active').addClass('hasFilter');
   } else {
     $('.location__controls .btn-reset').removeClass('show');
-    $('.metro__filter .btn-reset').hide();
+    $('.metro__filter .btn-reset').removeClass('active');
     $('.tabs__btn--active').removeClass('hasFilter');
   }
 };

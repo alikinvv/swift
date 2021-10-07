@@ -1093,7 +1093,7 @@ $('body').on('click', '.metro__filter .btn-reset, .location .btn-reset', (e) => 
     $('.tabs__content--active circle[r="8"]').attr('r', 6);
     $('.tabs__btn--active').removeClass('hasFilter');
     $('.location__controls .btn-reset').removeClass('show');
-    $('.metro__filter .btn-reset').hide();
+    $('.metro__filter .btn-reset').removeClass('active');
 });
 
 $('body').on('change', '.location .checkbox-group__input', () => {
@@ -1494,12 +1494,12 @@ let resetButton = () => {
 
     if (count > 0) {
         $('.location__controls .btn-reset').addClass('show');
-        $('.metro__filter .btn-reset').show().css('display', 'flex');
+        $('.metro__filter .btn-reset').addClass('active');
         $('.location__controls .btn-reset span').text(`Сбросить ${count} станций`);
         $('.tabs__btn--active').addClass('hasFilter');
     } else {
         $('.location__controls .btn-reset').removeClass('show');
-        $('.metro__filter .btn-reset').hide();
+        $('.metro__filter .btn-reset').removeClass('active');
         $('.tabs__btn--active').removeClass('hasFilter');
     }
 };
