@@ -878,6 +878,7 @@ var projectProgressSlider = new Swiper('.project-progress-slider', {
 
 $('.credit-filter__toggle').on('click', function (e) {
   e.preventDefault();
+  $(e.currentTarget).toggleClass('filter__toggle--open');
   $('.credit-filter__additional').slideToggle('fast');
 });
 $('.credit__main--primary').on('click', function () {

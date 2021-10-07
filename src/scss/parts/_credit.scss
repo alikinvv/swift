@@ -73,15 +73,23 @@
         align-items: center;
         background: transparent;
         fill: $accent;
+        transform: rotate(0);
 
         &:hover {
             fill: $primary;
             color: $primary;
         }
 
+        &.filter__toggle--open {
+            i {
+                transform: rotate(180deg);
+            }
+        }
+
         &--text {
             padding-right: size-rel(8px);
             display: inline-block;
+            transition: $trans;
         }
 
         &--icon {
@@ -89,6 +97,7 @@
             font-size: 0;
             line-height: 0;
             display: inline-block;
+            transition: $trans;
         }
     }
 
