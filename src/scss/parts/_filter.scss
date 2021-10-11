@@ -280,7 +280,7 @@
             font-size: 0;
             line-height: 0;
             display: inline-block;
-            transform: rotate(0deg);
+            transform: rotate(180deg);
             transition: $trans;
         }
 
@@ -294,7 +294,7 @@
 
         &--open {
             .filter__toggle--icon {
-                transform: rotate(180deg);
+                transform: rotate(0deg);
             }
         }
 
