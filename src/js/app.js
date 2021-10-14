@@ -662,6 +662,24 @@ $('body').on('click', '.item__tags--toggle', (e) => {
     }
 });
 
+// Main slider
+const mainSlider = new Swiper('.main__slider', {
+    slidesPerView: 1,
+    spaceBetween: 16,
+    navigation: {
+        nextEl: '.main .slider-next',
+        prevEl: '.main .slider-prev',
+    },
+    breakpoints: {
+        1024: {
+            spaceBetween: 16,
+        },
+        1200: {
+            spaceBetween: 24,
+        },
+    },
+});
+
 // Condition slider
 const serviceSlider = new Swiper('.conditions__slider', {
     slidesPerView: 'auto',

@@ -1874,3 +1874,17 @@
 .fancybox__thumbs {
     display: none !important;
 }
+
+.main {
+    width: 100%;
+
+    &__slider {
+        height: 654px;
+    }
+
+    .swiper-slide {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: right bottom;
+    }
+}

@@ -1,0 +1,76 @@
+{% extends "src/template/layout/_template.njk" %}
+
+{%- set page_hide_breadcrumb = true -%}
+{% set page_class = "page-main" %}
+{% set is_filter = false %}
+
+
+{% block content %}
+
+<section class="main">
+    <div class="swiper-container main__slider">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-image: url(img/slide1.png);">
+                <div class="main__title"></div>
+                <div class="main__text"></div>
+                <button type="button" class="btn">Подробнее</button>
+            </div>
+            <div class="swiper-slide" style="background-image: url(img/slide2.png);">
+                <div class="main__title"></div>
+                <div class="main__text"></div>
+                <button type="button" class="btn">Подробнее</button>
+            </div>
+            <div class="swiper-slide" style="background-image: url(img/slide1.png);">
+                <div class="main__tag"></div>
+                <div class="main__title"></div>
+                <div class="item__district">
+                    <div class="item__district--icon" style="background-color: #FFD702;"></div>
+                    <div class="item__district--name">Сокол</div>
+                    <div class="item__district--distance">
+                        <i>
+                            <svg class="ico-svg" viewBox="0 0 10 15" xmlns="http://www.w3.org/2000/svg">
+                                <use xlink:href="img/sprites/sprite-mono.svg#distanceicon"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                            </svg>
+                        </i>
+                        <span>12 минут</span>
+                    </div>
+                </div>
+                <div class="item__data">
+                    <div class="item__data--price">от 28,61 млн ₽</div>
+                    <div class="item__data--apartments">43 квартиры</div>
+                </div>
+                <div class="main__text"></div>
+                <button type="button" class="btn">Подробнее</button>
+            </div>
+        </div>
+
+        <div class="main__controls">
+            <button type="button" class="slider-button slider-button--prev slider-prev">
+                <i>
+                    <svg class="ico-svg" viewBox="0 0 192 512" xmlns="http://www.w3.org/2000/svg">
+                        <use xlink:href="img/sprites/sprite-mono.svg#angle-left"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                    </svg>
+                </i>
+            </button>
+            <button type="button" class="slider-button slider-button--next slider-next">
+                <i>
+                    <svg class="ico-svg" viewBox="0 0 192 512" xmlns="http://www.w3.org/2000/svg">
+                        <use xlink:href="img/sprites/sprite-mono.svg#angle-right"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                    </svg>
+                </i>
+            </button>
+            <div class="main__num">
+                <span>01</span>
+                <div class="main__line"></div>
+                <span>02</span>
+                <div class="main__line"></div>
+                <span>03</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
