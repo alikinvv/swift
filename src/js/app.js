@@ -666,9 +666,15 @@ $('body').on('click', '.item__tags--toggle', (e) => {
 const mainSlider = new Swiper('.main__slider', {
     slidesPerView: 1,
     spaceBetween: 16,
+    effect: 'fade',
+    loop: true,
     navigation: {
         nextEl: '.main .slider-next',
         prevEl: '.main .slider-prev',
+    },
+    autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
     },
     breakpoints: {
         1024: {
@@ -676,6 +682,25 @@ const mainSlider = new Swiper('.main__slider', {
         },
         1200: {
             spaceBetween: 24,
+        },
+    },
+    on: {
+        slideChange: function (index) {
+            $('.main__num span').removeClass('active');
+            $('.main__line').removeClass('active');
+
+            if ($('.main .swiper-slide').length - 2 === index.activeIndex - 1) {
+                $('.main__num span').eq(0).addClass('active');
+                $('.main__num span').eq(0).next().addClass('active');
+            } else {
+                $('.main__num span')
+                    .eq(index.activeIndex - 1)
+                    .addClass('active');
+                $('.main__num span')
+                    .eq(index.activeIndex - 1)
+                    .next()
+                    .addClass('active');
+            }
         },
     },
 });

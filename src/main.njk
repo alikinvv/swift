@@ -1,31 +1,32 @@
 {% extends "src/template/layout/_template.njk" %}
 
 {%- set page_hide_breadcrumb = true -%}
-{% set page_class = "page-main" %}
-{% set is_filter = false %}
-
+{% set page_class = "page-main page-filter" %}
+{% set is_filter = true %}
+{% set filter_main = true %}
+{% set four_rows = true %}
 
 {% block content %}
 
 <section class="main">
     <div class="swiper-container main__slider">
         <div class="swiper-wrapper">
-            <div class="swiper-slide" style="background-image: url(img/slide1.png);">
-                <div class="main__title"></div>
-                <div class="main__text"></div>
+            <div class="swiper-slide" style="background-image: url(img/slide1.png)">
+                <div class="main__title">Самые выгодные условия</div>
+                <div class="main__text">Купите квартиру по уникальной ставке <br> 2.99% на весь срок кредитования!</div>
                 <button type="button" class="btn">Подробнее</button>
             </div>
-            <div class="swiper-slide" style="background-image: url(img/slide2.png);">
-                <div class="main__title"></div>
-                <div class="main__text"></div>
+            <div class="swiper-slide" style="background-image: url(img/slide2.png)">
+                <div class="main__title">Ипотека для пенсионеров</div>
+                <div class="main__text">Купите квартиру по уникальной ставке <br> 2.99% на весь срок кредитования!</div>
                 <button type="button" class="btn">Подробнее</button>
             </div>
-            <div class="swiper-slide" style="background-image: url(img/slide1.png);">
-                <div class="main__tag"></div>
-                <div class="main__title"></div>
+            <div class="swiper-slide" style="background-image: url(img/slide3.png)">
+                <div class="main__tag">Гранель</div>
+                <div class="main__title h2">Императорские Мытищи</div>
                 <div class="item__district">
                     <div class="item__district--icon" style="background-color: #FFD702;"></div>
-                    <div class="item__district--name">Сокол</div>
+                    <div class="item__district--name">Раменки</div>
                     <div class="item__district--distance">
                         <i>
                             <svg class="ico-svg" viewBox="0 0 10 15" xmlns="http://www.w3.org/2000/svg">
@@ -33,43 +34,319 @@
                                     xmlns:xlink="http://www.w3.org/1999/xlink"></use>
                             </svg>
                         </i>
-                        <span>12 минут</span>
+                        <span>22 минуты</span>
                     </div>
                 </div>
+                <div class="main__house">Дома сданы!</div>
                 <div class="item__data">
-                    <div class="item__data--price">от 28,61 млн ₽</div>
-                    <div class="item__data--apartments">43 квартиры</div>
+                    <div class="item__data--price">от 4,67 млн ₽</div>
+                    <div class="item__data--apartments">257 квартир</div>
                 </div>
-                <div class="main__text"></div>
-                <button type="button" class="btn">Подробнее</button>
+                <button type="button" class="btn">Выбрать квартиру</button>
             </div>
         </div>
 
         <div class="main__controls">
-            <button type="button" class="slider-button slider-button--prev slider-prev">
-                <i>
-                    <svg class="ico-svg" viewBox="0 0 192 512" xmlns="http://www.w3.org/2000/svg">
-                        <use xlink:href="img/sprites/sprite-mono.svg#angle-left"
-                            xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                    </svg>
-                </i>
-            </button>
-            <button type="button" class="slider-button slider-button--next slider-next">
-                <i>
-                    <svg class="ico-svg" viewBox="0 0 192 512" xmlns="http://www.w3.org/2000/svg">
-                        <use xlink:href="img/sprites/sprite-mono.svg#angle-right"
-                            xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                    </svg>
-                </i>
-            </button>
+            <div class="main__buttons">
+                <button type="button" class="slider-button slider-button--prev slider-prev">
+                    <i>
+                        <svg class="ico-svg" viewBox="0 0 192 512" xmlns="http://www.w3.org/2000/svg">
+                            <use xlink:href="img/sprites/sprite-mono.svg#angle-left"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                        </svg>
+                    </i>
+                </button>
+                <button type="button" class="slider-button slider-button--next slider-next">
+                    <i>
+                        <svg class="ico-svg" viewBox="0 0 192 512" xmlns="http://www.w3.org/2000/svg">
+                            <use xlink:href="img/sprites/sprite-mono.svg#angle-right"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                        </svg>
+                    </i>
+                </button>
+            </div>
             <div class="main__num">
                 <span>01</span>
                 <div class="main__line"></div>
                 <span>02</span>
                 <div class="main__line"></div>
                 <span>03</span>
+                <div class="main__line"></div>
             </div>
         </div>
+    </div>
+</section>
+
+{% include "src/template/parts/_filter.njk" %}
+
+<button class="main-btn btn">
+    <i class="mobile-filter-button__icon">
+        <svg class="ico-svg" viewBox="0 0 19 17" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="img/sprites/sprite-mono.svg#filter" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+        </svg>
+    </i>
+    <span class="mobile-filter-button__text">Выбрать квартиру</span>
+</button>
+
+<section class="section">
+    <div class="section__header">
+        <div class="section__header--title">Новостройки</div>
+        <div class="section__header--nav">
+            <a href="apartments.html" class="section__header--link">Все новостройки</a>
+        </div>
+    </div>
+    <a href="map.html" type="button" class="btn btn-map" open-tab="metro"><img src="img/icons/about-icon-06_red.svg"
+            alt=""> Смотреть на карте</a>
+
+    {% include "src/template/parts/_apartments.njk" %}
+
+    <button class="btn section__btn">Оставить заявку</button>
+</section>
+
+<section class="banner section" style="background-image: url(img/slide1.png);">
+    <div class="h1">Самые выгодные условия</div>
+    <div class="banner__text">Купите квартиру по уникальной ставке <br> 2.99% на весь срок кредитования!</div>
+    <button class="btn">Подробнее</button>
+</section>
+
+<section class="section">
+    <div class="section__header">
+        <div class="section__header--title">Лучшие квартиры</div>
+        <div class="section__header--nav">
+            <a href="listing-zhk.html" class="section__header--link">Все лучшие квартиры</a>
+            <div class="section__header--buttons">
+                <div class="section-nav">
+                    <button type="button" class="slider-button slider-button--prev viewed-prev">
+                        <i>
+                            <svg class="ico-svg" viewBox="0 0 192 512" xmlns="http://www.w3.org/2000/svg">
+                                <use xlink:href="img/sprites/sprite-mono.svg#angle-left"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                            </svg>
+                        </i>
+                    </button>
+                    <button type="button" class="slider-button slider-button--next viewed-next">
+                        <i>
+                            <svg class="ico-svg" viewBox="0 0 192 512" xmlns="http://www.w3.org/2000/svg">
+                                <use xlink:href="img/sprites/sprite-mono.svg#angle-right"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                            </svg>
+                        </i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section__content">
+        <div class="viewed">
+            <div class="swiper-container viewed__slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="javascript:void(0)" class="flat-item">
+                            <div class="flat-item__completion">Сдача IV кв 2021</div>
+                            <div class="flat-item__object">Мосфильмовский квартал</div>
+                            <div class="flat-item__media">
+                                <div class="flat-item__media--image">
+                                    <img src="img/content/flat-horizontal.png" class="img-fluid" alt="">
+                                </div>
+                            </div>
+                            <div class="flat-item__title">4-комнатная 244,47 м<sup>2</sup></div>
+                            <div class="flat-item__price">
+                                <div class="flat-item__price--total">142 120 250 ₽</div>
+                                <div class="flat-item__price--meter">400 640 ₽ за м<sup>2</sup></div>
+                            </div>
+                            <div class="flat-item__tags">
+                                <span class="flat-item__tag">Евро</span>
+                                <span class="flat-item__tag">С отделкой</span>
+                                <span class="flat-item__tag">Переуступка</span>
+                            </div>
+                            <div class="flat-item__info">
+                                <span class="flat-item__info--elem">Корпус 14</span>
+                                <span class="flat-item__info--elem">Этаж 24 из 48</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="javascript:void(0)" class="flat-item not-found">
+                            <div class="flat-item__completion">Сдача IV кв 2021</div>
+                            <div class="flat-item__object">Петр Великий и Екатерина Великая</div>
+                            <div class="flat-item__media">
+                                <div class="flat-item__media--image">
+                                    <img src="img/content/not-found.png" class="img-fluid" alt="">
+                                </div>
+                            </div>
+                            <div class="flat-item__title">1-комнатная 38,25 м<sup>2</sup></div>
+                            <div class="flat-item__price">
+                                <div class="flat-item__price--total">28 120 250 ₽</div>
+                                <div class="flat-item__price--meter">100 640₽ за м<sup>2</sup></div>
+                            </div>
+                            <div class="flat-item__tags">
+                            </div>
+                            <div class="flat-item__info">
+                                <span class="flat-item__info--elem">Корпус 14</span>
+                                <span class="flat-item__info--elem">Этаж 24 из 48</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="javascript:void(0)" class="flat-item">
+                            <div class="flat-item__completion">Сдача I кв 2022</div>
+                            <div class="flat-item__object">Хорошевский</div>
+                            <div class="flat-item__media">
+                                <div class="flat-item__media--image">
+                                    <img src="img/content/flat-vertical.png" class="img-fluid" alt="">
+                                </div>
+                            </div>
+                            <div class="flat-item__title">Студия 25,78 м²<sup>2</sup></div>
+                            <div class="flat-item__price">
+                                <div class="flat-item__price--total">68 120 250 ₽</div>
+                                <div class="flat-item__price--meter">250 640 ₽ за м<sup>2</sup></div>
+                            </div>
+                            <div class="flat-item__tags">
+                                <span class="flat-item__tag">Переуступка</span>
+                            </div>
+                            <div class="flat-item__info">
+                                <span class="flat-item__info--elem">Корпус 5</span>
+                                <span class="flat-item__info--elem">Этаж 24 из 48</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="javascript:void(0)" class="flat-item">
+                            <div class="flat-item__completion">Сдача I кв 2022</div>
+                            <div class="flat-item__object">Пехра</div>
+                            <div class="flat-item__media">
+                                <div class="flat-item__media--image">
+                                    <img src="img/content/flat_image.png" class="img-fluid" alt="">
+                                </div>
+                            </div>
+                            <div class="flat-item__title">3-комнатная 87,93 м²<sup>2</sup></div>
+                            <div class="flat-item__price">
+                                <div class="flat-item__price--total">68 120 250 ₽</div>
+                                <div class="flat-item__price--meter">250 640 ₽ за м<sup>2</sup></div>
+                            </div>
+                            <div class="flat-item__tags">
+                                <span class="flat-item__tag">Переуступка</span>
+                            </div>
+                            <div class="flat-item__info">
+                                <span class="flat-item__info--elem">Корпус 5</span>
+                                <span class="flat-item__info--elem">Этаж 24 из 48</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="javascript:void(0)" class="flat-item">
+                            <div class="flat-item__completion">Сдача IV кв 2021</div>
+                            <div class="flat-item__object">Королевские Мытищи</div>
+                            <div class="flat-item__media">
+                                <div class="flat-item__media--image">
+                                    <img src="img/content/flat_image.png" class="img-fluid" alt="">
+                                </div>
+                            </div>
+                            <div class="flat-item__title">2-комнатная 194,13 м<sup>2</sup></div>
+                            <div class="flat-item__price">
+                                <div class="flat-item__price--total">142 120 250 ₽</div>
+                                <div class="flat-item__price--meter">400 640 ₽ за м<sup>2</sup></div>
+                            </div>
+                            <div class="flat-item__tags">
+                                <span class="flat-item__tag">Евро</span>
+                                <span class="flat-item__tag">Переуступка</span>
+                            </div>
+                            <div class="flat-item__info">
+                                <span class="flat-item__info--elem">Корпус 14</span>
+                                <span class="flat-item__info--elem">Этаж 24 из 48</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="javascript:void(0)" class="flat-item">
+                            <div class="flat-item__completion">Сдача IV кв 2021</div>
+                            <div class="flat-item__object">Мосфильмовский квартал</div>
+                            <div class="flat-item__media">
+                                <div class="flat-item__media--image">
+                                    <img src="img/content/flat_image.png" class="img-fluid" alt="">
+                                </div>
+                            </div>
+                            <div class="flat-item__title">4-комнатная 244,47 м<sup>2</sup></div>
+                            <div class="flat-item__price">
+                                <div class="flat-item__price--total">142 120 250 ₽</div>
+                                <div class="flat-item__price--meter">400 640 ₽ за м<sup>2</sup></div>
+                            </div>
+                            <div class="flat-item__tags">
+                                <span class="flat-item__tag">Евро</span>
+                                <span class="flat-item__tag">С отделкой</span>
+                                <span class="flat-item__tag">Переуступка</span>
+                            </div>
+                            <div class="flat-item__info">
+                                <span class="flat-item__info--elem">Корпус 14</span>
+                                <span class="flat-item__info--elem">Этаж 24 из 48</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!--/.viewed__slider -->
+        </div>
+        <!--/.viewed -->
+    </div>
+</section>
+
+<button class="btn mobile">Смотреть лучшие квартиры</button>
+
+<section class="section mortgage" style="background-image: url(img/mortgage.png);">
+    <div class="mortgage__wrap">
+        <div class="h2">Покупка квартиры в ипотеку</div>
+        <div class="mortgage__desc">Выбери свою ипотечную программу — жилые комплексы <br> аккредитованы крупнейшими
+            банками РФ!</div>
+        <div class="mortgage__controls">
+            <a href="javascript:void(0)" class="accent">
+                <div class="mortgage__from">Ипотека от</div>
+                <div class="mortgage__percent">4,4% </div>
+                <div class="mortgage__link">
+                    Рассчитать ипотеку
+                    <i>
+                        <svg class="ico-svg" viewBox="0 0 192 512" xmlns="http://www.w3.org/2000/svg">
+                            <use xlink:href="img/sprites/sprite-mono.svg#angle-right"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                        </svg>
+                    </i>
+                </div>
+            </a>
+            <a href="javascript:void(0)">
+                <div class="mortgage__title">Материнский капитал</div>
+                <div class="mortgage__text">Текст в две строки если нужно что нибудь подписать</div>
+                <div class="mortgage__link">
+                    Подробнее
+                    <i>
+                        <svg class="ico-svg" viewBox="0 0 192 512" xmlns="http://www.w3.org/2000/svg">
+                            <use xlink:href="img/sprites/sprite-mono.svg#angle-right"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                        </svg>
+                    </i>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="section video mb-0">
+    <div class="h2">АН «Стрижи»</div>
+    <div class="video__text">Обеспечиваем полное сопровождение на&nbsp;всех этапах сделки в&nbsp;соответствии <br>
+        с&nbsp;действующим законодательством. За&nbsp;клиентом с&nbsp;момента оформления заявки <br>
+        закрепляется персональный менеджер, готовый ответить на&nbsp;все вопросы в&nbsp;любое <br>
+        время. Предоставляем максимальный набор необходимых услуг</div>
+    <a href="javascript:void(0)">
+        <span>Подробнее о компании</span>
+        <i>
+            <svg class="ico-svg" viewBox="0 0 192 512" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="img/sprites/sprite-mono.svg#angle-right" xmlns:xlink="http://www.w3.org/1999/xlink">
+                </use>
+            </svg>
+        </i>
+    </a>
+
+    <div class="video__link" href="https://www.youtube.com/watch?v=lyh2kAjcmSY" data-fancybox
+        style="background-image: url(img/video.jpg);">
+        <img src="img/icons/play.svg" alt="">
     </div>
 </section>
 

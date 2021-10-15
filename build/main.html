@@ -21,7 +21,7 @@
     
 </head>
 
-<body class="page-main">
+<body class="page-main page-filter">
 
     <div class="root">
 
@@ -283,7 +283,7 @@
 
             
 
-            <div class="root__page ">
+            <div class="root__page  root__page--is-filter">
 
                 
                 <section class="root__main">
@@ -301,19 +301,305 @@
 <section class="main">
     <div class="swiper-container main__slider">
         <div class="swiper-wrapper">
-            <div class="swiper-slide" style="background-image: url(img/slide1.png);">
-                <div class="main__title"></div>
-                <div class="main__text"></div>
+            <div class="swiper-slide" style="background-image: url(img/slide1.png)">
+                <div class="main__title">Самые выгодные условия</div>
+                <div class="main__text">Купите квартиру по уникальной ставке <br> 2.99% на весь срок кредитования!</div>
                 <button type="button" class="btn">Подробнее</button>
             </div>
-            <div class="swiper-slide" style="background-image: url(img/slide2.png);">
-                <div class="main__title"></div>
-                <div class="main__text"></div>
+            <div class="swiper-slide" style="background-image: url(img/slide2.png)">
+                <div class="main__title">Ипотека для пенсионеров</div>
+                <div class="main__text">Купите квартиру по уникальной ставке <br> 2.99% на весь срок кредитования!</div>
                 <button type="button" class="btn">Подробнее</button>
             </div>
-            <div class="swiper-slide" style="background-image: url(img/slide1.png);">
-                <div class="main__tag"></div>
-                <div class="main__title"></div>
+            <div class="swiper-slide" style="background-image: url(img/slide3.png)">
+                <div class="main__tag">Гранель</div>
+                <div class="main__title h2">Императорские Мытищи</div>
+                <div class="item__district">
+                    <div class="item__district--icon" style="background-color: #FFD702;"></div>
+                    <div class="item__district--name">Раменки</div>
+                    <div class="item__district--distance">
+                        <i>
+                            <svg class="ico-svg" viewBox="0 0 10 15" xmlns="http://www.w3.org/2000/svg">
+                                <use xlink:href="img/sprites/sprite-mono.svg#distanceicon"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                            </svg>
+                        </i>
+                        <span>22 минуты</span>
+                    </div>
+                </div>
+                <div class="main__house">Дома сданы!</div>
+                <div class="item__data">
+                    <div class="item__data--price">от 4,67 млн ₽</div>
+                    <div class="item__data--apartments">257 квартир</div>
+                </div>
+                <button type="button" class="btn">Выбрать квартиру</button>
+            </div>
+        </div>
+
+        <div class="main__controls">
+            <div class="main__buttons">
+                <button type="button" class="slider-button slider-button--prev slider-prev">
+                    <i>
+                        <svg class="ico-svg" viewBox="0 0 192 512" xmlns="http://www.w3.org/2000/svg">
+                            <use xlink:href="img/sprites/sprite-mono.svg#angle-left"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                        </svg>
+                    </i>
+                </button>
+                <button type="button" class="slider-button slider-button--next slider-next">
+                    <i>
+                        <svg class="ico-svg" viewBox="0 0 192 512" xmlns="http://www.w3.org/2000/svg">
+                            <use xlink:href="img/sprites/sprite-mono.svg#angle-right"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                        </svg>
+                    </i>
+                </button>
+            </div>
+            <div class="main__num">
+                <span>01</span>
+                <div class="main__line"></div>
+                <span>02</span>
+                <div class="main__line"></div>
+                <span>03</span>
+                <div class="main__line"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<button class="mobile-filter-button filter-toggle">
+    <i class="mobile-filter-button__icon">
+        <svg class="ico-svg" viewBox="0 0 19 17" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="img/sprites/sprite-mono.svg#filter" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+        </svg>
+    </i>
+    <span class="mobile-filter-button__text">Выбор параметров</span>
+    
+</button>
+
+<div class="filter  filter-main">
+    <div class="filter__wrap">
+        <div class="filter-mobile__header">
+            <div class="filter-mobile__header--title">Фильтры</div>
+            <button type="button" class="filter-mobile__header--close filter-toggle">
+                <svg class="ico-svg" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="img/sprites/sprite-mono.svg#close" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                </svg>
+            </button>
+        </div>
+        <div class="filter__primary">
+            <div class="filter__primary--item">
+                <div class="options-inline">
+                    <div class="options-inline__title">Комнатность</div>
+                    <label class="options-inline__item">
+                        <input type="checkbox" class="options-inline__input" name="opt1" value="Студия" checked>
+                        <span class="options-inline__label">Студия</span>
+                    </label>
+                    <label class="options-inline__item">
+                        <input type="checkbox" class="options-inline__input" name="opt2" value="1">
+                        <span class="options-inline__label">1</span>
+                    </label>
+                    <label class="options-inline__item">
+                        <input type="checkbox" class="options-inline__input" name="opt3" value="2">
+                        <span class="options-inline__label">2</span>
+                    </label>
+                    <label class="options-inline__item">
+                        <input type="checkbox" class="options-inline__input" name="opt4" value="3">
+                        <span class="options-inline__label">3</span>
+                    </label>
+                    <label class="options-inline__item">
+                        <input type="checkbox" class="options-inline__input" name="opt5" value="4">
+                        <span class="options-inline__label">4</span>
+                    </label>
+                    <label class="options-inline__item">
+                        <input type="checkbox" class="options-inline__input" name="opt6" value="5+">
+                        <span class="options-inline__label">5+</span>
+                    </label>
+                </div>
+            </div><!--/.filter__primary--item -->
+            <div class="filter__primary--item">
+                <div class="range">
+                    <div class="range__title">Стоимость, млн ₽</div>
+                    <div class="range__main">
+                        <div class="range__item range__item--double">
+                            <div class="range__label">от</div>
+                            <input value="5.9" type="text" data-slider="cost" class="range__value range__value--from">
+                        </div>
+                        <div class="range__divider"></div>
+                        <div class="range__item range__item--double">
+                            <div class="range__label">до</div>
+                            <input value="120.7" type="text" data-slider="cost" class="range__value range__value--to">
+                        </div>
+                    </div>
+                    <div class="range__slider">
+                        <input type="text" class="range-field-slider slider-cost">
+                    </div>
+                </div>
+            </div><!--/.filter__primary--item -->
+            <div class="filter__primary--item">
+                <div class="range">
+                    <div class="range__title">Площадь, м²</div>
+                    <div class="range__main">
+                        <div class="range__item range__item--double">
+                            <div class="range__label">от</div>
+                            <input value="15" type="text" data-slider="area" class="range__value range__value--from">
+                        </div>
+                        <div class="range__divider"></div>
+                        <div class="range__item range__item--double">
+                            <div class="range__label">до</div>
+                            <input value="270" type="text" data-slider="area" class="range__value range__value--to">
+                        </div>
+                    </div>
+                    <div class="range__slider">
+                        <input type="text" class="range-field-slider slider-area">
+                    </div>
+                </div>
+            </div><!--/.filter__primary--item -->
+            <div class="filter__primary--item">
+                <div class="range">
+                    <div class="range__title">Срок сдачи</div>
+                    <div class="range__main">
+                        <div class="range__item">
+                            <div class="range__value range__value--from">Сдан</div>
+                        </div>
+                        <div class="range__divider"></div>
+                        <div class="range__item">
+                            <div class="range__value range__value--to">IV кв 2024</div>
+                        </div>
+                    </div>
+                    <div class="range__slider">
+                        <input type="text" class="range-field-slider slider-date"
+                            data-type="double"
+                            data-min="0"
+                            data-max="13"
+                            data-to="14"
+                            data-from="1"
+                            data-postfix=""
+                            data-range-values="Сдан,III кв 2021,IV кв 2021,I кв 2022,II кв 2022,III кв 2022,IV кв 2022,I кв 2023,II кв 2023,III кв 2023,IV кв 2023,I кв 2024,II кв 2024,III кв 2024,IV кв 2024"
+                            data-param="term"
+                        >
+                    </div>
+                </div>
+            </div>
+            
+                <div class="filter__primary--item">
+                    <div class="range">
+                        <div class="range-wrap">
+                            <div class="range__title">Этаж</div>
+                            <div class="range__main">
+                                <div class="range__item range__item--double">
+                                    <input value="7" type="text" data-slider="floor" class="range__value range__value--from">
+                                </div>
+                                <div class="range__divider"></div>
+                                <div class="range__item range__item--double">
+                                    <input value="22" type="text" data-slider="floor" class="range__value range__value--to">
+                                </div>
+                            </div>
+                            <div class="range__slider">
+                                <input type="text" class="range-field-slider slider-floor">
+                            </div>
+                        </div>
+                        <ul class="range__dropdown">
+                            <li>
+                                <button type="button" class="range__dropdown--button" data-button="not_last">не последний</button>
+                            </li>
+                            <li>
+                                <button type="button" class="range__dropdown--button" data-button="last">последний</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="filter__primary--item">
+                    <button type="button" class="btn btn-filter">Показать 1256 квартир</button>
+                </div>
+            
+        </div>
+        <button class="filter__toggle mobile">
+            <span class="filter__toggle--text">Дополнительные фильтры</span>
+            <i class="filter__toggle--icon">
+                <svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 5.5L5 1.5L9 5.5" stroke="#FF502F" stroke-width="1.5"/>
+                </svg>
+            </i>
+        </button>
+
+        
+    </div>
+    
+        <a href="map.html" type="button" class="btn btn-map" open-tab="metro"><img src="img/icons/about-icon-06_red.svg" alt=""> Смотреть на карте</a>
+    
+</div><!--/.filter -->
+
+
+    <div class="filter__progress filter-progress">
+        <div class="filter__progress--bar filter-progress-bar" style="width: 40%;"></div>
+    </div>
+
+
+
+<button class="main-btn btn">
+    <i class="mobile-filter-button__icon">
+        <svg class="ico-svg" viewBox="0 0 19 17" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="img/sprites/sprite-mono.svg#filter" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+        </svg>
+    </i>
+    <span class="mobile-filter-button__text">Выбрать квартиру</span>
+</button>
+
+<section class="section">
+    <div class="section__header">
+        <div class="section__header--title">Новостройки</div>
+        <div class="section__header--nav">
+            <a href="apartments.html" class="section__header--link">Все новостройки</a>
+        </div>
+    </div>
+    <a href="map.html" type="button" class="btn btn-map" open-tab="metro"><img src="img/icons/about-icon-06_red.svg"
+            alt=""> Смотреть на карте</a>
+
+    <div class="items-grid active">
+    <div class="item">
+        <div class="item__header">
+            <a href="javascript:void(0)" class="item__media">
+                <div class="item__media--image">
+                    <img src="img/content/item_image__01.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="item__media--map">
+                    <img src="img/content/item_map_01.jpg" class="img-fluid" alt="">
+                    <div class="item__marker">
+                        <div class="item__marker--elem">
+                            <div class="item__marker--icon">
+                                <svg class="ico-svg" viewBox="0 0 10 15" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="img/sprites/sprite-mono.svg#distanceicon"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </div>
+                            <div class="item__marker--text">Раменки 7 минут</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <div class="item__tags">
+                <div class="items__tags-list">
+                    <div class="item__tag item__tag--orange">Ипотека от 6,3%</div>
+                    <div class="item__tag item__tag--blue">Старт продаж</div>
+                    <div class="item__tag item__tag--blue">Кладовые</div>
+                </div>
+                <button class="button item__tags--toggle">
+                    <svg width="8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                        <path
+                            d="M151.5 347.8L3.5 201c-4.7-4.7-4.7-12.3 0-17l19.8-19.8c4.7-4.7 12.3-4.7 17 0L160 282.7l119.7-118.5c4.7-4.7 12.3-4.7 17 0l19.8 19.8c4.7 4.7 4.7 12.3 0 17l-148 146.8c-4.7 4.7-12.3 4.7-17 0z" />
+                    </svg>
+                </button>
+            </div>
+            <button class="item__toggle" type="button" data-show="карта" data-hide="скрыть"></button>
+        </div>
+        <div class="item__content">
+            <div class="item__content--base">
+                <div class="item__info">
+                    <div class="item__info--completion">Сдача IV кв 2022</div>
+                    <div class="item__info--developer">ЛСР недвижимость</div>
+                </div>
+                <div class="item__title">Мосфильмовский</div>
                 <div class="item__district">
                     <div class="item__district--icon" style="background-color: #FFD702;"></div>
                     <div class="item__district--name">Сокол</div>
@@ -331,36 +617,1740 @@
                     <div class="item__data--price">от 28,61 млн ₽</div>
                     <div class="item__data--apartments">43 квартиры</div>
                 </div>
-                <div class="main__text"></div>
-                <button type="button" class="btn">Подробнее</button>
+            </div>
+            <div class="item__content--hover">
+                <div class="item__info">
+                    <div class="item__info--completion">Сдача IV кв 2022</div>
+                    <a href="javascript:void(0)" class="item__info--apartments">43 квартиры</a>
+                </div>
+                <div class="item__price">
+                    <div class="item__price--title">Минимальная стоимость, млн ₽</div>
+                    <div class="item__price--table">
+                        <div class="item__table">
+                            <div class="item__table--elem">
+                                <div class="item__table--label">Студия</div>
+                                <div class="item__table--value">4,51</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">1-комн</div>
+                                <div class="item__table--value">8,32</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">2-комн</div>
+                                <div class="item__table--value">12,44</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">3-комн</div>
+                                <div class="item__table--value">14,80</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">4-комн</div>
+                                <div class="item__table--value">20,83</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">5-комн</div>
+                                <div class="item__table--value">127,47</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
 
-        <div class="main__controls">
-            <button type="button" class="slider-button slider-button--prev slider-prev">
-                <i>
-                    <svg class="ico-svg" viewBox="0 0 192 512" xmlns="http://www.w3.org/2000/svg">
-                        <use xlink:href="img/sprites/sprite-mono.svg#angle-left"
-                            xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+    <div class="item">
+        <div class="item__header">
+            <a href="javascript:void(0)" class="item__media">
+                <div class="item__media--image">
+                    <img src="img/content/item_image__02.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="item__media--map">
+                    <img src="img/content/item_map_01.jpg" class="img-fluid" alt="">
+                    <div class="item__marker">
+                        <div class="item__marker--elem">
+                            <div class="item__marker--icon">
+                                <svg class="ico-svg" viewBox="0 0 10 15" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="img/sprites/sprite-mono.svg#distanceicon"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </div>
+                            <div class="item__marker--text">Раменки 7 минут</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <div class="item__tags">
+                <div class="items__tags-list">
+                    <div class="item__tag item__tag--orange">Ипотека от 6,3%</div>
+                    <div class="item__tag item__tag--blue">Старт продаж</div>
+                    <div class="item__tag item__tag--blue">Кладовые</div>
+                </div>
+
+                <button class="button item__tags--toggle">
+                    <svg width="8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                        <path
+                            d="M151.5 347.8L3.5 201c-4.7-4.7-4.7-12.3 0-17l19.8-19.8c4.7-4.7 12.3-4.7 17 0L160 282.7l119.7-118.5c4.7-4.7 12.3-4.7 17 0l19.8 19.8c4.7 4.7 4.7 12.3 0 17l-148 146.8c-4.7 4.7-12.3 4.7-17 0z" />
                     </svg>
-                </i>
-            </button>
-            <button type="button" class="slider-button slider-button--next slider-next">
-                <i>
-                    <svg class="ico-svg" viewBox="0 0 192 512" xmlns="http://www.w3.org/2000/svg">
-                        <use xlink:href="img/sprites/sprite-mono.svg#angle-right"
-                            xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                    </svg>
-                </i>
-            </button>
-            <div class="main__num">
-                <span>01</span>
-                <div class="main__line"></div>
-                <span>02</span>
-                <div class="main__line"></div>
-                <span>03</span>
+                </button>
+            </div>
+            <button class="item__toggle" type="button" data-show="карта" data-hide="скрыть"></button>
+        </div>
+        <div class="item__content">
+            <div class="item__content--base">
+                <div class="item__info">
+                    <div class="item__info--completion">Сдача III кв 2024</div>
+                    <div class="item__info--developer">ПИК</div>
+                </div>
+                <div class="item__title">Хорошевский</div>
+                <div class="item__district">
+                    <div class="item__district--icon" style="background-color: #a0a0a0;"></div>
+                    <div class="item__district--name">
+                        <span>ул Академика Янгеля</span>
+                    </div>
+                    <div class="item__district--distance">
+                        <i>
+                            <svg class="ico-svg" viewBox="0 0 10 15" xmlns="http://www.w3.org/2000/svg">
+                                <use xlink:href="img/sprites/sprite-mono.svg#distanceicon"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                            </svg>
+                        </i>
+                        <span>12 минут</span>
+                    </div>
+                </div>
+                <div class="item__data">
+                    <div class="item__data--price">от 12,52 млн ₽</div>
+                    <div class="item__data--apartments">29 квартир</div>
+                </div>
+            </div>
+            <div class="item__content--hover">
+                <div class="item__info">
+                    <div class="item__info--completion">Сдача III кв 2024</div>
+                    <a href="javascript:void(0)" class="item__info--apartments">29 квартир</a>
+                </div>
+                <div class="item__price">
+                    <div class="item__price--title">Минимальная стоимость, млн ₽</div>
+                    <div class="item__price--table">
+                        <div class="item__table">
+                            <div class="item__table--elem">
+                                <div class="item__table--label">Студия</div>
+                                <div class="item__table--value">4,51</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">1-комн</div>
+                                <div class="item__table--value">8,32</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">2-комн</div>
+                                <div class="item__table--value">12,44</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">3-комн</div>
+                                <div class="item__table--value">14,80</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">4-комн</div>
+                                <div class="item__table--value">20,83</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">5-комн</div>
+                                <div class="item__table--value">127,47</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
+
+    <div class="item item--accent">
+        <div class="item__header">
+            <a href="javascript:void(0)" class="item__media">
+                <div class="item__media--image">
+                    <img src="img/content/item_image__03.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="item__media--map">
+                    <img src="img/content/item_map_01.jpg" class="img-fluid" alt="">
+                    <div class="item__marker">
+                        <div class="item__marker--elem">
+                            <div class="item__marker--icon">
+                                <svg class="ico-svg" viewBox="0 0 10 15" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="img/sprites/sprite-mono.svg#distanceicon"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </div>
+                            <div class="item__marker--text">Тропарево 7 минут</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <div class="item__tags">
+                <div class="items__tags-list">
+                    <div class="item__tag item__tag--orange">Ипотека от 6,3%</div>
+                    <div class="item__tag item__tag--blue">Старт продаж</div>
+                    <div class="item__tag item__tag--blue">Кладовые</div>
+                </div>
+                <button class="button item__tags--toggle">
+                    <svg width="8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                        <path
+                            d="M151.5 347.8L3.5 201c-4.7-4.7-4.7-12.3 0-17l19.8-19.8c4.7-4.7 12.3-4.7 17 0L160 282.7l119.7-118.5c4.7-4.7 12.3-4.7 17 0l19.8 19.8c4.7 4.7 4.7 12.3 0 17l-148 146.8c-4.7 4.7-12.3 4.7-17 0z" />
+                    </svg>
+                </button>
+            </div>
+            <button class="item__toggle" type="button" data-show="карта" data-hide="скрыть"></button>
+        </div>
+        <div class="item__content">
+            <div class="item__content--base">
+                <div class="item__info">
+                    <div class="item__info--completion">Сдача IV кв 2022</div>
+                    <div class="item__info--developer">ЛСР недвижимость</div>
+                </div>
+                <div class="item__title">Солнечный Луч</div>
+                <div class="item__district">
+                    <div class="item__district--icon" style="background-color: #FFD702;"></div>
+                    <div class="item__district--name">Сокол</div>
+                    <div class="item__district--distance">
+                        <i>
+                            <svg class="ico-svg" viewBox="0 0 10 15" xmlns="http://www.w3.org/2000/svg">
+                                <use xlink:href="img/sprites/sprite-mono.svg#distanceicon"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                            </svg>
+                        </i>
+                        <span>12 минут</span>
+                    </div>
+                </div>
+                <div class="item__data">
+                    <div class="item__data--price">от 28,61 млн ₽</div>
+                    <div class="item__data--apartments">43 квартиры</div>
+                </div>
+            </div>
+            <div class="item__content--hover">
+                <div class="item__info">
+                    <div class="item__info--completion">Сдача IV кв 2022</div>
+                    <a href="javascript:void(0)" class="item__info--apartments">43 квартиры</a>
+                </div>
+                <div class="item__price">
+                    <div class="item__price--title">Минимальная стоимость, млн ₽</div>
+                    <div class="item__price--table">
+                        <div class="item__table">
+                            <div class="item__table--elem">
+                                <div class="item__table--label">Студия</div>
+                                <div class="item__table--value">4,51</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">1-комн</div>
+                                <div class="item__table--value">8,32</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">2-комн</div>
+                                <div class="item__table--value">12,44</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">3-комн</div>
+                                <div class="item__table--value">14,80</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">4-комн</div>
+                                <div class="item__table--value">20,83</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">5-комн</div>
+                                <div class="item__table--value">127,47</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="item__header">
+            <a href="javascript:void(0)" class="item__media">
+                <div class="item__media--image">
+                    <img src="img/content/item_image__04.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="item__media--map">
+                    <img src="img/content/item_map_01.jpg" class="img-fluid" alt="">
+                    <div class="item__marker">
+                        <div class="item__marker--elem">
+                            <div class="item__marker--icon">
+                                <svg class="ico-svg" viewBox="0 0 10 15" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="img/sprites/sprite-mono.svg#distanceicon"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </div>
+                            <div class="item__marker--text">Раменки 7 минут</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <div class="item__tags">
+                <div class="items__tags-list">
+                    <div class="item__tag item__tag--orange">Ипотека от 6,3%</div>
+                    <div class="item__tag item__tag--blue">Старт продаж</div>
+                    <div class="item__tag item__tag--blue">Кладовые</div>
+                </div>
+                <button class="button item__tags--toggle">
+                    <svg width="8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                        <path
+                            d="M151.5 347.8L3.5 201c-4.7-4.7-4.7-12.3 0-17l19.8-19.8c4.7-4.7 12.3-4.7 17 0L160 282.7l119.7-118.5c4.7-4.7 12.3-4.7 17 0l19.8 19.8c4.7 4.7 4.7 12.3 0 17l-148 146.8c-4.7 4.7-12.3 4.7-17 0z" />
+                    </svg>
+                </button>
+            </div>
+            <button class="item__toggle" type="button" data-show="карта" data-hide="скрыть"></button>
+        </div>
+        <div class="item__content">
+            <div class="item__content--base">
+                <div class="item__info">
+                    <div class="item__info--completion">Сдача III кв 2024</div>
+                    <div class="item__info--developer">ПИК</div>
+                </div>
+                <div class="item__title">Петр Великий и Екатерина Великая</div>
+                <div class="item__district">
+                    <div class="item__district--icon" style="background-color: #a0a0a0;"></div>
+                    <div class="item__district--name">
+                        <span>ул Академика Янгеля</span>
+                    </div>
+                    <div class="item__district--distance">
+                        <i>
+                            <svg class="ico-svg" viewBox="0 0 10 15" xmlns="http://www.w3.org/2000/svg">
+                                <use xlink:href="img/sprites/sprite-mono.svg#distanceicon"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                            </svg>
+                        </i>
+                        <span>12 минут</span>
+                    </div>
+                </div>
+                <div class="item__data">
+                    <div class="item__data--price">от 12,52 млн ₽</div>
+                    <div class="item__data--apartments">29 квартир</div>
+                </div>
+            </div>
+            <div class="item__content--hover">
+                <div class="item__info">
+                    <div class="item__info--completion">Сдача III кв 2024</div>
+                    <a href="javascript:void(0)" class="item__info--apartments">29 квартир</a>
+                </div>
+                <div class="item__price">
+                    <div class="item__price--title">Минимальная стоимость, млн ₽</div>
+                    <div class="item__price--table">
+                        <div class="item__table">
+                            <div class="item__table--elem">
+                                <div class="item__table--label">Студия</div>
+                                <div class="item__table--value">4,51</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">1-комн</div>
+                                <div class="item__table--value">8,32</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">2-комн</div>
+                                <div class="item__table--value">12,44</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">3-комн</div>
+                                <div class="item__table--value">14,80</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">4-комн</div>
+                                <div class="item__table--value">20,83</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">5-комн</div>
+                                <div class="item__table--value">127,47</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="item__header">
+            <a href="javascript:void(0)" class="item__media">
+                <div class="item__media--image">
+                    <img src="img/content/item_image__05.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="item__media--map">
+                    <img src="img/content/item_map_01.jpg" class="img-fluid" alt="">
+                    <div class="item__marker">
+                        <div class="item__marker--elem">
+                            <div class="item__marker--icon">
+                                <svg class="ico-svg" viewBox="0 0 10 15" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="img/sprites/sprite-mono.svg#distanceicon"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </div>
+                            <div class="item__marker--text">Раменки 7 минут</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <div class="item__tags">
+                <div class="items__tags-list">
+                    <div class="item__tag item__tag--orange">Ипотека от 6,3%</div>
+                    <div class="item__tag item__tag--blue">Старт продаж</div>
+                    <div class="item__tag item__tag--blue">Кладовые</div>
+                </div>
+                <button class="button item__tags--toggle">
+                    <svg width="8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                        <path
+                            d="M151.5 347.8L3.5 201c-4.7-4.7-4.7-12.3 0-17l19.8-19.8c4.7-4.7 12.3-4.7 17 0L160 282.7l119.7-118.5c4.7-4.7 12.3-4.7 17 0l19.8 19.8c4.7 4.7 4.7 12.3 0 17l-148 146.8c-4.7 4.7-12.3 4.7-17 0z" />
+                    </svg>
+                </button>
+            </div>
+            <button class="item__toggle" type="button" data-show="карта" data-hide="скрыть"></button>
+        </div>
+        <div class="item__content">
+            <div class="item__content--base">
+                <div class="item__info">
+                    <div class="item__info--completion">Сдача III кв 2024</div>
+                    <div class="item__info--developer">ПИК</div>
+                </div>
+                <div class="item__title">Зеленый квартал на Пулковских высотах</div>
+                <div class="item__district">
+                    <div class="item__district--icon" style="background-color: #a0a0a0;"></div>
+                    <div class="item__district--name">
+                        <span>ул Академика Янгеля</span>
+                    </div>
+                    <div class="item__district--distance">
+                        <i>
+                            <svg class="ico-svg" viewBox="0 0 10 15" xmlns="http://www.w3.org/2000/svg">
+                                <use xlink:href="img/sprites/sprite-mono.svg#distanceicon"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                            </svg>
+                        </i>
+                        <span>12 минут</span>
+                    </div>
+                </div>
+                <div class="item__data">
+                    <div class="item__data--price">от 12,52 млн ₽</div>
+                    <div class="item__data--apartments">29 квартир</div>
+                </div>
+            </div>
+            <div class="item__content--hover">
+                <div class="item__info">
+                    <div class="item__info--completion">Сдача III кв 2024</div>
+                    <a href="javascript:void(0)" class="item__info--apartments">29 квартир</a>
+                </div>
+                <div class="item__price">
+                    <div class="item__price--title">Минимальная стоимость, млн ₽</div>
+                    <div class="item__price--table">
+                        <div class="item__table">
+                            <div class="item__table--elem">
+                                <div class="item__table--label">Студия</div>
+                                <div class="item__table--value">4,51</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">1-комн</div>
+                                <div class="item__table--value">8,32</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">2-комн</div>
+                                <div class="item__table--value">12,44</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">3-комн</div>
+                                <div class="item__table--value">14,80</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">4-комн</div>
+                                <div class="item__table--value">20,83</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">5-комн</div>
+                                <div class="item__table--value">127,47</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="item__header">
+            <a href="javascript:void(0)" class="item__media">
+                <div class="item__media--image">
+                    <img src="img/content/item_image__06.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="item__media--map">
+                    <img src="img/content/item_map_01.jpg" class="img-fluid" alt="">
+                    <div class="item__marker">
+                        <div class="item__marker--elem">
+                            <div class="item__marker--icon">
+                                <svg class="ico-svg" viewBox="0 0 10 15" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="img/sprites/sprite-mono.svg#distanceicon"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </div>
+                            <div class="item__marker--text">Раменки 7 минут</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <div class="item__tags">
+                <div class="items__tags-list">
+                    <div class="item__tag item__tag--orange">Ипотека от 6,3%</div>
+                    <div class="item__tag item__tag--blue">Старт продаж</div>
+                    <div class="item__tag item__tag--blue">Кладовые</div>
+                </div>
+                <button class="button item__tags--toggle">
+                    <svg width="8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                        <path
+                            d="M151.5 347.8L3.5 201c-4.7-4.7-4.7-12.3 0-17l19.8-19.8c4.7-4.7 12.3-4.7 17 0L160 282.7l119.7-118.5c4.7-4.7 12.3-4.7 17 0l19.8 19.8c4.7 4.7 4.7 12.3 0 17l-148 146.8c-4.7 4.7-12.3 4.7-17 0z" />
+                    </svg>
+                </button>
+            </div>
+            <button class="item__toggle" type="button" data-show="карта" data-hide="скрыть"></button>
+        </div>
+        <div class="item__content">
+            <div class="item__content--base">
+                <div class="item__info">
+                    <div class="item__info--completion">Дома сданы</div>
+                    <div class="item__info--developer">Гранель</div>
+                </div>
+                <div class="item__title">Сити Парк</div>
+                <div class="item__district">
+                    <div class="item__district--icon" style="background-color: #FFD702;"></div>
+                    <div class="item__district--name">Сокол</div>
+                    <div class="item__district--distance">
+                        <i>
+                            <svg class="ico-svg" viewBox="0 0 10 15" xmlns="http://www.w3.org/2000/svg">
+                                <use xlink:href="img/sprites/sprite-mono.svg#distanceicon"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                            </svg>
+                        </i>
+                        <span>12 минут</span>
+                    </div>
+                </div>
+                <div class="item__data">
+                    <div class="item__data--price">от 28,61 млн ₽</div>
+                    <div class="item__data--apartments">43 квартиры</div>
+                </div>
+            </div>
+            <div class="item__content--hover">
+                <div class="item__info">
+                    <div class="item__info--completion">Дома сданы2</div>
+                    <a href="javascript:void(0)" class="item__info--apartments">43 квартиры</a>
+                </div>
+                <div class="item__price">
+                    <div class="item__price--title">Минимальная стоимость, млн ₽</div>
+                    <div class="item__price--table">
+                        <div class="item__table">
+                            <div class="item__table--elem">
+                                <div class="item__table--label">Студия</div>
+                                <div class="item__table--value">4,51</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">1-комн</div>
+                                <div class="item__table--value">8,32</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">2-комн</div>
+                                <div class="item__table--value">12,44</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">3-комн</div>
+                                <div class="item__table--value">14,80</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">4-комн</div>
+                                <div class="item__table--value">20,83</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">5-комн</div>
+                                <div class="item__table--value">127,47</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="item-offer">
+        <div class="item-offer__title">Субсидированная <br />ипотека от 5,9%</div>
+        <div class="item-offer__text">Рассрочки для молодых семей и молодоженов</div>
+        <div class="item-offer__button">
+            <a href="javascript:void(0)" class="btn">Узнать подробнее</a>
+        </div>
+        <div class="item-offer__bg">
+            <img src="img/item-offer__image.jpg" class="img-fluid" alt="">
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="item__header">
+            <a href="javascript:void(0)" class="item__media">
+                <div class="item__media--image">
+                    <img src="img/content/item_image__01.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="item__media--map">
+                    <img src="img/content/item_map_01.jpg" class="img-fluid" alt="">
+                    <div class="item__marker">
+                        <div class="item__marker--elem">
+                            <div class="item__marker--icon">
+                                <svg class="ico-svg" viewBox="0 0 10 15" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="img/sprites/sprite-mono.svg#distanceicon"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </div>
+                            <div class="item__marker--text">Раменки 7 минут</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <div class="item__tags">
+                <div class="items__tags-list">
+                    <div class="item__tag item__tag--orange">Ипотека от 6,3%</div>
+                    <div class="item__tag item__tag--blue">Старт продаж</div>
+                    <div class="item__tag item__tag--blue">Кладовые</div>
+                </div>
+                <button class="button item__tags--toggle">
+                    <svg width="8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                        <path
+                            d="M151.5 347.8L3.5 201c-4.7-4.7-4.7-12.3 0-17l19.8-19.8c4.7-4.7 12.3-4.7 17 0L160 282.7l119.7-118.5c4.7-4.7 12.3-4.7 17 0l19.8 19.8c4.7 4.7 4.7 12.3 0 17l-148 146.8c-4.7 4.7-12.3 4.7-17 0z" />
+                    </svg>
+                </button>
+            </div>
+            <button class="item__toggle" type="button" data-show="карта" data-hide="скрыть"></button>
+        </div>
+        <div class="item__content">
+            <div class="item__content--base">
+                <div class="item__info">
+                    <div class="item__info--completion">Сдача IV кв 2022</div>
+                    <div class="item__info--developer">ЛСР недвижимость</div>
+                </div>
+                <div class="item__title">Мосфильмовский</div>
+                <div class="item__district">
+                    <div class="item__district--icon" style="background-color: #FFD702;"></div>
+                    <div class="item__district--name">Сокол</div>
+                    <div class="item__district--distance">
+                        <i>
+                            <svg class="ico-svg" viewBox="0 0 10 15" xmlns="http://www.w3.org/2000/svg">
+                                <use xlink:href="img/sprites/sprite-mono.svg#distanceicon"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                            </svg>
+                        </i>
+                        <span>12 минут</span>
+                    </div>
+                </div>
+                <div class="item__data">
+                    <div class="item__data--price">от 28,61 млн ₽</div>
+                    <div class="item__data--apartments">43 квартиры</div>
+                </div>
+            </div>
+            <div class="item__content--hover">
+                <div class="item__info">
+                    <div class="item__info--completion">Сдача IV кв 2022</div>
+                    <a href="javascript:void(0)" class="item__info--apartments">43 квартиры</a>
+                </div>
+                <div class="item__price">
+                    <div class="item__price--title">Минимальная стоимость, млн ₽</div>
+                    <div class="item__price--table">
+                        <div class="item__table">
+                            <div class="item__table--elem">
+                                <div class="item__table--label">Студия</div>
+                                <div class="item__table--value">4,51</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">1-комн</div>
+                                <div class="item__table--value">8,32</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">2-комн</div>
+                                <div class="item__table--value">12,44</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">3-комн</div>
+                                <div class="item__table--value">14,80</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">4-комн</div>
+                                <div class="item__table--value">20,83</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">5-комн</div>
+                                <div class="item__table--value">127,47</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="item__header">
+            <a href="javascript:void(0)" class="item__media">
+                <div class="item__media--image">
+                    <img src="img/content/item_image__01.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="item__media--map">
+                    <img src="img/content/item_map_01.jpg" class="img-fluid" alt="">
+                    <div class="item__marker">
+                        <div class="item__marker--elem">
+                            <div class="item__marker--icon">
+                                <svg class="ico-svg" viewBox="0 0 10 15" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="img/sprites/sprite-mono.svg#distanceicon"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </div>
+                            <div class="item__marker--text">Раменки 7 минут</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <div class="item__tags">
+                <div class="items__tags-list">
+                    <div class="item__tag item__tag--orange">Ипотека от 6,3%</div>
+                    <div class="item__tag item__tag--blue">Старт продаж</div>
+                    <div class="item__tag item__tag--blue">Кладовые</div>
+                </div>
+                <button class="button item__tags--toggle">
+                    <svg width="8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                        <path
+                            d="M151.5 347.8L3.5 201c-4.7-4.7-4.7-12.3 0-17l19.8-19.8c4.7-4.7 12.3-4.7 17 0L160 282.7l119.7-118.5c4.7-4.7 12.3-4.7 17 0l19.8 19.8c4.7 4.7 4.7 12.3 0 17l-148 146.8c-4.7 4.7-12.3 4.7-17 0z" />
+                    </svg>
+                </button>
+            </div>
+            <button class="item__toggle" type="button" data-show="карта" data-hide="скрыть"></button>
+        </div>
+        <div class="item__content">
+            <div class="item__content--base">
+                <div class="item__info">
+                    <div class="item__info--completion">Сдача IV кв 2022</div>
+                    <div class="item__info--developer">ЛСР недвижимость</div>
+                </div>
+                <div class="item__title">Мосфильмовский</div>
+                <div class="item__district">
+                    <div class="item__district--icon" style="background-color: #FFD702;"></div>
+                    <div class="item__district--name">Сокол</div>
+                    <div class="item__district--distance">
+                        <i>
+                            <svg class="ico-svg" viewBox="0 0 10 15" xmlns="http://www.w3.org/2000/svg">
+                                <use xlink:href="img/sprites/sprite-mono.svg#distanceicon"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                            </svg>
+                        </i>
+                        <span>12 минут</span>
+                    </div>
+                </div>
+                <div class="item__data">
+                    <div class="item__data--price">от 28,61 млн ₽</div>
+                    <div class="item__data--apartments">43 квартиры</div>
+                </div>
+            </div>
+            <div class="item__content--hover">
+                <div class="item__info">
+                    <div class="item__info--completion">Сдача IV кв 2022</div>
+                    <a href="javascript:void(0)" class="item__info--apartments">43 квартиры</a>
+                </div>
+                <div class="item__price">
+                    <div class="item__price--title">Минимальная стоимость, млн ₽</div>
+                    <div class="item__price--table">
+                        <div class="item__table">
+                            <div class="item__table--elem">
+                                <div class="item__table--label">Студия</div>
+                                <div class="item__table--value">4,51</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">1-комн</div>
+                                <div class="item__table--value">8,32</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">2-комн</div>
+                                <div class="item__table--value">12,44</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">3-комн</div>
+                                <div class="item__table--value">14,80</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">4-комн</div>
+                                <div class="item__table--value">20,83</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">5-комн</div>
+                                <div class="item__table--value">127,47</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="item__header">
+            <a href="javascript:void(0)" class="item__media">
+                <div class="item__media--image">
+                    <img src="img/content/item_image__02.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="item__media--map">
+                    <img src="img/content/item_map_01.jpg" class="img-fluid" alt="">
+                    <div class="item__marker">
+                        <div class="item__marker--elem">
+                            <div class="item__marker--icon">
+                                <svg class="ico-svg" viewBox="0 0 10 15" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="img/sprites/sprite-mono.svg#distanceicon"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </div>
+                            <div class="item__marker--text">Раменки 7 минут</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <div class="item__tags">
+                <div class="items__tags-list">
+                    <div class="item__tag item__tag--orange">Ипотека от 6,3%</div>
+                    <div class="item__tag item__tag--blue">Старт продаж</div>
+                    <div class="item__tag item__tag--blue">Кладовые</div>
+                </div>
+                <button class="button item__tags--toggle">
+                    <svg width="8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                        <path
+                            d="M151.5 347.8L3.5 201c-4.7-4.7-4.7-12.3 0-17l19.8-19.8c4.7-4.7 12.3-4.7 17 0L160 282.7l119.7-118.5c4.7-4.7 12.3-4.7 17 0l19.8 19.8c4.7 4.7 4.7 12.3 0 17l-148 146.8c-4.7 4.7-12.3 4.7-17 0z" />
+                    </svg>
+                </button>
+            </div>
+            <button class="item__toggle" type="button" data-show="карта" data-hide="скрыть"></button>
+        </div>
+        <div class="item__content">
+            <div class="item__content--base">
+                <div class="item__info">
+                    <div class="item__info--completion">Сдача III кв 2024</div>
+                    <div class="item__info--developer">ПИК</div>
+                </div>
+                <div class="item__title">Хорошевский</div>
+                <div class="item__district">
+                    <div class="item__district--icon" style="background-color: #a0a0a0;"></div>
+                    <div class="item__district--name">
+                        <span>ул Академика Янгеля</span>
+                    </div>
+                    <div class="item__district--distance">
+                        <i>
+                            <svg class="ico-svg" viewBox="0 0 10 15" xmlns="http://www.w3.org/2000/svg">
+                                <use xlink:href="img/sprites/sprite-mono.svg#distanceicon"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                            </svg>
+                        </i>
+                        <span>12 минут</span>
+                    </div>
+                </div>
+                <div class="item__data">
+                    <div class="item__data--price">от 12,52 млн ₽</div>
+                    <div class="item__data--apartments">29 квартир</div>
+                </div>
+            </div>
+            <div class="item__content--hover">
+                <div class="item__info">
+                    <div class="item__info--completion">Сдача III кв 2024</div>
+                    <a href="javascript:void(0)" class="item__info--apartments">29 квартир</a>
+                </div>
+                <div class="item__price">
+                    <div class="item__price--title">Минимальная стоимость, млн ₽</div>
+                    <div class="item__price--table">
+                        <div class="item__table">
+                            <div class="item__table--elem">
+                                <div class="item__table--label">Студия</div>
+                                <div class="item__table--value">4,51</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">1-комн</div>
+                                <div class="item__table--value">8,32</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">2-комн</div>
+                                <div class="item__table--value">12,44</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">3-комн</div>
+                                <div class="item__table--value">14,80</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">4-комн</div>
+                                <div class="item__table--value">20,83</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">5-комн</div>
+                                <div class="item__table--value">127,47</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="item item--accent">
+        <div class="item__header">
+            <a href="javascript:void(0)" class="item__media">
+                <div class="item__media--image">
+                    <img src="img/content/item_image__03.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="item__media--map">
+                    <img src="img/content/item_map_01.jpg" class="img-fluid" alt="">
+                    <div class="item__marker">
+                        <div class="item__marker--elem">
+                            <div class="item__marker--icon">
+                                <svg class="ico-svg" viewBox="0 0 10 15" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="img/sprites/sprite-mono.svg#distanceicon"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </div>
+                            <div class="item__marker--text">Тропарево 7 минут</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <div class="item__tags">
+                <div class="items__tags-list">
+                    <div class="item__tag item__tag--orange">Ипотека от 6,3%</div>
+                    <div class="item__tag item__tag--blue">Старт продаж</div>
+                    <div class="item__tag item__tag--blue">Кладовые</div>
+                </div>
+                <button class="button item__tags--toggle">
+                    <svg width="8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                        <path
+                            d="M151.5 347.8L3.5 201c-4.7-4.7-4.7-12.3 0-17l19.8-19.8c4.7-4.7 12.3-4.7 17 0L160 282.7l119.7-118.5c4.7-4.7 12.3-4.7 17 0l19.8 19.8c4.7 4.7 4.7 12.3 0 17l-148 146.8c-4.7 4.7-12.3 4.7-17 0z" />
+                    </svg>
+                </button>
+            </div>
+            <button class="item__toggle" type="button" data-show="карта" data-hide="скрыть"></button>
+        </div>
+        <div class="item__content">
+            <div class="item__content--base">
+                <div class="item__info">
+                    <div class="item__info--completion">Сдача IV кв 2022</div>
+                    <div class="item__info--developer">ЛСР недвижимость</div>
+                </div>
+                <div class="item__title">Солнечный Луч</div>
+                <div class="item__district">
+                    <div class="item__district--icon" style="background-color: #FFD702;"></div>
+                    <div class="item__district--name">Сокол</div>
+                    <div class="item__district--distance">
+                        <i>
+                            <svg class="ico-svg" viewBox="0 0 10 15" xmlns="http://www.w3.org/2000/svg">
+                                <use xlink:href="img/sprites/sprite-mono.svg#distanceicon"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                            </svg>
+                        </i>
+                        <span>12 минут</span>
+                    </div>
+                </div>
+                <div class="item__data">
+                    <div class="item__data--price">от 28,61 млн ₽</div>
+                    <div class="item__data--apartments">43 квартиры</div>
+                </div>
+            </div>
+            <div class="item__content--hover">
+                <div class="item__info">
+                    <div class="item__info--completion">Сдача IV кв 2022</div>
+                    <a href="javascript:void(0)" class="item__info--apartments">43 квартиры</a>
+                </div>
+                <div class="item__price">
+                    <div class="item__price--title">Минимальная стоимость, млн ₽</div>
+                    <div class="item__price--table">
+                        <div class="item__table">
+                            <div class="item__table--elem">
+                                <div class="item__table--label">Студия</div>
+                                <div class="item__table--value">4,51</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">1-комн</div>
+                                <div class="item__table--value">8,32</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">2-комн</div>
+                                <div class="item__table--value">12,44</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">3-комн</div>
+                                <div class="item__table--value">14,80</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">4-комн</div>
+                                <div class="item__table--value">20,83</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">5-комн</div>
+                                <div class="item__table--value">127,47</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="item__header">
+            <a href="javascript:void(0)" class="item__media">
+                <div class="item__media--image">
+                    <img src="img/content/item_image__04.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="item__media--map">
+                    <img src="img/content/item_map_01.jpg" class="img-fluid" alt="">
+                    <div class="item__marker">
+                        <div class="item__marker--elem">
+                            <div class="item__marker--icon">
+                                <svg class="ico-svg" viewBox="0 0 10 15" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="img/sprites/sprite-mono.svg#distanceicon"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </div>
+                            <div class="item__marker--text">Раменки 7 минут</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <div class="item__tags">
+                <div class="items__tags-list">
+                    <div class="item__tag item__tag--orange">Ипотека от 6,3%</div>
+                    <div class="item__tag item__tag--blue">Старт продаж</div>
+                    <div class="item__tag item__tag--blue">Кладовые</div>
+                </div>
+                <button class="button item__tags--toggle">
+                    <svg width="8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                        <path
+                            d="M151.5 347.8L3.5 201c-4.7-4.7-4.7-12.3 0-17l19.8-19.8c4.7-4.7 12.3-4.7 17 0L160 282.7l119.7-118.5c4.7-4.7 12.3-4.7 17 0l19.8 19.8c4.7 4.7 4.7 12.3 0 17l-148 146.8c-4.7 4.7-12.3 4.7-17 0z" />
+                    </svg>
+                </button>
+            </div>
+            <button class="item__toggle" type="button" data-show="карта" data-hide="скрыть"></button>
+        </div>
+        <div class="item__content">
+            <div class="item__content--base">
+                <div class="item__info">
+                    <div class="item__info--completion">Сдача III кв 2024</div>
+                    <div class="item__info--developer">ПИК</div>
+                </div>
+                <div class="item__title">Петр Великий и Екатерина Великая</div>
+                <div class="item__district">
+                    <div class="item__district--icon" style="background-color: #a0a0a0;"></div>
+                    <div class="item__district--name">
+                        <span>ул Академика Янгеля</span>
+                    </div>
+                    <div class="item__district--distance">
+                        <i>
+                            <svg class="ico-svg" viewBox="0 0 10 15" xmlns="http://www.w3.org/2000/svg">
+                                <use xlink:href="img/sprites/sprite-mono.svg#distanceicon"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                            </svg>
+                        </i>
+                        <span>12 минут</span>
+                    </div>
+                </div>
+                <div class="item__data">
+                    <div class="item__data--price">от 12,52 млн ₽</div>
+                    <div class="item__data--apartments">29 квартир</div>
+                </div>
+            </div>
+            <div class="item__content--hover">
+                <div class="item__info">
+                    <div class="item__info--completion">Сдача III кв 2024</div>
+                    <a href="javascript:void(0)" class="item__info--apartments">29 квартир</a>
+                </div>
+                <div class="item__price">
+                    <div class="item__price--title">Минимальная стоимость, млн ₽</div>
+                    <div class="item__price--table">
+                        <div class="item__table">
+                            <div class="item__table--elem">
+                                <div class="item__table--label">Студия</div>
+                                <div class="item__table--value">4,51</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">1-комн</div>
+                                <div class="item__table--value">8,32</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">2-комн</div>
+                                <div class="item__table--value">12,44</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">3-комн</div>
+                                <div class="item__table--value">14,80</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">4-комн</div>
+                                <div class="item__table--value">20,83</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">5-комн</div>
+                                <div class="item__table--value">127,47</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="item">
+        <div class="item__header">
+            <a href="javascript:void(0)" class="item__media">
+                <div class="item__media--image">
+                    <img src="img/content/item_image__05.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="item__media--map">
+                    <img src="img/content/item_map_01.jpg" class="img-fluid" alt="">
+                    <div class="item__marker">
+                        <div class="item__marker--elem">
+                            <div class="item__marker--icon">
+                                <svg class="ico-svg" viewBox="0 0 10 15" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="img/sprites/sprite-mono.svg#distanceicon"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </div>
+                            <div class="item__marker--text">Раменки 7 минут</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <div class="item__tags">
+                <div class="items__tags-list">
+                    <div class="item__tag item__tag--orange">Ипотека от 6,3%</div>
+                    <div class="item__tag item__tag--blue">Старт продаж</div>
+                    <div class="item__tag item__tag--blue">Кладовые</div>
+                </div>
+                <button class="button item__tags--toggle">
+                    <svg width="8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                        <path
+                            d="M151.5 347.8L3.5 201c-4.7-4.7-4.7-12.3 0-17l19.8-19.8c4.7-4.7 12.3-4.7 17 0L160 282.7l119.7-118.5c4.7-4.7 12.3-4.7 17 0l19.8 19.8c4.7 4.7 4.7 12.3 0 17l-148 146.8c-4.7 4.7-12.3 4.7-17 0z" />
+                    </svg>
+                </button>
+            </div>
+            <button class="item__toggle" type="button" data-show="карта" data-hide="скрыть"></button>
+        </div>
+        <div class="item__content">
+            <div class="item__content--base">
+                <div class="item__info">
+                    <div class="item__info--completion">Сдача III кв 2024</div>
+                    <div class="item__info--developer">ПИК</div>
+                </div>
+                <div class="item__title">Зеленый квартал на Пулковских высотах</div>
+                <div class="item__district">
+                    <div class="item__district--icon" style="background-color: #a0a0a0;"></div>
+                    <div class="item__district--name">
+                        <span>ул Академика Янгеля</span>
+                    </div>
+                    <div class="item__district--distance">
+                        <i>
+                            <svg class="ico-svg" viewBox="0 0 10 15" xmlns="http://www.w3.org/2000/svg">
+                                <use xlink:href="img/sprites/sprite-mono.svg#distanceicon"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                            </svg>
+                        </i>
+                        <span>12 минут</span>
+                    </div>
+                </div>
+                <div class="item__data">
+                    <div class="item__data--price">от 12,52 млн ₽</div>
+                    <div class="item__data--apartments">29 квартир</div>
+                </div>
+            </div>
+            <div class="item__content--hover">
+                <div class="item__info">
+                    <div class="item__info--completion">Сдача III кв 2024</div>
+                    <a href="javascript:void(0)" class="item__info--apartments">29 квартир</a>
+                </div>
+                <div class="item__price">
+                    <div class="item__price--title">Минимальная стоимость, млн ₽</div>
+                    <div class="item__price--table">
+                        <div class="item__table">
+                            <div class="item__table--elem">
+                                <div class="item__table--label">Студия</div>
+                                <div class="item__table--value">4,51</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">1-комн</div>
+                                <div class="item__table--value">8,32</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">2-комн</div>
+                                <div class="item__table--value">12,44</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">3-комн</div>
+                                <div class="item__table--value">14,80</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">4-комн</div>
+                                <div class="item__table--value">20,83</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">5-комн</div>
+                                <div class="item__table--value">127,47</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="item__header">
+            <a href="javascript:void(0)" class="item__media">
+                <div class="item__media--image">
+                    <img src="img/content/item_image__06.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="item__media--map">
+                    <img src="img/content/item_map_01.jpg" class="img-fluid" alt="">
+                    <div class="item__marker">
+                        <div class="item__marker--elem">
+                            <div class="item__marker--icon">
+                                <svg class="ico-svg" viewBox="0 0 10 15" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="img/sprites/sprite-mono.svg#distanceicon"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </div>
+                            <div class="item__marker--text">Раменки 7 минут</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <div class="item__tags">
+                <div class="items__tags-list">
+                    <div class="item__tag item__tag--orange">Ипотека от 6,3%</div>
+                    <div class="item__tag item__tag--blue">Старт продаж</div>
+                    <div class="item__tag item__tag--blue">Кладовые</div>
+                </div>
+                <button class="button item__tags--toggle">
+                    <svg width="8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                        <path
+                            d="M151.5 347.8L3.5 201c-4.7-4.7-4.7-12.3 0-17l19.8-19.8c4.7-4.7 12.3-4.7 17 0L160 282.7l119.7-118.5c4.7-4.7 12.3-4.7 17 0l19.8 19.8c4.7 4.7 4.7 12.3 0 17l-148 146.8c-4.7 4.7-12.3 4.7-17 0z" />
+                    </svg>
+                </button>
+            </div>
+            <button class="item__toggle" type="button" data-show="карта" data-hide="скрыть"></button>
+        </div>
+        <div class="item__content">
+            <div class="item__content--base">
+                <div class="item__info">
+                    <div class="item__info--completion">Дома сданы</div>
+                    <div class="item__info--developer">Гранель</div>
+                </div>
+                <div class="item__title">Сити Парк</div>
+                <div class="item__district">
+                    <div class="item__district--icon" style="background-color: #FFD702;"></div>
+                    <div class="item__district--name">Сокол</div>
+                    <div class="item__district--distance">
+                        <i>
+                            <svg class="ico-svg" viewBox="0 0 10 15" xmlns="http://www.w3.org/2000/svg">
+                                <use xlink:href="img/sprites/sprite-mono.svg#distanceicon"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                            </svg>
+                        </i>
+                        <span>12 минут</span>
+                    </div>
+                </div>
+                <div class="item__data">
+                    <div class="item__data--price">от 28,61 млн ₽</div>
+                    <div class="item__data--apartments">43 квартиры</div>
+                </div>
+            </div>
+            <div class="item__content--hover">
+                <div class="item__info">
+                    <div class="item__info--completion">Дома сданы2</div>
+                    <a href="javascript:void(0)" class="item__info--apartments">43 квартиры</a>
+                </div>
+                <div class="item__price">
+                    <div class="item__price--title">Минимальная стоимость, млн ₽</div>
+                    <div class="item__price--table">
+                        <div class="item__table">
+                            <div class="item__table--elem">
+                                <div class="item__table--label">Студия</div>
+                                <div class="item__table--value">4,51</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">1-комн</div>
+                                <div class="item__table--value">8,32</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">2-комн</div>
+                                <div class="item__table--value">12,44</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">3-комн</div>
+                                <div class="item__table--value">14,80</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">4-комн</div>
+                                <div class="item__table--value">20,83</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">5-комн</div>
+                                <div class="item__table--value">127,47</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="item__header">
+            <a href="javascript:void(0)" class="item__media">
+                <div class="item__media--image">
+                    <img src="img/content/item_image__01.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="item__media--map">
+                    <img src="img/content/item_map_01.jpg" class="img-fluid" alt="">
+                    <div class="item__marker">
+                        <div class="item__marker--elem">
+                            <div class="item__marker--icon">
+                                <svg class="ico-svg" viewBox="0 0 10 15" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="img/sprites/sprite-mono.svg#distanceicon"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </div>
+                            <div class="item__marker--text">Раменки 7 минут</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <div class="item__tags">
+                <div class="items__tags-list">
+                    <div class="item__tag item__tag--orange">Ипотека от 6,3%</div>
+                    <div class="item__tag item__tag--blue">Старт продаж</div>
+                    <div class="item__tag item__tag--blue">Кладовые</div>
+                </div>
+                <button class="button item__tags--toggle">
+                    <svg width="8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                        <path
+                            d="M151.5 347.8L3.5 201c-4.7-4.7-4.7-12.3 0-17l19.8-19.8c4.7-4.7 12.3-4.7 17 0L160 282.7l119.7-118.5c4.7-4.7 12.3-4.7 17 0l19.8 19.8c4.7 4.7 4.7 12.3 0 17l-148 146.8c-4.7 4.7-12.3 4.7-17 0z" />
+                    </svg>
+                </button>
+            </div>
+            <button class="item__toggle" type="button" data-show="карта" data-hide="скрыть"></button>
+        </div>
+        <div class="item__content">
+            <div class="item__content--base">
+                <div class="item__info">
+                    <div class="item__info--completion">Сдача IV кв 2022</div>
+                    <div class="item__info--developer">ЛСР недвижимость</div>
+                </div>
+                <div class="item__title">Мосфильмовский</div>
+                <div class="item__district">
+                    <div class="item__district--icon" style="background-color: #FFD702;"></div>
+                    <div class="item__district--name">Сокол</div>
+                    <div class="item__district--distance">
+                        <i>
+                            <svg class="ico-svg" viewBox="0 0 10 15" xmlns="http://www.w3.org/2000/svg">
+                                <use xlink:href="img/sprites/sprite-mono.svg#distanceicon"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                            </svg>
+                        </i>
+                        <span>12 минут</span>
+                    </div>
+                </div>
+                <div class="item__data">
+                    <div class="item__data--price">от 28,61 млн ₽</div>
+                    <div class="item__data--apartments">43 квартиры</div>
+                </div>
+            </div>
+            <div class="item__content--hover">
+                <div class="item__info">
+                    <div class="item__info--completion">Сдача IV кв 2022</div>
+                    <a href="javascript:void(0)" class="item__info--apartments">43 квартиры</a>
+                </div>
+                <div class="item__price">
+                    <div class="item__price--title">Минимальная стоимость, млн ₽</div>
+                    <div class="item__price--table">
+                        <div class="item__table">
+                            <div class="item__table--elem">
+                                <div class="item__table--label">Студия</div>
+                                <div class="item__table--value">4,51</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">1-комн</div>
+                                <div class="item__table--value">8,32</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">2-комн</div>
+                                <div class="item__table--value">12,44</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">3-комн</div>
+                                <div class="item__table--value">14,80</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">4-комн</div>
+                                <div class="item__table--value">20,83</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">5-комн</div>
+                                <div class="item__table--value">127,47</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="item__header">
+            <a href="javascript:void(0)" class="item__media">
+                <div class="item__media--image">
+                    <img src="img/content/item_image__01.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="item__media--map">
+                    <img src="img/content/item_map_01.jpg" class="img-fluid" alt="">
+                    <div class="item__marker">
+                        <div class="item__marker--elem">
+                            <div class="item__marker--icon">
+                                <svg class="ico-svg" viewBox="0 0 10 15" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="img/sprites/sprite-mono.svg#distanceicon"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </div>
+                            <div class="item__marker--text">Раменки 7 минут</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <div class="item__tags">
+                <div class="items__tags-list">
+                    <div class="item__tag item__tag--orange">Ипотека от 6,3%</div>
+                    <div class="item__tag item__tag--blue">Старт продаж</div>
+                    <div class="item__tag item__tag--blue">Кладовые</div>
+                </div>
+                <button class="button item__tags--toggle">
+                    <svg width="8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                        <path
+                            d="M151.5 347.8L3.5 201c-4.7-4.7-4.7-12.3 0-17l19.8-19.8c4.7-4.7 12.3-4.7 17 0L160 282.7l119.7-118.5c4.7-4.7 12.3-4.7 17 0l19.8 19.8c4.7 4.7 4.7 12.3 0 17l-148 146.8c-4.7 4.7-12.3 4.7-17 0z" />
+                    </svg>
+                </button>
+            </div>
+            <button class="item__toggle" type="button" data-show="карта" data-hide="скрыть"></button>
+        </div>
+        <div class="item__content">
+            <div class="item__content--base">
+                <div class="item__info">
+                    <div class="item__info--completion">Сдача IV кв 2022</div>
+                    <div class="item__info--developer">ЛСР недвижимость</div>
+                </div>
+                <div class="item__title">Мосфильмовский</div>
+                <div class="item__district">
+                    <div class="item__district--icon" style="background-color: #FFD702;"></div>
+                    <div class="item__district--name">Сокол</div>
+                    <div class="item__district--distance">
+                        <i>
+                            <svg class="ico-svg" viewBox="0 0 10 15" xmlns="http://www.w3.org/2000/svg">
+                                <use xlink:href="img/sprites/sprite-mono.svg#distanceicon"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                            </svg>
+                        </i>
+                        <span>12 минут</span>
+                    </div>
+                </div>
+                <div class="item__data">
+                    <div class="item__data--price">от 28,61 млн ₽</div>
+                    <div class="item__data--apartments">43 квартиры</div>
+                </div>
+            </div>
+            <div class="item__content--hover">
+                <div class="item__info">
+                    <div class="item__info--completion">Сдача IV кв 2022</div>
+                    <a href="javascript:void(0)" class="item__info--apartments">43 квартиры</a>
+                </div>
+                <div class="item__price">
+                    <div class="item__price--title">Минимальная стоимость, млн ₽</div>
+                    <div class="item__price--table">
+                        <div class="item__table">
+                            <div class="item__table--elem">
+                                <div class="item__table--label">Студия</div>
+                                <div class="item__table--value">4,51</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">1-комн</div>
+                                <div class="item__table--value">8,32</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">2-комн</div>
+                                <div class="item__table--value">12,44</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">3-комн</div>
+                                <div class="item__table--value">14,80</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">4-комн</div>
+                                <div class="item__table--value">20,83</div>
+                            </div>
+                            <div class="item__table--elem">
+                                <div class="item__table--label">5-комн</div>
+                                <div class="item__table--value">127,47</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    
+
+    
+
+</div>
+
+    <button class="btn section__btn">Оставить заявку</button>
+</section>
+
+<section class="banner section" style="background-image: url(img/slide1.png);">
+    <div class="h1">Самые выгодные условия</div>
+    <div class="banner__text">Купите квартиру по уникальной ставке <br> 2.99% на весь срок кредитования!</div>
+    <button class="btn">Подробнее</button>
+</section>
+
+<section class="section">
+    <div class="section__header">
+        <div class="section__header--title">Лучшие квартиры</div>
+        <div class="section__header--nav">
+            <a href="listing-zhk.html" class="section__header--link">Все лучшие квартиры</a>
+            <div class="section__header--buttons">
+                <div class="section-nav">
+                    <button type="button" class="slider-button slider-button--prev viewed-prev">
+                        <i>
+                            <svg class="ico-svg" viewBox="0 0 192 512" xmlns="http://www.w3.org/2000/svg">
+                                <use xlink:href="img/sprites/sprite-mono.svg#angle-left"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                            </svg>
+                        </i>
+                    </button>
+                    <button type="button" class="slider-button slider-button--next viewed-next">
+                        <i>
+                            <svg class="ico-svg" viewBox="0 0 192 512" xmlns="http://www.w3.org/2000/svg">
+                                <use xlink:href="img/sprites/sprite-mono.svg#angle-right"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                            </svg>
+                        </i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section__content">
+        <div class="viewed">
+            <div class="swiper-container viewed__slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="javascript:void(0)" class="flat-item">
+                            <div class="flat-item__completion">Сдача IV кв 2021</div>
+                            <div class="flat-item__object">Мосфильмовский квартал</div>
+                            <div class="flat-item__media">
+                                <div class="flat-item__media--image">
+                                    <img src="img/content/flat-horizontal.png" class="img-fluid" alt="">
+                                </div>
+                            </div>
+                            <div class="flat-item__title">4-комнатная 244,47 м<sup>2</sup></div>
+                            <div class="flat-item__price">
+                                <div class="flat-item__price--total">142 120 250 ₽</div>
+                                <div class="flat-item__price--meter">400 640 ₽ за м<sup>2</sup></div>
+                            </div>
+                            <div class="flat-item__tags">
+                                <span class="flat-item__tag">Евро</span>
+                                <span class="flat-item__tag">С отделкой</span>
+                                <span class="flat-item__tag">Переуступка</span>
+                            </div>
+                            <div class="flat-item__info">
+                                <span class="flat-item__info--elem">Корпус 14</span>
+                                <span class="flat-item__info--elem">Этаж 24 из 48</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="javascript:void(0)" class="flat-item not-found">
+                            <div class="flat-item__completion">Сдача IV кв 2021</div>
+                            <div class="flat-item__object">Петр Великий и Екатерина Великая</div>
+                            <div class="flat-item__media">
+                                <div class="flat-item__media--image">
+                                    <img src="img/content/not-found.png" class="img-fluid" alt="">
+                                </div>
+                            </div>
+                            <div class="flat-item__title">1-комнатная 38,25 м<sup>2</sup></div>
+                            <div class="flat-item__price">
+                                <div class="flat-item__price--total">28 120 250 ₽</div>
+                                <div class="flat-item__price--meter">100 640₽ за м<sup>2</sup></div>
+                            </div>
+                            <div class="flat-item__tags">
+                            </div>
+                            <div class="flat-item__info">
+                                <span class="flat-item__info--elem">Корпус 14</span>
+                                <span class="flat-item__info--elem">Этаж 24 из 48</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="javascript:void(0)" class="flat-item">
+                            <div class="flat-item__completion">Сдача I кв 2022</div>
+                            <div class="flat-item__object">Хорошевский</div>
+                            <div class="flat-item__media">
+                                <div class="flat-item__media--image">
+                                    <img src="img/content/flat-vertical.png" class="img-fluid" alt="">
+                                </div>
+                            </div>
+                            <div class="flat-item__title">Студия 25,78 м²<sup>2</sup></div>
+                            <div class="flat-item__price">
+                                <div class="flat-item__price--total">68 120 250 ₽</div>
+                                <div class="flat-item__price--meter">250 640 ₽ за м<sup>2</sup></div>
+                            </div>
+                            <div class="flat-item__tags">
+                                <span class="flat-item__tag">Переуступка</span>
+                            </div>
+                            <div class="flat-item__info">
+                                <span class="flat-item__info--elem">Корпус 5</span>
+                                <span class="flat-item__info--elem">Этаж 24 из 48</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="javascript:void(0)" class="flat-item">
+                            <div class="flat-item__completion">Сдача I кв 2022</div>
+                            <div class="flat-item__object">Пехра</div>
+                            <div class="flat-item__media">
+                                <div class="flat-item__media--image">
+                                    <img src="img/content/flat_image.png" class="img-fluid" alt="">
+                                </div>
+                            </div>
+                            <div class="flat-item__title">3-комнатная 87,93 м²<sup>2</sup></div>
+                            <div class="flat-item__price">
+                                <div class="flat-item__price--total">68 120 250 ₽</div>
+                                <div class="flat-item__price--meter">250 640 ₽ за м<sup>2</sup></div>
+                            </div>
+                            <div class="flat-item__tags">
+                                <span class="flat-item__tag">Переуступка</span>
+                            </div>
+                            <div class="flat-item__info">
+                                <span class="flat-item__info--elem">Корпус 5</span>
+                                <span class="flat-item__info--elem">Этаж 24 из 48</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="javascript:void(0)" class="flat-item">
+                            <div class="flat-item__completion">Сдача IV кв 2021</div>
+                            <div class="flat-item__object">Королевские Мытищи</div>
+                            <div class="flat-item__media">
+                                <div class="flat-item__media--image">
+                                    <img src="img/content/flat_image.png" class="img-fluid" alt="">
+                                </div>
+                            </div>
+                            <div class="flat-item__title">2-комнатная 194,13 м<sup>2</sup></div>
+                            <div class="flat-item__price">
+                                <div class="flat-item__price--total">142 120 250 ₽</div>
+                                <div class="flat-item__price--meter">400 640 ₽ за м<sup>2</sup></div>
+                            </div>
+                            <div class="flat-item__tags">
+                                <span class="flat-item__tag">Евро</span>
+                                <span class="flat-item__tag">Переуступка</span>
+                            </div>
+                            <div class="flat-item__info">
+                                <span class="flat-item__info--elem">Корпус 14</span>
+                                <span class="flat-item__info--elem">Этаж 24 из 48</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="javascript:void(0)" class="flat-item">
+                            <div class="flat-item__completion">Сдача IV кв 2021</div>
+                            <div class="flat-item__object">Мосфильмовский квартал</div>
+                            <div class="flat-item__media">
+                                <div class="flat-item__media--image">
+                                    <img src="img/content/flat_image.png" class="img-fluid" alt="">
+                                </div>
+                            </div>
+                            <div class="flat-item__title">4-комнатная 244,47 м<sup>2</sup></div>
+                            <div class="flat-item__price">
+                                <div class="flat-item__price--total">142 120 250 ₽</div>
+                                <div class="flat-item__price--meter">400 640 ₽ за м<sup>2</sup></div>
+                            </div>
+                            <div class="flat-item__tags">
+                                <span class="flat-item__tag">Евро</span>
+                                <span class="flat-item__tag">С отделкой</span>
+                                <span class="flat-item__tag">Переуступка</span>
+                            </div>
+                            <div class="flat-item__info">
+                                <span class="flat-item__info--elem">Корпус 14</span>
+                                <span class="flat-item__info--elem">Этаж 24 из 48</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!--/.viewed__slider -->
+        </div>
+        <!--/.viewed -->
+    </div>
+</section>
+
+<button class="btn mobile">Смотреть лучшие квартиры</button>
+
+<section class="section mortgage" style="background-image: url(img/mortgage.png);">
+    <div class="mortgage__wrap">
+        <div class="h2">Покупка квартиры в ипотеку</div>
+        <div class="mortgage__desc">Выбери свою ипотечную программу — жилые комплексы <br> аккредитованы крупнейшими
+            банками РФ!</div>
+        <div class="mortgage__controls">
+            <a href="javascript:void(0)" class="accent">
+                <div class="mortgage__from">Ипотека от</div>
+                <div class="mortgage__percent">4,4% </div>
+                <div class="mortgage__link">
+                    Рассчитать ипотеку
+                    <i>
+                        <svg class="ico-svg" viewBox="0 0 192 512" xmlns="http://www.w3.org/2000/svg">
+                            <use xlink:href="img/sprites/sprite-mono.svg#angle-right"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                        </svg>
+                    </i>
+                </div>
+            </a>
+            <a href="javascript:void(0)">
+                <div class="mortgage__title">Материнский капитал</div>
+                <div class="mortgage__text">Текст в две строки если нужно что нибудь подписать</div>
+                <div class="mortgage__link">
+                    Подробнее
+                    <i>
+                        <svg class="ico-svg" viewBox="0 0 192 512" xmlns="http://www.w3.org/2000/svg">
+                            <use xlink:href="img/sprites/sprite-mono.svg#angle-right"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                        </svg>
+                    </i>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="section video mb-0">
+    <div class="h2">АН «Стрижи»</div>
+    <div class="video__text">Обеспечиваем полное сопровождение на&nbsp;всех этапах сделки в&nbsp;соответствии <br>
+        с&nbsp;действующим законодательством. За&nbsp;клиентом с&nbsp;момента оформления заявки <br>
+        закрепляется персональный менеджер, готовый ответить на&nbsp;все вопросы в&nbsp;любое <br>
+        время. Предоставляем максимальный набор необходимых услуг</div>
+    <a href="javascript:void(0)">
+        <span>Подробнее о компании</span>
+        <i>
+            <svg class="ico-svg" viewBox="0 0 192 512" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="img/sprites/sprite-mono.svg#angle-right" xmlns:xlink="http://www.w3.org/1999/xlink">
+                </use>
+            </svg>
+        </i>
+    </a>
+
+    <div class="video__link" href="https://www.youtube.com/watch?v=lyh2kAjcmSY" data-fancybox
+        style="background-image: url(img/video.jpg);">
+        <img src="img/icons/play.svg" alt="">
     </div>
 </section>
 

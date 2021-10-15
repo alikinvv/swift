@@ -8,283 +8,328 @@
     {# <span class="mobile-filter-button__value">4</span> #}
 </button>
 
-<div class="filter {% if filter_scroll %}custom-scroll{% endif %}">
-    <div class="filter-mobile__header">
-        <div class="filter-mobile__header--title">Фильтры</div>
-        <button type="button" class="filter-mobile__header--close filter-toggle">
-            <svg class="ico-svg" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
-            <use xlink:href="img/sprites/sprite-mono.svg#close" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-            </svg>
-        </button>
-    </div>
-    <div class="filter__primary">
-        <div class="filter__primary--item">
-            <div class="options-inline">
-                <div class="options-inline__title">Комнатность</div>
-                <label class="options-inline__item">
-                    <input type="checkbox" class="options-inline__input" name="opt1" value="Студия" checked>
-                    <span class="options-inline__label">Студия</span>
-                </label>
-                <label class="options-inline__item">
-                    <input type="checkbox" class="options-inline__input" name="opt2" value="1">
-                    <span class="options-inline__label">1</span>
-                </label>
-                <label class="options-inline__item">
-                    <input type="checkbox" class="options-inline__input" name="opt3" value="2">
-                    <span class="options-inline__label">2</span>
-                </label>
-                <label class="options-inline__item">
-                    <input type="checkbox" class="options-inline__input" name="opt4" value="3">
-                    <span class="options-inline__label">3</span>
-                </label>
-                <label class="options-inline__item">
-                    <input type="checkbox" class="options-inline__input" name="opt5" value="4">
-                    <span class="options-inline__label">4</span>
-                </label>
-                <label class="options-inline__item">
-                    <input type="checkbox" class="options-inline__input" name="opt6" value="5+">
-                    <span class="options-inline__label">5+</span>
-                </label>
-            </div>
-        </div><!--/.filter__primary--item -->
-        <div class="filter__primary--item">
-            <div class="range">
-                <div class="range__title">Стоимость, млн ₽</div>
-                <div class="range__main">
-                    <div class="range__item range__item--double">
-                        <div class="range__label">от</div>
-                        <input value="5.9" type="text" data-slider="cost" class="range__value range__value--from">
-                    </div>
-                    <div class="range__divider"></div>
-                    <div class="range__item range__item--double">
-                        <div class="range__label">до</div>
-                        <input value="120.7" type="text" data-slider="cost" class="range__value range__value--to">
-                    </div>
-                </div>
-                <div class="range__slider">
-                    <input type="text" class="range-field-slider slider-cost">
-                </div>
-            </div>
-        </div><!--/.filter__primary--item -->
-        <div class="filter__primary--item">
-            <div class="range">
-                <div class="range__title">Площадь, м²</div>
-                <div class="range__main">
-                    <div class="range__item range__item--double">
-                        <div class="range__label">от</div>
-                        <input value="15" type="text" data-slider="area" class="range__value range__value--from">
-                    </div>
-                    <div class="range__divider"></div>
-                    <div class="range__item range__item--double">
-                        <div class="range__label">до</div>
-                        <input value="270" type="text" data-slider="area" class="range__value range__value--to">
-                    </div>
-                </div>
-                <div class="range__slider">
-                    <input type="text" class="range-field-slider slider-area">
-                </div>
-            </div>
-        </div><!--/.filter__primary--item -->
-        <div class="filter__primary--item">
-            <div class="range">
-                <div class="range__title">Срок сдачи</div>
-                <div class="range__main">
-                    <div class="range__item">
-                        <div class="range__value range__value--from">Сдан</div>
-                    </div>
-                    <div class="range__divider"></div>
-                    <div class="range__item">
-                        <div class="range__value range__value--to">IV кв 2024</div>
-                    </div>
-                </div>
-                <div class="range__slider">
-                    <input type="text" class="range-field-slider slider-date"
-                           data-type="double"
-                           data-min="0"
-                           data-max="13"
-                           data-to="14"
-                           data-from="1"
-                           data-postfix=""
-                           data-range-values="Сдан,III кв 2021,IV кв 2021,I кв 2022,II кв 2022,III кв 2022,IV кв 2022,I кв 2023,II кв 2023,III кв 2023,IV кв 2023,I кв 2024,II кв 2024,III кв 2024,IV кв 2024"
-                           data-param="term"
-                    >
-                </div>
-            </div>
-        </div>
-    </div>
-    <button class="filter__toggle mobile">
-        <span class="filter__toggle--text">Дополнительные фильтры</span>
-        <i class="filter__toggle--icon">
-            <svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 5.5L5 1.5L9 5.5" stroke="#FF502F" stroke-width="1.5"/>
-            </svg>
-        </i>
-    </button>
-
-    <div class="filter__secondary">
-        <div class="filter__secondary--row">
-            <div class="filter__secondary--item">
-                <div class="field field-link">
-                    <input type="text" class="field__input" name="field" placeholder="Поиск">
-                    <div class="field__select">
-                        <span class="field__select--text open-location" open-tab="district">Локация</span>
-                    </div>
-                </div>
-            </div>
-            <div class="filter__secondary--item">
-                <select name="select" class="pretty-select">
-                    <option value="Не выбрано">Прописка</option>
-                    <option value="Эконом">Нужна</option>
-                    <option value="Стандарт">Не нужна</option>
-                </select>
-            </div>
-            <div class="filter__secondary--item">
-                <div class="range">
-                    <div class="range-wrap">
-                        <div class="range__title">Этаж</div>
-                        <div class="range__main">
-                            <div class="range__item range__item--double">
-                                <input value="7" type="text" data-slider="floor" class="range__value range__value--from">
-                            </div>
-                            <div class="range__divider"></div>
-                            <div class="range__item range__item--double">
-                                <input value="22" type="text" data-slider="floor" class="range__value range__value--to">
-                            </div>
-                        </div>
-                        <div class="range__slider">
-                            <input type="text" class="range-field-slider slider-floor">
-                        </div>
-                    </div>
-                    <ul class="range__dropdown">
-                        <li>
-                            <button type="button" class="range__dropdown--button" data-button="not_last">не последний</button>
-                        </li>
-                        <li>
-                            <button type="button" class="range__dropdown--button" data-button="last">последний</button>
-                        </li>
-                    </ul>
-                </div>
-            </div><!-- /.filter__secondary--item -->
-            <div class="filter__secondary--item">
-                <select name="select" class="pretty-select">
-                    <option value="Не выбрано">Класс жилья</option>
-                    <option value="Эконом">Эконом</option>
-                    <option value="Стандарт">Стандарт</option>
-                    <option value="Комфорт">Комфорт</option>
-                    <option value="Комфорт+">Комфорт+</option>
-                    <option value="Бизнес">Бизнес</option>
-                    <option value="Элит">Элит</option>
-                </select>
-            </div><!-- /.filter__secondary--item -->
-        </div><!-- /.filter__secondary--row -->
-        <ul class="filter__secondary--inline">
-            <li>
-                <label class="btn-checkbox">
-                    <input type="checkbox" class="btn-checkbox__input" name="pc-1">
-                    <div class="btn-checkbox__label">
-                        <span class="btn-checkbox__text">Евро-планировка</span>
-                        <i class="btn-checkbox__icon" data-tippy-content="Подсказка" data-placement="top">
-                            <svg class="ico-svg" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-                                <use xlink:href="img/sprites/sprite-mono.svg#info-circle" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                            </svg>
-                        </i>
-                    </div>
-                </label>
-            </li>
-            <li>
-                <label class="btn-checkbox">
-                    <input type="checkbox" class="btn-checkbox__input" name="pc-1">
-                    <div class="btn-checkbox__label">
-                        <span class="btn-checkbox__text">Переуступка</span>
-                        <i class="btn-checkbox__icon" data-tippy-content="Подсказка" data-placement="top">
-                            <svg class="ico-svg" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-                                <use xlink:href="img/sprites/sprite-mono.svg#info-circle" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                            </svg>
-                        </i>
-                    </div>
-                </label>
-            </li>
-            <li>
-                <div class="checkbox-group">
-                    <div class="checkbox-group__row">
-                        <div class="checkbox-group__item">
-                            <label class="checkbox-group__button">
-                                <input type="radio" class="checkbox-group__input" name="check-group2" value="" checked>
-                                <span class="checkbox-group__label">С отделкой</span>
-                            </label>
-                        </div>
-                        <div class="checkbox-group__item">
-                            <label class="checkbox-group__button">
-                                <input type="radio" class="checkbox-group__input" name="check-group2" value="">
-                                <span class="checkbox-group__label">Без отделки</span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </div><!-- /.filter__secondary -->
-    <div class="filter__actions">
-        <div class="filter__actions__column">
-            <button type="button" class="btn btn-filter">Показать 1256 квартир</button>
-            <a href="map.html" type="button" class="btn btn-map" open-tab="metro"><img src="img/icons/about-icon-06_red.svg" alt=""> Смотреть на карте</a>
-            <button class="btn-reset">
-                <svg width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7 1.5L1 7.5" stroke="#FF502F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M1 1.5L7 7.5" stroke="#FF502F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<div class="filter {% if filter_scroll %}custom-scroll{% endif %} {% if filter_main %}filter-main{% endif %}">
+    <div class="filter__wrap">
+        <div class="filter-mobile__header">
+            <div class="filter-mobile__header--title">Фильтры</div>
+            <button type="button" class="filter-mobile__header--close filter-toggle">
+                <svg class="ico-svg" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="img/sprites/sprite-mono.svg#close" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
                 </svg>
-                <span>Очистить фильтры</span>
             </button>
         </div>
-        <div class="filter__actions__column">
-            <button class="filter__toggle">
-                <span class="filter__toggle--text">Дополнительные фильтры</span>
-                <i class="filter__toggle--icon">
-                    <svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 5.5L5 1.5L9 5.5" stroke="#FF502F" stroke-width="1.5"/>
-                    </svg>
-                </i>
-            </button>
+        <div class="filter__primary">
+            <div class="filter__primary--item">
+                <div class="options-inline">
+                    <div class="options-inline__title">Комнатность</div>
+                    <label class="options-inline__item">
+                        <input type="checkbox" class="options-inline__input" name="opt1" value="Студия" checked>
+                        <span class="options-inline__label">Студия</span>
+                    </label>
+                    <label class="options-inline__item">
+                        <input type="checkbox" class="options-inline__input" name="opt2" value="1">
+                        <span class="options-inline__label">1</span>
+                    </label>
+                    <label class="options-inline__item">
+                        <input type="checkbox" class="options-inline__input" name="opt3" value="2">
+                        <span class="options-inline__label">2</span>
+                    </label>
+                    <label class="options-inline__item">
+                        <input type="checkbox" class="options-inline__input" name="opt4" value="3">
+                        <span class="options-inline__label">3</span>
+                    </label>
+                    <label class="options-inline__item">
+                        <input type="checkbox" class="options-inline__input" name="opt5" value="4">
+                        <span class="options-inline__label">4</span>
+                    </label>
+                    <label class="options-inline__item">
+                        <input type="checkbox" class="options-inline__input" name="opt6" value="5+">
+                        <span class="options-inline__label">5+</span>
+                    </label>
+                </div>
+            </div><!--/.filter__primary--item -->
+            <div class="filter__primary--item">
+                <div class="range">
+                    <div class="range__title">Стоимость, млн ₽</div>
+                    <div class="range__main">
+                        <div class="range__item range__item--double">
+                            <div class="range__label">от</div>
+                            <input value="5.9" type="text" data-slider="cost" class="range__value range__value--from">
+                        </div>
+                        <div class="range__divider"></div>
+                        <div class="range__item range__item--double">
+                            <div class="range__label">до</div>
+                            <input value="120.7" type="text" data-slider="cost" class="range__value range__value--to">
+                        </div>
+                    </div>
+                    <div class="range__slider">
+                        <input type="text" class="range-field-slider slider-cost">
+                    </div>
+                </div>
+            </div><!--/.filter__primary--item -->
+            <div class="filter__primary--item">
+                <div class="range">
+                    <div class="range__title">Площадь, м²</div>
+                    <div class="range__main">
+                        <div class="range__item range__item--double">
+                            <div class="range__label">от</div>
+                            <input value="15" type="text" data-slider="area" class="range__value range__value--from">
+                        </div>
+                        <div class="range__divider"></div>
+                        <div class="range__item range__item--double">
+                            <div class="range__label">до</div>
+                            <input value="270" type="text" data-slider="area" class="range__value range__value--to">
+                        </div>
+                    </div>
+                    <div class="range__slider">
+                        <input type="text" class="range-field-slider slider-area">
+                    </div>
+                </div>
+            </div><!--/.filter__primary--item -->
+            <div class="filter__primary--item">
+                <div class="range">
+                    <div class="range__title">Срок сдачи</div>
+                    <div class="range__main">
+                        <div class="range__item">
+                            <div class="range__value range__value--from">Сдан</div>
+                        </div>
+                        <div class="range__divider"></div>
+                        <div class="range__item">
+                            <div class="range__value range__value--to">IV кв 2024</div>
+                        </div>
+                    </div>
+                    <div class="range__slider">
+                        <input type="text" class="range-field-slider slider-date"
+                            data-type="double"
+                            data-min="0"
+                            data-max="13"
+                            data-to="14"
+                            data-from="1"
+                            data-postfix=""
+                            data-range-values="Сдан,III кв 2021,IV кв 2021,I кв 2022,II кв 2022,III кв 2022,IV кв 2022,I кв 2023,II кв 2023,III кв 2023,IV кв 2023,I кв 2024,II кв 2024,III кв 2024,IV кв 2024"
+                            data-param="term"
+                        >
+                    </div>
+                </div>
+            </div>
+            {% if filter_main %}
+                <div class="filter__primary--item">
+                    <div class="range">
+                        <div class="range-wrap">
+                            <div class="range__title">Этаж</div>
+                            <div class="range__main">
+                                <div class="range__item range__item--double">
+                                    <input value="7" type="text" data-slider="floor" class="range__value range__value--from">
+                                </div>
+                                <div class="range__divider"></div>
+                                <div class="range__item range__item--double">
+                                    <input value="22" type="text" data-slider="floor" class="range__value range__value--to">
+                                </div>
+                            </div>
+                            <div class="range__slider">
+                                <input type="text" class="range-field-slider slider-floor">
+                            </div>
+                        </div>
+                        <ul class="range__dropdown">
+                            <li>
+                                <button type="button" class="range__dropdown--button" data-button="not_last">не последний</button>
+                            </li>
+                            <li>
+                                <button type="button" class="range__dropdown--button" data-button="last">последний</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="filter__primary--item">
+                    <button type="button" class="btn btn-filter">Показать 1256 квартир</button>
+                </div>
+            {% endif %}
         </div>
+        <button class="filter__toggle mobile">
+            <span class="filter__toggle--text">Дополнительные фильтры</span>
+            <i class="filter__toggle--icon">
+                <svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 5.5L5 1.5L9 5.5" stroke="#FF502F" stroke-width="1.5"/>
+                </svg>
+            </i>
+        </button>
+
+        {% if not filter_main %}
+            <div class="filter__secondary">
+                <div class="filter__secondary--row">
+                    <div class="filter__secondary--item">
+                        <div class="field field-link">
+                            <input type="text" class="field__input" name="field" placeholder="Поиск">
+                            <div class="field__select">
+                                <span class="field__select--text open-location" open-tab="district">Локация</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter__secondary--item">
+                        <select name="select" class="pretty-select">
+                            <option value="Не выбрано">Прописка</option>
+                            <option value="Эконом">Нужна</option>
+                            <option value="Стандарт">Не нужна</option>
+                        </select>
+                    </div>
+                    <div class="filter__secondary--item">
+                        <div class="range">
+                            <div class="range-wrap">
+                                <div class="range__title">Этаж</div>
+                                <div class="range__main">
+                                    <div class="range__item range__item--double">
+                                        <input value="7" type="text" data-slider="floor" class="range__value range__value--from">
+                                    </div>
+                                    <div class="range__divider"></div>
+                                    <div class="range__item range__item--double">
+                                        <input value="22" type="text" data-slider="floor" class="range__value range__value--to">
+                                    </div>
+                                </div>
+                                <div class="range__slider">
+                                    <input type="text" class="range-field-slider slider-floor">
+                                </div>
+                            </div>
+                            <ul class="range__dropdown">
+                                <li>
+                                    <button type="button" class="range__dropdown--button" data-button="not_last">не последний</button>
+                                </li>
+                                <li>
+                                    <button type="button" class="range__dropdown--button" data-button="last">последний</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div><!-- /.filter__secondary--item -->
+                    <div class="filter__secondary--item">
+                        <select name="select" class="pretty-select">
+                            <option value="Не выбрано">Класс жилья</option>
+                            <option value="Эконом">Эконом</option>
+                            <option value="Стандарт">Стандарт</option>
+                            <option value="Комфорт">Комфорт</option>
+                            <option value="Комфорт+">Комфорт+</option>
+                            <option value="Бизнес">Бизнес</option>
+                            <option value="Элит">Элит</option>
+                        </select>
+                    </div><!-- /.filter__secondary--item -->
+                </div><!-- /.filter__secondary--row -->
+                <ul class="filter__secondary--inline">
+                    <li>
+                        <label class="btn-checkbox">
+                            <input type="checkbox" class="btn-checkbox__input" name="pc-1">
+                            <div class="btn-checkbox__label">
+                                <span class="btn-checkbox__text">Евро-планировка</span>
+                                <i class="btn-checkbox__icon" data-tippy-content="Подсказка" data-placement="top">
+                                    <svg class="ico-svg" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                                        <use xlink:href="img/sprites/sprite-mono.svg#info-circle" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                    </svg>
+                                </i>
+                            </div>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="btn-checkbox">
+                            <input type="checkbox" class="btn-checkbox__input" name="pc-1">
+                            <div class="btn-checkbox__label">
+                                <span class="btn-checkbox__text">Переуступка</span>
+                                <i class="btn-checkbox__icon" data-tippy-content="Подсказка" data-placement="top">
+                                    <svg class="ico-svg" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                                        <use xlink:href="img/sprites/sprite-mono.svg#info-circle" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                    </svg>
+                                </i>
+                            </div>
+                        </label>
+                    </li>
+                    <li>
+                        <div class="checkbox-group">
+                            <div class="checkbox-group__row">
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="radio" class="checkbox-group__input" name="check-group2" value="" checked>
+                                        <span class="checkbox-group__label">С отделкой</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group__item">
+                                    <label class="checkbox-group__button">
+                                        <input type="radio" class="checkbox-group__input" name="check-group2" value="">
+                                        <span class="checkbox-group__label">Без отделки</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div><!-- /.filter__secondary -->
+            <div class="filter__actions">
+                <div class="filter__actions__column">
+                    <button type="button" class="btn btn-filter">Показать 1256 квартир</button>
+                    <a href="map.html" type="button" class="btn btn-map" open-tab="metro"><img src="img/icons/about-icon-06_red.svg" alt=""> Смотреть на карте</a>
+                    <button class="btn-reset">
+                        <svg width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7 1.5L1 7.5" stroke="#FF502F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M1 1.5L7 7.5" stroke="#FF502F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Очистить фильтры</span>
+                    </button>
+                </div>
+                <div class="filter__actions__column">
+                    <button class="filter__toggle">
+                        <span class="filter__toggle--text">Дополнительные фильтры</span>
+                        <i class="filter__toggle--icon">
+                            <svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 5.5L5 1.5L9 5.5" stroke="#FF502F" stroke-width="1.5"/>
+                            </svg>
+                        </i>
+                    </button>
+                </div>
+            </div>
+            <div class="filter__params">
+                <ul class="filter__params--list">
+                    <li class="filter__params--item">
+                        <div class="filter__params--label">Применено</div>
+                    </li>
+                    <li class="filter__params--item">
+                        <div class="filter__params--value">
+                            <div class="filter__params--label">цена от 5,9 млн до 120,7 млн</div>
+                            <div class="filter__params--del">
+                                <svg class="ico-svg" viewBox="0 0 8 9" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="img/sprites/sprite-mono.svg#clear" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </div>
+                        </div>
+                    </li><!--/.filter__params--item -->
+                    <li class="filter__params--item">
+                        <div class="filter__params--value">
+                            <div class="filter__params--label">площадь от 15 м² до 270 м<sup>2</sup></div>
+                            <div class="filter__params--del">
+                                <svg class="ico-svg" viewBox="0 0 8 9" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="img/sprites/sprite-mono.svg#clear" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </div>
+                        </div>
+                    </li><!--/.filter__params--item -->
+                    <li class="filter__params--item">
+                        <div class="filter__params--value">
+                            <div class="filter__params--label">с 1 по 25 этаж</div>
+                            <div class="filter__params--del">
+                                <svg class="ico-svg" viewBox="0 0 8 9" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="img/sprites/sprite-mono.svg#clear" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </div>
+                        </div>
+                    </li><!--/.filter__params--item -->
+                </ul>
+            </div>
+            <div class="filter__progress filter-progress">
+                <div class="filter__progress--bar filter-progress-bar" style="width: 40%;"></div>
+            </div><!--/.filter-mobile__footer -->
+        {% endif %}
     </div>
-    <div class="filter__params">
-        <ul class="filter__params--list">
-            <li class="filter__params--item">
-                <div class="filter__params--label">Применено</div>
-            </li>
-            <li class="filter__params--item">
-                <div class="filter__params--value">
-                    <div class="filter__params--label">цена от 5,9 млн до 120,7 млн</div>
-                    <div class="filter__params--del">
-                        <svg class="ico-svg" viewBox="0 0 8 9" xmlns="http://www.w3.org/2000/svg">
-                            <use xlink:href="img/sprites/sprite-mono.svg#clear" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                        </svg>
-                    </div>
-                </div>
-            </li><!--/.filter__params--item -->
-            <li class="filter__params--item">
-                <div class="filter__params--value">
-                    <div class="filter__params--label">площадь от 15 м² до 270 м<sup>2</sup></div>
-                    <div class="filter__params--del">
-                        <svg class="ico-svg" viewBox="0 0 8 9" xmlns="http://www.w3.org/2000/svg">
-                            <use xlink:href="img/sprites/sprite-mono.svg#clear" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                        </svg>
-                    </div>
-                </div>
-            </li><!--/.filter__params--item -->
-            <li class="filter__params--item">
-                <div class="filter__params--value">
-                    <div class="filter__params--label">с 1 по 25 этаж</div>
-                    <div class="filter__params--del">
-                        <svg class="ico-svg" viewBox="0 0 8 9" xmlns="http://www.w3.org/2000/svg">
-                            <use xlink:href="img/sprites/sprite-mono.svg#clear" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                        </svg>
-                    </div>
-                </div>
-            </li><!--/.filter__params--item -->
-        </ul>
-    </div>
+    {% if filter_main %}
+        <a href="map.html" type="button" class="btn btn-map" open-tab="metro"><img src="img/icons/about-icon-06_red.svg" alt=""> Смотреть на карте</a>
+    {% endif %}
+</div><!--/.filter -->
+
+{% if filter_main %}
     <div class="filter__progress filter-progress">
         <div class="filter__progress--bar filter-progress-bar" style="width: 40%;"></div>
-    </div><!--/.filter-mobile__footer -->
-</div><!--/.filter -->
+    </div>
+{% endif %}

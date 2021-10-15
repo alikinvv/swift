@@ -601,6 +601,43 @@ $('body').on('click', '.item__tags--toggle', function (e) {
     $(e.currentTarget).parent().find('.item__tag').toggleClass('active');
     $(e.currentTarget).toggleClass('active');
   }
+}); // Main slider
+
+var mainSlider = new Swiper('.main__slider', {
+  slidesPerView: 1,
+  spaceBetween: 16,
+  effect: 'fade',
+  loop: true,
+  navigation: {
+    nextEl: '.main .slider-next',
+    prevEl: '.main .slider-prev'
+  },
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false
+  },
+  breakpoints: {
+    1024: {
+      spaceBetween: 16
+    },
+    1200: {
+      spaceBetween: 24
+    }
+  },
+  on: {
+    slideChange: function slideChange(index) {
+      $('.main__num span').removeClass('active');
+      $('.main__line').removeClass('active');
+
+      if ($('.main .swiper-slide').length - 2 === index.activeIndex - 1) {
+        $('.main__num span').eq(0).addClass('active');
+        $('.main__num span').eq(0).next().addClass('active');
+      } else {
+        $('.main__num span').eq(index.activeIndex - 1).addClass('active');
+        $('.main__num span').eq(index.activeIndex - 1).next().addClass('active');
+      }
+    }
+  }
 }); // Condition slider
 
 var serviceSlider = new Swiper('.conditions__slider', {

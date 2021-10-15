@@ -17,6 +17,20 @@
     border: 1px solid #ff502f;
     border-radius: $border-radius;
 
+    &.mobile {
+        @include r(767) {
+            @include fcc;
+            width: 100%;
+            padding-left: 0;
+            padding-right: 0;
+            margin-bottom: 80px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        display: none;
+    }
+
     i {
         font-size: 0;
         line-height: 0;
