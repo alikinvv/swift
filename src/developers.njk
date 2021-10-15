@@ -1,0 +1,67 @@
+{% extends "src/template/layout/_template.njk" %}
+
+{% set page_class = "page-vacancies breadcrumb-white breadcrumb-absolute" %}
+{% set is_filter = false %}
+
+{% block content %}
+
+<section class="section vacancies" style="background-image: url('../img/developer.jpg');">
+    <div class="h1">Застройщикам</div>
+</section>
+
+<div class="vacancies__text">Мы&nbsp;всегда заинтересованы в&nbsp;привлечении к&nbsp;работе профессиональных
+    и&nbsp;талантливых специалистов и&nbsp;работаем ради тех, кто ценит свое время и&nbsp;нацелен на&nbsp;результат. Так
+    что если вы&nbsp;хотите работать у&nbsp;нас&nbsp;&mdash; не&nbsp;стесняйтесь и&nbsp;просто напишите нам об&nbsp;этом
+</div>
+
+<section class="section features">
+    <h4>Готовы сотрудничать с застройщиками, желающими стать <br> нашими партнерами, и предлагаем выгодные условия:</h4>
+
+    <div class="features__list">
+        <div class="features__item">
+            <img src="img/icons/settings.svg" alt="">
+            <div class="features__text">Расчет экономической модели</div>
+        </div>
+        <div class="features__item">
+            <img src="img/icons/folder.svg" alt="">
+            <div class="features__text">Ведение документооборота</div>
+        </div>
+        <div class="features__item">
+            <img src="img/icons/share2.svg" alt="">
+            <div class="features__text">Настройку интернет-рекламы</div>
+        </div>
+        <div class="features__item">
+            <img src="img/icons/people.svg" alt="">
+            <div class="features__text">Формирование отдела продаж</div>
+        </div>
+        <div class="features__item">
+            <img src="img/icons/checkbox.svg" alt="">
+            <div class="features__text">Полное юридическое <br> сопровождение</div>
+        </div>
+        <div class="features__item">
+            <img src="img/icons/home.svg" alt="">
+            <div class="features__text">Реализацию проекта и <br> постпродажное обслуживание</div>
+        </div>
+        <div class="features__item">
+            <img src="img/icons/doc.svg" alt="">
+            <div class="features__text">Помощь в получении разрешительной <br>
+            документации: градостроительных планов, <br>
+            технической документации, экспертных <br>
+            заключений</div>
+        </div>
+        <div class="features__item">
+            <img src="img/icons/point.svg" alt="">
+            <div class="features__text">Подбор земельных участков <br> для строительства</div>
+        </div>
+    </div>
+</section>
+
+<section class="section show mb-0">
+    <h4>Остались вопросы?</h4>
+
+    <div class="show__text">Наш опыт и доверие клиента — главные приоритеты в работе агентства «Стрижи». <br>
+Ждем вашего обращения, мы всегда на связи и готовы помочь!</div>
+    <a href="javascript:void(0)" class="btn">Оставить заявку</a>
+</section>
+
+{% endblock %}
