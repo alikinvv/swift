@@ -56,6 +56,24 @@
 
     margin-bottom: 51px;
 
+    &.flex {
+        @include r(1023) {
+            margin-bottom: 80px;
+        }
+
+        @include fssb;
+        flex-wrap: wrap;
+        margin-bottom: 121px;
+
+        .features__list {
+            @include r(1023) {
+                width: 100%;
+            }
+
+            width: 60%;
+        }
+    }
+
     h4,
     h3 {
         @include r(1500) {
@@ -71,6 +89,16 @@
 
     &__list {
         @include flexlist(1px);
+
+        &.col3 {
+            .features__item {
+                @include r(767) {
+                    @include flexitem(100%, 1px, 22px);
+                }
+
+                @include flexitem(33.33%, 1px, 35px);
+            }
+        }
     }
 
     &__item {
@@ -97,6 +125,80 @@
         img {
             margin-bottom: 9px;
         }
+    }
+
+    &__person {
+        @include r(1023) {
+            order: 3;
+        }
+
+        @include r(767) {
+            flex-shrink: initial;
+            @include fsn;
+        }
+
+        @include fcn;
+        flex-shrink: 0;
+
+        img {
+            @include r(1500) {
+                margin-right: 15px;
+            }
+
+            @include r(767) {
+                width: 64px;
+            }
+
+            border-radius: 8px;
+            margin-right: 24px;
+            width: 70px;
+        }
+
+        &-name {
+            @include r(1500) {
+                font-size: 12px;
+            }
+
+            @include r(767) {
+                line-height: 1.83;
+            }
+
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        &-work {
+            @include r(767) {
+                font-size: 10px;
+                color: $primary;
+            }
+
+            color: #818285;
+            font-size: 12px;
+        }
+
+        a {
+            color: $primary;
+            transition: $trans;
+            text-decoration: none;
+
+            &:hover {
+                color: $red;
+            }
+        }
+    }
+
+    &__desc {
+        @include r(1023) {
+            margin-top: 6px;
+            margin-bottom: 39px;
+        }
+
+        @include r(767) {
+            margin-top: 22px;
+        }
+
+        margin-top: 46px;
     }
 }
 

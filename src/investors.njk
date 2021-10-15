@@ -1,0 +1,56 @@
+{% extends "src/template/layout/_template.njk" %}
+
+{% set page_class = "page-vacancies breadcrumb-white breadcrumb-absolute" %}
+{% set is_filter = false %}
+
+{% block content %}
+
+<section class="section vacancies" style="background-image: url('../img/investors.jpg');">
+    <div class="h1">Инвесторам</div>
+</section>
+
+<section class="section features flex">
+    <div class="features__list col3">
+        <div class="features__item">
+            <img src="img/icons/chart2.svg" alt="">
+            <div class="features__text">Подберем объект с <br> максимальной доходностью</div>
+        </div>
+        <div class="features__item">
+            <img src="img/icons/doc.svg" alt="">
+            <div class="features__text">Согласуем специальные <br> условия сделки</div>
+        </div>
+        <div class="features__item">
+            <img src="img/icons/message.svg" alt="">
+            <div class="features__text">Общаемся за вас с <br> застройщиком и банками</div>
+        </div>
+    </div>
+
+    <div class="features__person">
+        <img src="img/person.jpg" alt="">
+        <div>
+            <div class="features__person-name">Константин Константинопольский</div>
+            <div class="features__person-work">Главный менеджер</div>
+            <a href="tel:890990990999">8 909 909 99 99</a>
+        </div>
+    </div>
+
+    <div class="features__desc">
+        Инвестиции в&nbsp;объекты недвижимости&nbsp;&mdash; надежный способ не&nbsp;только сохранить,
+        но&nbsp;и <br> приумножить капитал в&nbsp;современных
+        реалиях. Банковские вклады, равно как и <br> покупка акций, облигаций и&nbsp;прочих ценных бумаг связаны
+        с&nbsp;высокими
+        рисками и <br> постоянно вовлеченностью в&nbsp;процесс. Покупка недвижимости&nbsp;же&nbsp;&mdash; это
+        гарантированная сохранность <br> средств,
+        т.к. ликвидна как актив в&nbsp;любое время (особенно если была куплена на <br> раннем этапе строительства)
+    </div>
+</section>
+
+<section class="section mb-0">
+    <div class="section__header">
+        <div class="section__header--title">Объекты месяца</div>
+    </div>
+
+    {% include "src/template/parts/_apartments.njk" %}
+</section>
+
+{% endblock %}
