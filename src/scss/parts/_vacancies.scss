@@ -1,0 +1,190 @@
+.vacancies {
+    @include r(1500) {
+        height: 360px;
+    }
+
+    @include r(1023) {
+        height: 240px;
+        padding: 39px 65px;
+        margin-bottom: 41px;
+    }
+
+    @include r(767) {
+        height: 118px;
+        padding: 23px 65px;
+        margin-bottom: 24px;
+    }
+
+    width: calc(100% + 130px);
+    margin-left: -65px;
+    position: relative;
+    height: 480px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    @include fen;
+    padding: 80px 65px;
+    margin-bottom: 82px;
+
+    .h1 {
+        margin-bottom: 0;
+        color: #fff;
+    }
+
+    &__text {
+        @include r(1023) {
+            display: block;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.71;
+            margin-bottom: 40px;
+        }
+
+        @include r(767) {
+            font-size: 12px;
+            line-height: 1.83;
+        }
+
+        display: none;
+    }
+}
+
+.features {
+    @include r(1023) {
+        margin-bottom: 68px;
+    }
+
+    margin-bottom: 51px;
+
+    h3 {
+        @include r(1500) {
+            margin-bottom: 40px;
+        }
+
+        @include r(1023) {
+            display: none;
+        }
+
+        margin-bottom: 80px;
+    }
+
+    &__list {
+        @include flexlist(1px);
+    }
+
+    &__item {
+        @include r(1500) {
+            font-size: 12px;
+            line-height: 1.83;
+            @include flexitem(33.33%, 1px, 35px);
+        }
+
+        @include r(1023) {
+            @include flexitem(50%, 1px, 35px);
+
+            br {
+                display: none;
+            }
+        }
+
+        @include r(767) {
+            @include flexitem(100%, 1px, 22px);
+        }
+
+        @include flexitem(25%, 1px, 35px);
+
+        img {
+            margin-bottom: 9px;
+        }
+    }
+}
+
+.cols {
+    @include r(1023) {
+        display: none;
+    }
+
+    &__list {
+        @include flexlist(20px);
+    }
+
+    &__item {
+        @include r(1500) {
+            @include flexitem(33.33%, 20px);
+        }
+
+        @include flexitem(25%, 20px);
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 1.71;
+    }
+}
+
+.show {
+    @include r(1500) {
+        padding: 34px 65px;
+    }
+
+    @include r(1023) {
+        width: calc(100% + 130px);
+        margin-left: -65px;
+        padding: 36px 65px;
+    }
+
+    background: #f5f5f5;
+    padding: 40px 65px;
+
+    h4 {
+        @include r(1500) {
+            margin-bottom: 17px;
+        }
+
+        @include r(1023) {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        margin-bottom: 27px;
+    }
+
+    &__text {
+        @include r(1500) {
+            margin-bottom: 23px;
+        }
+
+        @include r(1023) {
+            margin-bottom: 42px;
+        }
+
+        @include r(767) {
+            font-size: 12px;
+            line-height: 1.83;
+        }
+
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.71;
+        margin-bottom: 40px;
+    }
+
+    .btn {
+        @include r(1500) {
+            font-size: 10px;
+            padding: 13px 16px;
+        }
+
+        @include r(1023) {
+            padding-left: 0;
+            padding-right: 0;
+            width: 100%;
+            font-size: 12px;
+        }
+
+        @include r(767) {
+            font-size: 10px;
+            margin-bottom: 25px;
+        }
+
+        padding: 13px 40px;
+    }
+}

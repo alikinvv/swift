@@ -1,0 +1,67 @@
+{% extends "src/template/layout/_template.njk" %}
+
+{% set page_class = "page-vacancies breadcrumb-white breadcrumb-absolute" %}
+{% set is_filter = false %}
+
+{% block content %}
+
+<section class="section vacancies" style="background-image: url('../img/vacancies.jpg');">
+    <div class="h1">Вакансии</div>
+</section>
+
+<div class="vacancies__text">Мы&nbsp;всегда заинтересованы в&nbsp;привлечении к&nbsp;работе профессиональных
+    и&nbsp;талантливых специалистов и&nbsp;работаем ради тех, кто ценит свое время и&nbsp;нацелен на&nbsp;результат. Так
+    что если вы&nbsp;хотите работать у&nbsp;нас&nbsp;&mdash; не&nbsp;стесняйтесь и&nbsp;просто напишите нам об&nbsp;этом
+</div>
+
+<section class="section features">
+    <h3>Преимущества работы у нас</h3>
+
+    <div class="features__list">
+        <div class="features__item">
+            <img src="img/icons/money.svg" alt="">
+            <div class="features__text">Конкурентная заработная <br> плата</div>
+        </div>
+        <div class="features__item">
+            <img src="img/icons/people.svg" alt="">
+            <div class="features__text">Равные возможности для <br> всех сотрудников</div>
+        </div>
+        <div class="features__item">
+            <img src="img/icons/badge.svg" alt="">
+            <div class="features__text">Обучение и приобретение <br> новых навыков</div>
+        </div>
+        <div class="features__item">
+            <img src="img/icons/doc.svg" alt="">
+            <div class="features__text">Комфортные условия труда</div>
+        </div>
+        <div class="features__item">
+            <img src="img/icons/rotate.svg" alt="">
+            <div class="features__text">Налаженные рабочие процессы</div>
+        </div>
+        <div class="features__item">
+            <img src="img/icons/chart.svg" alt="">
+            <div class="features__text">Возможности для самореализации и <br> карьерного роста</div>
+        </div>
+    </div>
+</section>
+
+<section class="section cols">
+    <div class="cols__list">
+        <div class="cols__item">Мы&nbsp;всегда заинтересованы в&nbsp;привлечении к&nbsp;работе профессиональных
+            и&nbsp;талантливых специалистов и&nbsp;работаем ради тех, кто ценит свое время и&nbsp;нацелен
+            на&nbsp;результат</div>
+        <div class="cols__item">Так что если вы&nbsp;хотите работать у&nbsp;нас&nbsp;&mdash; не&nbsp;стесняйтесь
+            и&nbsp;просто
+            напишите нам об&nbsp;этом</div>
+    </div>
+</section>
+
+<section class="section show mb-0">
+    <h4>Открытые вакансии</h4>
+
+    <div class="show__text">Будем рады видеть вас в нашем коллективе. Отправить резюме <br> и сопроводительное письмо
+        можно по адресу <a href="mailto:job@strizhi.estate">job@strizhi.estate</a></div>
+    <a href="javascript:void(0)" class="btn">Посмотреть вакансии</a>
+</section>
+
+{% endblock %}

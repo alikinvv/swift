@@ -1,3 +1,54 @@
+.breadcrumb-absolute {
+    .breadcrumb {
+        @include r(1279) {
+            left: 18px;
+        }
+
+        position: absolute;
+        top: 0;
+        left: 65px;
+        z-index: 2;
+    }
+}
+
+.breadcrumb-white {
+    .breadcrumb__item {
+        @include r(1023) {
+            color: #818285;
+        }
+
+        color: #fff;
+
+        &.active {
+            color: #fff;
+            opacity: 0.5;
+        }
+    }
+
+    .breadcrumb__toggle.active,
+    .breadcrumb__toggle {
+        path {
+            stroke: #fff;
+        }
+    }
+
+    .breadcrumb__back {
+        &:hover {
+            color: #fff;
+        }
+
+        color: #fff;
+
+        svg {
+            fill: #fff;
+        }
+    }
+
+    .breadcrumb__main li:before {
+        background: #fff;
+    }
+}
+
 .breadcrumb {
     @include r(1023) {
         @include fcs;
