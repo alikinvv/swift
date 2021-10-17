@@ -1,0 +1,193 @@
+{% extends "src/template/layout/_template.njk" %}
+
+{%- set page_hide_breadcrumb = true -%}
+{% set page_class = "page-news" %}
+{% set is_filter = false %}
+{% set title = "Новости и акции" %}
+
+{% block content %}
+
+<div class="tags">
+    <div class="swiper-container tags__slider">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <a href="javascript:void(0)" class="tags__item active">Все</a>
+            </div>
+            <div class="swiper-slide">
+                <a href="javascript:void(0)" class="tags__item">Хорошевский</a>
+            </div>
+            <div class="swiper-slide">
+                <a href="javascript:void(0)" class="tags__item">Мосфильмовский</a>
+            </div>
+            <div class="swiper-slide">
+                <a href="javascript:void(0)" class="tags__item">Сити Парк</a>
+            </div>
+            <div class="swiper-slide">
+                <a href="javascript:void(0)" class="tags__item">Парковый</a>
+            </div>
+            <div class="swiper-slide">
+                <a href="javascript:void(0)" class="tags__item">Пехра</a>
+            </div>
+            <div class="swiper-slide">
+                <a href="javascript:void(0)" class="tags__item">Императорские мытищи</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section mb-0">
+    <div class="section__content">
+        <div class="post__list">
+            <a href="javascript:void(0)" class="post-preview">
+                <div class="post-preview__image">
+                    <img src="img/content/post/post_perview__01.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="post-preview__content">
+                    <div class="post-preview__title">Акция «Детская ипотека»</div>
+                    <div class="post-preview__text">Рассрочки для молодых семей и молодоженов</div>
+                    <div class="post-preview__date">До 24 сентября 2024</div>
+                </div>
+            </a>
+            <a href="javascript:void(0)" class="post-preview">
+                <div class="post-preview__image">
+                    <img src="img/content/post/post_perview__02.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="post-preview__content">
+                    <div class="post-preview__title">Акция «Детская ипотека»</div>
+                    <div class="post-preview__date">До 24 сентября 2024</div>
+                </div>
+            </a>
+            <a href="javascript:void(0)" class="post-preview">
+                <div class="post-preview__image">
+                    <img src="img/content/post/post_perview__03.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="post-preview__content">
+                    <div class="post-preview__title">Скидка 2% на готовые квартиры в ЖК «Домашний»</div>
+                    <div class="post-preview__date">До 24 сентября 2024</div>
+                </div>
+            </a>
+            <a href="javascript:void(0)" class="post-preview">
+                <div class="post-preview__image">
+                    <img src="img/content/post/post_perview__02.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="post-preview__content">
+                    <div class="post-preview__title">Акция «Детская ипотека»</div>
+                    <div class="post-preview__date">До 24 сентября 2024</div>
+                </div>
+            </a>
+            <a href="javascript:void(0)" class="post-preview">
+                <div class="post-preview__image">
+                    <img src="img/content/post/post_perview__01.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="post-preview__content">
+                    <div class="post-preview__title">Акция «Детская ипотека»</div>
+                    <div class="post-preview__text">Рассрочки для молодых семей и молодоженов</div>
+                    <div class="post-preview__date">До 24 сентября 2024</div>
+                </div>
+            </a>
+            <a href="javascript:void(0)" class="post-preview">
+                <div class="post-preview__image">
+                    <img src="img/content/post/post_perview__02.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="post-preview__content">
+                    <div class="post-preview__title">Акция «Детская ипотека»</div>
+                    <div class="post-preview__date">До 24 сентября 2024</div>
+                </div>
+            </a>
+            <a href="javascript:void(0)" class="post-preview">
+                <div class="post-preview__image">
+                    <img src="img/content/post/post_perview__03.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="post-preview__content">
+                    <div class="post-preview__title">Скидка 2% на готовые квартиры в ЖК «Домашний»</div>
+                    <div class="post-preview__date">До 24 сентября 2024</div>
+                </div>
+            </a>
+            <a href="javascript:void(0)" class="post-preview">
+                <div class="post-preview__image">
+                    <img src="img/content/post/post_perview__02.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="post-preview__content">
+                    <div class="post-preview__title">Акция «Детская ипотека»</div>
+                    <div class="post-preview__date">До 24 сентября 2024</div>
+                </div>
+            </a>
+            <a href="javascript:void(0)" class="post-preview">
+                <div class="post-preview__image">
+                    <img src="img/content/post/post_perview__01.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="post-preview__content">
+                    <div class="post-preview__title">Акция «Детская ипотека»</div>
+                    <div class="post-preview__text">Рассрочки для молодых семей и молодоженов</div>
+                    <div class="post-preview__date">До 24 сентября 2024</div>
+                </div>
+            </a>
+            <a href="javascript:void(0)" class="post-preview">
+                <div class="post-preview__image">
+                    <img src="img/content/post/post_perview__02.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="post-preview__content">
+                    <div class="post-preview__title">Акция «Детская ипотека»</div>
+                    <div class="post-preview__date">До 24 сентября 2024</div>
+                </div>
+            </a>
+            <a href="javascript:void(0)" class="post-preview">
+                <div class="post-preview__image">
+                    <img src="img/content/post/post_perview__03.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="post-preview__content">
+                    <div class="post-preview__title">Скидка 2% на готовые квартиры в ЖК «Домашний»</div>
+                    <div class="post-preview__date">До 24 сентября 2024</div>
+                </div>
+            </a>
+            <a href="javascript:void(0)" class="post-preview">
+                <div class="post-preview__image">
+                    <img src="img/content/post/post_perview__02.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="post-preview__content">
+                    <div class="post-preview__title">Акция «Детская ипотека»</div>
+                    <div class="post-preview__date">До 24 сентября 2024</div>
+                </div>
+            </a>
+            <a href="javascript:void(0)" class="post-preview">
+                <div class="post-preview__image">
+                    <img src="img/content/post/post_perview__01.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="post-preview__content">
+                    <div class="post-preview__title">Акция «Детская ипотека»</div>
+                    <div class="post-preview__text">Рассрочки для молодых семей и молодоженов</div>
+                    <div class="post-preview__date">До 24 сентября 2024</div>
+                </div>
+            </a>
+            <a href="javascript:void(0)" class="post-preview">
+                <div class="post-preview__image">
+                    <img src="img/content/post/post_perview__02.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="post-preview__content">
+                    <div class="post-preview__title">Акция «Детская ипотека»</div>
+                    <div class="post-preview__date">До 24 сентября 2024</div>
+                </div>
+            </a>
+            <a href="javascript:void(0)" class="post-preview">
+                <div class="post-preview__image">
+                    <img src="img/content/post/post_perview__03.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="post-preview__content">
+                    <div class="post-preview__title">Скидка 2% на готовые квартиры в ЖК «Домашний»</div>
+                    <div class="post-preview__date">До 24 сентября 2024</div>
+                </div>
+            </a>
+            <a href="javascript:void(0)" class="post-preview">
+                <div class="post-preview__image">
+                    <img src="img/content/post/post_perview__02.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="post-preview__content">
+                    <div class="post-preview__title">Акция «Детская ипотека»</div>
+                    <div class="post-preview__date">До 24 сентября 2024</div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -29,6 +29,30 @@
         }
     }
 
+    &__list {
+        @include r(1023) {
+            @include flexlist(12px);
+        }
+
+        @include r(767) {
+            @include flexlist(1px);
+        }
+
+        @include flexlist(20px);
+
+        .post-preview {
+            @include r(1023) {
+                @include flexitem(50%, 12px, 24px);
+            }
+
+            @include r(767) {
+                @include flexitem(100%, 1px, 24px);
+            }
+
+            @include flexitem(25%, 20px, 40px);
+        }
+    }
+
     .highlighted {
         background: rgba($red, 0.3);
         padding: 3px 0;
