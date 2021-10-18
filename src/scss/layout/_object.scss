@@ -82,36 +82,39 @@
             border-radius: 50%;
 
             &.left::before {
-                opacity: 1;
+                transform: translate(-50%, -50%) rotate(0deg);
             }
 
-            &.right::after {
-                opacity: 1;
+            &.right::before {
+                transform: translate(-50%, -50%) rotate(180deg);
             }
 
             &::before {
                 content: '';
-                @include centerYa;
-                left: -25px;
-                background: url('../img/icons/direction.svg') no-repeat center;
-                background-size: contain;
-                width: 17px;
-                height: 17px;
-                opacity: 0;
-                transition: $trans;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                background: url('../img/icons/direction.svg') no-repeat 0 50%;
+                background-size: 15px;
+                width: 120px;
+                height: 120px;
+                opacity: 1;
+                transition: all 0.6s ease-in-out;
+                border-radius: 50%;
             }
 
-            &::after {
-                content: '';
-                @include centerYa;
-                right: -25px;
-                background: url('../img/icons/direction-right.svg') no-repeat center;
-                background-size: contain;
-                width: 17px;
-                height: 17px;
-                opacity: 0;
-                transition: $trans;
-            }
+            // &::after {
+            //     content: '';
+            //     @include centerYa;
+            //     right: -25px;
+            //     background: url('../img/icons/direction-right.svg') no-repeat center;
+            //     background-size: contain;
+            //     width: 17px;
+            //     height: 17px;
+            //     opacity: 0;
+            //     transition: $trans;
+            // }
         }
     }
 
