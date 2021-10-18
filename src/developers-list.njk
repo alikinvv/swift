@@ -1,0 +1,183 @@
+{% extends "src/template/layout/_template.njk" %}
+
+{%- set page_hide_breadcrumb = true -%}
+{% set page_class = "page-developers" %}
+{% set is_filter = false %}
+{% set title = "Застройщики" %}
+
+{% block content %}
+
+<section class="section developers mb-0">
+    <select name="developers" class="pretty-select">
+        <option value="" disabled selected>Поиск по застройщику</option>
+        <option value="ЛСР Недвижимость Северо-Запад">ЛСР Недвижимость Северо-Запад</option>
+        <option value="РГ-Девелопмент">РГ-Девелопмент</option>
+        <option value="ГК Самолет">ГК Самолет</option>
+        <option value="ПИК">ПИК</option>
+        <option value="Питерстрой">Питерстрой</option>
+    </select>
+
+    <div class="developers__list">
+        <a href="javascript:void(0)" class="developers__item">
+            <div class="developers__img">
+                <img src="img/pik.svg" alt="">
+            </div>
+            <div class="developers__info">
+                <div class="developers__name">ПИК</div>
+                <div class="developers__features">
+                    <div class="developers__features-item"><span>44</span>Строящиеся</div>
+                    <div class="developers__features-item"><span>44</span>Построено</div>
+                </div>
+                <div class="developers__text">Переуступка – это сделка по продаже недвижимости и текста..</div>
+            </div>
+        </a>
+        <a href="javascript:void(0)" class="developers__item">
+            <div class="developers__img">
+                <img src="img/fly.svg" alt="">
+            </div>
+            <div class="developers__info">
+                <div class="developers__name">ГК Самолет</div>
+                <div class="developers__features">
+                    <div class="developers__features-item"><span>44</span>Строящиеся</div>
+                    <div class="developers__features-item"><span>44</span>Построено</div>
+                </div>
+                <div class="developers__text">Переуступка – это сделка по продаже недвижимости и текста..</div>
+            </div>
+        </a>
+        <a href="javascript:void(0)" class="developers__item">
+            <div class="developers__img">
+                <img src="img/mic.svg" alt="">
+            </div>
+            <div class="developers__info">
+                <div class="developers__name">МИЦ Группа компаний</div>
+                <div class="developers__features">
+                    <div class="developers__features-item"><span>44</span>Строящиеся</div>
+                    <div class="developers__features-item"><span>44</span>Построено</div>
+                </div>
+                <div class="developers__text">Переуступка – это сделка по продаже недвижимости и текста..</div>
+            </div>
+        </a>
+        <a href="javascript:void(0)" class="developers__item">
+            <div class="developers__img">
+                <img src="img/rg.svg" alt="">
+            </div>
+            <div class="developers__info">
+                <div class="developers__name">РГ-Девелопмент</div>
+                <div class="developers__features">
+                    <div class="developers__features-item"><span>44</span>Строящиеся</div>
+                    <div class="developers__features-item"><span>44</span>Построено</div>
+                </div>
+                <div class="developers__text">Переуступка – это сделка по продаже недвижимости и текста..</div>
+            </div>
+        </a>
+        <a href="javascript:void(0)" class="developers__item">
+            <div class="developers__img">
+                <img src="img/pik.svg" alt="">
+            </div>
+            <div class="developers__info">
+                <div class="developers__name">ПИК</div>
+                <div class="developers__features">
+                    <div class="developers__features-item"><span>44</span>Строящиеся</div>
+                    <div class="developers__features-item"><span>44</span>Построено</div>
+                </div>
+                <div class="developers__text">Переуступка – это сделка по продаже недвижимости и текста..</div>
+            </div>
+        </a>
+        <a href="javascript:void(0)" class="developers__item">
+            <div class="developers__img">
+                <img src="img/fly.svg" alt="">
+            </div>
+            <div class="developers__info">
+                <div class="developers__name">ГК Самолет</div>
+                <div class="developers__features">
+                    <div class="developers__features-item"><span>44</span>Строящиеся</div>
+                    <div class="developers__features-item"><span>44</span>Построено</div>
+                </div>
+                <div class="developers__text">Переуступка – это сделка по продаже недвижимости и текста..</div>
+            </div>
+        </a>
+        <a href="javascript:void(0)" class="developers__item">
+            <div class="developers__img">
+                <img src="img/mic.svg" alt="">
+            </div>
+            <div class="developers__info">
+                <div class="developers__name">МИЦ Группа компаний</div>
+                <div class="developers__features">
+                    <div class="developers__features-item"><span>44</span>Строящиеся</div>
+                    <div class="developers__features-item"><span>44</span>Построено</div>
+                </div>
+                <div class="developers__text">Переуступка – это сделка по продаже недвижимости и текста..</div>
+            </div>
+        </a>
+        <a href="javascript:void(0)" class="developers__item">
+            <div class="developers__img">
+                <img src="img/rg.svg" alt="">
+            </div>
+            <div class="developers__info">
+                <div class="developers__name">РГ-Девелопмент</div>
+                <div class="developers__features">
+                    <div class="developers__features-item"><span>44</span>Строящиеся</div>
+                    <div class="developers__features-item"><span>44</span>Построено</div>
+                </div>
+                <div class="developers__text">Переуступка – это сделка по продаже недвижимости и текста..</div>
+            </div>
+        </a>
+        <a href="javascript:void(0)" class="developers__item">
+            <div class="developers__img">
+                <img src="img/pik.svg" alt="">
+            </div>
+            <div class="developers__info">
+                <div class="developers__name">ПИК</div>
+                <div class="developers__features">
+                    <div class="developers__features-item"><span>44</span>Строящиеся</div>
+                    <div class="developers__features-item"><span>44</span>Построено</div>
+                </div>
+                <div class="developers__text">Переуступка – это сделка по продаже недвижимости и текста..</div>
+            </div>
+        </a>
+        <a href="javascript:void(0)" class="developers__item">
+            <div class="developers__img">
+                <img src="img/fly.svg" alt="">
+            </div>
+            <div class="developers__info">
+                <div class="developers__name">ГК Самолет</div>
+                <div class="developers__features">
+                    <div class="developers__features-item"><span>44</span>Строящиеся</div>
+                    <div class="developers__features-item"><span>44</span>Построено</div>
+                </div>
+                <div class="developers__text">Переуступка – это сделка по продаже недвижимости и текста..</div>
+            </div>
+        </a>
+        <a href="javascript:void(0)" class="developers__item">
+            <div class="developers__img">
+                <img src="img/mic.svg" alt="">
+            </div>
+            <div class="developers__info">
+                <div class="developers__name">МИЦ Группа компаний</div>
+                <div class="developers__features">
+                    <div class="developers__features-item"><span>44</span>Строящиеся</div>
+                    <div class="developers__features-item"><span>44</span>Построено</div>
+                </div>
+                <div class="developers__text">Переуступка – это сделка по продаже недвижимости и текста..</div>
+            </div>
+        </a>
+        <a href="javascript:void(0)" class="developers__item">
+            <div class="developers__img">
+                <img src="img/rg.svg" alt="">
+            </div>
+            <div class="developers__info">
+                <div class="developers__name">РГ-Девелопмент</div>
+                <div class="developers__features">
+                    <div class="developers__features-item"><span>44</span>Строящиеся</div>
+                    <div class="developers__features-item"><span>44</span>Построено</div>
+                </div>
+                <div class="developers__text">Переуступка – это сделка по продаже недвижимости и текста..</div>
+            </div>
+        </a>
+    </div>
+
+    <a href="javascript:void(0)" class="btn">Показать еще 12</a>
+</section>
+
+
+{% endblock %}
