@@ -814,7 +814,7 @@ var objectPromoSlider = new Swiper('.object-promo-slider', {
     }
   }
 });
-var objectPromoSliderFull = new Swiper('.object-promo-slider-full', {
+var objectPromoSliderFull = new Swiper('.object-promo-slider-full:not(.fade)', {
   slidesPerView: 1,
   spaceBetween: 8,
   allowTouchMove: true,
@@ -823,6 +823,34 @@ var objectPromoSliderFull = new Swiper('.object-promo-slider-full', {
     delay: 5000,
     disableOnInteraction: false
   },
+  pagination: {
+    el: '.swiper-pagination',
+    type: 'fraction'
+  },
+  navigation: {
+    nextEl: '.object-promo-next',
+    prevEl: '.object-promo-prev'
+  },
+  breakpoints: {
+    768: {
+      spaceBetween: 16
+    },
+    1200: {
+      spaceBetween: 24,
+      allowTouchMove: false
+    }
+  }
+});
+var objectPromoSliderFullFade = new Swiper('.object-promo-slider-full.fade', {
+  slidesPerView: 1,
+  spaceBetween: 8,
+  allowTouchMove: true,
+  loop: true,
+  effect: 'fade',
+  // autoplay: {
+  //     delay: 5000,
+  //     disableOnInteraction: false,
+  // },
   pagination: {
     el: '.swiper-pagination',
     type: 'fraction'

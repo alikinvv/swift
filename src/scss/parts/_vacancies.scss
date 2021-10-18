@@ -223,7 +223,7 @@
     }
 }
 
-.show {
+section.show {
     @include r(1500) {
         padding: 34px 65px;
     }
@@ -250,7 +250,7 @@
         margin-bottom: 27px;
     }
 
-    &__text {
+    .show__text {
         @include r(1500) {
             margin-bottom: 23px;
         }

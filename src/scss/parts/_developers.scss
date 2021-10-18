@@ -1,0 +1,500 @@
+.developers {
+    .choices {
+        @include r(1500) {
+            margin-top: 39px;
+            max-width: 500px;
+        }
+
+        @include r(1279) {
+            margin-bottom: 40px;
+        }
+
+        @include r(1023) {
+            margin-top: 23px;
+            max-width: 100%;
+        }
+
+        max-width: 692px;
+        margin-top: 80px;
+        margin-bottom: 80px;
+
+        .choices__list--dropdown .choices__item {
+            position: relative;
+            padding-left: 48px;
+
+            &::before {
+                content: '';
+                @include centerYa;
+                left: 16px;
+                width: 16px;
+                height: 22px;
+                background: url('../img/icons/crane.svg') no-repeat center;
+                background-size: contain;
+            }
+        }
+    }
+
+    &__list {
+        @include r(1279) {
+            @include flexlist(10px);
+        }
+
+        @include r(1023) {
+            @include flexlist(12px);
+        }
+
+        @include r(767) {
+            @include flexlist(1px);
+        }
+
+        @include flexlist(20px);
+    }
+
+    &__item {
+        @include r(1500) {
+            height: 278px;
+            @include flexitem(25%, 20px, 40px);
+        }
+
+        @include r(1279) {
+            height: initial;
+            background: #fff;
+            box-shadow: 2px 2px 40px rgba(0, 0, 0, 0.08);
+            @include flexitem(25%, 10px, 40px);
+            padding: 24px 16px;
+        }
+
+        @include r(1023) {
+            @include flexitem(50%, 12px, 24px);
+        }
+
+        @include r(767) {
+            @include flexitem(100%, 1px, 24px);
+        }
+
+        @include flexitem(25%, 20px, 80px);
+        position: relative;
+        color: $primary;
+        text-decoration: none;
+        font-weight: 500;
+        height: 382px;
+
+        &:hover {
+            color: $primary;
+        }
+    }
+
+    @media screen and (min-width: 1280px) {
+        .developers__item:hover {
+            color: $primary;
+
+            .developers__img {
+                @include r(1500) {
+                    height: 102px;
+                }
+
+                height: 152px;
+
+                img {
+                    @include r(1500) {
+                        max-height: 80px;
+                    }
+
+                    max-height: 100px;
+                }
+            }
+
+            .developers__features {
+                display: flex;
+            }
+
+            .developers__text {
+                display: block;
+            }
+        }
+    }
+
+    &__img {
+        @include r(1500) {
+            width: 230px;
+            height: 230px;
+            margin-bottom: 25px;
+        }
+
+        @include r(1279) {
+            box-shadow: none;
+            width: initial;
+            height: initial;
+        }
+
+        @include r(1023) {
+            margin-bottom: 15px;
+        }
+
+        @include r(767) {
+            margin-bottom: 43px;
+        }
+
+        background: #fff;
+        box-shadow: 2px 2px 40px rgba(0, 0, 0, 0.08);
+        height: 326px;
+        width: 326px;
+        @include fcc;
+        margin-bottom: 30px;
+        transition: $trans;
+
+        img {
+            @include r(1500) {
+                max-width: 148px;
+            }
+
+            @include r(1279) {
+                height: 110px;
+                max-width: 90%;
+            }
+
+            @include r(1023) {
+                max-width: 174px;
+            }
+
+            @include r(767) {
+                max-width: 148px;
+            }
+
+            transition: $trans;
+            max-height: 140px;
+            max-width: 226px;
+        }
+    }
+
+    &__name {
+        @include r(1500) {
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        @include r(1023) {
+            margin-bottom: 23px;
+        }
+
+        @include r(767) {
+            margin-bottom: 29px;
+        }
+
+        margin-bottom: 30px;
+        font-size: 16px;
+    }
+
+    &__features {
+        @include r(1500) {
+            font-size: 10px;
+            margin-bottom: 13px;
+        }
+
+        @include r(1279) {
+            display: flex;
+        }
+
+        @include r(1023) {
+            font-size: 12px;
+            margin-bottom: 25px;
+        }
+
+        @include fcn;
+        display: none;
+        font-size: 12px;
+        font-weight: 400;
+        margin-bottom: 24px;
+
+        &-item {
+            @include r(767) {
+                margin-right: 40px;
+            }
+
+            margin-right: 54px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            span {
+                @include r(1500) {
+                    font-size: 16px;
+                    margin-bottom: -6px;
+                }
+
+                @include r(1023) {
+                    margin-bottom: 5px;
+                }
+
+                @include r(767) {
+                    font-size: 24px;
+                    font-weight: 600;
+                }
+
+                display: block;
+                color: $red;
+                font-weight: 600;
+                font-size: 20px;
+                margin-bottom: 3px;
+            }
+        }
+    }
+
+    &__text {
+        @include r(1500) {
+            font-size: 12px;
+            line-height: 1.83;
+            font-weight: 400;
+        }
+
+        @include r(1279) {
+            display: block;
+        }
+
+        @include r(1023) {
+            font-size: 14px;
+            line-height: 1.71;
+        }
+
+        @include r(767) {
+            font-size: 12px;
+            line-height: 1.83;
+        }
+
+        display: none;
+        font-weight: 400;
+    }
+
+    .btn {
+        @include r(1500) {
+            margin-top: 82px;
+        }
+
+        @include r(1279) {
+            margin-top: 64px;
+        }
+
+        @include r(1023) {
+            width: 100%;
+            padding-left: 0;
+            padding-right: 0;
+            font-size: 12px;
+            font-weight: 500;
+            margin-top: 47px;
+        }
+
+        @include r(767) {
+            margin-top: 17px;
+        }
+
+        @include centerX;
+        font-size: 14px;
+        font-weight: 500;
+        margin-top: 20px;
+        padding: 13px 15px;
+        position: relative;
+        z-index: 2;
+    }
+}
+
+.developer {
+    @include r(1023) {
+        margin-top: 0;
+    }
+
+    @include r(767) {
+        margin-top: -6px;
+    }
+
+    margin-top: 16px;
+
+    & > h2 {
+        @include r(767) {
+            display: block;
+        }
+
+        display: none;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 1.33;
+    }
+
+    &__main {
+        @include r(767) {
+            display: block;
+        }
+
+        display: flex;
+    }
+
+    &__left {
+        @include r(1500) {
+            width: 230px;
+        }
+
+        @include r(767) {
+            width: 100%;
+            margin-bottom: 46px;
+        }
+
+        width: 326px;
+        margin-right: 40px;
+        flex-shrink: 0;
+
+        a {
+            @include r(1500) {
+                font-weight: 500;
+                font-size: 14px;
+                margin-bottom: 7px;
+            }
+
+            @include r(1023) {
+                margin-bottom: 18px;
+                color: $red;
+            }
+
+            display: block;
+            text-decoration: none;
+            color: $primary;
+            font-weight: 500;
+            font-size: 16px;
+            margin-bottom: 14px;
+
+            &.mail {
+                color: $red;
+            }
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__addr {
+        @include r(1500) {
+            font-size: 12px;
+            line-height: 1.83;
+        }
+
+        @include r(767) {
+            br {
+                display: none;
+            }
+        }
+
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.71;
+    }
+
+    &__img {
+        @include r(1500) {
+            width: 230px;
+            height: 230px;
+            margin-bottom: 23px;
+        }
+
+        @include r(1023) {
+            margin-bottom: 25px;
+        }
+
+        @include r(767) {
+            width: 288px;
+            height: 288px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 29px;
+        }
+
+        width: 326px;
+        height: 326px;
+        background: linear-gradient(0deg, #ffffff, #ffffff);
+        box-shadow: 2px 2px 40px rgba(0, 0, 0, 0.08);
+        @include fcc;
+        margin-bottom: 30px;
+
+        img {
+            @include r(1500) {
+                max-width: 190px;
+                max-height: 190px;
+            }
+
+            max-width: 280px;
+            max-height: 280px;
+        }
+    }
+
+    &__info {
+        h2 {
+            @include r(1500) {
+                margin-bottom: 45px;
+            }
+
+            @include r(1023) {
+                margin-bottom: 48px;
+            }
+
+            @include r(767) {
+                display: none;
+            }
+
+            margin-bottom: 56px;
+        }
+    }
+
+    &__features {
+        @include r(767) {
+            justify-content: space-between;
+        }
+
+        display: flex;
+        margin-bottom: 40px;
+
+        &-item {
+            @include r(767) {
+                margin-right: 0;
+            }
+
+            font-size: 12px;
+            font-weight: 500;
+            margin-right: 42px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            span {
+                @include r(1500) {
+                    font-size: 32px;
+                    margin-bottom: 8px;
+                }
+
+                @include r(1023) {
+                    margin-bottom: 10px;
+                }
+
+                @include r(767) {
+                    font-size: 24px;
+                    margin-bottom: 5px;
+                }
+
+                font-weight: 600;
+                font-size: 40px;
+                display: block;
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+    &__text {
+        @include r(767) {
+            font-size: 12px;
+            line-height: 1.83;
+        }
+
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.71;
+    }
+}
