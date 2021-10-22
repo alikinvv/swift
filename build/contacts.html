@@ -21,7 +21,7 @@
     
 </head>
 
-<body class="page-vacancies breadcrumb-white breadcrumb-absolute">
+<body class="page-map page-contacts">
 
     <div class="root">
 
@@ -289,116 +289,240 @@
                 <section class="root__main">
                     <div class="container-fluid">
                         
+
                         
-                        <div class="breadcrumb ">
-    <a href="javascript:void(0)" class="breadcrumb__back">
-        <i class="breadcrumb__back--icon">
-            <svg class="ico-svg" viewBox="0 0 192 512" xmlns="http://www.w3.org/2000/svg">
-                <use xlink:href="img/sprites/sprite-mono.svg#angle-left" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+
+                        
+
+<section class="contacts section">
+    <div class="contacts__list">
+        <h1>Контакты</h1>
+
+        <a href="javascript:void(0)" class="btn btn-border mobile">
+            <svg width="17" height="20" viewBox="0 0 17 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M15.7273 8.36364C15.7273 14.0909 8.36364 19 8.36364 19C8.36364 19 1 14.0909 1 8.36364C1 4.29645 4.29645 1 8.36364 1C12.4308 1 15.7273 4.29645 15.7273 8.36364Z"
+                    stroke="#FF502F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M8.36372 10.8173C9.71945 10.8173 10.8183 9.71848 10.8183 8.36275C10.8183 7.00702 9.71945 5.9082 8.36372 5.9082C7.008 5.9082 5.90918 7.00702 5.90918 8.36275C5.90918 9.71848 7.008 10.8173 8.36372 10.8173Z"
+                    stroke="#FF502F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
-        </i>
-        <span class="breadcrumb__back--text">Назад</span>
-    </a>
-    <div class="breadcrumb__toggle">
-        <svg width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M14 7.5V7.51" stroke="#FF502F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M8 7.5V7.51" stroke="#FF502F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M2 7.5V7.51" stroke="#FF502F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
+
+            Офисы на карте
+        </a>
+
+        <div class="contacts__item" data-card="1">
+            <div class="contacts__close"><img src="img/icons/close-red.svg" alt=""></div>
+            <div class="contacts__image" style="background-image: url('../img/contact1.png');"></div>
+            <div class="contacts__title">Центральный офис</div>
+            <div class="tabs">
+                <div class="tabs__header">
+                    <ul class="tabs__list">
+                        <li class="tabs__item">
+                            <button class="tabs__btn tabs__btn--active" data-tabs-path="contacts1">Контакты</button>
+                        </li>
+                        <li class="tabs__item">
+                            <button class="tabs__btn" data-tabs-path="way1">Как добраться</button>
+                        </li>
+                    </ul>
+                    <div class="bar"></div>
+                </div>
+
+                <div class="tabs__content tabs__content--active" data-tabs-target="contacts1">
+                    <a href="tel:89872346790" class="contacts__phone">8 987 234 67 90</a>
+                    <div class="contacts__addr">г. Москва, Ленинградский пр-т, д. 31А</div>
+                    <a href="javascript:void(0)" class="btn">Записаться на прием</a>
+                </div>
+                <div class="tabs__content" data-tabs-target="way1">
+                    <div class="item__district">
+                        <div class="item__district--icon" style="background-color: #00F0FF;"></div>
+                        <div class="item__district--name">
+                            <span>ул академика Янгеля</span>
+                        </div>
+                        <div class="item__district--distance">
+                            <i>
+                                <svg class="ico-svg" viewBox="0 0 10 15" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="img/sprites/sprite-mono.svg#distanceicon"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </i>
+                            <span>8 минут</span>
+                        </div>
+                    </div>
+                    <div class="contacts__text">Выход из метро «Тверская» (2) и «Пушкинская» (1) на улицу Тверская,
+                        далее
+                        пройти 300 метров вдоль проезжей части до отеля InterContinental, повернуть направо на Дегтярный
+                        переулок и дойти до БЦ «Чайка Плаза», на первом этаже которого находится центральный офис продаж
+                        ГК
+                        «Гранель».</div>
+                    <a href="https://yandex.ru/maps/?ll=37.62,55.75&z=10&mode=routes&rtext=~55.727663,%2037.736033"
+                        target="_blank" class="contacts__way">
+                        Проложить маршрут
+                        <svg width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.5 6L9 3.5L6.5 1" stroke="#FF502F" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M1 7V5.5C1 4.3955 1.8955 3.5 3 3.5H9" stroke="#FF502F" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                    <a href="javascript:void(0)" class="btn btn-border">Записаться на прием</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="contacts__item" data-card="2">
+            <div class="contacts__close"><img src="img/icons/close-red.svg" alt=""></div>
+            <div class="contacts__image" style="background-image: url('../img/contact2.png');"></div>
+            <div class="contacts__title">Офис в Хорошёвском</div>
+            <div class="tabs">
+                <div class="tabs__header">
+                    <ul class="tabs__list">
+                        <li class="tabs__item">
+                            <button class="tabs__btn tabs__btn--active" data-tabs-path="contacts2">Контакты</button>
+                        </li>
+                        <li class="tabs__item">
+                            <button class="tabs__btn" data-tabs-path="way2">Как добраться</button>
+                        </li>
+                    </ul>
+                    <div class="bar"></div>
+                </div>
+
+                <div class="tabs__content tabs__content--active" data-tabs-target="contacts2">
+                    <a href="tel:89872346790" class="contacts__phone">8 987 234 67 90</a>
+                    <div class="contacts__addr">г. Москва, Ленинградский пр-т, д. 31А</div>
+                    <a href="javascript:void(0)" class="btn">Записаться на прием</a>
+                </div>
+                <div class="tabs__content" data-tabs-target="way2">
+                    <div class="item__district">
+                        <div class="item__district--icon" style="background-color: #00F0FF;"></div>
+                        <div class="item__district--name">
+                            <span>ул академика Янгеля</span>
+                        </div>
+                        <div class="item__district--distance">
+                            <i>
+                                <svg class="ico-svg" viewBox="0 0 10 15" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="img/sprites/sprite-mono.svg#distanceicon"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </i>
+                            <span>8 минут</span>
+                        </div>
+                    </div>
+                    <div class="contacts__text">Выход из метро «Тверская» (2) и «Пушкинская» (1) на улицу Тверская,
+                        далее
+                        пройти 300 метров вдоль проезжей части до отеля InterContinental, повернуть направо на Дегтярный
+                        переулок и дойти до БЦ «Чайка Плаза», на первом этаже которого находится центральный офис продаж
+                        ГК
+                        «Гранель».</div>
+                    <a href="https://yandex.ru/maps/?ll=37.62,55.75&z=10&mode=routes&rtext=~55.727663,%2037.736033"
+                        target="_blank" class="contacts__way">
+                        Проложить маршрут
+                        <svg width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.5 6L9 3.5L6.5 1" stroke="#FF502F" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M1 7V5.5C1 4.3955 1.8955 3.5 3 3.5H9" stroke="#FF502F" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                    <a href="javascript:void(0)" class="btn btn-border">Записаться на прием</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="contacts__item" data-card="3">
+            <div class="contacts__close"><img src="img/icons/close-red.svg" alt=""></div>
+            <div class="contacts__image" style="background-image: url('../img/contact3.png');"></div>
+            <div class="contacts__title">Офис в Хорошёвском</div>
+            <div class="tabs">
+                <div class="tabs__header">
+                    <ul class="tabs__list">
+                        <li class="tabs__item">
+                            <button class="tabs__btn tabs__btn--active" data-tabs-path="contacts3">Контакты</button>
+                        </li>
+                        <li class="tabs__item">
+                            <button class="tabs__btn" data-tabs-path="way3">Как добраться</button>
+                        </li>
+                    </ul>
+                    <div class="bar"></div>
+                </div>
+
+                <div class="tabs__content tabs__content--active" data-tabs-target="contacts3">
+                    <a href="tel:89872346790" class="contacts__phone">8 987 234 67 90</a>
+                    <div class="contacts__addr">г. Москва, Ленинградский пр-т, д. 31А</div>
+                    <a href="javascript:void(0)" class="btn">Записаться на прием</a>
+                </div>
+                <div class="tabs__content" data-tabs-target="way3">
+                    <div class="item__district">
+                        <div class="item__district--icon" style="background-color: #00F0FF;"></div>
+                        <div class="item__district--name">
+                            <span>ул академика Янгеля</span>
+                        </div>
+                        <div class="item__district--distance">
+                            <i>
+                                <svg class="ico-svg" viewBox="0 0 10 15" xmlns="http://www.w3.org/2000/svg">
+                                    <use xlink:href="img/sprites/sprite-mono.svg#distanceicon"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </i>
+                            <span>8 минут</span>
+                        </div>
+                    </div>
+                    <div class="contacts__text">Выход из метро «Тверская» (2) и «Пушкинская» (1) на улицу Тверская,
+                        далее
+                        пройти 300 метров вдоль проезжей части до отеля InterContinental, повернуть направо на Дегтярный
+                        переулок и дойти до БЦ «Чайка Плаза», на первом этаже которого находится центральный офис продаж
+                        ГК
+                        «Гранель».</div>
+                    <a href="https://yandex.ru/maps/?ll=37.62,55.75&z=10&mode=routes&rtext=~55.727663,%2037.736033"
+                        target="_blank" class="contacts__way">
+                        Проложить маршрут
+                        <svg width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.5 6L9 3.5L6.5 1" stroke="#FF502F" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M1 7V5.5C1 4.3955 1.8955 3.5 3 3.5H9" stroke="#FF502F" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                    <a href="javascript:void(0)" class="btn btn-border">Записаться на прием</a>
+                </div>
+            </div>
+        </div>
     </div>
-    <ul class="breadcrumb__main">
-        <li>
-            <a href="javascript:void(0)" class="breadcrumb__item">Москва</a>
-        </li>
-        <li>
-            <a href="javascript:void(0)" class="breadcrumb__item">Ювао</a>
-        </li>
-        <li>
-            <a href="javascript:void(0)" class="breadcrumb__item">Чертаново</a>
-        </li>
-        <li>
-            <a href="javascript:void(0)" class="breadcrumb__item">Королевские Мытищи</a>
-        </li>
-        <li>
-            <a href="javascript:void(0)" class="breadcrumb__item">от 5,9 млн до 120,7 млн</a>
-        </li>
-        <li>
-            <a href="javascript:void(0)" class="breadcrumb__item">от 15 м² до 270 м²</a>
-        </li>
-        <li>
-            <a href="javascript:void(0)" class="breadcrumb__item">IV кв 2024</a>
-        </li>
-        <li>
-            <span class="breadcrumb__item active">Новостройки</span>
-        </li>
-    </ul>
-    
-</div><!-- /.breadcrumb -->
 
-                        
-                        
-
-                        
-
-                        
-
-<section class="section vacancies" style="background-image: url('img/developer.jpg');">
-    <div class="h1">Застройщикам</div>
+    <div class="contacts__map">
+        <div id="contacts" class="yandex"></div>
+    </div>
 </section>
 
-<div class="vacancies__text">Мы&nbsp;всегда заинтересованы в&nbsp;привлечении к&nbsp;работе профессиональных
-    и&nbsp;талантливых специалистов и&nbsp;работаем ради тех, кто ценит свое время и&nbsp;нацелен на&nbsp;результат. Так
-    что если вы&nbsp;хотите работать у&nbsp;нас&nbsp;&mdash; не&nbsp;стесняйтесь и&nbsp;просто напишите нам об&nbsp;этом
-</div>
+<section class="section props">
+    <h2>Реквизиты</h2>
 
-<section class="section features">
-    <h4>Готовы сотрудничать с застройщиками, желающими стать <br> нашими партнерами, и предлагаем выгодные условия:</h4>
-
-    <div class="features__list">
-        <div class="features__item">
-            <img src="img/icons/settings.svg" alt="">
-            <div class="features__text">Расчет экономической модели</div>
+    <div class="props__list">
+        <div>
+            <span>Название компании</span>
+            <span>ООО наименование офиса наименование застройщик какойнибудь</span>
         </div>
-        <div class="features__item">
-            <img src="img/icons/folder.svg" alt="">
-            <div class="features__text">Ведение документооборота</div>
+        <div>
+            <span>Адрес компании</span>
+            <span>121108, Москва, ул. Франко, д.15, этаж 2, комната 22</span>
         </div>
-        <div class="features__item">
-            <img src="img/icons/share2.svg" alt="">
-            <div class="features__text">Настройку интернет-рекламы</div>
+        <div>
+            <span>Телефон</span>
+            <span><a href="tel:+44444444444">+4 444 444 44 44</a></span>
         </div>
-        <div class="features__item">
-            <img src="img/icons/people.svg" alt="">
-            <div class="features__text">Формирование отдела продаж</div>
+        <div>
+            <span>Email</span>
+            <span><a href="mailto:kakoynibudochendlinnyemail@gmail.com">kakoynibudochendlinnyemail@gmail.com</a></span>
         </div>
-        <div class="features__item">
-            <img src="img/icons/checkbox.svg" alt="">
-            <div class="features__text">Полное юридическое <br> сопровождение</div>
+        <div>
+            <span>ИНН</span>
+            <span>123456789012</span>
         </div>
-        <div class="features__item">
-            <img src="img/icons/home.svg" alt="">
-            <div class="features__text">Реализацию проекта и <br> постпродажное обслуживание</div>
-        </div>
-        <div class="features__item">
-            <img src="img/icons/doc.svg" alt="">
-            <div class="features__text">Помощь в получении разрешительной <br>
-            документации: градостроительных планов, <br>
-            технической документации, экспертных <br>
-            заключений</div>
-        </div>
-        <div class="features__item">
-            <img src="img/icons/point.svg" alt="">
-            <div class="features__text">Подбор земельных участков <br> для строительства</div>
+        <div>
+            <span>ОГРН</span>
+            <span>123456789012</span>
         </div>
     </div>
-</section>
-
-<section class="section show mb-0">
-    <h4>Остались вопросы?</h4>
-
-    <div class="show__text">Наш опыт и доверие клиента — главные приоритеты в работе агентства «Стрижи». <br>
-Ждем вашего обращения, мы всегда на связи и готовы помочь!</div>
-    <a href="javascript:void(0)" class="btn">Оставить заявку</a>
 </section>
 
 

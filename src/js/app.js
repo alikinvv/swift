@@ -94,43 +94,29 @@ let maskPhone = (selector, masked = '+7 (___) ___-__-__') => {
     }
 };
 
-const tabs = document.querySelector('.tabs');
-const tabsBtn = document.querySelectorAll('.tabs__btn');
-const tabsContent = document.querySelectorAll('.tabs__content');
+$('body').on('click', '.tabs__btn', (e) => {
+    $(e.currentTarget).closest('.tabs__list').find('.tabs__btn').removeClass('tabs__btn--active');
+    $(e.currentTarget).closest('.tabs').find('.tabs__content').removeClass('tabs__content--active');
+    $(`.tabs__content[data-tabs-target="${$(e.currentTarget).attr('data-tabs-path')}"]`).addClass('tabs__content--active');
 
-if (tabs) {
-    tabs.addEventListener('click', (e) => {
-        if (e.target.classList.contains('tabs__btn')) {
-            const tabsPath = e.target.dataset.tabsPath;
-            tabsBtn.forEach((el) => {
-                el.classList.remove('tabs__btn--active');
-            });
-            document.querySelector(`[data-tabs-path="${tabsPath}"]`).classList.add('tabs__btn--active');
-            tabsHandler(tabsPath);
-
-            $('.tabs')
-                .find('.bar')
-                .animate({
-                    width: $('.tabs').find('.tabs__btn--active').width(),
-                    left: $('.tabs').find('.tabs__btn--active').position().left,
-                });
-        }
-    });
-
-    $('.tabs')
+    $(e.currentTarget)
+        .closest('.tabs__header')
         .find('.bar')
-        .css('left', $('.tabs').find('.tabs__btn--active').position().left)
         .animate({
-            width: $('.tabs').find('.tabs__btn--active').width(),
+            width: $(e.currentTarget).width(),
+            left: $(e.currentTarget).position().left,
         });
-}
+});
 
-const tabsHandler = (path) => {
-    tabsContent.forEach((el) => {
-        el.classList.remove('tabs__content--active');
-    });
-    document.querySelector(`[data-tabs-target="${path}"]`).classList.add('tabs__content--active');
-};
+$('.bar').each(function () {
+    $(this)
+        .closest('.tabs__header')
+        .find('.bar')
+        .animate({
+            width: $(this).closest('.tabs__header').find('.tabs__btn--active').width(),
+            left: $(this).closest('.tabs__header').find('.tabs__btn--active').position().left,
+        });
+});
 
 const accordions = document.querySelectorAll('.accordion-control');
 
@@ -1913,6 +1899,88 @@ $('body').on('click', '.yandex__back', (e) => {
     $('.yandex__grid').show();
 });
 
+//contacts map page
+if ($('#contacts').length > 0) {
+    ymaps.ready(function () {
+        var myMap = new ymaps.Map(
+            'contacts',
+            {
+                center: [55.751574, 37.573856],
+                zoom: 12,
+                controls: ['fullscreenControl'],
+            },
+            {
+                searchControlProvider: 'yandex#search',
+            }
+        );
+
+        var myCollection = new ymaps.GeoObjectCollection();
+
+        function createPlacemark(image, coords, num, active) {
+            var animatedLayout = ymaps.templateLayoutFactory.createClass(`<div class="placemark" data-card="${num}"></div>`, {
+                build: function () {
+                    animatedLayout.superclass.build.call(this);
+                    var element = this.getParentElement().getElementsByClassName('placemark')[0];
+                    element.style.backgroundImage = image;
+
+                    var size = this.isActive ? 80 : 64;
+                    var smallShape = { type: 'Circle', coordinates: [0, 0], radius: size / 2 };
+                    this.getData().options.set('shape', smallShape);
+
+                    if (active) {
+                        element.classList.add('active');
+                    }
+
+                    this.getData().geoObject.events.add(
+                        'click',
+                        function (e) {
+                            if ($(window).width() < 768) {
+                                for (var i = 0; i < document.getElementsByClassName('placemark').length; i++) {
+                                    document.getElementsByClassName('placemark')[i].classList.remove('active');
+                                }
+
+                                element.classList.add('active');
+
+                                $(`.contacts__item[data-card="${num}"]`).addClass('show');
+                            }
+                        },
+                        this
+                    );
+                },
+            });
+
+            myCollection.add(
+                new ymaps.Placemark(
+                    coords,
+                    { test: 'test' },
+                    {
+                        iconLayout: animatedLayout,
+                        hasBalloon: false,
+                        test: 'test',
+                    }
+                )
+            );
+        }
+
+        createPlacemark("url('/img/map-marker1.png')", [55.684758, 37.738521], 1);
+        createPlacemark("url('/img/map-marker2.png')", [55.751574, 37.573856], 2);
+        createPlacemark("url('/img/map-marker3.png')", [55.775821, 37.59562], 3, true);
+
+        myMap.geoObjects.add(myCollection);
+
+        myMap.events.add('click', (e) => e.get('target').balloon.close());
+    });
+}
+
+$('body').on('mouseenter', '.contacts__item', (e) => {
+    $('.placemark').removeClass('active');
+    $(`.placemark[data-card="${$(e.currentTarget).attr('data-card')}"]`).addClass('active');
+});
+
+if ($(window).width() > 767) {
+    $('.contacts__list').addClass('custom-scroll');
+}
+
 // Custom scroll
 document.querySelectorAll('.custom-scroll').forEach((el) => {
     new SimpleBar(el);
@@ -1961,4 +2029,16 @@ $('body').on('mouseenter', '.object-promo__slider-full .object-promo__nav--next'
 
 $('body').on('mouseleave', '.object-promo__slider-full .object-promo__nav--next', (e) => {
     cursor.removeClass('right');
+});
+
+$('body').on('click', '.contacts .mobile', (e) => {
+    $('.contacts__map').addClass('active');
+    $('.contacts__item').addClass('active');
+    $('.contacts').addClass('active');
+    $('html, body').toggleClass('overflow');
+});
+
+$('body').on('click', '.contacts__close', (e) => {
+    $('.contacts__item').removeClass('show');
+    $('.placemark').removeClass('active');
 });

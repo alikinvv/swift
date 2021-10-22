@@ -1330,21 +1330,10 @@
     }
 
     &-main {
-        h1 {
-            display: none;
-        }
-
         .mobile-filter-button {
             @include r(1023) {
                 display: none;
             }
-        }
-    }
-
-    &-developer,
-    &-vacancies {
-        h1 {
-            display: none;
         }
     }
 
@@ -1561,7 +1550,7 @@
         }
 
         .root__main .container-fluid,
-        #yandex {
+        .yandex {
             @include r(1279) {
                 height: 92.5vh;
             }
@@ -1570,10 +1559,25 @@
             height: 100vh;
             padding-right: 0;
             padding-left: 0;
+
+            * {
+                &[class$='-gototaxi'],
+                &[class$='-copyright__content'],
+                &[class$='-gototech'],
+                &[class$='-gotoymaps'] {
+                    display: none !important;
+                }
+            }
         }
 
         .root__main {
             padding-bottom: 0;
+        }
+    }
+
+    &-contacts {
+        .root__main .container-fluid {
+            height: auto;
         }
     }
 }
@@ -2008,5 +2012,422 @@
         }
 
         font-size: 14px;
+    }
+}
+
+.placemark {
+    @include r(767) {
+        width: 48px;
+        height: 48px;
+        margin-top: -24px;
+        margin-left: -24px;
+    }
+
+    background-size: 100%;
+    width: 64px;
+    height: 64px;
+    margin-left: -32px;
+    margin-top: -32px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    transition: $trans;
+
+    &.active {
+        @include r(767) {
+            width: 48px;
+            height: 48px;
+            margin-top: -24px;
+            margin-left: -24px;
+        }
+
+        border-color: $red;
+        width: 80px;
+        height: 80px;
+        margin-left: -40px;
+        margin-top: -40px;
+    }
+}
+
+.contacts {
+    @include r(1500) {
+        margin-bottom: 5rem;
+    }
+
+    @include r(1023) {
+        margin-bottom: 41px;
+    }
+
+    @include r(767) {
+        padding-top: 47px;
+        position: relative;
+    }
+
+    &.active {
+        height: 100vh;
+    }
+
+    &__list {
+        @include r(1279) {
+            left: 16px;
+            max-height: 92.5vh;
+        }
+
+        @include r(1023) {
+            padding-top: 26px;
+            width: 288px;
+        }
+
+        @include r(767) {
+            position: static;
+            width: 100%;
+            padding: 0 16px;
+            max-height: initial;
+        }
+
+        position: absolute;
+        top: 0;
+        padding-top: 40px;
+        left: 65px;
+        z-index: 4;
+        width: 320px;
+        max-height: 100vh;
+
+        .simplebar-track {
+            display: none;
+        }
+
+        h1 {
+            margin-bottom: 24px;
+        }
+
+        .mobile {
+            @include r(767) {
+                margin-bottom: 23px;
+            }
+
+            &:hover path {
+                fill: #fff;
+            }
+
+            svg {
+                fill: transparent;
+                margin-right: 10px;
+            }
+        }
+    }
+
+    &__map {
+        @include r(767) {
+            display: block;
+            position: fixed;
+            top: 56px;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 31;
+            pointer-events: none;
+            user-select: none;
+            opacity: 0;
+            transition: $trans;
+        }
+
+        &.active {
+            opacity: 1;
+            pointer-events: all;
+            user-select: initial;
+        }
+
+        * {
+            &[class$='-inner-panes'] {
+                position: relative;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    background: #f5f5f5;
+                    opacity: 0.6;
+                    z-index: 502;
+                    pointer-events: none;
+                    user-select: none;
+                }
+            }
+        }
+    }
+
+    &__close {
+        text-align: center;
+        padding-bottom: 8px;
+        display: none;
+
+        img {
+            width: 12px;
+        }
+    }
+
+    &__item {
+        @include r(767) {
+            overflow: scroll;
+        }
+
+        background: #ffffff;
+        box-shadow: 2px 2px 40px rgba(0, 0, 0, 0.08);
+        padding: 16px;
+        margin-bottom: 24px;
+        width: 100%;
+
+        &.active {
+            position: absolute;
+            bottom: 0;
+            left: 16px;
+            right: 16px;
+            width: calc(100% - 32px);
+            z-index: 32;
+            transform: translateY(110%);
+            transition: $trans;
+            margin-bottom: 0;
+            max-height: 80vh;
+
+            .contacts__close {
+                display: block;
+            }
+        }
+
+        &.show {
+            bottom: calc(50% + 30px);
+            transform: translateY(50%);
+        }
+
+        .tabs__header {
+            @include r(1500) {
+                margin-bottom: 13px;
+            }
+
+            @include r(767) {
+                margin-bottom: 15px;
+            }
+
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 8px;
+            margin-bottom: 16px;
+
+            .bar {
+                bottom: -1px;
+            }
+
+            .tabs__btn--active {
+                color: $red;
+            }
+
+            .tabs__item:not(:last-child) {
+                margin-right: 26px;
+            }
+        }
+
+        .btn {
+            @include r(1500) {
+                font-size: 10px;
+            }
+
+            padding-left: 0;
+            padding-right: 0;
+            width: 100%;
+            font-weight: 700;
+            font-size: 12px;
+        }
+
+        .item__district {
+            margin-bottom: 11px;
+        }
+
+        .item__district--icon {
+            @include r(1500) {
+                width: 8px;
+                height: 8px;
+            }
+
+            width: 10px;
+            height: 10px;
+        }
+
+        .item__district--name {
+            @include r(1500) {
+                font-size: 12px;
+            }
+
+            font-size: 14px;
+            max-width: 180px;
+            font-weight: 500;
+        }
+    }
+
+    &__image {
+        @include r(1500) {
+            margin-bottom: 23px;
+        }
+
+        width: 100%;
+        height: 160px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-bottom: 29px;
+    }
+
+    &__title {
+        @include r(1500) {
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        @include r(767) {
+            margin-bottom: 18px;
+        }
+
+        font-weight: 500;
+        font-size: 16px;
+        margin-bottom: 19px;
+    }
+
+    &__phone {
+        @include r(1500) {
+            font-size: 12px;
+        }
+
+        @include r(767) {
+            color: $red;
+        }
+
+        font-weight: 500;
+        font-size: 14px;
+        transition: trans;
+        color: $primary;
+        text-decoration: none;
+        margin-bottom: 8px;
+        display: inline-block;
+
+        &:hover {
+            color: $red;
+        }
+    }
+
+    &__addr {
+        @include r(1500) {
+            font-size: 12px;
+        }
+
+        font-weight: 400;
+        font-size: 14px;
+        margin-bottom: 24px;
+    }
+
+    &__text {
+        @include r(1500) {
+            font-size: 12px;
+            line-height: 1.83;
+        }
+
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.71;
+        margin-bottom: 10px;
+    }
+
+    &__way {
+        @include r(1500) {
+            font-size: 12px;
+        }
+
+        text-decoration: none;
+        @include fcn;
+        font-weight: 500;
+        font-size: 14px;
+        transition: $trans;
+        margin-bottom: 24px;
+
+        &:hover {
+            color: $primary;
+
+            path {
+                stroke: $primary;
+            }
+        }
+
+        svg {
+            margin-left: 10px;
+
+            path {
+                transition: $trans;
+            }
+        }
+    }
+}
+
+.props {
+    @include r(1279) {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    padding: 2px 65px;
+
+    h2 {
+        @include r(1500) {
+            font-size: 600px;
+            font-size: 20px;
+        }
+    }
+
+    &__list {
+        div {
+            @include r(767) {
+                display: block;
+                margin-bottom: 24px;
+            }
+
+            @include fcn;
+            margin-bottom: 16px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        span:first-child {
+            @include r(1500) {
+                font-size: 12px;
+                min-width: 168px;
+            }
+
+            @include r(767) {
+                display: block;
+                color: #818285;
+            }
+
+            min-width: 190px;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        span:last-child {
+            @include r(1500) {
+                font-size: 12px;
+            }
+
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        a {
+            color: $primary;
+            text-decoration: none;
+
+            &:hover {
+                color: $red;
+            }
+        }
     }
 }
