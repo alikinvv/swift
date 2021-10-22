@@ -1673,9 +1673,9 @@ if ($('#contacts').length > 0) {
       }));
     }
 
-    createPlacemark("url('/img/map-marker1.png')", [55.684758, 37.738521], 1);
-    createPlacemark("url('/img/map-marker2.png')", [55.751574, 37.573856], 2);
-    createPlacemark("url('/img/map-marker3.png')", [55.775821, 37.59562], 3, true);
+    createPlacemark("url('img/map-marker1.png')", [55.684758, 37.738521], 1);
+    createPlacemark("url('img/map-marker2.png')", [55.751574, 37.573856], 2);
+    createPlacemark("url('img/map-marker3.png')", [55.775821, 37.59562], 3, true);
     myMap.geoObjects.add(myCollection);
     myMap.events.add('click', function (e) {
       return e.get('target').balloon.close();
