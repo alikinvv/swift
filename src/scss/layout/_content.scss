@@ -2058,7 +2058,6 @@
     }
 
     @include r(767) {
-        padding-top: 47px;
         position: relative;
     }
 
@@ -2178,16 +2177,16 @@
         padding: 16px;
         margin-bottom: 24px;
         width: 100%;
+        transition: $trans;
 
         &.active {
             position: absolute;
-            bottom: 0;
+            top: 100%;
             left: 16px;
             right: 16px;
             width: calc(100% - 32px);
             z-index: 32;
             transform: translateY(110%);
-            transition: $trans;
             margin-bottom: 0;
             max-height: 80vh;
 
@@ -2197,8 +2196,8 @@
         }
 
         &.show {
-            bottom: calc(50% + 30px);
-            transform: translateY(50%);
+            top: 45%;
+            transform: translateY(-50%);
         }
 
         .tabs__header {
