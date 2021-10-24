@@ -691,6 +691,10 @@ const mainSlider = new Swiper('.main__slider', {
     },
 });
 
+$('body').on('click', '.main__num span', (e) => {
+    mainSlider.slideTo($(e.currentTarget).text());
+});
+
 // Condition slider
 const serviceSlider = new Swiper('.conditions__slider', {
     slidesPerView: 'auto',
@@ -2042,3 +2046,21 @@ $('body').on('click', '.contacts__close', (e) => {
     $('.contacts__item').removeClass('show');
     $('.placemark').removeClass('active');
 });
+
+let someHeight = (selector, element) => {
+    for (let i = 0; i < $(selector).length; i++) {
+        let $step = $(selector).eq(i);
+        let stepHeight = 0;
+
+        for (let j = 0; j < $step.find(element).length; j++) {
+            if ($step.find(element).eq(j).height() > stepHeight) {
+                stepHeight = $step.find(element).eq(j).height();
+            }
+        }
+
+        $step.find(element).height(stepHeight);
+    }
+};
+
+someHeight('.viewed__slider', '.flat-item__object');
+someHeight('.viewed__slider', '.flat-item__price');

@@ -622,6 +622,9 @@ var mainSlider = new Swiper('.main__slider', {
       }
     }
   }
+});
+$('body').on('click', '.main__num span', function (e) {
+  mainSlider.slideTo($(e.currentTarget).text());
 }); // Condition slider
 
 var serviceSlider = new Swiper('.conditions__slider', {
@@ -1743,3 +1746,21 @@ $('body').on('click', '.contacts__close', function (e) {
   $('.contacts__item').removeClass('show');
   $('.placemark').removeClass('active');
 });
+
+var someHeight = function someHeight(selector, element) {
+  for (var _i8 = 0; _i8 < $(selector).length; _i8++) {
+    var $step = $(selector).eq(_i8);
+    var stepHeight = 0;
+
+    for (var j = 0; j < $step.find(element).length; j++) {
+      if ($step.find(element).eq(j).height() > stepHeight) {
+        stepHeight = $step.find(element).eq(j).height();
+      }
+    }
+
+    $step.find(element).height(stepHeight);
+  }
+};
+
+someHeight('.viewed__slider', '.flat-item__object');
+someHeight('.viewed__slider', '.flat-item__price');

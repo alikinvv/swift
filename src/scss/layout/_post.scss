@@ -244,6 +244,14 @@
     }
 
     &__content {
+        @include r(1279) {
+            font-size: 14px;
+        }
+
+        @include r(767) {
+            font-size: 12px;
+        }
+
         margin-bottom: size-rel(40px);
     }
 
@@ -350,7 +358,7 @@
 
     @include media-breakpoint-up(xl) {
         &__content {
-            max-width: size-rel(936px);
+            max-width: 770px;
         }
 
         &__block {
@@ -398,6 +406,15 @@
         &--prev {
             margin-bottom: size-rel(24px);
         }
+    }
+
+    &__title {
+        @include r(1500) {
+            font-size: 12px;
+        }
+
+        font-size: 14px;
+        font-weight: 400;
     }
 
     &__link {
@@ -542,8 +559,18 @@
     }
 
     &__name {
+        @include r(1500) {
+            font-size: 12px;
+            line-height: 1.83;
+        }
+
+        @include r(1279) {
+            color: $red;
+        }
+
         font-weight: 500;
         font-size: 14px;
+        line-height: 1.71;
     }
 
     &__price {
@@ -679,8 +706,12 @@
     }
 
     .swiper-pagination {
+        @include r(1279) {
+            font-size: 12px;
+        }
+
         @include r(767) {
-            display: none;
+            bottom: 60px;
         }
 
         @include centerXa;
@@ -805,7 +836,11 @@ ol {
 
 .subscribe {
     @include r(1279) {
-        padding: 45px 25px;   
+        padding: 48px 25px;
+    }
+
+    @include r(767) {
+        padding: 41px 25px;
     }
 
     background: $gray-light;
@@ -844,6 +879,11 @@ ol {
     &__title {
         @include r(1279) {
             font-size: 16px;
+            margin-bottom: 11px;
+        }
+
+        @include r(767) {
+            font-size: 14px;
         }
 
         font-weight: 600;
@@ -854,7 +894,13 @@ ol {
 
     &__subtitle {
         @include r(1279) {
-            font-size: 14px;
+            font-size: 12px;
+            margin-bottom: 41px;
+        }
+
+        @include r(767) {
+            font-size: 10px;
+            margin-bottom: 20px;
         }
 
         font-size: size-rel(10px);
@@ -867,6 +913,10 @@ ol {
         position: relative;
 
         .placeholder {
+            @include r(1279) {
+                font-size: 12px;
+            }
+
             @include centerYa;
             left: 0;
             font-size: 14px;
@@ -875,6 +925,10 @@ ol {
         }
 
         input {
+            @include r(1279) {
+                font-size: 12px;
+            }
+
             border: 0;
             box-shadow: 0px 1px 0px #cccccc;
             transition: $trans;
@@ -903,14 +957,40 @@ ol {
     }
 
     &__button {
+        @include r(1279) {
+            margin-top: 24px;
+        }
+
+        @include r(767) {
+            margin-top: 0;
+        }
+
         margin-bottom: size-rel(16px);
 
         .btn {
+            @include r(1279) {
+                font-size: 10px;
+                font-weight: 700;
+                border-radius: 0;
+                padding-top: 11px;
+                padding-bottom: 11px;
+            }
+
             width: 100%;
         }
     }
 
     &__text {
+        @include r(1279) {
+            font-size: 12px;
+            line-height: 1.83;
+        }
+
+        @include r(767) {
+            font-size: 10px;
+            line-height: 2;
+        }
+
         font-size: size-rel(10px);
         line-height: size-rel(20px);
     }

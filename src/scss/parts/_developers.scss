@@ -105,11 +105,15 @@
             }
 
             .developers__features {
-                display: flex;
+                opacity: 1;
+                height: auto;
+                transition: all 0.2s ease-in-out 0.2s;
             }
 
             .developers__text {
-                display: block;
+                opacity: 1;
+                height: auto;
+                transition: all 0.2s ease-in-out 0.2s;
             }
         }
     }
@@ -193,6 +197,8 @@
 
         @include r(1279) {
             display: flex;
+            opacity: 1;
+            height: auto;
         }
 
         @include r(1023) {
@@ -201,10 +207,12 @@
         }
 
         @include fcn;
-        display: none;
         font-size: 12px;
         font-weight: 400;
         margin-bottom: 24px;
+        opacity: 0;
+        height: 0;
+        transition-delay: 0;
 
         &-item {
             @include r(767) {
@@ -250,6 +258,8 @@
 
         @include r(1279) {
             display: block;
+            opacity: 1;
+            height: auto;
         }
 
         @include r(1023) {
@@ -262,8 +272,10 @@
             line-height: 1.83;
         }
 
-        display: none;
         font-weight: 400;
+        opacity: 0;
+        height: 0;
+        transition-delay: 0;
     }
 
     .btn {

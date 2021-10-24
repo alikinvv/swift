@@ -1347,6 +1347,25 @@
                 display: none;
             }
         }
+
+        .main ~ .section .section__header--nav {
+            display: flex;
+        }
+
+        .items-grid {
+            @include r(1023) {
+                & > div {
+                    display: none;
+
+                    &:nth-child(1),
+                    &:nth-child(2),
+                    &:nth-child(3),
+                    &:nth-child(4) {
+                        display: block;
+                    }
+                }
+            }
+        }
     }
 
     &-map {
