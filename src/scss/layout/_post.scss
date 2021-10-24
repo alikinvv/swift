@@ -804,6 +804,10 @@ ol {
 }
 
 .subscribe {
+    @include r(1279) {
+        padding: 45px 25px;   
+    }
+
     background: $gray-light;
     padding: size-rel(40px) size-rel(24px);
 
@@ -838,6 +842,10 @@ ol {
     }
 
     &__title {
+        @include r(1279) {
+            font-size: 16px;
+        }
+
         font-weight: 600;
         font-size: size-rel(14px);
         line-height: size-rel(24px);
@@ -845,6 +853,10 @@ ol {
     }
 
     &__subtitle {
+        @include r(1279) {
+            font-size: 14px;
+        }
+
         font-size: size-rel(10px);
         line-height: size-rel(20px);
         margin-bottom: size-rel(8px);
