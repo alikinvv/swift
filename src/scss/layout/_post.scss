@@ -50,6 +50,83 @@
             }
 
             @include flexitem(25%, 20px, 40px);
+            transition: $trans;
+
+            &__title {
+                @include r(1500) {
+                    font-size: 14px;
+                    font-weight: 500;
+                    line-height: 1.71;
+                }
+
+                @include r(1023) {
+                    font-size: 16px;
+                    font-weight: 500;
+                    line-height: 2;
+                }
+
+                @include r(767) {
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 1.71;
+                }
+
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 2;
+            }
+
+            &__text {
+                @include r(1500) {
+                    font-weight: 400;
+                    font-size: 12px;
+                    line-height: 1.83;
+                }
+
+                @include r(1023) {
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 1.71;
+                }
+
+                @include r(767) {
+                    font-weight: 400;
+                    font-size: 12px;
+                    line-height: 1.83;
+                }
+
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 1.71;
+            }
+
+            &__date {
+                @include r(1500) {
+                    font-size: 10px;
+                    font-weight: 400;
+                    line-height: 2;
+                }
+
+                @include r(1023) {
+                    font-size: 12px;
+                    font-weight: 400;
+                    line-height: 1.83;
+                }
+
+                @include r(767) {
+                    font-weight: 400;
+                    font-size: 10px;
+                    line-height: 2;
+                }
+
+                font-size: 12px;
+                font-weight: 400;
+                line-height: 1.83;
+            }
+
+            &:hover {
+                box-shadow: 2px 2px 40px rgba(#000, 0.16);
+            }
         }
     }
 

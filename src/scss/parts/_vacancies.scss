@@ -101,6 +101,11 @@
         }
     }
 
+    &__img {
+        @include fcn;
+        min-height: 30px;
+    }
+
     &__item {
         @include r(1500) {
             font-size: 12px;
